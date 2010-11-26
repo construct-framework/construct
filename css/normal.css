@@ -1,0 +1,22 @@
+body {background:none}
+#body-container {background:none}
+#load-first{background:none} 
+#content-main {background:none} 
+#content-left,#content-right {background:none} 
+/*#content-left .moduletable,#content-right .moduletable,#bottom-user-modules .moduletable,#footer .moduletable{background:none} */
+#user1 {background:none} 
+#user2 {background:none} 
+#user3 {background:none} 
+#user4 {background:none} 
+.gutter {background:none} 
+#access {background:none} 
+#breadcrumbs {background:none} 
+#content-container {background:none} 
+#bottom-user-modules {background:none} 
+#top-user-modules {background:none} 
+#branding {background:none} 
+#header h1 a:link, #header h1 a:visited, #header h1 a:hover{background:url('../images/logo.png') 0 0 no-repeat;} 
+#footer {background:none} 
+#header {background:none} 
+#nav {background:none} 
+#top-module {background:none} 

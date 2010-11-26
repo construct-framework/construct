@@ -1,0 +1,368 @@
+@charset "utf-8";
+/* -- Template Overrides -- */
+#adminform{}			
+#author{}			
+#contact_email_copy{}			
+#contact_email{}			
+#contact_emailmsg{}			
+#contact_name{}			
+#contact_text{}
+#content{}
+#Count{}			
+#created_by_alias{}			
+#email{}			
+#emailmsg{}			
+#Fax{}			
+#hits{}			
+#itema{}			
+#itemb{}			
+#itemc{}			
+#jformdescription{}			
+#jformtitle{}			
+#jformurl{}			
+#josForm{}			
+#login{}			
+#Mail{}			
+#metadesc{}			
+#metakey{}			
+#mobile{}			
+#mod_login_password{}			
+#mod_login_remember{}			
+#mod_login_username{}			
+#mod_search_searchword {}			
+#Name{}			
+#namemsg{}			
+#num_a{}			
+#num{}			
+#page{}			
+#pass{}			
+#password{}			
+#password2{}			
+#Phone{}			
+#poll{}			
+#Position{}			
+#pw2msg{}			
+#pwmsg{}			
+#question{}			
+#rem{}			
+#search_searchword{}				
+#tableOrdering{}			
+#tableOrdering2{}			
+#title{}			
+#token{}			
+#user{}			
+#usernamemasg{}			
+.article_column {}			
+.article_row {}			
+.article_separator {}	
+.articleinfo {}			
+.blog {}			
+.blog_more {}			
+.blog_more {}			
+.blogsection {}			
+.button {}			
+.buttonheading {}			
+.category {}			
+.checkbox {}			
+.cols1{}
+.cols2 {}			
+.cols3 {}			
+.cols4 {}	
+.column1,
+.column2,
+.column3,
+.column4 {}
+.componentheading {}			
+.contact {}			
+.contact_address {}			
+.contact_email {}			
+.contact_email_checkbox {}			
+.contentdescription {}			
+.contentheading {}			
+.contentpagetitle {}			
+.contentpane {}			
+.contentpaneopen_edit {}			
+.copy {}			
+.counter {}			
+.createdate {}			
+.createdby {}			
+.display {}			
+.editor {}			
+.editor{}			
+.email {}			
+.error {}			
+.feed_description {}			
+.filter {}			
+.form-login {}			
+.form-validate {}			
+.form-validate{}			
+.hasTip {}			
+.hidden {}			
+.horiz {}			
+.inputbox {}			
+.inputbox{}			
+.iteminfo {}			
+.josForm {}			
+.latestnews {}			
+.leading {}			
+.leading_separator {}			
+.limit {}			
+.list {}			
+.list-footer {}			
+.log {}			
+.login_form {}			
+.logout_form {}			
+.marker {}			
+.message {}			
+.metadata {}			
+.name {}			
+.newsfeed {}			
+.newsfeeds {}			
+.only {}			
+.ordering {}			
+.pageinfo {}			
+.pagination {}			
+.pagination li {}			
+.pass {}			
+.phrase {}			
+.poll {}			
+.pollstableborder {}			
+.publishing {}			
+.question {}			
+.radio {}			
+.readon {}			
+.remember {}
+.remember input {}
+.required {}			
+.required{}			
+.results {}			
+.row_separator,
+.row_separator2{}
+.save {}			
+.search {}			
+.search_intro {}			
+.search_result {}			
+.sectiontableentry {}			
+.sectiontablemasthead {}			
+.small {}			
+.user {}			
+.user_name {}			
+.validate {}			
+.validate-email {}			
+.validate-email{}			
+.validate-passverify {}			
+.validate-password {}			
+.validate-password{}			
+.verify_pass {}			
+.vert {}			
+.weblinks {}			
+.word {}			
+.wrap {}			
+.wrap_image {}
+
+/* -- Following styles derived from the Beez Accessible Template by Angie Radtke -- */
+
+/* -- Tables -- */
+table.newsfeed{}
+table.newsfeeds td,
+table.weblinks td,
+table.category td{padding:5px}
+table.newsfeeds th,
+table.weblinks th,
+table.category th{padding:5px}
+table.newsfeeds,
+table.weblinks,
+table.category{font-size:1em;margin:20px 0}
+table.newsfeeds tr:last-child,
+table.weblinks tr:last-child,
+table.category tr:last-child{border-bottom:1px solid #B6B6B6}
+/* -- System Messages -- */
+#system-message{}
+#system-message dt{}
+#system-message dd{}
+#system-message dd ul{}
+/* System Standard Messages */
+#system-message dt.message{display:none}
+#system-message dd.message{ }
+#system-message dd.message ul{}
+/* System Error Messages */
+#system-message dt.error{display:none}
+#system-message dd.error{ }
+#system-message dd.error ul{}
+/* System Notice Messages */
+#system-message dt.notice{display:none}
+#system-message dd.notice{ }
+#system-message dd.notice ul{}
+ 
+.article_column h2{}
+.article_row .column1 h2,
+.article_row .column2 h2{}
+.article_row p.iteminfo{} 
+a.readon{}
+a.readon:hover,
+a.readon:active,
+a.readon:focus{}
+span.content_rating,
+.leading span.content_rating{margin:10px 0 0;display:block}
+.leading h2{}
+.leading .readon {}
+.content_vote{margin:0 0 10px;display:block}
+.content_vote input{margin:0 5px}
+.content_vote .button{border:0;font-weight:bold;margin:20px 10px 0 0;padding:0 0 0 30px;cursor:pointer} 
+/* -- Blog More -- */
+.blog_more h2{font-weight:normal;margin:0}
+.blog_more li a{display:inline;margin:0;padding:0}
+.blog_more li{padding:4px}
+.blog_more ul li a{padding:2px 0 4px 15px}
+.blog_more ul li a:hover{}
+.blog_more ul li a:active,
+.blog_more ul li a:focus{}
+.blog_more ul{background:#eee;border:solid 1px #ccc;line-height:1.3em;list-style-type:none;margin:0;padding:10px}
+.blog_more{padding:10px 0}
+/* -- Pagination -- */
+.pagination{margin:10px 0 0;padding:10px 0}
+.pagination{list-style-type:none;margin:0;padding:0;text-align:left}
+.pagination li{display:inline;padding:2px 5px 0 0;text-align:left}
+.pagination li a{padding:2px}
+/* -- Poll -- */
+form.poll{padding:20px 20px 20px 0}
+form.poll fieldset{border:0 solid #000;margin:0 0 10px;padding:0}
+form.poll{padding:10px 0 0}
+form.poll fieldset{line-height:1.6em}
+form.poll fieldset label{padding:0 0 0 4px}
+form.poll .button{float:left;margin:0 10px 0 0;padding:2px !important}
+form.poll a{text-decoration:none;color:#000 !important;margin:0;padding:0 2px !important;/*border:outset 2px #999;background:#d4d0c8;*/cursor:pointer;float:left}
+form.poll a:active,
+form.poll .button:active {border:outset 1px #999}
+form.poll a:hover,
+form.poll a:focus,
+form.poll .button:hover,
+form.poll .button:focus{}
+form.poll:after{content:".";visibility:hidden;height:0;display:block;clear:both}*/
+/* -- Poll Results -- */
+dl.poll{}
+dl.poll dt{border-bottom:solid 1px #ccc}
+dl.poll dd{padding:6px 0;font-weight:bold}
+.polls_color_1{background:#000}
+.polls_color_2{background:#333}
+.polls_color_3{background:#666}
+.polls_color_4{background:#999}
+.polls_color_5{background:#ccc}
+.polls_color_6{background:#eee}
+.poll .polls_color_1,
+.poll .polls_color_2,
+.poll .polls_color_3,
+.poll .polls_color_4,
+.poll .polls_color_5{border:solid 1px;position:relative}
+.poll h3{border:solid 0;margin:10px 0}
+.poll .td_2{width:100px}
+.poll .td_3{width:300px}
+.poll form{margin:20px 0}
+.poll table{font-size:1em;width:auto;border:solid 0;position:relative}
+.poll table .td_1{width:30px}
+.poll table caption{font-size:1em;font-weight:bold;margin:10px 0;text-align:left}
+.poll td{border:solid 1px #ddd;padding:2px}
+.poll td.line{width:300px}
+.poll th{background:#EEE;border:solid 1px #ccc}
+.question{font-weight:bold}
+/* -- Edit Form -- */
+form.editor legend{font-size:1.2em;font-weight:bold;padding:2px}
+form.editor fieldset{border:solid 1px #ccc;padding:20px;margin:10px 0}
+form.editor .publishing label{float:left;width:14em}
+form.editor .publishing div{margin:5px 0;clear:left}
+form.editor .publishing .radio label{float:none;width:14em}
+form.editor .publishing .radio label span{float:left;width:14em}
+form.editor fieldset.metadata label{float:none !important;display:block;font-weight:bold}
+/* -- Login Form -- */
+form.limit{}
+.login_form{}
+.login_form input{}
+.login_form label{}
+.login_form .button{}
+/* -- User Form -- */
+form.user {margin:10px 0}		
+form.user label {width:40%;float:left}
+form.user .paramlist {margin-top:0}		
+form.user .paramlist label {width:100%}
+
+/*form.user {margin:10px 0}		
+form.user label {width:130px;float:left}
+form.user .paramlist {margin-top:0}
+form.user table.paramlist label {width:125px}*/
+
+/* -- Registration Form -- */
+form.registration label,
+form.registration input,
+form.lost_password label,
+form.lost_password input,
+form.lost_password .button,
+form.search_result,
+form.registration,
+form.lost_password,
+.search_result .button,
+form.registration .button{}
+.registration fieldset p{}
+.registration div,
+.login_form div,
+.lost_password div{margin:5px 0}
+/* -- Contact -- */
+.contact{margin:10px 0}
+.contact_email_checkbox label{float:none !important}
+.contact label{float:left;width:14em;margin:10px 0 0}
+.contact label.copy{width:90%;padding:0 0 0 10px}
+.contact form{padding:20px;margin:10px 0}
+.contact input{padding:2px 2px 0;margin:10px 0 0}
+.contact .button{}
+#contact_text {width:80%;height:150px}	
+address{font-style:normal;margin:10px 0}
+address p{line-height:1em}
+span.marker{margin:0 10px 0 0}
+label.textarea{float:none !important;margin:10px 0;display:block;width:100%}
+/* -- Tooltip -- */
+div.tooltip{float:left;background:#ffc;border:1px solid #D4D5AA;padding:5px;max-width:200px}
+div.tooltip h4{padding:0;margin:0;font-size:95%;font-weight:bold;margin-top:-15px;padding-top:15px;padding-bottom:5px}
+div.tooltip p{font-size:90%;margin:0}
+/* -- Breadcrumbs -- */
+* html #breadcrumbs{}
+#breadcrumbs{}
+#breadcrumbs p{}
+#breadcrumbs a{}
+#breadcrumbs a:link,
+#breadcrumbs a:visited{}
+#breadcrumbs span{}
+#breadcrumbs span a:hover,
+#breadcrumbs span a:active,
+#breadcrumbs span a:focus{}
+/* -- Search Selects -- */
+.phrase .inputbox{display:block;height:1.5em;margin-top:10px;width:12em}
+.phrase .inputbox option{border-bottom:solid 1px #333;padding:2px}
+.phrase .inputbox option a:hover{background:#C00;border-color:#CFD0D6;color:#fff}
+.search_result legend{border-bottom:solid 0 #000;background:#fff}
+.phrase {margin:10px 10px 10px 0;padding:10px;width:60%;border:solid 1px #ccc;float:left}
+.word {padding:10px 10px 10px 0;border:solid 0 !important}		
+.word input {border:1px solid #ccc;margin:0 0 0 10px;padding:2px}
+.only {border:solid 1px #ccc;margin:10px 0 10px 10px;padding:5px 10px 13px;line-height:1.3em}
+/* -- User Feedback -- */
+.inputbox:focus {border-bottom:solid 2px #999;border-right:solid 2px #999}	
+.invalid{border-color:#ff0000}
+label.invalid{color:#ff0000}
+input.invalid,
+textarea.invalid{border:solid 2px #ff0000}
+/* -- editor -- */
+.contentpaneopen_edit{float:left}
+.contentpaneopen_edit img{border:0}
+.save{text-align:right;padding:10px 0}
+/* -- article index -- */
+table.contenttoc{border:solid 1px #ccc;margin:10px;width:35%;float:right}
+table.contenttoc tbody{margin-left:10px;float:left}
+table.contenttoc tbody tr td a{padding-left:5px}
+.pagenavcounter{font-weight:bold}
+/* -- Advertisement -- */
+.moduletable_text{margin:10px}
+.banneritem_text{margin:10px 0 10px 0;/*background:#f5f5f5;*/padding:5px;border:solid 1px #eee}
+/* -- Caption fixes -- */
+.img_caption.left{float:left;margin-right:1em}
+.img_caption.right{float:right;margin-left:1em}
+.img_caption.left p{clear:left;text-align:center}
+.img_caption.right p{clear:right;text-align:center}
+p.syndicate{float:left;display:block;text-align:left}
