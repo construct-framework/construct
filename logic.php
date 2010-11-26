@@ -195,9 +195,7 @@ elseif(file_exists($categoryIndex)){
 elseif(file_exists($sectionIndex)){
 		$alternateIndexFile = $sectionIndex;}
 elseif(file_exists($componentIndex)){
-		$alternateIndexFile = $componentIndex;}	
+		$alternateIndexFile = $componentIndex;}
 elseif(file_exists($templateIndex)){
-		$alternateIndexFile = $templateIndex;}			
+		$alternateIndexFile = $templateIndex;}
 else unset($alternateIndexFile);
-
-?>

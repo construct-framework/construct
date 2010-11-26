@@ -8,10 +8,10 @@
 
 // To enable use of site configuration
 $app 					= JFactory::getApplication();
-// Returns a reference to the global document object
-$doc 					= JFactory::getDocument();
 // Get the base URL of the website
 $baseUrl 				= JURI::base();
+// Returns a reference to the global document object
+$doc 					= JFactory::getDocument();
 //Get the current URL
 $url 					= clone(JURI::getInstance());
 // Get and define template parameters
@@ -74,7 +74,7 @@ if ( loadMoo && $loadModal ) {
 if(file_exists($logicFile)) include $logicFile;
 
 // Mobile device detection
-if(file_exists($mdetectFile)) include_once $mdetectFile;	
+if(file_exists($mdetectFile)) include_once $mdetectFile;
 $uagent_obj = new uagent_info();
 $isMobile = $uagent_obj->DetectMobileLong();
 // Check if mobile device detecion is turned on and, test if visitor is a mobile device, and if so, load mobile sub-template
@@ -116,17 +116,17 @@ else {
 		echo "\n".$cssFile;
 	if ($googleHeaderFont != "")
 		echo "\n".'  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='.$googleHeaderFont.'">
-		<style type="text/css">h1,h2,h3,h4,h5,h6{font-family:'.$googleHeaderFont.', serif !important} </style>';
+		<style type="text/css">h1,h2,h3,h4,h5,h6{font-family:'.$googleHeaderFont.', serif !important}</style>';
 	if ($loadjQuery)
 		$doc->addScript("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");
 	if ($enableSwitcher)
 		echo "\n".'  <script type="text/javascript" src="templates/'.$this->template.'/js/styleswitch.js"></script>';
 	if ($siteWidth)
-		echo "\n".'  <style type="text/css">#body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}</style>';
-	if (!$fullWidth)
-		echo "\n".'  <style type="text/css">#header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.';margin:0 auto}</style>';
+		echo "\n".'  <style type="text/css"> #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}</style>';
 	if ($siteWidthType == 'max-width')
-		echo "\n".'  <style type="text/css"> img, object {max-width:100%}</style>';
+		echo "\n".'  <style type="text/css"> img, object {max-width:100%}</style>';		
+	if (!$fullWidth)
+		echo "\n".'  <style type="text/css"> #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.';margin:0 auto}</style>';
 ?>  
   <script type="text/javascript">window.addEvent('domready',function(){new SmoothScroll({duration:1200},window);});</script>
   <!--[if lt IE 7]>
@@ -167,17 +167,17 @@ else {
 				<?php endif; ?>		   
 				<?php if ($this->countModules('supra2')) : ?>
 					<div id="supra2" class="<?php echo $supraModuleClass ?>">
-						<jdoc:include type="modules" name="supra2" />
-					</div><!-- end supra2 -->								
+						<jdoc:include type="modules" name="supra2" style="jexhtml" />
+					</div><!-- end supra2 -->
 				<?php endif; ?>				
 				<?php if ($this->countModules('supra3')) : ?>
 					<div id="supra3" class="<?php echo $supraModuleClass ?>">
-						<jdoc:include type="modules" name="supra3" />
+						<jdoc:include type="modules" name="supra3" style="jexhtml" />
 					</div><!-- end supra3 -->								
 				<?php endif; ?>				
 				<?php if ($this->countModules('supra4')) : ?>
 					<div id="supra4" class="<?php echo $supraModuleClass ?>">
-						<jdoc:include type="modules" name="supra4" />
+						<jdoc:include type="modules" name="supra4" style="jexhtml" />
 					</div><!-- end supra4 -->								
 				<?php endif; ?>						
 			</div><!-- end supra -->
@@ -350,7 +350,7 @@ else {
 									<jdoc:include type="message" />
 								</div>
 							<?php endif; ?>
-							
+
 							<jdoc:include type="component" />
 								
 							<?php if ($contentBottomCount) : ?>
@@ -385,42 +385,42 @@ else {
 					</div><!-- end content-main -->
 					
 					<?php if ($contentLeftCount) : ?>
-						<div id="content-left" class="clearfix">				
+						<div id="content-left" class="clearfix">
 							<?php if ($this->countModules('left')) : ?>
 								<div id="left" class="<?php echo $contentLeftClass ?>">
-									<div class="gutter clearfix">		
+									<div class="gutter clearfix">
 										<jdoc:include type="modules" name="left" style="jexhtml" />
 									</div><!--end gutter -->
-								</div><!-- end left -->								
-							<?php endif; ?>			   
+								</div><!-- end left -->
+							<?php endif; ?>
 							<?php if ($this->countModules('left2')) : ?>
 								<div id="left2" class="<?php echo $contentLeftClass ?>">
-									<div class="gutter clearfix">		
+									<div class="gutter clearfix">
 										<jdoc:include type="modules" name="left2" style="jexhtml" />
 									</div><!--end gutter -->
 								</div><!-- end left2 -->
-							<?php endif; ?>								
+							<?php endif; ?>
 						</div><!-- end left -->
 					<?php endif; ?>
 
 				</div><!-- end load-first -->
 		
 					<?php if ($contentRightCount) : ?>
-						<div id="content-right" class="clearfix">							
+						<div id="content-right" class="clearfix">
 							<?php if ($this->countModules('right')) : ?>
 								<div id="right" class="<?php echo $contentRightClass ?>">
 									<div class="gutter clearfix">
 										<jdoc:include type="modules" name="right" style="jexhtml" />
-									</div><!--end gutter -->	
+									</div><!--end gutter -->
 								</div><!-- end right -->								
-							<?php endif; ?>			   
+							<?php endif; ?>
 							<?php if ($this->countModules('right2')) : ?>
 								<div id="right2" class="<?php echo $contentRightClass ?>">
 									<div class="gutter clearfix">
 										<jdoc:include type="modules" name="right2" style="jexhtml" />
-									</div><!--end gutter -->				
+									</div><!--end gutter -->
 								</div><!-- end right2 -->
-							<?php endif; ?>							
+							<?php endif; ?>
 						</div><!-- end right -->
 					<?php endif; ?>
 			
