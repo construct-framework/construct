@@ -55,8 +55,7 @@ $contentRightClass 		= '';
 $subContentClass 		= 'count-4';
 
 // Based on http://forum.joomla.org/index.php/viewtopic.php?p=1077558#p1077558
-$document   			= &JFactory::getDocument();
-$renderer   			= $document->loadRenderer( 'modules' );
+$renderer   			= $doc->loadRenderer( 'modules' );
 $raw 					= array( 'style' => 'raw' );
 $xhtml 					= array( 'style' => 'xhtml' );
 $jexhtml 				= array( 'style' => 'jexhtml' );

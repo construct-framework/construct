@@ -6,22 +6,15 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-// Get the base URL of the website
-$baseUrl 				= JURI::base();
-// Get and define template parameters
-$customStyleSheet 		= $this->params->get('customStyleSheet');
-$useCustomStyleSheet 	= $this->params->get('useCustomStyleSheet');
-// Define absolute paths to files
-$logicFile				= JPATH_THEMES.'/'.$this->template.'/logic.php';
-
 // Load template logic
+$logicFile 		= JPATH_THEMES.'/'.$this->template.'/logic.php';
 if(file_exists($logicFile)) include $logicFile;
 
 // Check for alternate index file and load it if it exists
 if (isset($alternateIndexFile)) {
-	include_once($alternateIndexFile);		
+	include_once($alternateIndexFile);
 }
-else {	
+else {
 ?>
 <?php echo '<?'; ?>xml version="1.0" encoding="<?php echo $this->_charset ?>"
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
