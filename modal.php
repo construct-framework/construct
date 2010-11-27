@@ -5,13 +5,9 @@
 * @copyright	Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
-// Get and define template parameters
-$customStyleSheet 		= $this->params->get('customStyleSheet');
-$useCustomStyleSheet 	= $this->params->get('useCustomStyleSheet');
-// Define absolute paths to files
-$logicFile				= JPATH_THEMES.'/'.$this->template.'/logic.php';
 
 // Load template logic
+$logicFile				= JPATH_THEMES.'/'.$this->template.'/logic.php';
 if(file_exists($logicFile)) include $logicFile;;
 
 // Check for alternate index file and load it if it exists

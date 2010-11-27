@@ -1,85 +1,27 @@
 <?php defined('_JEXEC') or die;
 /**
-* @package		Template Framework for Joomla! 1.5
+* @package		Template Framework for Joomla! 1.6
 * @author		Joomla Engineering http://joomlaengineering.com
 * @copyright	Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-// To enable use of site configuration
-$app 					= JFactory::getApplication();
-// Get the base URL of the website
-$baseUrl 				= JURI::base();
-//Get the current URL
-$url 					= clone(JURI::getInstance());
-// Get and define template parameters
-$customStyleSheet 		= $this->params->get('customStyleSheet');
-$enableSwitcher 		= $this->params->get('enableSwitcher');
-$IECSS3					= $this->params->get('IECSS3');
-$IECSS3Targets			= $this->params->get('IECSS3Targets');
-$IE6TransFix			= $this->params->get('IE6TransFix');
-$IE6TransFixTargets		= $this->params->get('IE6TransFixTargets');
-$fontFamily 			= $this->params->get('fontFamily');
-$fullWidth				= $this->params->get('fullWidth');
-$googleHeaderFont 		= $this->params->get('googleHeaderFont');
-$loadMoo 				= $this->params->get('loadMoo');
-$loadModal				= $this->params->get('loadModal');
-$loadjQuery 			= $this->params->get('loadjQuery');
-$mdetect 				= $this->params->get('mdetect');
-$mtemplate				= $this->params->get('mtemplate');
-$setGeneratorTag		= $this->params->get('setGeneratorTag');
-$showDate 				= $this->params->get('showDate');		
-$showDiagnostics 		= $this->params->get('showDiagnostics');
-$siteWidth				= $this->params->get('siteWidth');
-$siteWidthType			= $this->params->get('siteWidthType');
-$siteWidthUnit			= $this->params->get('siteWidthUnit');
-$showPageLinks 			= $this->params->get('showPageLinks');
-$useCustomStyleSheet 	= $this->params->get('useCustomStyleSheet');
-$useStickyFooter 		= $this->params->get('useStickyFooter');
-$useSubBodyClasses		= $this->params->get('useSubBodyClasses');
-// Define absolute paths to files
-$mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/mobile/mdetect.php';
-$mtemplateFile			= JPATH_THEMES.'/'.$this->template.'/mobile/'.$mtemplate.'-offline.php';
-$logicFile				= JPATH_THEMES.'/'.$this->template.'/logic.php';
-// To enable user specific data
-$user 					= JFactory::getUser();
-/*
-<?php echo $user->get('name');?>
-<?php echo $user->get('email');?>
-<?php echo $user->get('usertype');?>
-<?php echo $user->get('registerDate');?>
-<?php echo $user->get('lastvisitDate');?>
-*/
-
-// Change generatot tag
-$this->setGenerator($setGeneratorTag);
-
-// Remove MooTools if set to no.
-if (!$loadMoo) {
-	$head=$this->getHeadData();
-	reset($head['scripts']);
-	foreach($head['scripts'] as $key=>$value) {
-		unset($head['scripts'][$key]);
-	}		
-	$this->setHeadData($head);
-}
-
-// Enable modal pop-ups - see html/mod_footer/default.php to customize
-if (($loadMoo) && ($loadModal)) {	
-	JHTML::_('behavior.modal');
-}
-
 // Load template logic
+$logicFile 				= JPATH_THEMES.'/'.$this->template.'/logic.php';
 if(file_exists($logicFile)) include $logicFile;
 
 // Mobile device detection
+$mtemplateFile			= JPATH_THEMES.'/'.$this->template.'/mobile/'.$mtemplateoffline;
+
+// Initialize mobile device detection
 if(file_exists($mdetectFile)) include_once $mdetectFile;
-$uagent_obj = new uagent_info();
-$isMobile = $uagent_obj->DetectMobileLong();
-// Check if mobile device detecion is turned on and, test if visitor is a mobile device, and if so, load mobile offline sub-template
+$uagent_obj 			= new uagent_info();
+$isMobile 				= $uagent_obj->DetectMobileLong();
+
+// Check if mobile device detecion is turned on and test if visitor is a mobile device. If so, load mobile sub-template
 if ( $mdetect && $isMobile ) {
 	echo '<span>You are viewing the mobile device friendly version of this website.</span>';
-		if(file_exists($mtemplateFile)) include_once $mtemplateFile;	
+	if(file_exists($mtemplateFile)) include_once $mtemplateFile;
 }
 else {
 ?>
@@ -89,67 +31,13 @@ else {
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <head>
 <jdoc:include type="head" />
-  <meta name="mssmarttagspreventparsing" content="true" />
-  <meta name="offlinetemplate" />  
-  <meta http-equiv="imagetoolbar" content="no" />
-  <meta name="copyright" content="<?php echo $app->getCfg('sitename');?>" />	
-  <link rel="shortcut icon" href="<?php echo 'templates/'.$this->template; ?>/favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="<?php echo 'templates/'.$this->template; ?>/favicon.png" type="image/png" />	
-  <link rel="stylesheet" href="<?php echo 'templates/'.$this->template; ?>/css/screen.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="<?php echo 'templates/'.$this->template; ?>/css/overrides.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="<?php echo 'templates/'.$this->template; ?>/css/print.css" type="text/css" media="print" />
-<?php if ($enableSwitcher) {
-  echo '  <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/diagnostic.css" type="text/css" title="diagnostic"/>
-  <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/normal.css" type="text/css" title="normal"/>
-  <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/wireframe.css" type="text/css" title="wireframe"/>';
-} ?> 
-<?php	
-	if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
-		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/'.$customStyleSheet.'"  type="text/css" media="screen" />';
-	if ($this->direction == 'rtl')
-		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/rtl.css"  type="text/css" media="screen" />';
-	if (isset($cssFile))
-		echo "\n".$cssFile;
-	if ($googleHeaderFont != "")
-		echo "\n".'  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='.$googleHeaderFont.'">
-		<style type="text/css">h1,h2,h3,h4,h5,h6{font-family:'.$googleHeaderFont.', serif !important} </style>';
-	if ($loadjQuery)
-		$doc->addScript("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");
-	if ($enableSwitcher)
-		echo "\n".'  <script type="text/javascript" src="templates/'.$this->template.'/js/styleswitch.js"></script>';
-	if ($siteWidth)
-		echo "\n".'  <style type="text/css"> #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}</style>';
-	if (!$fullWidth)
-		echo "\n".'  <style type="text/css"> #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.';margin:0 auto}</style>';
-	if ($siteWidthType == 'max-width')
-		echo "\n".'  <style type="text/css"> img, object {max-width:100%}</style>';		
-?>  
-  <script type="text/javascript">window.addEvent('domready',function(){new SmoothScroll({duration:1200},window);});</script>
-  <!--[if lt IE 7]>
-<?php if ($IE6TransFix) {
-  echo '  <script type="text/javascript" src="templates/'.$this->template.'/js/DD_belatedPNG_0.0.8a-min.js"></script>
-  <script>DD_belatedPNG.fix('.$IE6TransFixTargets.');</script>'."\n";
-} ?>
-  <link rel="stylesheet" href="<?php echo 'templates/'.$this->template; ?>/css/ie6.css" type="text/css" media="screen" />
-  <style type="text/css">
-  body {text-align:center}
-  #body-container{text-align:left}
-  #body-container, #supra<?php if (!$fullWidth) echo ',#header, #footer'; ?>{width: expression( document.body.clientWidth > <?php echo ($siteWidth -1); ?> ? "<?php echo $siteWidth.$siteWidthUnit; ?>" : "auto" );margin:0 auto}	
-  </style>
-  <![endif]-->
-<?php if ($useStickyFooter) {
-	echo '  <!--[if !IE 7]>
-  <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
-  <![endif]-->';
-} ?>
-<?php if ($IECSS3) {
-  echo '  <!--[if !IE 9]>
-  <style type="text/css">'.$IECSS3Targets.'"{behavior:url("'.$baseUrl.'templates/'.$this->template.'/js/PIE.htc)</style>
-  <![endif]-->';
-} ?>
 </head>
 
 <body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId!=0) echo ' article-'.$articleId; if ($itemId!=0) echo ' item-'.$itemId; if($catId!=0) echo ' category-'.$catId; if($sectionId!=0) echo ' section-'.$sectionId;} ?>">
+
+<?php if ($this->countModules('analytics')) : ?>
+	<jdoc:include type="modules" name="analytics" />
+<?php endif; ?>
 
 <a id="page-top" name="page-top"></a>
 	<div id="footer-push">
@@ -347,35 +235,31 @@ else {
 										<jdoc:include type="modules" name="offline" style="jexhtml" />								
 								<?php endif; ?>	
 					  
-								<?php if ($this->getBuffer('message')) : ?>
-									<jdoc:include type="message" />
-								<?php endif; ?>	
-																
-								<h3><?php echo $app->getCfg('offline_message'); ?></h3>
-								<?php if(JPluginHelper::isEnabled('authentication', 'openid')) : ?>
-								<?php JHTML::_('script', 'openid.js'); ?>
-								<?php endif; ?>
-									<form action="index.php" method="post" name="login" id="form-login">
-										<fieldset class="input">								
-											<label id="form-login-username" for="username"><?php echo JText::_('Username') ?>
-												<input name="username" id="username" type="text" class="inputbox" alt="<?php echo JText::_('Username') ?>" size="18" />
-											</label>
-											<label id="form-login-password" for="passwd"><?php echo JText::_('Password') ?>
-												<input type="password" name="passwd" class="inputbox" size="18" alt="<?php echo JText::_('Password') ?>" id="passwd" />
-											</label>
-											<label id="form-login-remember" for="remember"><?php echo JText::_('Remember me') ?>
-												<input type="checkbox" name="remember" class="inputbox" value="yes" alt="<?php echo JText::_('Remember me') ?>" id="remember" />
-											</label>
-											<input type="submit" name="Submit" class="button" value="<?php echo JText::_('LOGIN') ?>" />
-										</fieldset>
-										<input type="hidden" name="option" value="com_user" />
-										<input type="hidden" name="task" value="login" />
-										<input type="hidden" name="return" value="<?php echo base64_encode(JURI::base()) ?>" />
-										<?php echo JHTML::_( 'form.token' ); ?>
-									</form>
-								</div>
-														
-							<?php if ($contentBottomCount) : ?>
+							<?php if ($this->getBuffer('message')) : ?>
+								<jdoc:include type="message" />
+							<?php endif; ?>
+							
+							<h3><?php echo $app->getCfg('offline_message'); ?></h3>
+							<form action="index.php" method="post" name="login" id="form-login">
+								<fieldset class="input">
+									<label id="form-login-username"  for="username"><?php echo JText::_('JGLOBAL_USERNAME') ?>
+										<input name="username" id="username" type="text" class="inputbox" alt="<?php echo JText::_('JGLOBAL_USERNAME') ?>" size="18" />
+									</label>
+									<label id="form-login-password" for="passwd"><?php echo JText::_('JGLOBAL_PASSWORD') ?>
+										<input type="password" name="password" class="inputbox" size="18" alt="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" id="passwd" />
+									</label>
+									<label id="form-login-remember" for="remember"><?php echo JText::_('JGLOBAL_REMEMBER_ME') ?>
+										<input type="checkbox" name="remember" class="inputbox" value="yes" alt="<?php echo JText::_('JGLOBAL_REMEMBER_ME') ?>" id="remember" />
+									</label>						
+									<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGIN') ?>" />
+									<input type="hidden" name="option" value="com_users" />
+									<input type="hidden" name="task" value="user.login" />
+									<input type="hidden" name="return" value="<?php echo base64_encode(JURI::base()) ?>" />
+									<?php echo JHtml::_('form.token'); ?>
+								</fieldset>
+							</form>
+								
+						<?php if ($contentBottomCount) : ?>
 								<div id="content-bottom" class="clearfix">						
 									<?php if ($this->countModules('user5')) : ?>
 										<div id="user5" class="<?php echo $contentuser5Class ?>">

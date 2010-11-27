@@ -9,7 +9,7 @@
 	<authorUrl>http://joomlaengineering.com/</authorUrl>
 	<version>1.5.318 Pro</version>
 	<description><![CDATA[
-	<a href="http://joomlaengineering.com/" target="_blank"><img src="../templates/je-construct-pro/images/logo.png"/></a>	
+	<a href="http://joomlaengineering.com/" target="_blank"><img src="../templates/je-construct-pro/images/logo.png"></a>	
 	<script type="text/javascript" src="../media/system/js/switcher.js"></script>
 	<div id="submenu-box">		
 		<div class="t"><div class="t"><div class="t"></div></div></div><!-- top -->		
@@ -88,6 +88,16 @@
 						</ul>		
 				</div><!-- end page-features -->	
 				<div id="page-changelog">
+					<h4>1.5.340 - November 26th, 2010</h4>
+						<ul>
+							<li>Added article, category, component, item folders to CSS and modified logic.php to inspect those folders for asset specific CSS.</li>
+							<li>Moved all head elements to logic.php for unified usage and elimination of redundant code.</li>
+							<li>Modified modal.php and offline.php to reflect head elements move to logic.php.</li>
+							<li>Changed $document to $doc in error.php.</li>
+							<li>Removed custom style sheet from component.php.</li>
+							<li>Discontinued use of mssmarttagspreventparsing and http-equiv="imagetoolbar" meta tags.</li>
+							<li>Added offline mobile template parameter.</li>
+						</ul>					
 					<h4>1.5.318 - November 19th, 2010</h4>
 						<ul>
 							<li>Moved layout overrides (sub-templates) to /layout/ folder, added support for core template layout override (Thanks Seth Warburton and Molajo!).</li>
@@ -468,7 +478,8 @@
         	<option value="1">Yes</option>
         	<option value="0">No</option>
     		</param>
-		<param name="mtemplate" type="filelist" default="mobile.php" label="Mobile Sub-template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile-offline\.php" description="Name of mobile friendly sub-template located within this templates' mobile folder. Default is mobile.php" /> />
+		<param name="mtemplate" type="filelist" default="mobile.php" label="Mobile Sub-template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile-offline\.php" description="Name of mobile friendly sub-template located within this templates' mobile folder. Default is mobile.php" />
+		<param name="mtemplateoffline" type="filelist" default="mobile-offline.php" label="Offline Mobile Template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile\.php" description="Name of offline mobile friendly sub-template located within this templates' mobile folder. Default is mobile-offline.php." />			
 		<param type="spacer" default=" " />			
 		<param name="useCustomStyleSheet" type="radio" default="1" label="Use custom style sheet" description="Enable to use a seperate stylesheet for your custom CSS declarations. HINT: Segregating custom styles will help you upgrade your copy of Construct if so desired.">
         	<option value="1">Yes</option>

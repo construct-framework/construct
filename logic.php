@@ -1,10 +1,149 @@
 <?php defined('_JEXEC') or die;
 /**
-* @package		Template Framework for Joomla! 1.5
+* @package		Template Framework for Joomla! 1.6
 * @author		Joomla Engineering http://joomlaengineering.com
 * @copyright	Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+// To enable use of site configuration
+$app 					= JFactory::getApplication();
+// Get the base URL of the website
+$baseUrl 				= JURI::base();
+// Returns a reference to the global document object
+$doc 					= JFactory::getDocument();
+// Define relative shortcut for current template directory
+$template 				= 'templates/'.$this->template;
+// Get the current URL
+$url 					= clone(JURI::getInstance());
+// To access the current user object
+$user 					= JFactory::getUser();
+
+// Get and define template parameters
+$customStyleSheet 		= $this->params->get('customStyleSheet');
+$enableSwitcher 		= $this->params->get('enableSwitcher');
+$IECSS3					= $this->params->get('IECSS3');
+$IECSS3Targets			= $this->params->get('IECSS3Targets');
+$IE6TransFix			= $this->params->get('IE6TransFix');
+$IE6TransFixTargets		= $this->params->get('IE6TransFixTargets');
+$fontFamily 			= $this->params->get('fontFamily');
+$fullWidth				= $this->params->get('fullWidth');
+$googleHeaderFont 		= $this->params->get('googleHeaderFont');
+$loadMoo 				= $this->params->get('loadMoo');
+$loadModal				= $this->params->get('loadModal');
+$loadjQuery 			= $this->params->get('loadjQuery');
+$mdetect 				= $this->params->get('mdetect');
+$mtemplate				= $this->params->get('mtemplate');
+$mtemplateoffline		= $this->params->get('mtemplateoffline');
+$setGeneratorTag		= $this->params->get('setGeneratorTag');
+$showDate 				= $this->params->get('showDate');		
+$showDiagnostics 		= $this->params->get('showDiagnostics');
+$siteWidth				= $this->params->get('siteWidth');
+$siteWidthType			= $this->params->get('siteWidthType');
+$siteWidthUnit			= $this->params->get('siteWidthUnit');
+$showPageLinks 			= $this->params->get('showPageLinks');
+$useCustomStyleSheet 	= $this->params->get('useCustomStyleSheet');
+$useStickyFooter 		= $this->params->get('useStickyFooter');
+$useSubBodyClasses		= $this->params->get('useSubBodyClasses');
+
+// Define absolute paths to files
+$mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/mobile/mdetect.php';
+$mtemplateFile			= JPATH_THEMES.'/'.$this->template.'/mobile/'.$mtemplate;
+
+// Change generatot tag
+$this->setGenerator($setGeneratorTag);
+
+// Remove MooTools if set to no.
+if (!$loadMoo) {	
+	$head = $this->getHeadData();	
+	reset($head['scripts']);
+	$moo = key($head['scripts']);	
+	unset($head['scripts'][$moo]);		
+	$this->setHeadData($head);	
+}
+
+// Enable modal pop-ups - see html/mod_footer/default.php to customize
+if ( loadMoo && $loadModal ) {	
+	JHTML::_('behavior.modal');
+}
+
+#---------------------------- Head Elements --------------------------------#
+
+// Custom tags
+$doc->addCustomTag('<meta name="copyright" content="'.$app->getCfg('sitename').'" />');
+
+// Transparent favicon
+$doc->addFavicon($template.'/favicon.png', 'image/png','icon');
+
+// Style sheets
+$doc->addStyleSheet($template.'/css/screen.css','text/css','screen');
+$doc->addStyleSheet($template.'/css/overrides.css','text/css','screen');
+$doc->addStyleSheet($template.'/css/print.css','text/css','print');
+if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
+	$doc->addStyleSheet($template.'/css/'.$customStyleSheet,'text/css','screen');
+if ($this->direction == 'rtl')
+	$doc->addStyleSheet($template.'/css/rtl.css');
+if (isset($cssFile))
+	$doc->addStyleSheet($cssFile);
+
+// Style sheet switcher
+if ($enableSwitcher) {
+	$attribs = array('title' => 'diagnostic', 'rel' => 'alternate stylesheet'); 
+	$doc->addStyleSheet($template.'/css/diagnostic.css','text/css','screen',$attribs);
+	$attribs = array('title' => 'normal', 'rel' => 'alternate stylesheet');
+	$doc->addStyleSheet($template.'/css/normal.css','text/css','screen',$attribs);
+	$attribs = array('title' => 'wireframe', 'rel' => 'alternate stylesheet'); 	
+	$doc->addStyleSheet($template.'/css/wireframe.css','text/css','screen',$attribs);
+	$doc->addScript($template.'/js/styleswitch.js');
+} 	
+
+// Typography
+if ($googleHeaderFont != "") {
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleHeaderFont.'');
+	$doc->addStyleDeclaration('  h1,h2,h3,h4,h5,h6{font-family:'.$googleHeaderFont.', serif !important}');
+}
+
+// JavaScript
+$doc->addCustomTag("\n".'  <script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
+if ($loadjQuery)
+	$doc->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js');
+
+// Layout Declarations
+if ($siteWidth)
+	$doc->addStyleDeclaration("\n".'  #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}');
+if ($siteWidthType == 'max-width')
+	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%}>');		
+if (!$fullWidth)
+	$doc->addStyleDeclaration("\n".'  #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'; margin:0 auto}');
+	
+// Internet Explorer Fixes	
+if ($IECSS3) {
+  $doc->addCustomTag("\n".'  <!--[if !IE 9]>
+  <style type="text/css">'.$IECSS3Targets.' {behavior:url("'.$baseUrl.'templates/'.$this->template.'/js/PIE.htc")}</style>
+  <![endif]-->');
+}
+if ($useStickyFooter) {
+	$doc->addCustomTag("\n".'  <!--[if !IE 7]>
+  <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
+  <![endif]-->');
+}
+$doc->addCustomTag('<!--[if lt IE 7]>
+  <link rel="stylesheet" href="'.$template.'/css/ie6.css" type="text/css" media="screen" />
+  <style type="text/css">
+  body {text-align:center}
+  #body-container {text-align:left}');  
+  if (!$fullWidth) {
+  $doc->addCustomTag('#body-container, #supra, #header, #footer {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto}');
+  }
+  else {
+  $doc->addCustomTag('#body-container, #supra {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto}');
+  }
+  $doc->addCustomTag('</style>');
+  if ($IE6TransFix) {
+  $doc->addCustomTag('  <script type="text/javascript" src="'.$template.'/js/DD_belatedPNG_0.0.8a-min.js"></script>
+  <script>DD_belatedPNG.fix('.$IE6TransFixTargets.');</script>');
+  }
+  $doc->addCustomTag('<![endif]-->');
 
 #--------------------------------------------------------------------------#
 // from http://groups.google.com/group/joomla-dev-general/browse_thread/thread/b54f3f131dd173d
@@ -117,30 +256,7 @@ $itemId = JRequest::getInt('Itemid', 0);
 $articleId = JRequest::getInt('id');
 
 #--------------------------------------------------------------------------#
-// from http://forum.joomla.org/viewtopic.php?p=1425983#p1425983
 
-function getSection($iId) {
-	  $database = &JFactory::getDBO();
-	  if(Jrequest::getCmd('view', 0) == "section") {
-			return JRequest::getInt('id');
-	  	}
-	  elseif(Jrequest::getCmd('view', 0) == "category") {
-			$sql = "SELECT section FROM #__categories WHERE id = $iId ";
-			$database->setQuery( $sql );
-			$row=$database->loadResult();
-			return $row;
-	  	}
-	  elseif(Jrequest::getCmd('view', 0) == "article") {
-			$temp=explode(":",JRequest::getInt('id'));
-			$sql = "SELECT sectionid FROM #__content WHERE id = ".$temp[0];
-			$database->setQuery( $sql );
-			$row=$database->loadResult();
-			return $row;
-	  	}		
-	}
-$sectionId=getSection(JRequest::getInt('id'));
-
-#--------------------------------------------------------------------------#
 // from http://forum.joomla.org/viewtopic.php?p=1837233#p1837233
 
 $catId = JRequest::getInt('catid');
@@ -159,29 +275,25 @@ $currentComponent = JRequest::getCmd('option');
 
 $templateIndex	= JPATH_THEMES.'/'.$this->template.'/layouts/index.php';
 $componentIndex = JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$currentComponent.'.php';
-$sectionIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/section/section-'.$sectionId.'.php';
 $categoryIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/category/category-'.$catId.'.php';
 $itemIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/item/item-'.$itemId.'.php';
 $articleIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/article/article-'.$articleId.'.php';
-$componentCss 	= JPATH_THEMES.'/'.$this->template.'/component/'.$currentComponent.'.css';
-$sectionCss 	= JPATH_THEMES.'/'.$this->template.'/section/section-'.$sectionId.'.css';
-$categoryCss 	= JPATH_THEMES.'/'.$this->template.'/category/category-'.$catId.'.css';
-$itemCss 		= JPATH_THEMES.'/'.$this->template.'/item/item-'.$itemId.'.css';
-$articleCss 	= JPATH_THEMES.'/'.$this->template.'/article/article-'.$articleId.'.css';
+$componentCss 	= JPATH_THEMES.'/'.$this->template.'/css/component/'.$currentComponent.'.css';
+$categoryCss 	= JPATH_THEMES.'/'.$this->template.'/css/category/category-'.$catId.'.css';
+$itemCss 		= JPATH_THEMES.'/'.$this->template.'/css/item/item-'.$itemId.'.css';
+$articleCss 	= JPATH_THEMES.'/'.$this->template.'/css/article/article-'.$articleId.'.css';
 
 #--------------------------------------------------------------------------#
 // dynamically adds specific style sheet if it exists
 
 if(file_exists($articleCss)){
-		$cssFile = '<link rel="stylesheet" href="templates/'.$this->template.'/article/article-'.$articleId.'.css" type="text/css" media="screen" />';}
+		$cssFile = '<link rel="stylesheet" href="templates/'.$this->template.'/css/article/article-'.$articleId.'.css" type="text/css" media="screen" />';}
 elseif(file_exists($itemCss)){
-		$cssFile = '<link rel="stylesheet" href="templates/'.$this->template.'/item/item-'.$itemId.'.css" type="text/css" media="screen" />';}
+		$cssFile = '<link rel="stylesheet" href="templates/'.$this->template.'/css/item/item-'.$itemId.'.css" type="text/css" media="screen" />';}
 elseif(file_exists($categoryCss)){
-		$cssFile = '<link rel="stylesheet" href="templates/'.$this->template.'/category/category-'.$catId.'.css" type="text/css" media="screen" />';}
-elseif(file_exists($sectionCss)){
-		$cssFile = '<link  rel="stylesheet" href="templates/'.$this->template.'/section/section-'.$sectionId.'.css" type="text/css" media="screen" />';}
+		$cssFile = '<link rel="stylesheet" href="templates/'.$this->template.'/css/category/category-'.$catId.'.css" type="text/css" media="screen" />';}
 elseif(file_exists($componentCss)){
-		$cssFile = '<link  rel="stylesheet" href="templates/'.$this->template.'/component/'.$currentComponent.'.css" type="text/css" media="screen" />';}		
+		$cssFile = '<link  rel="stylesheet" href="templates/'.$this->template.'/css/component/'.$currentComponent.'.css" type="text/css" media="screen" />';}		
 else unset($cssFile);
 
 #--------------------------------------------------------------------------#	
@@ -192,10 +304,8 @@ elseif(file_exists($itemIndex)){
 		$alternateIndexFile = $itemIndex;}
 elseif(file_exists($categoryIndex)){
 		$alternateIndexFile = $categoryIndex;}
-elseif(file_exists($sectionIndex)){
-		$alternateIndexFile = $sectionIndex;}
 elseif(file_exists($componentIndex)){
-		$alternateIndexFile = $componentIndex;}
+		$alternateIndexFile = $componentIndex;}	
 elseif(file_exists($templateIndex)){
-		$alternateIndexFile = $templateIndex;}
+		$alternateIndexFile = $templateIndex;}		
 else unset($alternateIndexFile);

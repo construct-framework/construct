@@ -10,6 +10,8 @@
 $app 					= JFactory::getApplication();
 // Get the base URL of the website
 $baseUrl 				= JURI::base();
+// Returns a reference to the global document object
+$doc 					= JFactory::getDocument();
 // Get the offline status of the webiste
 $offLine 				= $app->getCfg('offline');
 // Send the user to the home page if the website is offline
@@ -53,8 +55,7 @@ $contentRightClass 		= '';
 $subContentClass 		= 'count-4';
 
 // Based on http://forum.joomla.org/index.php/viewtopic.php?p=1077558#p1077558
-$document   			= &JFactory::getDocument();
-$renderer   			= $document->loadRenderer( 'modules' );
+$renderer   			= $doc->loadRenderer( 'modules' );
 $raw 					= array( 'style' => 'raw' );
 $xhtml 					= array( 'style' => 'xhtml' );
 $jexhtml 				= array( 'style' => 'jexhtml' );
