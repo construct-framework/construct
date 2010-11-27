@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <install version="1.6" type="template" client="site" method="upgrade" >
-	<name>je-construct-dev</name>
-	<creationDate>November 9th, 2010</creationDate>
+	<name>je-construct-pro</name>
+	<creationDate>November 26th, 2010</creationDate>
 	<author>Joomla Engineering</author>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com</authorUrl>
 	<copyright>Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.6.283</version>
+	<version>1.6.337</version>
 	<description>TPL_JE_CONSTRUCT_PRO_DESCRIPTION</description>
 	<files>
 		<filename>css/diagnostic.css</filename>
@@ -63,7 +63,7 @@
 		<filename>mobile/mdetect.php</filename>
 		<filename>mobile/mobile.css</filename>
 		<filename>mobile/mobile.php</filename>
-		<filename>section/index.html</filename>
+		<filename>mobile/mobile-offline.php</filename>		
 		<filename>component.php</filename>
 		<filename>error.php</filename>
         <filename>favicon.ico</filename>
