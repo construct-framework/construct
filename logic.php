@@ -82,9 +82,9 @@ $doc->addStyleSheet($template.'/css/print.css','text/css','print');
 if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
 	$doc->addStyleSheet($template.'/css/'.$customStyleSheet,'text/css','screen');
 if ($this->direction == 'rtl')
-	$doc->addStyleSheet($template.'/css/rtl.css');
+	$doc->addStyleSheet($template.'/css/rtl.css','screen');
 if (isset($cssFile))
-	$doc->addStyleSheet($cssFile);
+	$doc->addStyleSheet($cssFile,'screen');
 
 // Style sheet switcher
 if ($enableSwitcher) {

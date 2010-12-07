@@ -12,10 +12,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <head>
 	<jdoc:include type="head" />
-	<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/print.css" type="text/css" />
-<?php	
-	if ($this->direction == 'rtl')
-		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/rtl.css"  type="text/css" media="screen" />';
+<?php
+	$doc->addStyleSheet($template.'/css/print.css','text/css','print');
+if ($this->direction == 'rtl')
+	$doc->addStyleSheet($template.'/css/rtl.css','screen');
 ?>
 </head>
 <body class="contentpane">

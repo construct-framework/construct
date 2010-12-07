@@ -88,9 +88,6 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <head>
 <jdoc:include type="head" />
-  <meta name="mssmarttagspreventparsing" content="true" />
-  <meta name="errortemplate" />    
-  <meta http-equiv="imagetoolbar" content="no" />
   <meta name="copyright" content="<?php echo $app->getCfg('sitename');?>" />	
   <link rel="shortcut icon" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/favicon.ico" type="image/x-icon" />
   <link rel="icon" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/favicon.png" type="image/png" />	

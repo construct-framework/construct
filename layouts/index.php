@@ -12,71 +12,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <head>
 <jdoc:include type="head" />
-  <meta name="mssmarttagspreventparsing" content="true" />
-  <meta name="alternatetemplateindex" />
-  <meta http-equiv="imagetoolbar" content="no" />
-  <meta name="copyright" content="<?php echo $app->getCfg('sitename');?>" />	
-  <link rel="shortcut icon" href="<?php echo 'templates/'.$this->template; ?>/favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="<?php echo 'templates/'.$this->template; ?>/favicon.png" type="image/png" />	
-  <link rel="stylesheet" href="<?php echo 'templates/'.$this->template; ?>/css/screen.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="<?php echo 'templates/'.$this->template; ?>/css/overrides.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="<?php echo 'templates/'.$this->template; ?>/css/print.css" type="text/css" media="print" />
-<?php if ($enableSwitcher) {
-  echo '  <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/diagnostic.css" type="text/css" title="diagnostic"/>
-  <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/normal.css" type="text/css" title="normal"/>
-  <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/wireframe.css" type="text/css" title="wireframe"/>';
-} ?>
-<?php	
-	if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
-		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/'.$customStyleSheet.'"  type="text/css" media="screen" />';
-	if ($this->direction == 'rtl')
-		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/rtl.css"  type="text/css" media="screen" />';
-	if (isset($cssFile))
-		echo "\n".$cssFile;
-	if ($googleHeaderFont != "")
-		echo "\n".'  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='.$googleHeaderFont.'">
-		<style type="text/css">h1,h2,h3,h4,h5,h6{font-family:'.$googleHeaderFont.', serif !important} </style>';
-	if ($loadjQuery)
-		$doc->addScript("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");
-	if ($enableSwitcher)
-		echo "\n".'  <script type="text/javascript" src="templates/'.$this->template.'/js/styleswitch.js"></script>';
-	if ($siteWidth)
-		echo "\n".'  <style type="text/css"> #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}</style>';
-	if (!$fullWidth)
-		echo "\n".'  <style type="text/css"> #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.';margin:0 auto}</style>';
-	if ($siteWidthType == 'max-width')
-		echo "\n".'  <style type="text/css"> img, object {max-width:100%}</style>';
-?>  
-  <script type="text/javascript">window.addEvent('domready',function(){new SmoothScroll({duration:1200},window);});</script>
-  <!--[if lt IE 7]>
-<?php if ($IE6TransFix) {
-  echo '  <script type="text/javascript" src="templates/'.$this->template.'/js/DD_belatedPNG_0.0.8a-min.js"></script>
-  <script>DD_belatedPNG.fix('.$IE6TransFixTargets.');</script>'."\n";
-} ?>
-  <link rel="stylesheet" href="<?php echo 'templates/'.$this->template; ?>/css/ie6.css" type="text/css" media="screen" />
-  <style type="text/css">
-  body {text-align:center}
-  #body-container{text-align:left}
-  #body-container, #supra<?php if (!$fullWidth) echo ',#header, #footer'; ?>{width: expression( document.body.clientWidth > <?php echo ($siteWidth -1); ?> ? "<?php echo $siteWidth.$siteWidthUnit; ?>" : "auto" );margin:0 auto}	
-  </style>
-  <![endif]-->
-<?php if ($useStickyFooter) {
-	echo '  <!--[if !IE 7]>
-  <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
-  <![endif]-->';
-} ?>
-<?php if ($IECSS3) {
-  echo '  <!--[if !IE 9]>
-  <style type="text/css">'.$IECSS3Targets.'"{behavior:url("'.$baseUrl.'templates/'.$this->template.'/js/PIE.htc)</style>
-  <![endif]-->';
-} ?>
 </head>
 
 <body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId!=0) echo ' article-'.$articleId; if ($itemId!=0) echo ' item-'.$itemId; if($catId!=0) echo ' category-'.$catId; if($sectionId!=0) echo ' section-'.$sectionId;} ?>">
 
 <a id="page-top" name="page-top"></a>
 	<div id="footer-push">
-	
+
 		<?php if ($supraModuleCount) : ?>
 			<div id="supra" class="clearfix">						
 				<?php if ($this->countModules('supra1')) : ?>
@@ -86,17 +28,17 @@
 				<?php endif; ?>		   
 				<?php if ($this->countModules('supra2')) : ?>
 					<div id="supra2" class="<?php echo $supraModuleClass ?>">
-						<jdoc:include type="modules" name="supra2" />
-					</div><!-- end supra2 -->								
+						<jdoc:include type="modules" name="supra2" style="jexhtml" />
+					</div><!-- end supra2 -->
 				<?php endif; ?>				
 				<?php if ($this->countModules('supra3')) : ?>
 					<div id="supra3" class="<?php echo $supraModuleClass ?>">
-						<jdoc:include type="modules" name="supra3" />
+						<jdoc:include type="modules" name="supra3" style="jexhtml" />
 					</div><!-- end supra3 -->								
 				<?php endif; ?>				
 				<?php if ($this->countModules('supra4')) : ?>
 					<div id="supra4" class="<?php echo $supraModuleClass ?>">
-						<jdoc:include type="modules" name="supra4" />
+						<jdoc:include type="modules" name="supra4" style="jexhtml" />
 					</div><!-- end supra4 -->								
 				<?php endif; ?>						
 			</div><!-- end supra -->
@@ -269,7 +211,7 @@
 									<jdoc:include type="message" />
 								</div>
 							<?php endif; ?>
-							
+
 							<jdoc:include type="component" />
 								
 							<?php if ($contentBottomCount) : ?>
@@ -304,42 +246,42 @@
 					</div><!-- end content-main -->
 					
 					<?php if ($contentLeftCount) : ?>
-						<div id="content-left" class="clearfix">				
+						<div id="content-left" class="clearfix">
 							<?php if ($this->countModules('left')) : ?>
 								<div id="left" class="<?php echo $contentLeftClass ?>">
-									<div class="gutter clearfix">		
+									<div class="gutter clearfix">
 										<jdoc:include type="modules" name="left" style="jexhtml" />
 									</div><!--end gutter -->
-								</div><!-- end left -->								
-							<?php endif; ?>			   
+								</div><!-- end left -->
+							<?php endif; ?>
 							<?php if ($this->countModules('left2')) : ?>
 								<div id="left2" class="<?php echo $contentLeftClass ?>">
-									<div class="gutter clearfix">		
+									<div class="gutter clearfix">
 										<jdoc:include type="modules" name="left2" style="jexhtml" />
 									</div><!--end gutter -->
 								</div><!-- end left2 -->
-							<?php endif; ?>								
+							<?php endif; ?>
 						</div><!-- end left -->
 					<?php endif; ?>
 
 				</div><!-- end load-first -->
 		
 					<?php if ($contentRightCount) : ?>
-						<div id="content-right" class="clearfix">							
+						<div id="content-right" class="clearfix">
 							<?php if ($this->countModules('right')) : ?>
 								<div id="right" class="<?php echo $contentRightClass ?>">
 									<div class="gutter clearfix">
 										<jdoc:include type="modules" name="right" style="jexhtml" />
-									</div><!--end gutter -->	
+									</div><!--end gutter -->
 								</div><!-- end right -->								
-							<?php endif; ?>			   
+							<?php endif; ?>
 							<?php if ($this->countModules('right2')) : ?>
 								<div id="right2" class="<?php echo $contentRightClass ?>">
 									<div class="gutter clearfix">
 										<jdoc:include type="modules" name="right2" style="jexhtml" />
-									</div><!--end gutter -->				
+									</div><!--end gutter -->
 								</div><!-- end right2 -->
-							<?php endif; ?>							
+							<?php endif; ?>
 						</div><!-- end right -->
 					<?php endif; ?>
 			

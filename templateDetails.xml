@@ -2,12 +2,12 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
 <install version="1.5" type="template" method="upgrade">
 	<name>JE-Construct-Pro</name>
-	<creationDate>November 19th, 2010</creationDate>
+	<creationDate>December 7th, 2010</creationDate>
 	<author>Joomla Engineering</author>
 	<copyright>Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com/</authorUrl>
-	<version>1.5.318 Pro</version>
+	<version>1.5.341 Pro</version>
 	<description><![CDATA[
 	<a href="http://joomlaengineering.com/" target="_blank"><img src="../templates/je-construct-pro/images/logo.png"></a>	
 	<script type="text/javascript" src="../media/system/js/switcher.js"></script>
@@ -278,7 +278,12 @@
 		<filename>css/print.css</filename>
 		<filename>css/rtl.css</filename>
 		<filename>css/screen.css</filename>
-		<filename>css/wireframe.css</filename>		
+		<filename>css/wireframe.css</filename>
+		<filename>css/article/index.html</filename>
+		<filename>css/category/index.html</filename>
+		<filename>css/component/index.html</filename>
+		<filename>css/item/index.html</filename>
+		<filename>css/section/index.html</filename>		
 		<filename>elements/index.html</filename>
 		<filename>elements/upgradecheck.php</filename>
 		<filename>fonts/BebasNeue-webfont.eot</filename>
