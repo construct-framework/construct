@@ -7,7 +7,7 @@
 */
 
 // Load template logic
-$logicFile 		= JPATH_THEMES.'/'.$this->template.'/logic.php';
+$logicFile 				= JPATH_THEMES.'/'.$this->template.'/logic.php';
 if(file_exists($logicFile)) include $logicFile;
 
 // Check for alternate index file and load it if it exists
@@ -20,16 +20,10 @@ else {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <head>
-  <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/screen.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/modal.css" type="text/css" media="screen" />
-<?php	
-	if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
-		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/'.$customStyleSheet.'"  type="text/css" media="screen" />';
-	if ($this->direction == 'rtl')
-		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/rtl.css"  type="text/css" media="screen" />';
-	if (isset($cssFile))
-		echo "\n".$cssFile;
-?>  
+<jdoc:include type="head" />
+<?php
+$doc->addStyleSheet($template.'/css/modal.css','text/css','screen'); 
+?>
 </head>
 
 <body class="<?php if($articleId!=0){echo' article-'.$articleId;}?>">

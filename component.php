@@ -6,8 +6,10 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-// Get the base URL of the website
-$baseUrl 				= JURI::base();
+// Returns a reference to the global document object
+$doc 					= JFactory::getDocument();
+// Define relative shortcut for current template directory
+$template 				= 'templates/'.$this->template;
 ?>
 
 <?php echo '<?'; ?>xml version="1.0" encoding="<?php echo $this->_charset ?>"
@@ -15,10 +17,10 @@ $baseUrl 				= JURI::base();
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <head>
 	<jdoc:include type="head" />
-	<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/print.css" type="text/css" />
-<?php	
-	if ($this->direction == 'rtl')
-		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/rtl.css"  type="text/css" media="screen" />';
+<?php
+	$doc->addStyleSheet($template.'/css/print.css','text/css','print');
+if ($this->direction == 'rtl')
+	$doc->addStyleSheet($template.'/css/rtl.css','screen');
 ?>
 </head>
 <body class="contentpane">
