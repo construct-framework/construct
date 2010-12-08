@@ -235,29 +235,33 @@ else {
 										<jdoc:include type="modules" name="offline" style="jexhtml" />								
 								<?php endif; ?>	
 					  
-							<?php if ($this->getBuffer('message')) : ?>
-								<jdoc:include type="message" />
-							<?php endif; ?>
-							
-							<h3><?php echo $app->getCfg('offline_message'); ?></h3>
-							<form action="index.php" method="post" name="login" id="form-login">
-								<fieldset class="input">
-									<label id="form-login-username"  for="username"><?php echo JText::_('JGLOBAL_USERNAME') ?>
-										<input name="username" id="username" type="text" class="inputbox" alt="<?php echo JText::_('JGLOBAL_USERNAME') ?>" size="18" />
-									</label>
-									<label id="form-login-password" for="passwd"><?php echo JText::_('JGLOBAL_PASSWORD') ?>
-										<input type="password" name="password" class="inputbox" size="18" alt="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" id="passwd" />
-									</label>
-									<label id="form-login-remember" for="remember"><?php echo JText::_('JGLOBAL_REMEMBER_ME') ?>
-										<input type="checkbox" name="remember" class="inputbox" value="yes" alt="<?php echo JText::_('JGLOBAL_REMEMBER_ME') ?>" id="remember" />
-									</label>						
-									<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGIN') ?>" />
-									<input type="hidden" name="option" value="com_users" />
-									<input type="hidden" name="task" value="user.login" />
-									<input type="hidden" name="return" value="<?php echo base64_encode(JURI::base()) ?>" />
-									<?php echo JHtml::_('form.token'); ?>
-								</fieldset>
-							</form>
+								<?php if ($this->getBuffer('message')) : ?>
+									<jdoc:include type="message" />
+								<?php endif; ?>	
+																
+								<h3><?php echo $app->getCfg('offline_message'); ?></h3>
+								<?php if(JPluginHelper::isEnabled('authentication', 'openid')) : ?>
+								<?php JHTML::_('script', 'openid.js'); ?>
+								<?php endif; ?>
+									<form action="index.php" method="post" name="login" id="form-login">
+										<fieldset class="input">								
+											<label id="form-login-username" for="username"><?php echo JText::_('Username') ?>
+												<input name="username" id="username" type="text" class="inputbox" alt="<?php echo JText::_('Username') ?>" size="18" />
+											</label>
+											<label id="form-login-password" for="passwd"><?php echo JText::_('Password') ?>
+												<input type="password" name="passwd" class="inputbox" size="18" alt="<?php echo JText::_('Password') ?>" id="passwd" />
+											</label>
+											<label id="form-login-remember" for="remember"><?php echo JText::_('Remember me') ?>
+												<input type="checkbox" name="remember" class="inputbox" value="yes" alt="<?php echo JText::_('Remember me') ?>" id="remember" />
+											</label>
+											<input type="submit" name="Submit" class="button" value="<?php echo JText::_('LOGIN') ?>" />
+										</fieldset>
+										<input type="hidden" name="option" value="com_user" />
+										<input type="hidden" name="task" value="login" />
+										<input type="hidden" name="return" value="<?php echo base64_encode(JURI::base()) ?>" />
+										<?php echo JHTML::_( 'form.token' ); ?>
+									</form>
+								</div><!--end offline-->
 								
 						<?php if ($contentBottomCount) : ?>
 								<div id="content-bottom" class="clearfix">						
