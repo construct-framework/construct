@@ -15,7 +15,7 @@
 </head>
 
 <body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId!=0) echo ' article-'.$articleId; if ($itemId!=0) echo ' item-'.$itemId; if($catId!=0) echo ' category-'.$catId; if($sectionId!=0) echo ' section-'.$sectionId;} ?>">
-<h1>Alternate Index</h1>
+
 <a id="page-top" name="page-top"></a>
 	<div id="footer-push">
 

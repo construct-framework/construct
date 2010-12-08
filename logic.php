@@ -106,7 +106,7 @@ if ($loadjQuery)
 if ($siteWidth)
 	$doc->addStyleDeclaration("\n".'  #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}');
 if ($siteWidthType == 'max-width')
-	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%}>');		
+	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%}');		
 if (!$fullWidth)
 	$doc->addStyleDeclaration("\n".'  #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'; margin:0 auto}');
 	

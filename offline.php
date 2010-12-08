@@ -258,6 +258,7 @@ else {
 									<?php echo JHtml::_('form.token'); ?>
 								</fieldset>
 							</form>
+							</div><!--end offline-->
 								
 						<?php if ($contentBottomCount) : ?>
 								<div id="content-bottom" class="clearfix">						
