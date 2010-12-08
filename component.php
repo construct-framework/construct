@@ -5,6 +5,11 @@
 * @copyright	Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+// Returns a reference to the global document object
+$doc 					= JFactory::getDocument();
+// Define relative shortcut for current template directory
+$template 				= 'templates/'.$this->template;
 ?>
 
 <?php echo '<?'; ?>xml version="1.0" encoding="<?php echo $this->_charset ?>"
