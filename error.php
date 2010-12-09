@@ -83,14 +83,10 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 							
 ?>
 
-<?php echo '<?'; ?>xml version="1.0" encoding="<?php echo $this->_charset ?>"
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <head>
 <jdoc:include type="head" />
-  <meta name="mssmarttagspreventparsing" content="true" />
-  <meta name="errortemplate" />
-  <meta http-equiv="imagetoolbar" content="no" />
   <meta name="copyright" content="<?php echo $app->getCfg('sitename');?>" />	
   <link rel="shortcut icon" href="<?php echo 'templates/'.$this->template; ?>/favicon.ico" type="image/x-icon" />
   <link rel="icon" href="<?php echo 'templates/'.$this->template; ?>/favicon.png" type="image/png" />	
