@@ -71,6 +71,7 @@ if ( loadMoo && $loadModal ) {
 
 // Custom tags
 $doc->addCustomTag('<meta name="copyright" content="'.$app->getCfg('sitename').'" />');
+$doc->addCustomTag('<meta http-equiv="Content-Type" content="text/html;charset='.$this->_charset.'" />');
 
 // Transparent favicon
 $doc->addFavicon($template.'/favicon.png', 'image/png','icon');
