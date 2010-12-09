@@ -7,7 +7,7 @@
 	<copyright>Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com/</authorUrl>
-	<version>1.5.353 Pro</version>
+	<version>1.5.355 Pro</version>
 	<description><![CDATA[
 	<a href="http://joomlaengineering.com/" target="_blank"><img src="../templates/je-construct-pro/images/logo.png"></a>	
 	<script type="text/javascript" src="../media/system/js/switcher.js"></script>
@@ -88,9 +88,9 @@
 						</ul>		
 				</div><!-- end page-features -->	
 				<div id="page-changelog">
-					<h4>1.5.353 - December 8th, 2010</h4>
+					<h4>1.5.355 - December 8th, 2010</h4>
 						<ul>
-							<li>Replaced XML encoding pseudo-attribute in favor of meta http-equiv/content tag.</li>
+							<li>Removed XML encoding pseudo-attribute as Joomla head includes meta http-equiv/content tag.</li>
 						</ul>
 					<h4>1.5.349 - December 8th, 2010</h4>
 						<ul>
