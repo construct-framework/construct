@@ -62,84 +62,7 @@ if ($loadMoo) {
 	}
 }
 
-#---------------------------- Head Elements --------------------------------#
-
-// Custom tags
-$doc->addCustomTag('<meta name="copyright" content="'.$app->getCfg('sitename').'" />');
-
-// Transparent favicon
-$doc->addFavicon($template.'/favicon.png', 'image/png','icon');
-
-// Style sheets
-$doc->addStyleSheet($template.'/css/screen.css','text/css','screen');
-$doc->addStyleSheet($template.'/css/print.css','text/css','print');
-if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
-	$doc->addStyleSheet($template.'/css/'.$customStyleSheet,'text/css','screen');
-if ($this->direction == 'rtl')
-	$doc->addStyleSheet($template.'/css/rtl.css');
-if (isset($cssFile))
-	$doc->addStyleSheet($cssFile);
-
-// Style sheet switcher
-if ($enableSwitcher) {
-	$attribs = array('title' => 'diagnostic', 'rel' => 'alternate stylesheet'); 
-	$doc->addStyleSheet($template.'/css/diagnostic.css','text/css','screen',$attribs);
-	$attribs = array('title' => 'normal', 'rel' => 'alternate stylesheet');
-	$doc->addStyleSheet($template.'/css/normal.css','text/css','screen',$attribs);
-	$attribs = array('title' => 'wireframe', 'rel' => 'alternate stylesheet'); 	
-	$doc->addStyleSheet($template.'/css/wireframe.css','text/css','screen',$attribs);
-	$doc->addScript($template.'/js/styleswitch.js');
-} 	
-
-// Typography
-if ($googleHeaderFont != "") {
-	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleHeaderFont.'');
-	$doc->addStyleDeclaration('  h1,h2,h3,h4,h5,h6{font-family:'.$googleHeaderFont.', serif !important}');
-}
-
-// JavaScript
-$doc->addCustomTag("\n".'  <script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
-if ($loadjQuery)
-	$doc->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js');
-
-// Layout Declarations
-if ($siteWidth)
-	$doc->addStyleDeclaration("\n".'  #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}');
-if ($siteWidthType == 'max-width')
-	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%}');		
-if (!$fullWidth)
-	$doc->addStyleDeclaration("\n".'  #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'; margin:0 auto}');
-	
-// Internet Explorer Fixes	
-if ($IECSS3) {
-  $doc->addCustomTag("\n".'  <!--[if !IE 9]>
-  <style type="text/css">'.$IECSS3Targets.' {behavior:url("'.$baseUrl.'templates/'.$this->template.'/js/PIE.htc")}</style>
-  <![endif]-->');
-}
-if ($useStickyFooter) {
-	$doc->addCustomTag("\n".'  <!--[if !IE 7]>
-  <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
-  <![endif]-->');
-}
-$doc->addCustomTag('<!--[if lt IE 7]>
-  <link rel="stylesheet" href="'.$template.'/css/ie6.css" type="text/css" media="screen" />
-  <style type="text/css">
-  body {text-align:center}
-  #body-container {text-align:left}');  
-  if (!$fullWidth) {
-  $doc->addCustomTag('#body-container, #supra, #header, #footer {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto}');
-  }
-  else {
-  $doc->addCustomTag('#body-container, #supra {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto}');
-  }
-  $doc->addCustomTag('</style>');
-  if ($IE6TransFix) {
-  $doc->addCustomTag('  <script type="text/javascript" src="'.$template.'/js/DD_belatedPNG_0.0.8a-min.js"></script>
-  <script>DD_belatedPNG.fix('.$IE6TransFixTargets.');</script>');
-  }
-  $doc->addCustomTag('<![endif]-->');
-
-#--------------------------------------------------------------------------#
+#----------------------------- Moldule Counts -----------------------------#
 // from http://groups.google.com/group/joomla-dev-general/browse_thread/thread/b54f3f131dd173d
 
 $supraCount1 = (int) ($this->countModules('supra1') > 0);
@@ -228,7 +151,7 @@ $subContentCount = $subContentCount1 + $subContentCount2 + $subContentCount3 + $
 
 if ($subContentCount) : $subContentClass = 'count-'.$subContentCount; endif;
 
-#--------------------------------------------------------------------------#
+#------------------------------ Column Layout -----------------------------#
 
 $columnLayout= 'main-only';
 	
@@ -240,27 +163,26 @@ elseif (($contentLeftCount == 0) && ($contentRightCount > 0)) :
 	$columnLayout = 'main-right-'.$contentRightCount;
 endif;
 	
-#--------------------------------------------------------------------------#
+#-------------------------------- Item ID ---------------------------------#
 
 $itemId = JRequest::getInt('Itemid', 0);
 
-#--------------------------------------------------------------------------#
+#------------------------------- Article ID -------------------------------#
 // from http://forum.joomla.org/viewtopic.php?p=2046136#p2046136
 
 $articleId = JRequest::getInt('id');
 
-#--------------------------------------------------------------------------#
-
+#------------------------------ Category ID -------------------------------#
 // from http://forum.joomla.org/viewtopic.php?p=1837233#p1837233
 
 $catId = JRequest::getInt('catid');
 
-#--------------------------------------------------------------------------#
+#--------------------------------- Alias ----------------------------------#
 // based on http://forum.joomla.org/viewtopic.php?f=127&t=281999
 
 $currentAlias = JSite::getMenu()->getActive()->alias;
 
-#--------------------------------------------------------------------------#
+#----------------------------- Component Name -----------------------------#
 
 $currentComponent = JRequest::getCmd('option');
 
@@ -281,13 +203,13 @@ $articleCss 	= JPATH_THEMES.'/'.$this->template.'/css/article/article-'.$article
 // dynamically adds specific style sheet if it exists
 
 if(file_exists($articleCss)){
-		$cssFile = '<link rel="stylesheet" href="templates/'.$this->template.'/css/article/article-'.$articleId.'.css" type="text/css" media="screen" />';}
+		$cssFile = $template.'/css/article/article-'.$articleId.'.css';}
 elseif(file_exists($itemCss)){
-		$cssFile = '<link rel="stylesheet" href="templates/'.$this->template.'/css/item/item-'.$itemId.'.css" type="text/css" media="screen" />';}
+		$cssFile = $template.'/css/item/item-'.$itemId.'.css';}
 elseif(file_exists($categoryCss)){
-		$cssFile = '<link rel="stylesheet" href="templates/'.$this->template.'/css/category/category-'.$catId.'.css" type="text/css" media="screen" />';}
+		$cssFile = $template.'/css/category/category-'.$catId.'.css';}
 elseif(file_exists($componentCss)){
-		$cssFile = '<link  rel="stylesheet" href="templates/'.$this->template.'/css/component/'.$currentComponent.'.css" type="text/css" media="screen" />';}		
+		$cssFile = $template.'/css/component/'.$currentComponent.'.css';}		
 else unset($cssFile);
 
 #--------------------------------------------------------------------------#	
@@ -303,3 +225,77 @@ elseif(file_exists($componentIndex)){
 elseif(file_exists($templateIndex)){
 		$alternateIndexFile = $templateIndex;}		
 else unset($alternateIndexFile);
+
+#---------------------------- Head Elements --------------------------------#
+
+// Custom tags
+$doc->addCustomTag('<meta name="copyright" content="'.$app->getCfg('sitename').'" />');
+
+// Transparent favicon
+$doc->addFavicon($template.'/favicon.png', 'image/png','icon');
+
+// Style sheets
+$doc->addStyleSheet($template.'/css/screen.css','text/css','screen');
+$doc->addStyleSheet($template.'/css/print.css','text/css','print');
+if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
+	$doc->addStyleSheet($template.'/css/'.$customStyleSheet,'text/css','screen');
+if ($this->direction == 'rtl')
+	$doc->addStyleSheet($template.'/css/rtl.css','text/css','screen');
+if (isset($cssFile))
+	$doc->addStyleSheet($cssFile,'text/css','screen');
+
+// Style sheet switcher
+if ($enableSwitcher) {
+	$doc->addCustomTag('<link rel="alternate stylesheet" href="'.$template.'/css/diagnostic.css" type="text/css" media="screen" title="diagnostic" />');
+	$doc->addCustomTag('<link rel="alternate stylesheet" href="'.$template.'/css/normal.css" type="text/css" media="screen" title="normal" />');
+	$doc->addCustomTag('<link rel="alternate stylesheet" href="'.$template.'/css/wireframe.css" type="text/css" media="screen" title="wireframe" />');
+	$doc->addScript($template.'/js/styleswitch.js');
+}
+
+// Typography
+if ($googleHeaderFont != "") {
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleHeaderFont.'');
+	$doc->addStyleDeclaration('  h1,h2,h3,h4,h5,h6{font-family:'.$googleHeaderFont.', serif !important}');
+}
+
+// JavaScript
+$doc->addCustomTag("\n".'  <script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
+if ($loadjQuery)
+	$doc->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js');
+
+// Layout Declarations
+if ($siteWidth)
+	$doc->addStyleDeclaration("\n".'  #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}');
+if ($siteWidthType == 'max-width')
+	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%}');		
+if (!$fullWidth)
+	$doc->addStyleDeclaration("\n".'  #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'; margin:0 auto}');
+	
+// Internet Explorer Fixes	
+if ($IECSS3) {
+  $doc->addCustomTag("\n".'  <!--[if !IE 9]>
+  <style type="text/css">'.$IECSS3Targets.' {behavior:url("'.$baseUrl.'templates/'.$this->template.'/js/PIE.htc")}</style>
+  <![endif]-->');
+}
+if ($useStickyFooter) {
+	$doc->addCustomTag("\n".'  <!--[if !IE 7]>
+  <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
+  <![endif]-->');
+}
+$doc->addCustomTag('<!--[if lt IE 7]>
+  <link rel="stylesheet" href="'.$template.'/css/ie6.css" type="text/css" media="screen" />
+  <style type="text/css">
+  body {text-align:center}
+  #body-container {text-align:left}');  
+  if (!$fullWidth) {
+  $doc->addCustomTag('#body-container, #supra, #header, #footer {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto}');
+  }
+  else {
+  $doc->addCustomTag('#body-container, #supra {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto}');
+  }
+  $doc->addCustomTag('</style>');
+  if ($IE6TransFix) {
+  $doc->addCustomTag('  <script type="text/javascript" src="'.$template.'/js/DD_belatedPNG_0.0.8a-min.js"></script>
+  <script>DD_belatedPNG.fix('.$IE6TransFixTargets.');</script>');
+  }
+  $doc->addCustomTag('<![endif]-->');

@@ -236,13 +236,13 @@ ul.menu-horizontal li{float:left} /* Use -horizontal menu class suffix */
 .blue,
 .blue a,
 .orange,
-.orange a{color:#FFF !important}
+.orange a {color:#FFF !important}
 .red {background:#ff0000 !important}
 .green {background:#00a33d !important}
 .blue {background:#0060b6 !important}
 .orange {background:#ff7f00 !important}
 .rounded {-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;padding:5px;margin:5px}
-.right{float:right}
+.right {float:right}
 .search {float:left}
 .search .only {border:solid 1px #ccc;margin:10px 0 10px 10px;padding:5px 10px 13px;line-height:1.3em}
 .search .phrases .inputbox{display:block;height:1.5em;margin-top:10px;width:12em}
