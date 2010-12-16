@@ -35,12 +35,11 @@ $loadjQuery 			= '0';
 $mdetect 				= '1';
 $setGeneratorTag		= 'Joomla Engineering | http://JoomlaEngineering.com';
 $showDate 				= '1';
-$showPageLinks			= '';
+$showPageLinks			= '1';
 $showDiagnostics 		= '0';
 $siteWidth				= '80.5';
 $siteWidthType			= 'max-width';
 $siteWidthUnit			= 'em';
-$showPageLinks 			= '1';
 $useCustomStyleSheet 	= '1';
 $useStickyFooter 		= '1';
 
