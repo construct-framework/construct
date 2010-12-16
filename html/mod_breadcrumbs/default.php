@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access'); ?>
 		}
 		echo ' '.$separator.' </li>';
 	}  else if ($params->get('showLast', 1)) { // when $i == $count -1 and 'showLast' is true
-	    echo $list[$i]->name;
+		echo '<li>'.$list[$i]->name.'</li>';
 	}
 	
 endfor; ?>	
