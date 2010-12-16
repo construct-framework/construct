@@ -26,6 +26,7 @@ $IECSS3					= $this->params->get('IECSS3');
 $IECSS3Targets			= $this->params->get('IECSS3Targets');
 $IE6TransFix			= $this->params->get('IE6TransFix');
 $IE6TransFixTargets		= $this->params->get('IE6TransFixTargets');
+$fluidMedia				= $this->params->get('fluidMedia');
 $fontFamily 			= $this->params->get('fontFamily');
 $fullWidth				= $this->params->get('fullWidth');
 $googleHeaderFont 		= $this->params->get('googleHeaderFont');
@@ -278,7 +279,7 @@ if ($IECSS3) {
   <![endif]-->');
 }
 if ($useStickyFooter) {
-	$doc->addCustomTag("\n".'  <!--[if !IE 7]>
+	$doc->addCustomTag("\n".'  <!--[if lt IE 7]>
   <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
   <![endif]-->');
 }

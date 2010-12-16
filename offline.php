@@ -38,8 +38,8 @@ else {
 	<jdoc:include type="modules" name="analytics" />
 <?php endif; ?>
 
-<a id="page-top" name="page-top"></a>
 	<div id="footer-push">
+		<a id="page-top" name="page-top"></a>
 
 		<?php if ($supraModuleCount) : ?>
 			<div id="supra" class="clearfix">						

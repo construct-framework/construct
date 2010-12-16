@@ -192,6 +192,10 @@
 					<option value="px">Pixel</option>
 					<option value="%">Percent</option>
 				</field>
+				<field name="fluidMedia" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_FLUID_MEDIA_LABEL" description="TPL_JE_CONSTRUCT_PRO_FLUID_MEDIA_DESC">
+				  <option value="1">Yes</option>
+				  <option value="0">No</option>
+				</field>				
 				<field name="fullWidth" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_FULL_WIDTH_LABEL" description="TPL_JE_CONSTRUCT_PRO_FULL_WIDTH_DESC">
 				  <option value="1">Yes</option>
 				  <option value="0">No</option>
