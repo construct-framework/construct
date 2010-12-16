@@ -21,7 +21,7 @@ if ($offLine) {
 // Manually set and define template parameters
 $columnLayout			= 'left-1-main-right-1';
 $customStyleSheet 		= 'example.css';
-$enableSwitcher 		= '1';
+$enableSwitcher 		= '0';
 $fontFamily 			= 'lucida-grande';
 $fullWidth				= '1';
 $IECSS3					= '1';
@@ -86,7 +86,6 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <head>
-<jdoc:include type="head" />
   <meta name="copyright" content="<?php echo $app->getCfg('sitename');?>" />	
   <link rel="shortcut icon" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/favicon.ico" type="image/x-icon" />
   <link rel="icon" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/favicon.png" type="image/png" />	
@@ -131,6 +130,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
   #body-container{text-align:left}
   #body-container, #supra<?php if (!$fullWidth) echo ',#header, #footer'; ?>{width: expression( document.body.clientWidth > <?php echo ($siteWidth -1); ?> ? "<?php echo $siteWidth.$siteWidthUnit; ?>" : "auto" );margin:0 auto}	
   </style>
+<![endif]-->  
 <?php if ($useStickyFooter) {
 	echo '  <!--[if !IE 7]>
   <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
@@ -140,7 +140,8 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
   echo '  <!--[if !IE 9]>
   <style type="text/css">'.$IECSS3Targets.'"{behavior:url("'.$baseUrl.'templates/'.$this->template.'/js/PIE.htc)</style>
   <![endif]-->';
-} ?>
+}
+echo "\n"; ?>
 </head>
 
 <body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; ?> error">
