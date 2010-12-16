@@ -21,7 +21,7 @@ if ($offLine) {
 // Manually set and define template parameters
 $columnLayout			= 'left-1-main-right-1';
 $customStyleSheet 		= 'example.css';
-$enableSwitcher 		= '1';
+$enableSwitcher 		= '0';
 $fontFamily 			= 'lucida-grande';
 $fullWidth				= '1';
 $IECSS3					= '1';
@@ -140,7 +140,8 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
   echo '  <!--[if !IE 9]>
   <style type="text/css">'.$IECSS3Targets.'"{behavior:url("'.$baseUrl.'templates/'.$this->template.'/js/PIE.htc)</style>
   <![endif]-->';
-} ?>
+}
+echo "\n"; ?>
 </head>
 
 <body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; ?> error">
