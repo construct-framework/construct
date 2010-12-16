@@ -13,7 +13,7 @@
 <jdoc:include type="head" />
 </head>
 
-<body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId!=0) echo ' article-'.$articleId; if ($itemId!=0) echo ' item-'.$itemId; if($catId!=0) echo ' category-'.$catId; if($sectionId!=0) echo ' section-'.$sectionId;} ?>">
+<body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId!=0) echo ' article-'.$articleId; if ($itemId!=0) echo ' item-'.$itemId; if($catId!=0) echo ' category-'.$catId;} ?>">
 
 	<div id="footer-push">
 		<a id="page-top" name="page-top"></a>
@@ -61,7 +61,6 @@
 						<li><?php if($articleId!=0) echo 'article-'.$articleId; ?></li>
 						<li><?php if($itemId!=0) echo' item-'.$itemId; ?></li>
 						<li><?php if($catId!=0) echo ' category-'.$catId; ?></li>
-						<li><?php if($sectionId!=0) echo ' section-'.$sectionId; ?></li>
 					</ul>
 				<?php endif; ?>	
 
