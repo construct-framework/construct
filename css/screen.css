@@ -215,7 +215,6 @@ ol.form li.group ul input{width:auto}
 ol.form li.button button{margin:0 auto;display:block}
 ol.form li.checkbox {float:left;width:10px}
 ol.form span.error{position:absolute;top:0;right:0}
-.inputbox:focus {border:2px solid #1A61AE}
 input.invalid,
 textarea.invalid{border:solid 2px #ff0000}
 label.invalid{color:#ff0000;font-weight:bold}
@@ -315,9 +314,9 @@ ul.menu ul ul{margin:0 0 0 100%;top:0}
 #nav ul, #nav li{margin:0;padding:0}
 #nav ul.menu ul ul{margin:0 0 0 100%;top:0}
 
-#nav{border:1px solid #999;z-index:1}
+#nav{z-index:1}
 #nav ul.menu li a,
-#nav ul.menu li span.separator{border-right:1px solid #999;line-height:1.8em;padding:6px 15px 5px}
+#nav ul.menu li span.separator{line-height:1.8em;padding:6px 15px 5px}
 #nav ul.menu ul li a{border:none}
 
 /* -- Right-aligned navigation -- */
