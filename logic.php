@@ -56,7 +56,7 @@ $this->setGenerator($setGeneratorTag);
 
 // Load the MooTools JavaScript Library
 if ($loadMoo) {
-	JHTML::_('behavior.mootools');
+	JHTML::_('behavior.framework', true);
 	if ($loadModal) {
 		// Enable modal pop-ups - see html/mod_footer/default.php to customize
 		JHTML::_('behavior.modal');
