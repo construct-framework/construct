@@ -293,7 +293,7 @@ ul.menu-horizontal li{float:left} /* Use -horizontal menu class suffix */
 #system-message dd.warning{color:#F00;background:#FBAD18;border-top:2px solid #F57E20;border-bottom:2px solid #F57E20}
 #system-message dd.warning ul{margin-bottom:0}
 #system-message dd.error{color:#F00;background:#FBEEF1;border-top:2px solid #FEABB9;border-bottom:2px solid #FEABB9}
-#to-page-top{position:absolute;top:10px;right:10px}
+
 /* -- Menu CSS -- */
 ul.menu a,
 ul.menu span.seprator{background:#fff;display:block;padding:.1em .7em/*use padding to indent text*/}
