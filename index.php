@@ -238,7 +238,7 @@ else {
 							<?php if ($contentBottomCount) : ?>
 								<div id="content-bottom" class="clearfix">						
 									<?php if ($this->countModules('user5')) : ?>
-										<div id="user5" class="<?php echo $contentuser5Class ?>">
+										<div id="user5" class="<?php echo $contentBottomClass ?>">
 											<jdoc:include type="modules" name="user5" style="jexhtml" module-class="gutter" />
 										</div><!-- end user5 -->								
 									<?php endif; ?>
