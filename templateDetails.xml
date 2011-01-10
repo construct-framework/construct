@@ -483,7 +483,8 @@
 		<param name="useStickyFooter" type="radio" default="1" label="Use CSS Sticky Footer" description="Enable the use a CSS Sticky Footer, which requires a fixed height. Dynamic content of varying sizes may require special attention when using this.">
         	<option value="1">Yes</option>
         	<option value="0">No</option>
-    	</param>						
+    	</param>
+		<param name="stickyFooterHeight" type="text" default="175" label="Sticky Footer Height" description="Set the fixed height, in pixels, of your sticky footer." size="5" />						
 		<param type="spacer" default=" " />
 		<param name="IECSS3" type="radio" default="1" label="Add CSS3 Support to IE" description="Enable the use of PIE (http://css3pie.com/) to add CSS3 support to Internet Explorer version 8 and before. Also adds pie_hover class to non-link items on hover. For performance reason, you must define the tagret elements below.">
         	<option value="1">Yes</option>

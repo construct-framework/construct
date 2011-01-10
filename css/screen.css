@@ -437,8 +437,7 @@ ul.menu li ul li ul li ul li.parent li span.separator:after{content:""}
 /* -- Sticky Footer -- *//*http://www.cssstickyfooter.com/*/
 html, .sticky-footer{height:100%}
 .sticky-footer #footer-push{min-height:100%}
-.sticky-footer #body-container{padding-bottom:170px}/* must be same height as the footer */
-.sticky-footer #footer{position:relative;margin-top:-170px;/* negative value of footer height */height:170px;clear:both}
+.sticky-footer #footer{position:relative;clear:both}
 .sticky-footer:before{content:"";height:100%;float:left;width:0;margin-top:-32767px}/*Opera Fix*/
 
 /* -- Preview Module Styles for use with index.php?tp=1 -- */
