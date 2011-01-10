@@ -43,6 +43,7 @@ $siteWidth				= $this->params->get('siteWidth');
 $siteWidthType			= $this->params->get('siteWidthType');
 $siteWidthUnit			= $this->params->get('siteWidthUnit');
 $showPageLinks 			= $this->params->get('showPageLinks');
+$stickyFooterHeight		= $this->params->get('stickyFooterHeight');
 $useCustomStyleSheet 	= $this->params->get('useCustomStyleSheet');
 $useStickyFooter 		= $this->params->get('useStickyFooter');
 $useSubBodyClasses		= $this->params->get('useSubBodyClasses');
@@ -279,6 +280,8 @@ if ($IECSS3) {
   <![endif]-->');
 }
 if ($useStickyFooter) {
+	$doc->addStyleDeclaration("\n".'  .sticky-footer #body-container{padding-bottom:'.$stickyFooterHeight.'px;}
+  .sticky-footer #footer{margin-top:-'.$stickyFooterHeight.'px;height:'.$stickyFooterHeight.'px;}');
 	$doc->addCustomTag("\n".'  <!--[if lt IE 7]>
   <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
   <![endif]-->');
