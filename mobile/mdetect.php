@@ -1,9 +1,9 @@
-<?php defined('_JEXEC')or die;
+<?php
 
 /* *******************************************
 // Copyright 2010, Anthony Hand
 //
-// File version date: September 27, 2010
+// File version date: November 28, 2010
 //
 // LICENSE INFORMATION
 // Licensed under the Apache License, Version 2.0 (the "License"); 
@@ -24,7 +24,7 @@
 //   Source Files: http://code.google.com/p/mobileesp/
 //   
 //   Versions of this code are available for:
-//      PHP, JavaScript, Java, and ASP.NET (C#)
+//      PHP, JavaScript, Java, ASP.NET (C#), and Ruby
 //
 // *******************************************
 */
@@ -58,12 +58,14 @@ class uagent_info
 
    //Initialize some initial smartphone string variables.
    var $engineWebKit = 'webkit';
-   var $deviceAndroid = 'android';
    var $deviceIphone = 'iphone';
    var $deviceIpod = 'ipod';
    var $deviceIpad = 'ipad';
    var $deviceMacPpc = 'macintosh'; //Used for disambiguation
 
+   var $deviceAndroid = 'android';
+   var $deviceGoogleTV = 'googletv';
+   
    var $deviceNuvifone = 'nuvifone'; //Garmin Nuvifone
 
    var $deviceSymbian = 'symbian';
@@ -255,6 +257,16 @@ class uagent_info
          else
             return $this->false; 
       }
+      else
+         return $this->false; 
+   }
+
+   //**************************
+   // Detects if the current device is a GoogleTV.
+   function DetectGoogleTV()
+   {
+      if (stripos($this->useragent, $this->deviceGoogleTV) > -1)
+         return $this->true; 
       else
          return $this->false; 
    }
