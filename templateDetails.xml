@@ -2,12 +2,12 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
 <install version="1.5" type="template" method="upgrade">
 	<name>JE-Construct-Pro</name>
-	<creationDate>December 21st, 2010</creationDate>
+	<creationDate>January 19th, 2011</creationDate>
 	<author>Joomla Engineering</author>
 	<copyright>Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com/</authorUrl>
-	<version>1.5.397 Pro</version>
+	<version>1.5.466 Pro</version>
 	<description><![CDATA[
 	<a href="http://joomlaengineering.com/" target="_blank"><img src="../templates/je-construct-pro/images/logo.png"></a>	
 	<script type="text/javascript" src="../media/system/js/switcher.js"></script>
@@ -88,6 +88,24 @@
 						</ul>		
 				</div><!-- end page-features -->	
 				<div id="page-changelog">
+					<h4>1.5.466 - January 19th, 2011</h4>
+						<ul>
+							<li>Moved from screen.css to example.css in example-template-pack.zip:
+								<ul>
+									<li>#content-left .moduletable,#content-left .moduletable_menu,#content-right .moduletable,#content-right .moduletable_menu {border:1px solid #999;padding:5px;margin:5px 0;}</li>
+									<li>#content-top .module,#content-top .moduletable,#content-top .moduletable_menu{border:1px solid #999;padding:5px;margin:5px;}</li>
+									<li>ul.menu ul {border:1px solid #999}</li>
+									<li>#nav{border:1px solid #999}</li>
+									<li>#nav ul.menu li a,#nav ul.menu li span.separator {border-right:1px solid #999}</li>
+								</ul>
+							</li>
+							<li>Moved #to-page-top{position:absolute;top:10px;right:10px} from screen.css to example.css in example-template-pack.zip. (Thanks Christina Solana and Molajo!)</li>							
+							<li>Changed Layout Aid default setting to Hide.</li>
+							<li>Changed Use Sub-template Body Classes default setting to Yes.</li>
+							<li>Added sticky footer height parameter.</li>
+							<li>Updated mdetect.php to add support for Google TV.</li>							
+							<li>Changed &lt;div id=&quot;user5&quot; class=&quot;&lt;?php echo $contentuser5Class ?&gt;&quot;&gt; to &lt;div id=&quot;user5&quot; class=&quot;&lt;?php echo $contentBottomClass ?&gt;&quot;&gt;. (Thanks Klas Berlic and Molajo!)</li>							
+						</ul>
 					<h4>1.5.397 - December 21st, 2010</h4>
 						<ul>
 							<li>Fixed missing &lt;![endif]--&gt;.(Thanks Michael Babker and Molajo!)</li>
@@ -449,7 +467,7 @@
 			<option value="1">Show</option>
 			<option value="0">Hide</option>
 		</param>
-		<param name="enableSwitcher" type="radio" default="1" label="Layout Aid" description="Enable the ajax style sheet switcher. Defaults to diagnostic and normal options for a visual layout aid.">
+		<param name="enableSwitcher" type="radio" default="0" label="Layout Aid" description="Enable the ajax style sheet switcher. Defaults to diagnostic and normal options for a visual layout aid.">
 			<option value="1">Show</option>
 			<option value="0">Hide</option>
 		</param>		
@@ -457,7 +475,7 @@
         	<option value="1">Show</option>
         	<option value="0">Hide</option>
     	</param>
-		<param name="useSubBodyClasses" type="radio" default="0" label="Use Sub-template Body Classes" description="Enable to dynamically add body classes equl to the current sub-template.">
+		<param name="useSubBodyClasses" type="radio" default="1" label="Use Sub-template Body Classes" description="Enable to dynamically add body classes equl to the current sub-template.">
         	<option value="1">Yes</option>
         	<option value="0">No</option>
     	</param>
