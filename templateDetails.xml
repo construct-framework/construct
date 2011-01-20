@@ -135,7 +135,7 @@
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
 				</field>
-				<field name="enableSwitcher" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_ENABLE_SWITCHER_LABEL" description="TPL_JE_CONSTRUCT_PRO_ENABLE_SWITCHER_DESC">
+				<field name="enableSwitcher" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_ENABLE_SWITCHER_LABEL" description="TPL_JE_CONSTRUCT_PRO_ENABLE_SWITCHER_DESC">
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
 				</field>		
@@ -143,7 +143,7 @@
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
 				</field>
-				<field name="useSubBodyClasses" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_USE_SUB_BODY_CLASSES_LABEL" description="TPL_JE_CONSTRUCT_PRO_USE_SUB_BODY_CLASSES_DESC">
+				<field name="useSubBodyClasses" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_USE_SUB_BODY_CLASSES_LABEL" description="TPL_JE_CONSTRUCT_PRO_USE_SUB_BODY_CLASSES_DESC">
 		        	<option value="1">Yes</option>
 		        	<option value="0">No</option>
 		    	</field>
