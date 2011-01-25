@@ -2,13 +2,13 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="1.6" type="template" client="site" method="upgrade">
 	<name>je-construct-pro</name>
-	<creationDate>January 19th, 2010</creationDate>
+	<creationDate>January 25th, 2010</creationDate>
 	<author>Joomla Engineering</author>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com</authorUrl>
-	<copyright>Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.6.462</version>
+	<version>1.6.473</version>
 	<description>TPL_JE_CONSTRUCT_PRO_DESCRIPTION</description>
 	<files>
 		<filename>css/diagnostic.css</filename>
@@ -16,7 +16,6 @@
 		<filename>css/ie6.css</filename>
 		<filename>css/index.html</filename>
 		<filename>css/modal.css</filename>
-		<filename>css/normal.css</filename>
 		<filename>css/print.css</filename>
 		<filename>css/rtl.css</filename>
 		<filename>css/screen.css</filename>

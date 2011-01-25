@@ -2,7 +2,7 @@
 /**
 * @package		Template Framework for Joomla! 1.6
 * @author		Joomla Engineering http://joomlaengineering.com
-* @copyright	Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.
+* @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
@@ -21,7 +21,7 @@ class JFormFieldUpgradecheck extends JFormField {
 		if(!function_exists("curl_init")) return 'cURL is not supported by your server. Please contact your hosting provider to enable this capability.';
 		//If cURL is supported, check the current version available.
 		else 
-				$version = 463;
+				$version = 473;
 				$target = 'http://joomlaengineering.com/upgradecheck/je-construct-pro-1-6';
 				$curl = curl_init();
 				curl_setopt($curl, CURLOPT_URL, $target);
