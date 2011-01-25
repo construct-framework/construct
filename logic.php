@@ -2,7 +2,7 @@
 /**
 * @package		Template Framework for Joomla! 1.6
 * @author		Joomla Engineering http://joomlaengineering.com
-* @copyright	Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.
+* @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
@@ -16,7 +16,7 @@ $doc 					= JFactory::getDocument();
 $template 				= 'templates/'.$this->template;
 // Get the current URL
 $url 					= clone(JURI::getInstance());
-// To access the current user object
+// To access the current user object. See http://docs.joomla.org/Accessing_the_current_user_object
 $user 					= JFactory::getUser();
 
 // Get and define template parameters
@@ -284,7 +284,6 @@ if (isset($cssFile))
 // Style sheet switcher
 if ($enableSwitcher) {
 	$doc->addCustomTag('<link rel="alternate stylesheet" href="'.$template.'/css/diagnostic.css" type="text/css" media="screen" title="diagnostic" />');
-	$doc->addCustomTag('<link rel="alternate stylesheet" href="'.$template.'/css/normal.css" type="text/css" media="screen" title="normal" />');
 	$doc->addCustomTag('<link rel="alternate stylesheet" href="'.$template.'/css/wireframe.css" type="text/css" media="screen" title="wireframe" />');
 	$doc->addScript($template.'/js/styleswitch.js');
 } 	
