@@ -28,7 +28,8 @@ $IECSS3					= '1';
 $IECSS3Targets			= '.drop-shadow, .outline, .rounded, ul.menu li, ul.menu ul, #nav,#content-left .moduletable, #content-left .moduletable_menu, #content-right .moduletable, #content-right .moduletable_menu, #content-top .moduletable, #content-top .moduletable_menu, #sub-nav .moduletable, #sub-nav .moduletable_menu';
 $IE6TransFix			= '1';
 $IE6TransFixTargets		= 'h1 a, .readon, .parent a, #breadcrumbs';
-$googleHeaderFont 		= '';
+$googleWebFont 			= '';
+$googleWebFontTargets	= 'h1,h2,h3,h4,h5,h6';
 $loadMoo 				= '1';
 $loadModal				= '1';
 $loadjQuery 			= '0';
@@ -104,9 +105,9 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 		echo "\n".'  <link rel="stylesheet" href="'.$baseUrl.'"templates/"'.$this->template.'"/css/rtl.css"  type="text/css" media="screen" />';
 	if (isset($cssFile))
 		echo "\n".$cssFile;
-	if ($googleHeaderFont != "")
-		echo "\n".'  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='.$googleHeaderFont.'">
-		<style type="text/css">h1,h2,h3,h4,h5,h6{font-family:'.$googleHeaderFont.', serif !important} </style>';
+	if ($googleWebFont != "")
+		echo "\n".'  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='.$googleWebFont.'">
+		<style type="text/css">'.$googleWebFontTargets.'{font-family:'.$googleWebFont.', serif !important} </style>';
 	if ($loadjQuery)
 		$doc->addScript("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");
 	if ($enableSwitcher)

@@ -336,7 +336,7 @@ td.sectiontableheader:last-child,
 ul.menu a,
 ul.menu span.seprator{background:#fff;display:block;padding:.1em .7em/*use padding to indent text*/}
 ul.menu li{float:left;position:relative}
-ul.menu ul{position:absolute;left:-999em;width:16em;/*sub-menu widths*/z-index:1}
+ul.menu ul{position:absolute;left:-999em;width:16em;/*sub-menu widths*/z-index:999}
 ul.menu ul li{width:100%}
 ul.menu ul ul{margin:0 0 0 100%;top:0}
 #nav:after,
@@ -352,7 +352,7 @@ ul.menu ul ul{margin:0 0 0 100%;top:0}
 #nav ul, #nav li{margin:0;padding:0}
 #nav ul.menu ul ul{margin:0 0 0 100%;top:0}
 
-#nav{z-index:1;}
+#nav{z-index:999;}
 #nav ul.menu li a,
 #nav ul.menu li span.separator{line-height:1.8em;padding:6px 15px 5px;}
 #nav ul.menu ul li a{border:none}
