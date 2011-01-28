@@ -29,7 +29,8 @@ $IE6TransFixTargets		= $this->params->get('IE6TransFixTargets');
 $fluidMedia				= $this->params->get('fluidMedia');
 $fontFamily 			= $this->params->get('fontFamily');
 $fullWidth				= $this->params->get('fullWidth');
-$googleHeaderFont 		= $this->params->get('googleHeaderFont');
+$googleWebFont 			= $this->params->get('googleWebFont');
+$googleWebFontTargets	= $this->params->get('googleWebFontTargets');
 $loadMoo 				= $this->params->get('loadMoo');
 $loadModal				= $this->params->get('loadModal');
 $loadjQuery 			= $this->params->get('loadjQuery');
@@ -63,6 +64,9 @@ if ($loadMoo) {
 		JHTML::_('behavior.modal');
 	}
 }
+
+// Fix Google Web Font name for CSS
+$googleWebFontFamily = str_replace("+"," ",$googleWebFont);
 
 #----------------------------- Moldule Counts -----------------------------#
 // from http://groups.google.com/group/joomla-dev-general/browse_thread/thread/b54f3f131dd173d
@@ -254,9 +258,9 @@ if ($enableSwitcher) {
 }
 
 // Typography
-if ($googleHeaderFont != "") {
-	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleHeaderFont.'');
-	$doc->addStyleDeclaration('  h1,h2,h3,h4,h5,h6{font-family:'.$googleHeaderFont.', serif !important}');
+if ($googleWebFont != "") {
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleWebFont.'');
+	$doc->addStyleDeclaration('  '.$googleWebFontTargets.'{font-family:'.$googleWebFontFamily.', serif !important}');
 }
 
 // JavaScript
