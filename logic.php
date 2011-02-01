@@ -53,7 +53,7 @@ $useSubBodyClasses		= $this->params->get('useSubBodyClasses');
 $mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/mobile/mdetect.php';
 $mtemplateFile			= JPATH_THEMES.'/'.$this->template.'/mobile/'.$mtemplate;
 
-// Change generatot tag
+// Change generator tag
 $this->setGenerator($setGeneratorTag);
 
 // Remove MooTools if set to no.
@@ -72,6 +72,10 @@ if ( loadMoo && $loadModal ) {
 
 // Fix Google Web Font name for CSS
 $googleWebFontFamily = str_replace("+"," ",$googleWebFont);
+
+// Get the name of the extended template override set
+if ($useCustomStyleSheet)
+$overrideVariant = str_replace(".css","",$customStyleSheet);
 
 #----------------------------- Moldule Counts -----------------------------#
 // from http://groups.google.com/group/joomla-dev-general/browse_thread/thread/b54f3f131dd173d
@@ -224,46 +228,91 @@ $currentComponent = JRequest::getCmd('option');
 #--------------------------------------------------------------------------#
 // inspired by suchitis at http://forum.joomla.org/viewtopic.php?p=1861458#p1861458
 
-$templateIndex	= JPATH_THEMES.'/'.$this->template.'/layouts/index.php';
-$componentIndex = JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$currentComponent.'.php';
-$sectionIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/section/section-'.$sectionId.'.php';
-$categoryIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/category/category-'.$catId.'.php';
-$itemIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/item/item-'.$itemId.'.php';
-$articleIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/article/article-'.$articleId.'.php';
-$componentCss 	= JPATH_THEMES.'/'.$this->template.'/css/component/'.$currentComponent.'.css';
-$sectionCss 	= JPATH_THEMES.'/'.$this->template.'/css/section/section-'.$sectionId.'.css';
-$categoryCss 	= JPATH_THEMES.'/'.$this->template.'/css/category/category-'.$catId.'.css';
-$itemCss 		= JPATH_THEMES.'/'.$this->template.'/css/item/item-'.$itemId.'.css';
-$articleCss 	= JPATH_THEMES.'/'.$this->template.'/css/article/article-'.$articleId.'.css';
+$templateVariantIndex	= JPATH_THEMES.'/'.$this->template.'/layouts/'.$overrideVariant.'-index.php';
+$componentVariantIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$overrideVariant.'-'.$currentComponent.'.php';
+$sectionVariantIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/section/'.$overrideVariant.'-section-'.$sectionId.'.php';
+$categoryVariantIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/category/'.$overrideVariant.'-category-'.$catId.'.php';
+$itemVariantIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/item/'.$overrideVariant.'-item-'.$itemId.'.php';
+$articleVariantIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/article/'.$overrideVariant.'-article-'.$articleId.'.php';
+$componentVariantCss 	= JPATH_THEMES.'/'.$this->template.'/css/component/'.$overrideVariant.'-'.$currentComponent.'.css';
+$sectionVariantCss 		= JPATH_THEMES.'/'.$this->template.'/css/section/'.$overrideVariant.'-section-'.$sectionId.'.css';
+$categoryVariantCss 	= JPATH_THEMES.'/'.$this->template.'/css/category/'.$overrideVariant.'-category-'.$catId.'.css';
+$itemVariantCss 		= JPATH_THEMES.'/'.$this->template.'/css/item/'.$overrideVariant.'-item-'.$itemId.'.css';
+$articleVariantCss 		= JPATH_THEMES.'/'.$this->template.'/css/article/'.$overrideVariant.'-article-'.$articleId.'.css';
+
+$templateIndex			= JPATH_THEMES.'/'.$this->template.'/layouts/index.php';
+$componentIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$currentComponent.'.php';
+$sectionIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/section/section-'.$sectionId.'.php';
+$categoryIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/category/category-'.$catId.'.php';
+$itemIndex 				= JPATH_THEMES.'/'.$this->template.'/layouts/item/item-'.$itemId.'.php';
+$articleIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/article/article-'.$articleId.'.php';
+$componentCss 			= JPATH_THEMES.'/'.$this->template.'/css/component/'.$currentComponent.'.css';
+$sectionCss 			= JPATH_THEMES.'/'.$this->template.'/css/section/section-'.$sectionId.'.css';
+$categoryCss 			= JPATH_THEMES.'/'.$this->template.'/css/category/category-'.$catId.'.css';
+$itemCss 				= JPATH_THEMES.'/'.$this->template.'/css/item/item-'.$itemId.'.css';
+$articleCss 			= JPATH_THEMES.'/'.$this->template.'/css/article/article-'.$articleId.'.css';
+
 
 #--------------------------------------------------------------------------#
-
-if(file_exists($articleCss)){
+if(file_exists($articleVariantCss)){
+		$cssFile = $template.'/css/article/'.$overrideVariant.'-article-'.$articleId.'.css';}
+elseif(file_exists($articleCss)){
 		$cssFile = $template.'/css/article/article-'.$articleId.'.css';}
+
+elseif(file_exists($itemVariantCss)){
+		$cssFile = $template.'/css/item/'.$overrideVariant.'-item-'.$itemId.'.css';}		
 elseif(file_exists($itemCss)){
 		$cssFile = $template.'/css/item/item-'.$itemId.'.css';}
+
+elseif(file_exists($categoryVariantCss)){
+		$cssFile = $template.'/css/category/'.$overrideVariant.'-category-'.$catId.'.css';}
 elseif(file_exists($categoryCss)){
 		$cssFile = $template.'/css/category/category-'.$catId.'.css';}
+
+elseif(file_exists($sectionVariantCss)){
+		$cssFile = $template.'/css/section/'.$overrideVariant.'-section-'.$catId.'.css';}	
 elseif(file_exists($sectionCss)){
 		$cssFile = $template.'/css/section/section-'.$catId.'.css';}	
+
+elseif(file_exists($componentVariantCss)){
+		$cssFile = $template.'/css/component/'.$overrideVariant.'-'.$currentComponent.'.css';}		
 elseif(file_exists($componentCss)){
 		$cssFile = $template.'/css/component/'.$currentComponent.'.css';}		
+		
 else unset($cssFile);
 
 #--------------------------------------------------------------------------#	
 
-if(file_exists($articleIndex)){
+if(file_exists($articleVariantIndex)){
+		$alternateIndexFile = $articleVariantIndex;}
+elseif(file_exists($articleIndex)){
 		$alternateIndexFile = $articleIndex;}
+		
+elseif(file_exists($itemVariantIndex)){
+		$alternateIndexFile = $itemVariantIndex;}
 elseif(file_exists($itemIndex)){
 		$alternateIndexFile = $itemIndex;}
+		
+elseif(file_exists($categoryVariantIndex)){
+		$alternateIndexFile = $categoryVariantIndex;}
 elseif(file_exists($categoryIndex)){
 		$alternateIndexFile = $categoryIndex;}
+
+elseif(file_exists($sectionVariantIndex)){
+		$alternateIndexFile = $sectionVariantIndex;}
 elseif(file_exists($sectionIndex)){
-		$alternateIndexFile = $sectionIndex;}		
+		$alternateIndexFile = $sectionIndex;}
+		
+elseif(file_exists($componentVariantIndex)){
+		$alternateIndexFile = $componentVariantIndex;}
 elseif(file_exists($componentIndex)){
 		$alternateIndexFile = $componentIndex;}	
+
+elseif(file_exists($templateVariantIndex)){
+		$alternateIndexFile = $templateVariantIndex;}
 elseif(file_exists($templateIndex)){
-		$alternateIndexFile = $templateIndex;}		
+		$alternateIndexFile = $templateIndex;}
+		
 else unset($alternateIndexFile);
 
 #---------------------------- Head Elements --------------------------------#
