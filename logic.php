@@ -195,13 +195,48 @@ $articleId = JRequest::getInt('id');
 
 #------------------------------- Section ID -------------------------------#
 
-if ($view == 'section')
-$sectionId = JRequest::getInt('id');
+function getSection($iId) {
+	  $database = &JFactory::getDBO();
+	  if(JRequest::getCmd('view', 0) == "section") {
+			return JRequest::getInt('id');
+		}
+	  elseif(JRequest::getCmd('view', 0) == "category") {
+			$sql = "SELECT section FROM #__categories WHERE id = $iId ";
+			$database->setQuery( $sql );
+			$row = $database->loadResult();
+			return $row;
+		}
+	  elseif(JRequest::getCmd('view', 0) == "article") {
+			$temp = explode(":",JRequest::getInt('id'));
+			$sql = "SELECT sectionid FROM #__content WHERE id = ".$temp[0];
+			$database->setQuery( $sql );
+			$row = $database->loadResult();
+			return $row;
+		}		
+	}
+	
+$sectionId = getSection(JRequest::getInt('id'));
 
 #------------------------------ Category ID -------------------------------#
 
-if ($view == 'category')
-$catId = JRequest::getInt('id');
+function getCategory($iId) {
+	$database = &JFactory::getDBO();
+	  if(JRequest::getCmd('view', 0) == "section") {
+			return null;
+		}
+	  elseif(JRequest::getCmd('view', 0) == "category") {
+			return JRequest::getInt('id');
+		}		
+	  elseif(JRequest::getCmd('view', 0) == "article") {
+			$temp = explode(":",JRequest::getInt('id'));
+			$sql = "SELECT catid FROM #__content WHERE id = ".$temp[0];
+			$database->setQuery( $sql );
+			$row = $database->loadResult();
+			return $row;
+		}		
+	}
+	
+$catId = getCategory(JRequest::getInt('id'));
 
 #--------------------------------- Alias ----------------------------------#
 
@@ -212,7 +247,6 @@ $currentAlias = JSite::getMenu()->getActive()->alias;
 $currentComponent = JRequest::getCmd('option');
 
 #--------------------------------------------------------------------------#
-// inspired by suchitis at http://forum.joomla.org/viewtopic.php?p=1861458#p1861458
 
 $templateGroupIndex		= JPATH_THEMES.'/'.$this->template.'/layouts/'.$overrideGroup.'-index.php';
 $componentGroupIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$overrideGroup.'-'.$currentComponent.'.php';
@@ -238,8 +272,8 @@ $categoryCss 			= JPATH_THEMES.'/'.$this->template.'/css/category/category-'.$ca
 $itemCss 				= JPATH_THEMES.'/'.$this->template.'/css/item/item-'.$itemId.'.css';
 $articleCss 			= JPATH_THEMES.'/'.$this->template.'/css/article/article-'.$articleId.'.css';
 
-
 #--------------------------------------------------------------------------#
+
 if(file_exists($articleGroupCss)){
 		$cssFile = $template.'/css/article/'.$overrideGroup.'-article-'.$articleId.'.css';}
 elseif(file_exists($articleCss)){
