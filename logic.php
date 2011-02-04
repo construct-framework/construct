@@ -18,6 +18,8 @@ $template 				= 'templates/'.$this->template;
 $url 					= clone(JURI::getInstance());
 // To access the current user object
 $user 					= JFactory::getUser();
+// Get the current view
+$view     				= JRequest::getCmd('view');
 
 // Get and define template parameters
 $customStyleSheet 		= $this->params->get('customStyleSheet');
@@ -66,11 +68,11 @@ if ($loadMoo) {
 }
 
 // Fix Google Web Font name for CSS
-$googleWebFontFamily = str_replace("+"," ",$googleWebFont);
+$googleWebFontFamily 	= str_replace("+"," ",$googleWebFont);
 
-// Get the name of the extended template override set
+// Get the name of the extended template override group
 if ($useCustomStyleSheet)
-$overrideVariant = str_replace(".css","",$customStyleSheet);
+$overrideGroup 			= str_replace(".css","",$customStyleSheet);
 
 #----------------------------- Moldule Counts -----------------------------#
 // from http://groups.google.com/group/joomla-dev-general/browse_thread/thread/b54f3f131dd173d
@@ -178,17 +180,16 @@ endif;
 $itemId = JRequest::getInt('Itemid', 0);
 
 #------------------------------- Article ID -------------------------------#
-// from http://forum.joomla.org/viewtopic.php?p=2046136#p2046136
 
+if ($view == 'article')
 $articleId = JRequest::getInt('id');
 
 #------------------------------ Category ID -------------------------------#
-// from http://forum.joomla.org/viewtopic.php?p=1837233#p1837233
 
-$catId = JRequest::getInt('catid');
+if ($view == 'category')
+$catId = JRequest::getInt('id');
 
 #--------------------------------- Alias ----------------------------------#
-// based on http://forum.joomla.org/viewtopic.php?f=127&t=281999
 
 $currentAlias = JSite::getMenu()->getActive()->alias;
 
@@ -199,16 +200,16 @@ $currentComponent = JRequest::getCmd('option');
 #--------------------------------------------------------------------------#
 // inspired by suchitis at http://forum.joomla.org/viewtopic.php?p=1861458#p1861458
 
-$templateVariantIndex	= JPATH_THEMES.'/'.$this->template.'/layouts/'.$overrideVariant.'-index.php';
-$componentVariantIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$overrideVariant.'-'.$currentComponent.'.php';
-$categoryVariantIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/category/'.$overrideVariant.'-category-'.$catId.'.php';
-$itemVariantIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/item/'.$overrideVariant.'-item-'.$itemId.'.php';
-$articleVariantIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/article/'.$overrideVariant.'-article-'.$articleId.'.php';
-$componentVariantCss 	= JPATH_THEMES.'/'.$this->template.'/css/component/'.$overrideVariant.'-'.$currentComponent.'.css';
-$sectionVariantCss 		= JPATH_THEMES.'/'.$this->template.'/css/section/'.$overrideVariant.'-section-'.$sectionId.'.css';
-$categoryVariantCss 	= JPATH_THEMES.'/'.$this->template.'/css/category/'.$overrideVariant.'-category-'.$catId.'.css';
-$itemVariantCss 		= JPATH_THEMES.'/'.$this->template.'/css/item/'.$overrideVariant.'-item-'.$itemId.'.css';
-$articleVariantCss 		= JPATH_THEMES.'/'.$this->template.'/css/article/'.$overrideVariant.'-article-'.$articleId.'.css';
+$templateGroupIndex		= JPATH_THEMES.'/'.$this->template.'/layouts/'.$overrideGroup.'-index.php';
+$componentGroupIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$overrideGroup.'-'.$currentComponent.'.php';
+$categoryGroupIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/category/'.$overrideGroup.'-category-'.$catId.'.php';
+$itemGroupIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/item/'.$overrideGroup.'-item-'.$itemId.'.php';
+$articleGroupIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/article/'.$overrideGroup.'-article-'.$articleId.'.php';
+$componentGroupCss 		= JPATH_THEMES.'/'.$this->template.'/css/component/'.$overrideGroup.'-'.$currentComponent.'.css';
+$sectionGroupCss 		= JPATH_THEMES.'/'.$this->template.'/css/section/'.$overrideGroup.'-section-'.$sectionId.'.css';
+$categoryGroupCss 		= JPATH_THEMES.'/'.$this->template.'/css/category/'.$overrideGroup.'-category-'.$catId.'.css';
+$itemGroupCss 			= JPATH_THEMES.'/'.$this->template.'/css/item/'.$overrideGroup.'-item-'.$itemId.'.css';
+$articleGroupCss 		= JPATH_THEMES.'/'.$this->template.'/css/article/'.$overrideGroup.'-article-'.$articleId.'.css';
 
 $templateIndex			= JPATH_THEMES.'/'.$this->template.'/layouts/index.php';
 $componentIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$currentComponent.'.php';
@@ -223,55 +224,46 @@ $articleCss 			= JPATH_THEMES.'/'.$this->template.'/css/article/article-'.$artic
 
 
 #--------------------------------------------------------------------------#
-if(file_exists($articleVariantCss)){
-		$cssFile = $template.'/css/article/'.$overrideVariant.'-article-'.$articleId.'.css';}
+if(file_exists($articleGroupCss)){
+		$cssFile = $template.'/css/article/'.$overrideGroup.'-article-'.$articleId.'.css';}
 elseif(file_exists($articleCss)){
 		$cssFile = $template.'/css/article/article-'.$articleId.'.css';}
-
-elseif(file_exists($itemVariantCss)){
-		$cssFile = $template.'/css/item/'.$overrideVariant.'-item-'.$itemId.'.css';}		
+elseif(file_exists($itemGroupCss)){
+		$cssFile = $template.'/css/item/'.$overrideGroup.'-item-'.$itemId.'.css';}		
 elseif(file_exists($itemCss)){
 		$cssFile = $template.'/css/item/item-'.$itemId.'.css';}
-
-elseif(file_exists($categoryVariantCss)){
-		$cssFile = $template.'/css/category/'.$overrideVariant.'-category-'.$catId.'.css';}
+elseif(file_exists($categoryGroupCss)){
+		$cssFile = $template.'/css/category/'.$overrideGroup.'-category-'.$catId.'.css';}
 elseif(file_exists($categoryCss)){
 		$cssFile = $template.'/css/category/category-'.$catId.'.css';}
-
-elseif(file_exists($componentVariantCss)){
-		$cssFile = $template.'/css/component/'.$overrideVariant.'-'.$currentComponent.'.css';}		
+elseif(file_exists($componentGroupCss)){
+		$cssFile = $template.'/css/component/'.$overrideGroup.'-'.$currentComponent.'.css';}		
 elseif(file_exists($componentCss)){
 		$cssFile = $template.'/css/component/'.$currentComponent.'.css';}		
-		
 else unset($cssFile);
 
 #--------------------------------------------------------------------------#	
 
-if(file_exists($articleVariantIndex)){
-		$alternateIndexFile = $articleVariantIndex;}
+if(file_exists($articleGroupIndex)){
+		$alternateIndexFile = $articleGroupIndex;}
 elseif(file_exists($articleIndex)){
-		$alternateIndexFile = $articleIndex;}
-		
-elseif(file_exists($itemVariantIndex)){
-		$alternateIndexFile = $itemVariantIndex;}
+		$alternateIndexFile = $articleIndex;}		
+elseif(file_exists($itemGroupIndex)){
+		$alternateIndexFile = $itemGroupIndex;}
 elseif(file_exists($itemIndex)){
-		$alternateIndexFile = $itemIndex;}
-		
-elseif(file_exists($categoryVariantIndex)){
-		$alternateIndexFile = $categoryVariantIndex;}
+		$alternateIndexFile = $itemIndex;}		
+elseif(file_exists($categoryGroupIndex)){
+		$alternateIndexFile = $categoryGroupIndex;}
 elseif(file_exists($categoryIndex)){
 		$alternateIndexFile = $categoryIndex;}
-
-elseif(file_exists($componentVariantIndex)){
-		$alternateIndexFile = $componentVariantIndex;}
+elseif(file_exists($componentGroupIndex)){
+		$alternateIndexFile = $componentGroupIndex;}
 elseif(file_exists($componentIndex)){
 		$alternateIndexFile = $componentIndex;}	
-
-elseif(file_exists($templateVariantIndex)){
-		$alternateIndexFile = $templateVariantIndex;}
+elseif(file_exists($templateGroupIndex)){
+		$alternateIndexFile = $templateGroupIndex;}
 elseif(file_exists($templateIndex)){
-		$alternateIndexFile = $templateIndex;}
-		
+		$alternateIndexFile = $templateIndex;}		
 else unset($alternateIndexFile);
 
 #---------------------------- Head Elements --------------------------------#
