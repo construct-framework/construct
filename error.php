@@ -168,10 +168,10 @@ echo "\n"; ?>
 
 				<?php if ($showDate) : ?>
 					<div class="date-container">
-						<span class="date-weekday"><?php $now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
-						<span class="date-month"><?php $now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
-						<span class="date-day"><?php $now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
-						<span class="date-year"><?php $now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
+						<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
+						<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
+						<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
+						<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
 					</div>
 				<?php endif; ?>
 			

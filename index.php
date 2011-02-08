@@ -34,7 +34,7 @@ else {
 <jdoc:include type="head" />
 </head>
 
-<body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId!=0) echo ' article-'.$articleId; if ($itemId!=0) echo ' item-'.$itemId; if($catId!=0) echo ' category-'.$catId;} ?>">
+<body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId;} ?>">
 
 	<div id="footer-push">
 		<a id="page-top" name="page-top"></a>
@@ -69,19 +69,19 @@ else {
 
 				<?php if ($showDate) : ?>
 					<div class="date-container">
-						<span class="date-weekday"><?php $now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
-						<span class="date-month"><?php $now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
-						<span class="date-day"><?php $now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
-						<span class="date-year"><?php $now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
+						<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
+						<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
+						<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
+						<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
 					</div>
 				<?php endif; ?>	
 				
 				<?php if ($showDiagnostics) : ?>
 					<ul id="diagnostics">
 						<li><?php echo $currentComponent; ?></li>
-						<li><?php if($articleId!=0) echo 'article-'.$articleId; ?></li>
-						<li><?php if($itemId!=0) echo' item-'.$itemId; ?></li>
-						<li><?php if($catId!=0) echo ' category-'.$catId; ?></li>
+						<li><?php if($articleId)	echo 'article-'.$articleId; ?></li>
+						<li><?php if($itemId)		echo 'item-'.$itemId; ?></li>
+						<li><?php if($catId)		echo 'category-'.$catId; ?></li>
 					</ul>
 				<?php endif; ?>	
 
