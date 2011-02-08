@@ -13,7 +13,7 @@
 <jdoc:include type="head" />
 </head>
 
-<body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId!=0) echo ' article-'.$articleId; if ($itemId!=0) echo ' item-'.$itemId; if($catId!=0) echo ' category-'.$catId; if($sectionId!=0) echo ' section-'.$sectionId;} ?>">							
+<body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId)	echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId;} ?>">							
 	<jdoc:include type="component" />
 </body>
 </html>

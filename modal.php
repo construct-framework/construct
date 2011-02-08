@@ -20,7 +20,7 @@ $doc->addStyleSheet($template.'/css/modal.css','text/css','screen');
 ?>
 </head>
 
-<body class="<?php if($articleId!=0){echo' article-'.$articleId;}?>">
+<body class="modal <?php if($articleId) echo 'article-'.$articleId; ?>">
 	<jdoc:include type="component" />     
 </body>
 </html>
