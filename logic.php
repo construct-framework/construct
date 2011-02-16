@@ -353,7 +353,7 @@ if ($enableSwitcher) {
 // Typography
 if ($googleWebFont != "") {
 	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleWebFont.'');
-	$doc->addStyleDeclaration('  '.$googleWebFontTargets.'{font-family:'.$googleWebFontFamily.', serif !important}');
+	$doc->addStyleDeclaration('  '.$googleWebFontTargets.' {font-family:'.$googleWebFontFamily.', serif}');
 }
 
 // JavaScript
@@ -363,7 +363,7 @@ if ($loadjQuery)
 
 // Layout Declarations
 if ($siteWidth)
-	$doc->addStyleDeclaration("\n".'  #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}');
+	$doc->addStyleDeclaration("\n".'  #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'}');
 if (($siteWidthType == 'max-width') && $fluidMedia )
 	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%}');		
 if (!$fullWidth)
@@ -382,6 +382,7 @@ if ($useStickyFooter) {
   <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
   <![endif]-->');
 }
+
 $doc->addCustomTag('<!--[if lt IE 7]>
   <link rel="stylesheet" href="'.$template.'/css/ie6.css" type="text/css" media="screen" />
   <style type="text/css">
