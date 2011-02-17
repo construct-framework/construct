@@ -22,6 +22,8 @@ $user 					= JFactory::getUser();
 $view     				= JRequest::getCmd('view');
 
 // Get and define template parameters
+$customFontFamily		= $this->params->get('customFontFamily');
+$customFontFamilyTargets= $this->params->get('customFontFamilyTargets');
 $customStyleSheet 		= $this->params->get('customStyleSheet');
 $enableSwitcher 		= $this->params->get('enableSwitcher');
 $IECSS3					= $this->params->get('IECSS3');
@@ -30,9 +32,15 @@ $IE6TransFix			= $this->params->get('IE6TransFix');
 $IE6TransFixTargets		= $this->params->get('IE6TransFixTargets');
 $fluidMedia				= $this->params->get('fluidMedia');
 $fontFamily 			= $this->params->get('fontFamily');
+$fontFamilyTargets		= $this->params->get('fontFamilyTargets');
+$fontFamilySize			= $this->params->get('fontFamilySize');
 $fullWidth				= $this->params->get('fullWidth');
 $googleWebFont 			= $this->params->get('googleWebFont');
 $googleWebFontTargets	= $this->params->get('googleWebFontTargets');
+$googleWebFont2			= $this->params->get('googleWebFont2');
+$googleWebFontTargets2	= $this->params->get('googleWebFontTargets2');
+$googleWebFont3			= $this->params->get('googleWebFont3');
+$googleWebFontTargets3	= $this->params->get('googleWebFontTargets3');
 $loadMoo 				= $this->params->get('loadMoo');
 $loadModal				= $this->params->get('loadModal');
 $loadjQuery 			= $this->params->get('loadjQuery');
@@ -78,6 +86,8 @@ if (!$loadMoo) {
 
 // Fix Google Web Font name for CSS
 $googleWebFontFamily 	= str_replace("+"," ",$googleWebFont);
+$googleWebFontFamily2 	= str_replace("+"," ",$googleWebFont2);
+$googleWebFontFamily3 	= str_replace("+"," ",$googleWebFont3);
 
 // Get the name of the extended template override group
 if ($useCustomStyleSheet)
@@ -351,9 +361,23 @@ if ($enableSwitcher) {
 } 	
 
 // Typography
-if ($googleWebFont != "") {
+if ( $fontFamily && $fontFamilyTargets && $fontFamilySize )
+	$doc->addStyleDeclaration('  '.$fontFamilyTargets.' {font-family:'.$fontFamily.'; font-size:'.$fontFamilySize.'}');
+elseif ( $fontFamily && $fontFamilyTargets )
+	$doc->addStyleDeclaration('  '.$fontFamilyTargets.' {font-family:'.$fontFamily.';}');
+if ( $customFontFamily && $customFontFamilyTargets )
+	$doc->addStyleDeclaration('  '.$customFontFamilyTargets.' {font-family:'.$customFontFamily.';}');	
+if ($googleWebFont) {
 	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleWebFont.'');
-	$doc->addStyleDeclaration('  '.$googleWebFontTargets.' {font-family:'.$googleWebFontFamily.', serif}');
+	$doc->addStyleDeclaration('  '.$googleWebFontTargets.' {font-family:'.$googleWebFontFamily.', serif;}');
+}
+if ($googleWebFont2) {
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleWebFont2.'');
+	$doc->addStyleDeclaration('  '.$googleWebFontTargets2.' {font-family:'.$googleWebFontFamily2.', serif;}');
+}
+if ($googleWebFont3) {
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleWebFont3.'');
+	$doc->addStyleDeclaration('  '.$googleWebFontTargets3.' {font-family:'.$googleWebFontFamily3.', serif;}');
 }
 
 // JavaScript
@@ -363,11 +387,11 @@ if ($loadjQuery)
 
 // Layout Declarations
 if ($siteWidth)
-	$doc->addStyleDeclaration("\n".'  #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'}');
+	$doc->addStyleDeclaration("\n".'  #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.';}');
 if (($siteWidthType == 'max-width') && $fluidMedia )
-	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%}');		
+	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%;}');		
 if (!$fullWidth)
-	$doc->addStyleDeclaration("\n".'  #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'; margin:0 auto}');
+	$doc->addStyleDeclaration("\n".'  #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'; margin:0 auto;}');
 	
 // Internet Explorer Fixes	
 if ($IECSS3) {
