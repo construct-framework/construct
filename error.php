@@ -41,6 +41,7 @@ $showDiagnostics 		= '0';
 $siteWidth				= '80.5';
 $siteWidthType			= 'max-width';
 $siteWidthUnit			= 'em';
+$stickyFooterHeight		= '175';
 $useCustomStyleSheet 	= '1';
 $useStickyFooter 		= '1';
 
@@ -113,7 +114,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 		echo "\n".'  <script type="text/javascript" src="templates/'.$this->template.'/js/styleswitch.js"></script>';
 	if ($siteWidth)
 		echo "\n".'  <style type="text/css"> #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}</style>';
-	if ($siteWidthType == 'max-width')
+	if (($siteWidthType == 'max-width') && $fluidMedia )
 		echo "\n".'  <style type="text/css"> img, object {max-width:100%}</style>';		
 	if (!$fullWidth)
 		echo "\n".'  <style type="text/css"> #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.';margin:0 auto}</style>';
@@ -132,8 +133,11 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
   </style>
   <![endif]-->
 <?php if ($useStickyFooter) {
-	echo '  <!--[if !IE 7]>
-  <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
+	echo '  <style type="text/css">.sticky-footer #body-container{padding-bottom:'.$stickyFooterHeight.'px;}
+  .sticky-footer #footer{margin-top:-'.$stickyFooterHeight.'px;height:'.$stickyFooterHeight.'px;}
+  </style>
+  <!--[if !IE 7]>
+  <style type="text/css">.sticky-footer #footer-push {display:table;height:100%}</style>
   <![endif]-->';
 } ?>
 <?php if ($IECSS3) {
@@ -179,10 +183,20 @@ echo "\n"; ?>
 				
 				<?php echo $renderer->render('header', $jexhtml, null);  ?>
 				
-				<?php if ($showPageLinks) : ?>
+				<?php if ($showPageLinks) : ?>						
+					<ul id="access">
+						<li>Jump to:</li>
+						<li><a href="<?php echo $baseUrl; ?>index.php#content" class="to-content">Content</a></li>					
+						<li><a href="<?php echo $baseUrl; ?>index.php#nav" class="to-nav">Navigation</a></li>
+						<li><a href="<?php echo $baseUrl; ?>index.php#additional" class="to-additional">Additional Information</a></li>
+					</ul>				
+				<?php endif; ?>	
+				
+				<?php if ($enableSwitcher) : ?>
 					<ul id="style-switch">
-						<li class="narrow"><a href="#" onclick="setActiveStyleSheet('diagnostic'); return false;" title="Diagnostic">Diagnostic Mode</a></li>
-						<li class="wide"><a href="#" onclick="setActiveStyleSheet('normal'); return false;" title="Normal">Normal Mode</a></li>
+						<li><a href="#" onclick="setActiveStyleSheet('wireframe'); return false;" title="Wireframe">Wireframe</a></li>
+						<li><a href="#" onclick="setActiveStyleSheet('diagnostic'); return false;" title="Diagnostic">Diagnostic Mode</a></li>
+						<li><a href="#" onclick="setActiveStyleSheet('normal'); return false;" title="Normal">Normal Mode</a></li>
 					</ul>
 				<?php endif; ?>
 				
@@ -355,9 +369,9 @@ echo "\n"; ?>
 		</div><!-- end body-container -->
 	</div><!-- end footer-push -->
 	
-	<div id="footer" class="clear">
+	<div id="footer" class="clear clearfix">
 		<div class="gutter clearfix">
-			<a id="to-page-top" href="<?php echo $this->baseurl ?>#top">Back to Top</a>
+			<a id="to-page-top" href="<?php echo $baseurl; ?>index.php#page-top">Back to Top</a>
 			<?php echo $renderer->render('footer', $jexhtml, null);  ?>
 		</div><!--end gutter -->
 	</div><!-- end footer -->
