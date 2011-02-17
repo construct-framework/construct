@@ -485,7 +485,7 @@
 			<option value="0">No</option>
 		</param>		
 		<param type="panel" title="Layout" />			
-		<param name="siteWidth" type="text" default="80.5" label="Site Width" description="Define the overall width of the layout. Enter only a number, no units, as you will choose which unit to use below." size="10" />	
+		<param name="siteWidth" type="text" default="80.5" label="Site Width" description="Define the overall width of the layout. Enter only a number, no units, as you will choose which unit to use below." size="5" />	
 		<param name="siteWidthType" type="radio" default="max-width" label="Site Width Style" description="Set whether to use a fluid max-width or fixed width layout.">
 			<option value="max-width">Fluid Max-width</option>
 			<option value="width">Fixed Width</option>
@@ -516,28 +516,27 @@
 		<param name="mtemplate" type="filelist" default="mobile.php" label="Mobile Sub-template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile-offline\.php" description="Name of mobile friendly sub-template located within this templates' mobile folder. Default is mobile.php" />
 		<param name="mtemplateoffline" type="filelist" default="mobile-offline.php" label="Offline Mobile Template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile\.php" description="Name of offline mobile friendly sub-template located within this templates' mobile folder. Default is mobile-offline.php." />						
 		<param type="panel" title="Typography" />	
-		<param name="fontFamily" type="list" default="" label="Font Family" description="The font family to be used.">
-			<option value="">- None Selected -</option>			
-			<option value="Arial, Helvetica, sans-serif">Arial</option>
-			<option value="Arial Black, Gadget, sans-serif">Arial Black</option>
-			<option value="&quot;Courier New&quot;, Courier, monospace">Courier New</option>			
-			<option value="Georgia, serif">Georgia</option>
-			<option value="Impact, Charcoal, sans-serif">Impact</option>			
-			<option value="&quot;Lucida Console&quot;, Monaco, monospace">Lucida Console</option>	
-			<option value='"Lucida Grande",Lucida,Verdana,sans-serif'>Lucida Grande</option>								
-			<option value="&quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, sans-serif">Lucida Sans</option>
-			<option value="&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif">Palatino</option>			
-			<option value="Tahoma, Geneva, sans-serif">Tahoma</option>
-			<option value="&quot;Times New Roman&quot;, Times, serif">Times New Roman</option>
-			<option value="&quot;Trebuchet MS&quot;, Helvetica, sans-serif">Trebuchet</option>
-			<option value="Verdana, Geneva, sans-serif">Verdana</option>
+		<param name="baseFontSize" type="text" default="76" label="Base Font Size (%)" description="The base font size, in percentage, used for typography and layout. Default is 76%, which is 12px in most modern browsers. Calculate em based dims as target dim(px) / container dim(px) = result in em" size="1" />		
+		<param name="fontFamily" type="list" default="" label="Base Font Family" description="The font family to be used.">
+			<option value="">- None Selected -</option>		
+			<option value="arial">Arial</option>
+			<option value="arial-black">Arial Black</option>
+			<option value="courier">Courier New</option>			
+			<option value="georgia">Georgia</option>
+			<option value="impact">Impact</option>			
+			<option value="lucida-console">Lucida Console</option>	
+			<option value="lucida-grande">Lucida Grande</option>								
+			<option value="lucida-sans">Lucida Sans</option>
+			<option value="palatino">Palatino</option>			
+			<option value="tahoma">Tahoma</option>
+			<option value="times">Times New Roman</option>
+			<option value="trebuchet">Trebuchet</option>
+			<option value="verdana">Verdana</option>
 		</param>
-		<param name="fontFamilyTargets" type="text" default="body" label="Font Family Targets" description="The html elements, CSS IDs, and classes to apply the selected font to." size="50" />
-		<param name="fontFamilySize" type="text" default="76%" label="Font Family Size" description="Define the font size, including the unit of measure, of the font family defined above." size="10" />
 		<param type="spacer" default=" " />	
 		<param name="customFontFamily" type="text" default="" label="Custom Font Family" description="Freely define your own font family" size="50" />		
 		<param name="customFontFamilyTargets" type="text" default="" label="Custom Font Family Targets" description="The html elements, CSS IDs, and classes to apply the custom defined font family to." size="50" />
-		<param name="customFontFamilySize" type="text" default="76%" label="Custom Font Family Size" description="Define the font size, including the unit of measure, of the font family defined above." size="10" />		
+		<param name="customFontFamilySize" type="text" default="76%" label="Custom Font Family Size" description="Define the font size, including the unit of measure, of the font family defined above." size="5" />		
 		<param type="spacer" default=" " />
 		<param name="googleWebFont" type="list" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information.">
 			<option value="">- None Selected -</option>
@@ -619,7 +618,7 @@
 			<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>											
 		</param>
 		<param name="googleWebFontTargets" type="text" default="h1,h2,h3,h4,h5,h6" label="Google Web Font Targets" description="The html elements, CSS IDs, and classes to apply the selected Google Web Font to." size="50" />
-		<param name="googleWebFontSize" type="text" default="2.5em" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above." size="10" />				
+		<param name="googleWebFontSize" type="text" default="2.5em" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above." size="5" />				
 		<param type="spacer" default=" " />
 		<param name="googleWebFont2" type="list" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information.">
 			<option value="">- None Selected -</option>
@@ -701,7 +700,7 @@
 			<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>											
 		</param>
 		<param name="googleWebFontTargets2" type="text" default="" label="Google Web Font Targets" description="The html elements, CSS IDs, and classes to apply the selected Google Web Font to." size="50" />
-		<param name="googleWebFontSize2" type="text" default="" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above." size="10" />			
+		<param name="googleWebFontSize2" type="text" default="" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above." size="5" />			
 		<param type="spacer" default=" " />
 		<param name="googleWebFont3" type="list" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information.">
 			<option value="">- None Selected -</option>
@@ -783,7 +782,7 @@
 			<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>											
 		</param>
 		<param name="googleWebFontTargets3" type="text" default="" label="Google Web Font Targets" description="The html elements, CSS IDs, and classes to apply the selected Google Web Font to." size="50" />
-		<param name="googleWebFontSize3" type="text" default="" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above." size="10" />			
+		<param name="googleWebFontSize3" type="text" default="" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above." size="5" />			
 		<param type="panel" title="Version Check" />			
 		<param label="Version Check" type="upgradecheck"/>
 		<param type="panels" />			
