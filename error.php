@@ -148,7 +148,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 echo "\n"; ?>
 </head>
 
-<body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; ?> error">
+<body class="<?php echo $columnLayout; if ($bodyFontFamily) echo ' '.$bodyFontFamily; if($useStickyFooter) echo ' sticky-footer'; ?> error">
 	<div id="footer-push">
 		<?php if ($supraModuleClass) : ?>
 			<div id="top" class="clearfix">
