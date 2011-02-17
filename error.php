@@ -22,7 +22,7 @@ if ($offLine) {
 $columnLayout			= 'left-1-main-right-1';
 $customStyleSheet 		= 'example.css';
 $enableSwitcher 		= '0';
-$fontFamily 			= 'lucida-grande';
+$bodyFontFamily 		= 'lucida-grande';
 $fullWidth				= '1';
 $IECSS3					= '1';
 $IECSS3Targets			= '.drop-shadow, .outline, .rounded, ul.menu li, ul.menu ul, #nav,#content-left .moduletable, #content-left .moduletable_menu, #content-right .moduletable, #content-right .moduletable_menu, #content-top .moduletable, #content-top .moduletable_menu, #sub-nav .moduletable, #sub-nav .moduletable_menu';
@@ -149,7 +149,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 echo "\n"; ?>
 </head>
 
-<body class="<?php echo $fontFamily.' '.$columnLayout; if($useStickyFooter) echo ' sticky-footer'; ?> error">
+<body class="<?php echo $columnLayout; if ($bodyFontFamily) echo ' '.$bodyFontFamily; if($useStickyFooter) echo ' sticky-footer'; ?> error">
 	<div id="footer-push">
 		<?php if ($supraModuleClass) : ?>
 			<div id="top" class="clearfix">

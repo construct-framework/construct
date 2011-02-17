@@ -516,8 +516,7 @@
 		<param name="mtemplate" type="filelist" default="mobile.php" label="Mobile Sub-template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile-offline\.php" description="Name of mobile friendly sub-template located within this templates' mobile folder. Default is mobile.php" />
 		<param name="mtemplateoffline" type="filelist" default="mobile-offline.php" label="Offline Mobile Template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile\.php" description="Name of offline mobile friendly sub-template located within this templates' mobile folder. Default is mobile-offline.php." />						
 		<param type="panel" title="Typography" />	
-		<param name="baseFontSize" type="text" default="76" label="Base Font Size (%)" description="The base font size, in percentage, used for typography and layout. Default is 76%, which is 12px in most modern browsers. Calculate em based dims as target dim(px) / container dim(px) = result in em" size="1" />		
-		<param name="fontFamily" type="list" default="" label="Base Font Family" description="The font family to be used.">
+		<param name="bodyFontFamily" type="list" default="" label="Body Font Family" description="The body font family to be used.">
 			<option value="">- None Selected -</option>		
 			<option value="arial">Arial</option>
 			<option value="arial-black">Arial Black</option>
@@ -534,9 +533,9 @@
 			<option value="verdana">Verdana</option>
 		</param>
 		<param type="spacer" default=" " />	
-		<param name="customFontFamily" type="text" default="" label="Custom Font Family" description="Freely define your own font family" size="50" />		
-		<param name="customFontFamilyTargets" type="text" default="" label="Custom Font Family Targets" description="The html elements, CSS IDs, and classes to apply the custom defined font family to." size="50" />
-		<param name="customFontFamilySize" type="text" default="76%" label="Custom Font Family Size" description="Define the font size, including the unit of measure, of the font family defined above." size="5" />		
+		<param name="customFontFamily" type="text" default="" label="Custom Font Family" description="Freely define your own font family." size="50" />		
+		<param name="customFontFamilyTargets" type="text" default="" label="Font Family Targets" description="A comma seperated list of  the html elements, CSS IDs, and classes to apply the custom defined font family to. If targeting the body, be sure to set the Body Font Family to None Selected." size="50" />
+		<param name="customFontFamilySize" type="text" default="76%" label="Custom Font Family Size" description="Define the font size, including the unit of measure, of the font family defined above. Percentage is preferred. NOTE: Construct's base typography uses a font size of 76%, which is 12px in most modern browsers." size="5" />		
 		<param type="spacer" default=" " />
 		<param name="googleWebFont" type="list" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information.">
 			<option value="">- None Selected -</option>
@@ -617,8 +616,8 @@
 			<option value="Walter+Turncoat">Walter Turncoat</option>
 			<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>											
 		</param>
-		<param name="googleWebFontTargets" type="text" default="h1,h2,h3,h4,h5,h6" label="Google Web Font Targets" description="The html elements, CSS IDs, and classes to apply the selected Google Web Font to." size="50" />
-		<param name="googleWebFontSize" type="text" default="2.5em" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above." size="5" />				
+		<param name="googleWebFontTargets" type="text" default="h1,h2,h3,h4,h5,h6" label="Google Web Font Targets" description="A comma seperated list of the html elements, CSS IDs, and classes to apply the selected Google Web Font to. If targeting the body, be sure to set the Body Font Family to None Selected." size="50" />
+		<param name="googleWebFontSize" type="text" default="2.5em" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above. Percentage is preferred. NOTE: Construct's base typography uses a font size of 76%, which is 12px in most modern browsers." size="5" />				
 		<param type="spacer" default=" " />
 		<param name="googleWebFont2" type="list" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information.">
 			<option value="">- None Selected -</option>
@@ -699,8 +698,8 @@
 			<option value="Walter+Turncoat">Walter Turncoat</option>
 			<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>											
 		</param>
-		<param name="googleWebFontTargets2" type="text" default="" label="Google Web Font Targets" description="The html elements, CSS IDs, and classes to apply the selected Google Web Font to." size="50" />
-		<param name="googleWebFontSize2" type="text" default="" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above." size="5" />			
+		<param name="googleWebFontTargets2" type="text" default="" label="Google Web Font Targets" description="A comma seperated list of the html elements, CSS IDs, and classes to apply the selected Google Web Font to. If targeting the body, be sure to set the Body Font Family to None Selected." size="50" />
+		<param name="googleWebFontSize2" type="text" default="" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above. Percentage is preferred. NOTE: Construct's base typography uses a font size of 76%, which is 12px in most modern browsers." size="5" />			
 		<param type="spacer" default=" " />
 		<param name="googleWebFont3" type="list" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information.">
 			<option value="">- None Selected -</option>
@@ -781,8 +780,8 @@
 			<option value="Walter+Turncoat">Walter Turncoat</option>
 			<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>											
 		</param>
-		<param name="googleWebFontTargets3" type="text" default="" label="Google Web Font Targets" description="The html elements, CSS IDs, and classes to apply the selected Google Web Font to." size="50" />
-		<param name="googleWebFontSize3" type="text" default="" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above." size="5" />			
+		<param name="googleWebFontTargets3" type="text" default="" label="Google Web Font Targets" description="A comma seperated list of A comma seperated list of the html elements, CSS IDs, and classes to apply the selected Google Web Font to. If targeting the body, be sure to set the Body Font Family to None Selected." size="50" />
+		<param name="googleWebFontSize3" type="text" default="" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above. Percentage is preferred. NOTE: Construct's base typography uses a font size of 76%, which is 12px in most modern browsers." size="5" />			
 		<param type="panel" title="Version Check" />			
 		<param label="Version Check" type="upgradecheck"/>
 		<param type="panels" />			
