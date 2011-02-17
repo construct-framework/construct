@@ -16,46 +16,178 @@ img,a img{border:0}
 body{font-size:76%/* 12px in most modern browsers - used as basis of layout and typography. Calculate em based dims as "target dim(px) / container dim(px) = result in em" */}
 #body-container,
 #supra{max-width:80.5em/* 966px / 12px = 80.5em */;margin:0 auto;padding:0}
-#load-first{float:left}
 
-.main-only #content-main{float:left;width:100%}
-.main-only #load-first{width:100%}
+#load-first{float:left;}
+.main-only #content-main{float:left;width:100%;}
+.main-only #load-first{width:100%;}
 
-.left-1-main #load-first{width:100%}
-.left-1-main #content-main{float:right;width:80% !important;width:78%}
-.left-1-main #content-left{float:left;width:20%}
+.left-1-main #load-first{width:100%;}
+.left-1-main #content-main{float:right;width:80%;}
+.left-1-main #content-left{float:left;width:20%;}
 
-.left-2-main #load-first{width:100%}
-.left-2-main #content-main{float:right;width:60% !important;width:58%}
-.left-2-main #content-left{float:left;width:40%}
+.left-2-main #load-first{width:100%;}
+.left-2-main #content-main{float:right;width:60%;}
+.left-2-main #content-left{float:left;width:40%;}
 
-.main-right-1 #content-main{float:left;width:100%}
-.main-right-1 #load-first{width:80% !important;width:78%}
-.main-right-1 #content-right{float:right;width:20%}
+.main-right-1 #content-main{float:left;width:100%;}
+.main-right-1 #load-first{width:80%;}
+.main-right-1 #content-right{float:right;width:20%;}
 
-.main-right-2 #content-main{float:left;width:100%}
-.main-right-2 #load-first{width:60% !important;width:58%}
-.main-right-2 #content-right{float:right;width:40%}
+.main-right-2 #content-main{float:left;width:100%;}
+.main-right-2 #load-first{width:60%;}
+.main-right-2 #content-right{float:right;width:40%;}
 
-.left-1-main-right-1 #load-first{width:80% !important;width:78%} 
-.left-1-main-right-1 #content-main{float:right;width:74.2% !important;width:72.2%}
-.left-1-main-right-1 #content-left{float:left;width:25.8%}
-.left-1-main-right-1 #content-right{float:right;width:20%}
+.left-1-main-right-1 #load-first{width:80%;} 
+.left-1-main-right-1 #content-main{float:right;width:74.2%;}
+.left-1-main-right-1 #content-left{float:left;width:25.8%;}
+.left-1-main-right-1 #content-right{float:right;width:20%;}
 
-.left-2-main-right-1 #load-first{width:80% !important;width:78%} 
-.left-2-main-right-1 #content-main{float:right;width:60% !important;width:58%} 
-.left-2-main-right-1 #content-left{float:left;width:40%}
-.left-2-main-right-1 #content-right{float:right;width:20%}
+.left-2-main-right-1 #load-first{width:80%;} 
+.left-2-main-right-1 #content-main{float:right;width:60%;} 
+.left-2-main-right-1 #content-left{float:left;width:40%;}
+.left-2-main-right-1 #content-right{float:right;width:20%;}
 
-.left-1-main-right-2 #load-first{width:60% !important;width:58%} 
-.left-1-main-right-2 #content-main{float:right;width:65.5% !important;width:63.5%}
-.left-1-main-right-2 #content-left{float:left;width:34.5%}
-.left-1-main-right-2 #content-right{float:right;width:40%}
+.left-1-main-right-2 #load-first{width:60%;} 
+.left-1-main-right-2 #content-main{float:right;width:65.5%;}
+.left-1-main-right-2 #content-left{float:left;width:34.5%;}
+.left-1-main-right-2 #content-right{float:right;width:40%;}
 
-.left-2-main-right-2 #load-first{width:60% !important;width:58%} 
-.left-2-main-right-2 #content-main{float:right;width:33% !important;width:31%} 
-.left-2-main-right-2 #content-left{float:left;width:66%}
-.left-2-main-right-2 #content-right{float:right;width:40%}
+.left-2-main-right-2 #load-first{width:60%;} 
+.left-2-main-right-2 #content-main{float:right;width:33%;} 
+.left-2-main-right-2 #content-left{float:left;width:66%;}
+.left-2-main-right-2 #content-right{float:right;width:40%;}
+
+
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+	
+/* continue here*/	
+.media-query.left-2-main-right-2 #content-main{width:60%;}
+.media-query.left-2-main-right-2 #content-left{width:30%;}
+.media-query.left-2-main-right-2 #content-left div {width:100%;clear:left}
+
+
+.media-query.left-1-main-right-1 #load-first{width:100%;}
+.media-query.left-1-main-right-1 #content-right{width:100%;}
+	
+.media-query.left-2-main-right-1 #load-first{width:100%;}
+.media-query.left-2-main-right-1 #content-right{width:100%;}
+	
+.media-query.left-1-main-right-2 #load-first{width:100%;}
+.media-query.left-1-main-right-2 #content-right{width:100%;}
+	
+.media-query.left-2-main-right-2 #load-first{width:100%;}
+.media-query.left-2-main-right-2 #content-right{width:100%;}	
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+.media-query.left-1-main #content-main{width:100%;}
+.media-query.left-1-main #content-left{width:50%;}
+	
+.media-query.left-2-main #content-main{width:100%;}
+.media-query.left-2-main #content-left{width:100%;}
+.media-query.left-2-main #left {width:50%;}
+.media-query.left-2-main #left2{width:50%;}
+	
+.media-query.main-right-1 #content-main {width:100%;}
+.media-query.main-right-1 #load-first{width:100%;}
+.media-query.main-right-1 #content-right{width:100%;}
+	
+.media-query.main-right-2 #content-main{width:100%;}
+.media-query.main-right-2 #load-first{width:100%;}
+.media-query.main-right-2 #content-right{width:100%;}
+.media-query.main-right-2 #right {width:50%;}
+.media-query.main-right-2 #right2 {width:50%;}
+	
+.media-query.left-1-main-right-1 #load-first{width:100%;} 
+.media-query.left-1-main-right-1 #content-main{width:100%;}
+.media-query.left-1-main-right-1 #content-left{width:50%;}
+.media-query.left-1-main-right-1 #content-right{width:100%;}
+	
+.media-query.left-2-main-right-1 #load-first{width:100%;} 
+.media-query.left-2-main-right-1 #content-main{width:100%;} 
+.media-query.left-2-main-right-1 #content-left{width:100%;}
+.media-query.left-2-main-right-1 #content-right{width:100%;}
+.media-query.left-2-main #left {width:50%;}
+.media-query.left-2-main #left2 {width:50%;}
+
+.media-query.left-1-main-right-2 #load-first{width:100%;} 
+.media-query.left-1-main-right-2 #content-main{width:100%;}
+.media-query.left-1-main-right-2 #content-left{width:100%;}
+.media-query.left-1-main-right-2 #content-right{width:100%;}
+.media-query.left-1-main-right-2 #right {width:50%;}
+.media-query.left-1-main-right-2 #right2 {width:50%;}
+
+.media-query.left-2-main-right-2 #load-first{width:100%;} 
+.media-query.left-2-main-right-2 #content-main{width:100%;} 
+.media-query.left-2-main-right-2 #content-left{width:100%;}
+.media-query.left-2-main-right-2 #content-right{width:100%;}
+.media-query.left-2-main-right-2 #left {width:50%;}
+.media-query.left-2-main-right-2 #left2 {width:50%;}
+.media-query.left-2-main-right-2 #right {width:50%;}
+.media-query.left-2-main-right-2 #right2 {width:50%;}
+
+/* -- dynamic module widths-- */
+.media-query .count-1,
+.media-query .count-2,
+.media-query .count-3,
+.media-query .count-4,
+.media-query .count-5,
+.media-query .count-6{width:50%;}
+
+}
+
+@media only screen and (max-width: 480px) {
+	
+.media-query.left-1-main #content-main{width:100%;}
+.media-query.left-1-main #content-left{width:100%;}
+
+.media-query.left-2-main #content-main{width:100%;}
+.media-query.left-2-main #content-left{width:100%;}
+
+.media-query.main-right-1 #content-main{width:100%;}
+.media-query.main-right-1 #load-first{width:100%;}
+.media-query.main-right-1 #content-right{width:100%;}
+
+.media-query.main-right-2 #content-main{width:100%;}
+.media-query.main-right-2 #load-first{width:100%;}
+.media-query.main-right-2 #content-right{width:100%;}
+.media-query.left-1-main-right-2 #right {width:100%;}
+.media-query.left-1-main-right-2 #right2 {width:100%;}
+
+.media-query.left-1-main-right-1 #load-first{width:100%;}
+.media-query.left-1-main-right-1 #content-main{width:100%;}
+.media-query.left-1-main-right-1 #content-left{width:100%;}
+.media-query.left-1-main-right-1 #content-right{width:100%;}
+
+.media-query.left-2-main-right-1 #load-first{width:100%;}
+.media-query.left-2-main-right-1 #content-main{width:100%;}
+.media-query.left-2-main-right-1 #content-left{width:100%;}
+.media-query.left-2-main-right-1 #content-right{width:100%;}
+
+.media-query.left-1-main-right-2 #load-first{width:100%;}
+.media-query.left-1-main-right-2 #content-main{width:100%;}
+.media-query.left-1-main-right-2 #content-left{width:100%;}
+.media-query.left-1-main-right-2 #content-right{width:100%;}
+
+.media-query.left-2-main-right-2 #load-first{width:100%;}
+.media-query.left-2-main-right-2 #content-main{width:100%;}
+.media-query.left-2-main-right-2 #content-left{width:100%;}
+.media-query.left-2-main-right-2 #content-right{width:100%;}
+.media-query.left-2-main #left #content-left{width:100%;}
+.media-query.left-2-main #left2 #content-left{width:100%;}
+
+/* -- dynamic module widths-- */
+.media-query .count-1,
+.media-query .count-2,
+.media-query .count-3,
+.media-query .count-4,
+.media-query .count-5,
+.media-query .count-6{width:100%;}
+
+.media-query #content-right .gutter { margin: 0 10px 0 0;}
+
+}
 
 /* -- spacing rules -- */
 .gutter{margin:10px}
@@ -65,9 +197,9 @@ body{font-size:76%/* 12px in most modern browsers - used as basis of layout and 
 #top-user-modules .gutter{margin-bottom:0}
 
 .cols1{display: block;float: none !important; margin: 0 !important;}
-.cols2{width: 47.8%;padding:1%}			
-.cols3{width: 30.9%;padding:1%}			
-.cols4{width: 22.4%;padding:1%}
+.cols2{width: 47.8%;padding:1%;}			
+.cols3{width: 30.9%;padding:1%;}			
+.cols4{width: 22.4%;padding:1%;}
 
 .column1,
 .column2,
@@ -75,12 +207,12 @@ body{font-size:76%/* 12px in most modern browsers - used as basis of layout and 
 .column4{float:left}
 
 /* -- dynamic module widths-- */
-.count-1{float:left;width:100%} 
-.count-2{float:left;width:50%}
-.count-3{float:left;width:33.3%}
-.count-4{float:left;width:25%}
-.count-5{float:left;width:20%}
-.count-6{float:left;width:16.6%}
+.count-1{float:left;width:100%;} 
+.count-2{float:left;width:50%;}
+.count-3{float:left;width:33.3%;}
+.count-4{float:left;width:25%;}
+.count-5{float:left;width:20%;}
+.count-6{float:left;width:16.6%;}
 
 /* -- Base Typography -- *//* Inspration from http://www.thenoodleincident.com/tutorials/typography/template.html*/
 body{color:#333;line-height:1.8em}
@@ -109,7 +241,7 @@ blockquote{border-left:10px solid #ddd;margin-left:10px}
 code{font-family:"Courier New", Courier, monospace;font-size:1em;white-space:pre}
 div{font-size:1em}
 em{font-style:italic}
-fieldset{font-size:100%}
+fieldset{font-size:100%;}
 form table{font-size:1.1em}
 form{margin:0;padding:0}
 hr{display:none}
@@ -129,7 +261,7 @@ ol,ul,li{font-size:1em;margin:0.2em 0 0.1em 0}
 li{margin-left:1.25em}
 p{font-size:1em;line-height:1.8em}
 pre{font-family:monospace;font-size:1em;overflow-x: auto; /* Firefox 2 */ white-space: pre-wrap; /* css-3 */ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */ white-space: -pre-wrap; /* Opera 4-6 */	white-space: -o-pre-wrap; /* Opera 7 */ word-wrap: break-word; /* Internet Explorer 5.5+ */}
-table{font-size:1em;line-height:1.8em;margin:1.5em 0;padding:0;width:100%}
+table{font-size:1em;line-height:1.8em;margin:1.5em 0;padding:0;width:100%;}
 table caption{font-weight:bold;margin:0;padding:0 0 1.5em}
 textarea{font-size:100%;font-family:arial, serif}
 td{font-size:1em;vertical-align:top}
@@ -175,7 +307,7 @@ strong{font-weight:bold}
 .button2-left .blank{background:url(../images/editor-buttons/j_button2_blank.png) 100% 0 no-repeat}
 .buttonheading{vertical-align:top;float:right}
 .column_separator table.contentpaneopen{margin-left:10px}
-.counter{float:left;clear:left;width:25%}			
+.counter{float:left;clear:left;width:25%;}			
 .componentheading{padding-top:10px}
 .contentdescription{padding:10px 0;overflow:hidden}
 .createdate,
@@ -183,7 +315,7 @@ strong{font-weight:bold}
 .date-container {float:right}
 .display{text-align:right}	
 .drop-shadow{background:#fff;-webkit-box-shadow:2px 2px 6px rgba(0,0,0,0.6); -moz-box-shadow:2px 2px 6px rgba(0,0,0,0.6); box-shadow:2px 2px 6px rgba(0,0,0,0.6); padding:5px;margin:5px;}
-ol.form{float:left; list-style:none; width:100%}
+ol.form{float:left; list-style:none; width:100%;}
 ol.form li{clear:both;float:left;margin:0 0 10px;/*width:300px;*/width:100%;position:relative}
 ol.form label{cursor:pointer;display:block;font-weight:bold;margin:0 10px 0 0}
 ol.form input, 
@@ -287,9 +419,9 @@ td.sectiontableheader:last-child,
 /* -- CSS IDs -- */
 #access{float:left;clear:left}
 #access li{float:left;margin:0;padding:2px 5px 3px}
-#bottom-user-modules{float:left;width:100%}
+#bottom-user-modules{float:left;width:100%;}
 #bottom-user-modules .moduletable{padding-top:15px}
-#branding{float:left;margin:0;padding:10px 0 10px 20px;text-align:left;width:40%}
+#branding{float:left;margin:0;padding:10px 0 10px 20px;text-align:left;width:40%;}
 #content-container{margin:0;padding:0;text-align:left}
 #content-main ul{margin-bottom:1.25em; list-style:disc}
 #content-left h3{padding:0}
@@ -313,7 +445,7 @@ td.sectiontableheader:last-child,
 #logo a:hover{background:url(../images/logo.png) 0 0 no-repeat;display:block;width:300px;height:103px;text-decoration:none;text-indent:-9000em}
 #logo a:focus{outline:none}
 #mod_login_password,
-#mod_login_username{width:80%}
+#mod_login_username{width:80%;}
 #page ol,#content ol{list-style:decimal}
 #page ul, #content ul{list-style:disc}
 #siteinfo-legal{text-align:left;width:500px;margin:0 auto}	
@@ -337,7 +469,7 @@ ul.menu a,
 ul.menu span.seprator{background:#fff;display:block;padding:.1em .7em/*use padding to indent text*/}
 ul.menu li{float:left;position:relative}
 ul.menu ul{position:absolute;left:-999em;width:16em;/*sub-menu widths*/z-index:999}
-ul.menu ul li{width:100%}
+ul.menu ul li{width:100%;}
 ul.menu ul ul{margin:0 0 0 100%;top:0}
 #nav:after,
 #content-left ul.menu:after,
@@ -365,7 +497,7 @@ ul.menu ul ul{margin:0 0 0 100%;top:0}
 /*#nav ul.menu ul {width:1024px;border:none}
 #nav ul.menu ul li {width:13em}
 #nav ul.menu ul li a{font-size:.8em;}
-#nav ul.menu ul ul{margin:0 0 0 0;top:100%}
+#nav ul.menu ul ul{margin:0 0 0 0;top:100%;}
 
 /* -- Left/Right Aligned Dropbox Second Level-- */
 /*#nav ul.menu ul {width:400px;}
@@ -374,12 +506,12 @@ ul.menu ul ul{margin:0 0 0 100%;top:0}
 #nav ul.menu ul ul{margin:0 0 0 100%;top:0}
 
 /* -- Absolutely Positioned Centered Menu -- */
-/*#nav{width:100%}
-#nav ul{position:relative;float:right;right:50%}
+/*#nav{width:100%;}
+#nav ul{position:relative;float:right;right:50%;}
 #nav ul li{position:relative;float:left;left:50%;margin:0}
 /* -- Second Level Centered Suckerfish-- */
 /*#nav ul li ul{display:none;position:absolute;top:100%;left:0;right:auto}
-#nav ul li ul li{left:auto;margin:0;clear:left;width:100%}
+#nav ul li ul li{left:auto;margin:0;clear:left;width:100%;}
 #nav ul li:hover ul{display:block}
 #nav ul li.last ul{left:auto;right:0}/*Flip last item to keep witin area*/
 /* -- Third Level Centered Suckerfish-- */
@@ -425,11 +557,11 @@ ul.menu li ul li ul li ul li.parent li span.separator:after{content:""}
 /* -- CSS Clearing -- */
 .clearfix:after,.clearfix:before{clear:both;content:".";font:1px/0;display:block;height:0;visibility:hidden}/*:before is for gutter margin top*/
 .clearfix{display:inline-block;display:block;min-width:0}
-* html .clearfix{height:1%} 
+* html .clearfix{height:1%;} 
 .clear{clear:both}
 /* -- Sticky Footer -- *//*http://www.cssstickyfooter.com/*/
-html, .sticky-footer{height:100%}
-.sticky-footer #footer-push{min-height:100%}
+html, .sticky-footer{height:100%;}
+.sticky-footer #footer-push{min-height:100%;}
 .sticky-footer #footer{position:relative;clear:both}
 .sticky-footer:before{content:"";height:100%;float:left;width:0;margin-top:-32767px}/*Opera Fix*/
 
@@ -439,6 +571,6 @@ html, .sticky-footer{height:100%}
 .mod-preview-wrapper div.moduletable, .mod-preview-wrapper div.moduletable_menu, .mod-preview-wrapper div.moduletable_text, .mod-preview-wrapper ul.menu, .mod-preview-wrapper #breadcrumbs{opacity:0}
 .mod-preview-info{color:#fff;background:none;border:none;z-index:999;position:absolute;left:5px;top:5px;font-family:BebasNeueRegular;font-size:2em}
 #left .mod-preview-wrapper,#left2 .mod-preview-wrapper,#right .mod-preview-wrapper,#right2 .mod-preview-wrapper{height:940px}
-/*#breadcrumbs .mod-preview-wrapper{min-width:125px}.left-2-main-right-2 #content-left{width:33%}.left-2-main-right-2 #load-first{width:74% !important;}.left-2-main-right-2 #content-right{width:25%;}.left-2-main-right-2 #content-main{width:67% !important;}#syndicate{bottom:120px;left:80px;position:absolute;}*/
+/*#breadcrumbs .mod-preview-wrapper{min-width:125px}.left-2-main-right-2 #content-left{width:33%;}.left-2-main-right-2 #load-first{width:74% !important;}.left-2-main-right-2 #content-right{width:25%;}.left-2-main-right-2 #content-main{width:67% !important;}#syndicate{bottom:120px;left:80px;position:absolute;}*/
 
 /*bb*/

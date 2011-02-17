@@ -13,7 +13,7 @@
 <jdoc:include type="head" />
 </head>
 
-<body class="<?php echo $columnLayout; if ($bodyFontFamily) echo ' '.$bodyFontFamily; ; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId)	echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId;} ?>">
+<body class="<?php echo $columnLayout; if ($bodyFontFamily) echo ' '.$bodyFontFamily; if ($mediaQuerySupport) echo ' media-query'; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent.' '.$currentAlias; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId)	echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId;} ?>">
 
 	<div id="footer-push">
 		<a id="page-top" name="page-top"></a>

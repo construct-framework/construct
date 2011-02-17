@@ -2,7 +2,18 @@
 #load-first {height: 1%}
 #content-main{height:1%}
 #content-container ul li{ list-style-position:outside}
-/*#body-container {width: 80%}*/
+
+.left-1-main #content-main{width:78%}
+.left-2-main #content-main{width:58%}
+.main-right-1 #load-first{width:78%}
+.main-right-2 #load-first{width:58%}
+.left-1-main-right-1 #content-main{width:72.2%}
+.left-2-main-right-1 #load-first{width:78%} 
+.left-2-main-right-1 #content-main{width:58%} 
+.left-1-main-right-2 #load-first{width:58%} 
+.left-1-main-right-2 #content-main{width:63.5%}
+.left-2-main-right-2 #load-first{width:58%} 
+.left-2-main-right-2 #content-main{width:31%} 
 
 /* Dynamic max-widths for images and objects*/
 .main-only #content-main img,

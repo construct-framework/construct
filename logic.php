@@ -47,6 +47,7 @@ $loadMoo 				= $this->params->get('loadMoo');
 $loadModal				= $this->params->get('loadModal');
 $loadjQuery 			= $this->params->get('loadjQuery');
 $mdetect 				= $this->params->get('mdetect');
+$mediaQuerySupport		= $this->params->get('mediaQuerySupport');
 $mtemplate				= $this->params->get('mtemplate');
 $mtemplateoffline		= $this->params->get('mtemplateoffline');
 $setGeneratorTag		= $this->params->get('setGeneratorTag');
