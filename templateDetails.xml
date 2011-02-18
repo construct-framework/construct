@@ -488,7 +488,7 @@
 			</fieldset>
 			<fieldset name="features">
 				<field label="TPL_JE_CONSTRUCT_PRO_FEATURES" type="spacer" />
-			</fieldset>						
+			</fieldset>			
 		</fields>
 	</config>	
 </extension>
