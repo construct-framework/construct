@@ -495,7 +495,11 @@
 			<option value="px">Pixel</option>
 			<option value="%">Percent</option>
 		</param>
-		<param name="mediaQuerySupport" type="radio" default="1" label="Media Query Support" description="Select Yes to enable media query support that will dynamically resize and rearrange your content columns based on your visitor's browser viewport.">
+		<param name="mediaQuerySupport" type="radio" default="0" label="Media Query Support" description="Select Yes to enable media query support that will dynamically resize and rearrange the layout based on your visitor's browser viewport.">
+		  <option value="1">Yes</option>
+		  <option value="0">No</option>
+		</param>
+		<param name="mediaQuerySupport" type="radio" default="0" label="Media Query Support" description="Select Yes to enable media query support that will dynamically resize and rearrange the layout based on your visitor's browser viewport.">
 		  <option value="1">Yes</option>
 		  <option value="0">No</option>
 		</param>		
