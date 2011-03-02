@@ -2,7 +2,7 @@
 defined('_JEXEC') or die;
 ?>
 
-<form action="index.php"  method="post" class="search<?php echo $params->get('moduleclass_sfx'); ?>">
+<form action="index.php?option=com_search&view=search"  method="post" class="search<?php echo $params->get('moduleclass_sfx'); ?>">
 	<label for="mod_search_searchword">
 		<?php echo JText::_('search') ?>
 	</label>

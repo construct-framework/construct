@@ -47,7 +47,6 @@ $loadMoo 				= $this->params->get('loadMoo');
 $loadModal				= $this->params->get('loadModal');
 $loadjQuery 			= $this->params->get('loadjQuery');
 $mdetect 				= $this->params->get('mdetect');
-$mediaQuerySupport		= $this->params->get('mediaQuerySupport');
 $mtemplate				= $this->params->get('mtemplate');
 $mtemplateoffline		= $this->params->get('mtemplateoffline');
 $setGeneratorTag		= $this->params->get('setGeneratorTag');
@@ -300,9 +299,9 @@ elseif(file_exists($categoryGroupCss)){
 elseif(file_exists($categoryCss)){
 		$cssFile = $template.'/css/category/category-'.$catId.'.css';}
 elseif(file_exists($sectionGroupCss)){
-		$cssFile = $template.'/css/section/'.$overrideGroup.'-section-'.$catId.'.css';}	
+		$cssFile = $template.'/css/section/'.$overrideGroup.'-section-'.$sectionId.'.css';}	
 elseif(file_exists($sectionCss)){
-		$cssFile = $template.'/css/section/section-'.$catId.'.css';}
+		$cssFile = $template.'/css/section/section-'.$sectionId.'.css';}
 elseif(file_exists($componentGroupCss)){
 		$cssFile = $template.'/css/component/'.$overrideGroup.'-'.$currentComponent.'.css';}		
 elseif(file_exists($componentCss)){
