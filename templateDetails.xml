@@ -2,13 +2,13 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="1.6" type="template" client="site" method="upgrade">
 	<name>je-construct-pro</name>
-	<creationDate>February 4th, 2011</creationDate>
+	<creationDate>March 2nd, 2011</creationDate>
 	<author>Joomla Engineering</author>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com</authorUrl>
 	<copyright>Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.6.523</version>
+	<version>1.6.614</version>
 	<description>TPL_JE_CONSTRUCT_PRO_DESCRIPTION</description>
 	<files>
 		<filename>css/diagnostic.css</filename>
@@ -26,11 +26,6 @@
 		<filename>css/item/index.html</filename>
 		<filename>elements/index.html</filename>
 		<filename>elements/upgradecheck.php</filename>
-		<filename>fonts/BebasNeue-webfont.eot</filename>
-		<filename>fonts/BebasNeue-webfont.svg</filename>
-		<filename>fonts/BebasNeue-webfont.ttf</filename>
-		<filename>fonts/BebasNeue-webfont.woff</filename>
-		<filename>fonts/index.html</filename>
 		<filename>html/modules.php</filename>
 		<filename>html/pagination.php</filename>
 		<filename>html/index.html</filename>
@@ -189,7 +184,7 @@
 					<option value="em">Em</option>
 					<option value="px">Pixel</option>
 					<option value="%">Percent</option>
-				</field>
+				</field>				
 				<field name="fluidMedia" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_FLUID_MEDIA_LABEL" description="TPL_JE_CONSTRUCT_PRO_FLUID_MEDIA_DESC">
 				  <option value="1">Yes</option>
 				  <option value="0">No</option>
@@ -236,11 +231,18 @@
 				<field type="spacer" default=" " />				
 				<field name="googleWebFont" type="list" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC">
 					<option value="">- None Selected -</option>
+					<option value="Allan">Allan</option>
 					<option value="Allerta">Allerta</option>
 					<option value="Allerta+Stencil">Allerta Stencil</option>
+					<option value="Anonymous+Pro">Anonymous Pro</option>
+					<option value="Anton">Anton</option>
 					<option value="Arimo">Arimo</option>
 					<option value="Arvo">Arvo</option>
+					<option value="Astloch">Astloch</option>
 					<option value="Bentham">Bentham</option>
+					<option value="Bevan">Bevan</option>
+					<option value="Buda">Buda</option>
+					<option value="Cabin">Cabin</option>
 					<option value="Calibri">Calibri</option>
 					<option value="Calligraffitti">Calligraffitti</option>
 					<option value="Cambria">Cambria</option>
@@ -248,9 +250,11 @@
 					<option value="Cardo">Cardo</option>
 					<option value="Cherry+Cream+Soda">Cherry Cream Soda</option>
 					<option value="Chewy">Chewy</option>
+					<option value="Coda">Coda</option>
 					<option value="Coming+Soon">Coming Soon</option>
 					<option value="Consolas">Consolas</option>
 					<option value="Copse">Copse</option>
+					<option value="Corben">Corben</option>
 					<option value="Corsiva">Corsiva</option>
 					<option value="Cousine">Cousine</option>
 					<option value="Covered+By+Your+Grace">Covered By Your Grace</option>
@@ -258,6 +262,7 @@
 					<option value="Crimson+Text">Crimson Text</option>
 					<option value="Crushed">Crushed</option>
 					<option value="Cuprum">Cuprum</option>
+					<option value="Dancing+Script">Dancing Script</option>
 					<option value="Droid+Sans">Droid Sans</option>
 					<option value="Droid+Sans+Mono">Droid Sans Mono</option>
 					<option value="Droid+Serif">Droid Serif</option>
@@ -265,6 +270,7 @@
 					<option value="GFS+Didot">GFS Didot</option>
 					<option value="GFS+Neohellenic">GFS Neohellenic</option>
 					<option value="Geo">Geo</option>
+					<option value="Goudy+Bookletter+1911">Goudy Bookletter 1911</option>
 					<option value="Gruppo">Gruppo</option>
 					<option value="Hanuman">Hanuman</option>
 					<option value="Homemade+Apple">Homemade Apple</option>
@@ -283,10 +289,16 @@
 					<option value="Josefin+Sans">Josefin Sans</option>
 					<option value="Josefin+Slab">Josefin Slab</option>
 					<option value="Just+Another+Hand">Just Another Hand</option>
+					<option value="Just+Me+Again+Down+Here">Just Me Again Down Here</option>
 					<option value="Kenia">Kenia</option>
 					<option value="Kranky">Kranky</option>
+					<option value="Kreon">Kreon</option>
+					<option value="Kristi">Kristi</option>
+					<option value="Lato">Lato</option>
+					<option value="Lekton">Lekton</option>
 					<option value="Lobster">Lobster</option>
 					<option value="Luckiest+Guy">Luckiest Guy</option>
+					<option value="Meddon">Meddon</option>
 					<option value="Merriweather">Merriweather</option>
 					<option value="Molengo">Molengo</option>
 					<option value="Mountains+of+Christmas">Mountains of Christmas</option>
@@ -298,17 +310,25 @@
 					<option value="PT+Sans">PT Sans</option>
 					<option value="PT+Sans+Caption">PT Sans Caption</option>
 					<option value="PT+Sans+Narrow">PT Sans Narrow</option>
+					<option value="PT+Serif">PT Serif</option>
 					<option value="Permanent+Marker">Permanent Marker</option>
 					<option value="Philosopher">Philosopher</option>
 					<option value="Puritan">Puritan</option>
+					<option value="Radley">Radley</option>
+					<option value="Raleway">Raleway</option>
 					<option value="Reenie+Beanie">Reenie Beanie</option>
 					<option value="Rock+Salt">Rock Salt</option>
-					<option value="Schoolbell,Slackey">Schoolbell,Slackey</option>
+					<option value="Schoolbell">Schoolbell</option>
+					<option value="Slackey">Slackey</option>
+					<option value="Sniglet">Sniglet</option>
 					<option value="Sunshiney">Sunshiney</option>
 					<option value="Syncopate">Syncopate</option>
+					<option value="Tangerine">Tangerine</option>
 					<option value="Tinos">Tinos</option>
+					<option value="Ubuntu">Ubuntu</option>
 					<option value="UnifrakturMaguntia">UnifrakturMaguntia</option>
 					<option value="Unkempt">Unkempt</option>
+					<option value="Vibur">Vibur</option>
 					<option value="Vollkorn">Vollkorn</option>
 					<option value="Walter+Turncoat">Walter Turncoat</option>
 					<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>									
@@ -318,11 +338,18 @@
 				<field type="spacer" default=" " />				
 				<field name="googleWebFont2" type="list" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC">
 					<option value="">- None Selected -</option>
+					<option value="Allan">Allan</option>
 					<option value="Allerta">Allerta</option>
 					<option value="Allerta+Stencil">Allerta Stencil</option>
+					<option value="Anonymous+Pro">Anonymous Pro</option>
+					<option value="Anton">Anton</option>
 					<option value="Arimo">Arimo</option>
 					<option value="Arvo">Arvo</option>
+					<option value="Astloch">Astloch</option>
 					<option value="Bentham">Bentham</option>
+					<option value="Bevan">Bevan</option>
+					<option value="Buda">Buda</option>
+					<option value="Cabin">Cabin</option>
 					<option value="Calibri">Calibri</option>
 					<option value="Calligraffitti">Calligraffitti</option>
 					<option value="Cambria">Cambria</option>
@@ -330,9 +357,11 @@
 					<option value="Cardo">Cardo</option>
 					<option value="Cherry+Cream+Soda">Cherry Cream Soda</option>
 					<option value="Chewy">Chewy</option>
+					<option value="Coda">Coda</option>
 					<option value="Coming+Soon">Coming Soon</option>
 					<option value="Consolas">Consolas</option>
 					<option value="Copse">Copse</option>
+					<option value="Corben">Corben</option>
 					<option value="Corsiva">Corsiva</option>
 					<option value="Cousine">Cousine</option>
 					<option value="Covered+By+Your+Grace">Covered By Your Grace</option>
@@ -340,6 +369,7 @@
 					<option value="Crimson+Text">Crimson Text</option>
 					<option value="Crushed">Crushed</option>
 					<option value="Cuprum">Cuprum</option>
+					<option value="Dancing+Script">Dancing Script</option>
 					<option value="Droid+Sans">Droid Sans</option>
 					<option value="Droid+Sans+Mono">Droid Sans Mono</option>
 					<option value="Droid+Serif">Droid Serif</option>
@@ -347,6 +377,7 @@
 					<option value="GFS+Didot">GFS Didot</option>
 					<option value="GFS+Neohellenic">GFS Neohellenic</option>
 					<option value="Geo">Geo</option>
+					<option value="Goudy+Bookletter+1911">Goudy Bookletter 1911</option>
 					<option value="Gruppo">Gruppo</option>
 					<option value="Hanuman">Hanuman</option>
 					<option value="Homemade+Apple">Homemade Apple</option>
@@ -365,10 +396,16 @@
 					<option value="Josefin+Sans">Josefin Sans</option>
 					<option value="Josefin+Slab">Josefin Slab</option>
 					<option value="Just+Another+Hand">Just Another Hand</option>
+					<option value="Just+Me+Again+Down+Here">Just Me Again Down Here</option>
 					<option value="Kenia">Kenia</option>
 					<option value="Kranky">Kranky</option>
+					<option value="Kreon">Kreon</option>
+					<option value="Kristi">Kristi</option>
+					<option value="Lato">Lato</option>
+					<option value="Lekton">Lekton</option>
 					<option value="Lobster">Lobster</option>
 					<option value="Luckiest+Guy">Luckiest Guy</option>
+					<option value="Meddon">Meddon</option>
 					<option value="Merriweather">Merriweather</option>
 					<option value="Molengo">Molengo</option>
 					<option value="Mountains+of+Christmas">Mountains of Christmas</option>
@@ -380,17 +417,25 @@
 					<option value="PT+Sans">PT Sans</option>
 					<option value="PT+Sans+Caption">PT Sans Caption</option>
 					<option value="PT+Sans+Narrow">PT Sans Narrow</option>
+					<option value="PT+Serif">PT Serif</option>
 					<option value="Permanent+Marker">Permanent Marker</option>
 					<option value="Philosopher">Philosopher</option>
 					<option value="Puritan">Puritan</option>
+					<option value="Radley">Radley</option>
+					<option value="Raleway">Raleway</option>
 					<option value="Reenie+Beanie">Reenie Beanie</option>
 					<option value="Rock+Salt">Rock Salt</option>
-					<option value="Schoolbell,Slackey">Schoolbell,Slackey</option>
+					<option value="Schoolbell">Schoolbell</option>
+					<option value="Slackey">Slackey</option>
+					<option value="Sniglet">Sniglet</option>
 					<option value="Sunshiney">Sunshiney</option>
 					<option value="Syncopate">Syncopate</option>
+					<option value="Tangerine">Tangerine</option>
 					<option value="Tinos">Tinos</option>
+					<option value="Ubuntu">Ubuntu</option>
 					<option value="UnifrakturMaguntia">UnifrakturMaguntia</option>
 					<option value="Unkempt">Unkempt</option>
+					<option value="Vibur">Vibur</option>
 					<option value="Vollkorn">Vollkorn</option>
 					<option value="Walter+Turncoat">Walter Turncoat</option>
 					<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>									
@@ -400,11 +445,18 @@
 				<field type="spacer" default=" " />				
 				<field name="googleWebFont3" type="list" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC">
 					<option value="">- None Selected -</option>
+					<option value="Allan">Allan</option>
 					<option value="Allerta">Allerta</option>
 					<option value="Allerta+Stencil">Allerta Stencil</option>
+					<option value="Anonymous+Pro">Anonymous Pro</option>
+					<option value="Anton">Anton</option>
 					<option value="Arimo">Arimo</option>
 					<option value="Arvo">Arvo</option>
+					<option value="Astloch">Astloch</option>
 					<option value="Bentham">Bentham</option>
+					<option value="Bevan">Bevan</option>
+					<option value="Buda">Buda</option>
+					<option value="Cabin">Cabin</option>
 					<option value="Calibri">Calibri</option>
 					<option value="Calligraffitti">Calligraffitti</option>
 					<option value="Cambria">Cambria</option>
@@ -412,9 +464,11 @@
 					<option value="Cardo">Cardo</option>
 					<option value="Cherry+Cream+Soda">Cherry Cream Soda</option>
 					<option value="Chewy">Chewy</option>
+					<option value="Coda">Coda</option>
 					<option value="Coming+Soon">Coming Soon</option>
 					<option value="Consolas">Consolas</option>
 					<option value="Copse">Copse</option>
+					<option value="Corben">Corben</option>
 					<option value="Corsiva">Corsiva</option>
 					<option value="Cousine">Cousine</option>
 					<option value="Covered+By+Your+Grace">Covered By Your Grace</option>
@@ -422,6 +476,7 @@
 					<option value="Crimson+Text">Crimson Text</option>
 					<option value="Crushed">Crushed</option>
 					<option value="Cuprum">Cuprum</option>
+					<option value="Dancing+Script">Dancing Script</option>
 					<option value="Droid+Sans">Droid Sans</option>
 					<option value="Droid+Sans+Mono">Droid Sans Mono</option>
 					<option value="Droid+Serif">Droid Serif</option>
@@ -429,6 +484,7 @@
 					<option value="GFS+Didot">GFS Didot</option>
 					<option value="GFS+Neohellenic">GFS Neohellenic</option>
 					<option value="Geo">Geo</option>
+					<option value="Goudy+Bookletter+1911">Goudy Bookletter 1911</option>
 					<option value="Gruppo">Gruppo</option>
 					<option value="Hanuman">Hanuman</option>
 					<option value="Homemade+Apple">Homemade Apple</option>
@@ -447,10 +503,16 @@
 					<option value="Josefin+Sans">Josefin Sans</option>
 					<option value="Josefin+Slab">Josefin Slab</option>
 					<option value="Just+Another+Hand">Just Another Hand</option>
+					<option value="Just+Me+Again+Down+Here">Just Me Again Down Here</option>
 					<option value="Kenia">Kenia</option>
 					<option value="Kranky">Kranky</option>
+					<option value="Kreon">Kreon</option>
+					<option value="Kristi">Kristi</option>
+					<option value="Lato">Lato</option>
+					<option value="Lekton">Lekton</option>
 					<option value="Lobster">Lobster</option>
 					<option value="Luckiest+Guy">Luckiest Guy</option>
+					<option value="Meddon">Meddon</option>
 					<option value="Merriweather">Merriweather</option>
 					<option value="Molengo">Molengo</option>
 					<option value="Mountains+of+Christmas">Mountains of Christmas</option>
@@ -462,17 +524,25 @@
 					<option value="PT+Sans">PT Sans</option>
 					<option value="PT+Sans+Caption">PT Sans Caption</option>
 					<option value="PT+Sans+Narrow">PT Sans Narrow</option>
+					<option value="PT+Serif">PT Serif</option>
 					<option value="Permanent+Marker">Permanent Marker</option>
 					<option value="Philosopher">Philosopher</option>
 					<option value="Puritan">Puritan</option>
+					<option value="Radley">Radley</option>
+					<option value="Raleway">Raleway</option>
 					<option value="Reenie+Beanie">Reenie Beanie</option>
 					<option value="Rock+Salt">Rock Salt</option>
-					<option value="Schoolbell,Slackey">Schoolbell,Slackey</option>
+					<option value="Schoolbell">Schoolbell</option>
+					<option value="Slackey">Slackey</option>
+					<option value="Sniglet">Sniglet</option>
 					<option value="Sunshiney">Sunshiney</option>
 					<option value="Syncopate">Syncopate</option>
+					<option value="Tangerine">Tangerine</option>
 					<option value="Tinos">Tinos</option>
+					<option value="Ubuntu">Ubuntu</option>
 					<option value="UnifrakturMaguntia">UnifrakturMaguntia</option>
 					<option value="Unkempt">Unkempt</option>
+					<option value="Vibur">Vibur</option>
 					<option value="Vollkorn">Vollkorn</option>
 					<option value="Walter+Turncoat">Walter Turncoat</option>
 					<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>									
