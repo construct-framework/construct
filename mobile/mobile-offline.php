@@ -20,6 +20,7 @@ $baseUrl 				= JURI::base();
 </head>
 
 <body>
+	<span>You are viewing the mobile device friendly version of this website.</span>
 	<div id="header">	
 		<h1><a href="<?php echo $baseUrl; ?>/" title="<?php echo $app->getCfg('sitename'); ?>"><?php echo $app->getCfg('sitename'); ?></a></h1>
 	</div>

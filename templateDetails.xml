@@ -31,8 +31,8 @@
 					<h3>Getting Started:</h3>
 					<p>Now that you've installed Construct, getting started is easy. The 40 included module positions occupy the most commonly used areas within a template. With dynamic width logic, the availability of two left and two right columns, the numerous module positions and expanded functionality via template parameters, building your unique Joomla website is greatly simplified with this framework. Once you have your content, components and modules in place, just add your unique style.</p>
 					<p>Adding your unique style is accomplished by adding a custom style sheet to the CSS directory located within this template (/templates/je-construct-pro/css/). Once created, just open this template in the Template Manager and select YES next to <em>Use custom style sheet</em> and select the one you added. There is also an example template pack included within this template&rsquo;s installation archive to help you get you started; just extract the example template pack archive to this template&rsquo;s directory.</p>
-					<p>Integrated mobile device detection ensures that all of your visitors get the content they desire. The included mobile sub-template is a great start for serving your mobile audience. It&rsquo;s fast loading and easy to use design fita most devices well.</p>
-					<p>Allowing even greater flexablity of your design is the ability to add article, menu item, category, section and component specific CSS and sub-template files. Place these appropriately named files in the right folder and the template will load them automatically. For exmaple, to create a sub-template for article 37, add your new layout and CSS to the <em>layouts/article</em> directory and name the files <code>article-37.php</code> and <code>article-37.css</code>. You can even override the template's core layout by adding an alternate <code>index.php</code> file to the <em>layouts/</em> directory.</p> 
+					<p>Integrated mobile device detection ensures that all of your visitors get the content they desire. The included mobile version of the template is a great start for serving your mobile audience. It&rsquo;s fast loading and easy to use design fita most devices well.</p>
+					<p>Allowing even greater flexablity of your design is the ability to add article, menu item, category, section and component specific extended template overrides. Place these appropriately named files in the right folder and the template will load them automatically. For example, to create an extended template override for article 37, add your new layout named <code>article-37.php</code> to <em>/layouts/article</em> and CSS named <code>article-37.css</code> to <em>/css/article</em>. You can even override the template's core layout by adding an alternate <code>index.php</code> file to the <em>layouts/</em> directory.</p> 
 					<h4 style="clear:left">Joomla 1.5 Template Development Framework &copy; 2010 Joomla Engineering&trade; </h4>
 					<p>For more information and support, visit <a href="http://joomlaengineering.com/" target="_blank">Joomla Engineering</a></p>
 				</div><!-- end page-site -->
@@ -46,7 +46,7 @@
 							<li>Google Font API parameter option for header font.</li>
 							<li>Automatic detection and loading of alternate component, section, category, item and article sub-templates.</li>
 							<li>Automatic detection and loading of component, section, category, item and article specific CSS files.</li>
-							<li>Parameterized automatic comprehensive detection of mobile devices and loading of mobile friendly sub-template.</li>
+							<li>Parameterized automatic comprehensive detection of mobile devices and loading of mobile version of this template to load,.</li>
 							<li>Matching error page, with built in email notification and non-collapsible module rendering.</li>
 							<li>Matching offline page.</li>
 							<li>Example upgrade notification / version checker code.</li>
@@ -124,7 +124,7 @@
 							</li>
 							<li>Moved #to-page-top{position:absolute;top:10px;right:10px} from screen.css to example.css in example-template-pack.zip. (Thanks Christina Solana and Molajo!)</li>							
 							<li>Changed Layout Aid default setting to Hide.</li>
-							<li>Changed Use Sub-template Body Classes default setting to Yes.</li>
+							<li>Changed Extended Template Override Body Classes default setting to Yes.</li>
 							<li>Added sticky footer height parameter.</li>
 							<li>Updated mdetect.php to add support for Google TV.</li>							
 							<li>Changed &lt;div id=&quot;user5&quot; class=&quot;&lt;?php echo $contentuser5Class ?&gt;&quot;&gt; to &lt;div id=&quot;user5&quot; class=&quot;&lt;?php echo $contentBottomClass ?&gt;&quot;&gt;. (Thanks Klas Berlic and Molajo!)</li>							
@@ -323,7 +323,7 @@
 						</ul>					
 					<h4>1.5.60 - May 14th, 2010</h4>
 						<ul>
-							<li>Paramterized mobile detection and mobile sub-template name.</li>
+							<li>Paramterized mobile detection and Mobile Template name.</li>
 						</ul>
 					<h4>Alpha Candidate - February 19th, 2010</h4>					
 					<h4>Initial Build - January 25th, 2010</h4>
@@ -452,13 +452,13 @@
 			<option value="1">Show</option>
 			<option value="0">Hide</option>
 		</param>		
-		<param name="showDiagnostics" type="radio" default="0" label="Sub-template Diagnostics" description="Enable display of current article, item, category, section, component, and alias information for sub-template development.">
+		<param name="showDiagnostics" type="radio" default="0" label="Extended Template Override Diagnostics" description="Enable display of the current article, item, category, section, component, and alias exteneded template override information.">
         	<option value="1">Show</option>
         	<option value="0">Hide</option>
     	</param>
-		<param name="useSubBodyClasses" type="radio" default="1" label="Use Sub-template Body Classes" description="Enable to dynamically add body classes equl to the current sub-template.">
-        	<option value="1">Yes</option>
-        	<option value="0">No</option>
+		<param name="useSubBodyClasses" type="radio" default="1" label="Extended Template Override Body Classes" description="Enable to dynamically add extended template override body classes.">
+        	<option value="1">Show</option>
+        	<option value="0">Hide</option>
     	</param>
 		<param name="useCustomStyleSheet" type="radio" default="1" label="Use custom style sheet" description="Enable to use a seperate stylesheet for your custom CSS declarations. HINT: Segregating custom styles will help you upgrade your copy of Construct if so desired.">
         	<option value="1">Yes</option>
@@ -515,12 +515,12 @@
     	</param>
 		<param name="stickyFooterHeight" type="text" default="175" label="Sticky Footer Height" description="Set the fixed height, in pixels, of your sticky footer." size="5" />		
 		<param type="panel" title="Mobile" />			
-		<param name="mdetect" type="radio" default="1" label="Mobile Device Detection" description="Enable automatic detecion of mobile devices and load a mobile friendly alternate sub-template.">
-        	<option value="1">Yes</option>
+		<param name="mdetect" type="radio" default="1" label="Mobile Device Detection" description="Enable automatic detecion of mobile devices and load a mobile version of the template.">
+        	<option value="1">Yes</option> 
         	<option value="0">No</option>
     		</param>
-		<param name="mtemplate" type="filelist" default="mobile.php" label="Mobile Sub-template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile-offline\.php" description="Name of mobile friendly sub-template located within this templates' mobile folder. Default is mobile.php" />
-		<param name="mtemplateoffline" type="filelist" default="mobile-offline.php" label="Offline Mobile Template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile\.php" description="Name of offline mobile friendly sub-template located within this templates' mobile folder. Default is mobile-offline.php." />						
+		<param name="mtemplate" type="filelist" default="mobile.php" label="Mobile Template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile-offline\.php" description="Name of mobile version of this template to load, located within this templates' mobile folder. Default is mobile.php" />
+		<param name="mtemplateoffline" type="filelist" default="mobile-offline.php" label="Offline Mobile Template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile\.php" description="Name of offline mobile version of this template to load, located within this templates' mobile folder. Default is mobile-offline.php." />						
 		<param type="panel" title="Typography" />	
 		<param name="bodyFontFamily" type="list" default="" label="Body Font Family" description="The body font family to be used.">
 			<option value="">- None Selected -</option>		
