@@ -17,7 +17,6 @@ $isMobile 		= $uagent_obj->DetectMobileLong();
 
 // Check if mobile device detecion is turned on and test if visitor is a mobile device. If so, load mobile sub-template
 if ( $mdetect && $isMobile ) {
-	echo '<span>You are viewing the mobile device friendly version of this website.</span>';
 	if(file_exists($mtemplateFile)) include_once $mtemplateFile;
 }
 
