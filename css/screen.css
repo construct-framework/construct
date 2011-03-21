@@ -15,7 +15,7 @@ img,a img{border:0}
 /* -- Layout -- */
 body{font-size:76%/* 12px in most modern browsers - used as basis of layout and typography. Calculate em based dims as "target dim(px) / container dim(px) = result in em" */}
 #body-container,
-#supra{max-width:80.5em/* 966px / 12px = 80.5em */;margin:0 auto;padding:0}
+#supra{margin:0 auto;padding:0}
 #load-first{float:left}
 
 .main-only #content-main{float:left;width:100%}
