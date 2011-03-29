@@ -230,14 +230,12 @@ $categoryGroupIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/category/'.$ov
 $itemGroupIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/item/'.$overrideGroup.'-item-'.$itemId.'.php';
 $articleGroupIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/article/'.$overrideGroup.'-article-'.$articleId.'.php';
 $componentGroupCss 		= JPATH_THEMES.'/'.$this->template.'/css/component/'.$overrideGroup.'-'.$currentComponent.'.css';
-$sectionGroupCss 		= JPATH_THEMES.'/'.$this->template.'/css/section/'.$overrideGroup.'-section-'.$sectionId.'.css';
 $categoryGroupCss 		= JPATH_THEMES.'/'.$this->template.'/css/category/'.$overrideGroup.'-category-'.$catId.'.css';
 $itemGroupCss 			= JPATH_THEMES.'/'.$this->template.'/css/item/'.$overrideGroup.'-item-'.$itemId.'.css';
 $articleGroupCss 		= JPATH_THEMES.'/'.$this->template.'/css/article/'.$overrideGroup.'-article-'.$articleId.'.css';
 
 $templateIndex			= JPATH_THEMES.'/'.$this->template.'/layouts/index.php';
 $componentIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$currentComponent.'.php';
-$sectionIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/section/section-'.$sectionId.'.php';
 $categoryIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/category/category-'.$catId.'.php';
 $itemIndex 				= JPATH_THEMES.'/'.$this->template.'/layouts/item/item-'.$itemId.'.php';
 $articleIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/article/article-'.$articleId.'.php';
