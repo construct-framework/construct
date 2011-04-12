@@ -238,7 +238,7 @@ form.poll a:hover,
 form.poll a:focus,
 form.poll .button:hover,
 form.poll .button:focus{}
-form.poll:after{content:".";visibility:hidden;height:0;display:block;clear:both}*/
+form.poll:after{content:".";visibility:hidden;height:0;display:block;clear:both}
 /* -- Poll Results -- */
 dl.poll{}
 dl.poll dt{border-bottom:solid 1px #ccc}

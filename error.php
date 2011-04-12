@@ -92,8 +92,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
   <link rel="icon" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/favicon.png" type="image/png" />	
   <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/screen.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/overrides.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/print.css" type="text/css" media="print" />
-<link rel="stylesheet" href="/modules/mod_tweetdisplayback/media/css/construct.css" type="text/css" media="screen" />  
+  <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/print.css" type="text/css" media="print" />  
 <?php if ($enableSwitcher) {
   echo '  <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/diagnostic.css" type="text/css" title="diagnostic"/>
   <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/normal.css" type="text/css" title="normal"/>
