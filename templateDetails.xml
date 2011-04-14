@@ -88,7 +88,7 @@
 						</ul>		
 				</div><!-- end page-features -->	
 				<div id="page-changelog">
-					<h4>1.5.639 - March 2nd, 2011</h4>
+					<h4>1.5.639 - April 14th, 2011</h4>
 						<ul>
 							<li>Removed ul.menu a background:#fff from screen.css.</li>
 							<li>Moved CSS menu item parent indicator from screen.css to example.css.</li>
