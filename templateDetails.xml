@@ -2,12 +2,12 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
 <install version="1.5" type="template" method="upgrade">
 	<name>JE-Construct-Pro</name>
-	<creationDate>March 2nd, 2011</creationDate>
+	<creationDate>April 14th, 2011</creationDate>
 	<author>Joomla Engineering</author>
 	<copyright>Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com/</authorUrl>
-	<version>1.5.612 Pro</version>
+	<version>1.5.639 Pro</version>
 	<description><![CDATA[
 	<a href="http://joomlaengineering.com/" target="_blank"><img src="../templates/je-construct-pro/images/logo.png"></a>	
 	<script type="text/javascript" src="../media/system/js/switcher.js"></script>
@@ -88,10 +88,17 @@
 						</ul>		
 				</div><!-- end page-features -->	
 				<div id="page-changelog">
+					<h4>1.5.639 - March 2nd, 2011</h4>
+						<ul>
+							<li>Removed ul.menu a background:#fff from screen.css.</li>
+							<li>Moved CSS menu item parent indicator from screen.css to example.css.</li>
+							<li>Removed TBD css from error.php.</li>
+							<li>Removed stray */ from overrides.css Thanks Troy Hall!</li>
+						</ul>					
 					<h4>1.5.612 - March 2nd, 2011</h4>
 						<ul>
 							<li>Implemented Jen Kramer's search result - Thanks Jen!</li>
-							<li>Corrected improper detection of section CSS - Thanks Andrea Pluhar!</
+							<li>Corrected improper detection of section CSS - Thanks Andrea Pluhar!</li>
 							<li>Updated Google Web Fonts - Thanks Daniel Riefstahl | Pixel Point Creative!</li>
 						</ul>			
 					<h4>1.5.519 - February 4th, 2011</h4>
