@@ -46,9 +46,13 @@ $googleWebFontTargets3	= $this->params->get('googleWebFontTargets3');
 $loadMoo 				= $this->params->get('loadMoo');
 $loadModal				= $this->params->get('loadModal');
 $loadjQuery 			= $this->params->get('loadjQuery');
+$mContentDataTheme		= $this->params->get('mContentDataTheme');
 $mdetect 				= $this->params->get('mdetect');
-$mtemplate				= $this->params->get('mtemplate');
-$mtemplateoffline		= $this->params->get('mtemplateoffline');
+$mFooterDataTheme		= $this->params->get('mFooterDataTheme');
+$mHeaderDataTheme		= $this->params->get('mHeaderDataTheme');
+$mNavPosition			= $this->params->get('mNavPosition');
+$mNavDataTheme			= $this->params->get('mNavDataTheme');
+$mPageDataTheme			= $this->params->get('mPageDataTheme');
 $setGeneratorTag		= $this->params->get('setGeneratorTag');
 $showDate 				= $this->params->get('showDate');		
 $showDiagnostics 		= $this->params->get('showDiagnostics');
@@ -62,8 +66,9 @@ $useStickyFooter 		= $this->params->get('useStickyFooter');
 $useSubBodyClasses		= $this->params->get('useSubBodyClasses');
 
 // Define absolute paths to files
-$mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/mobile/mdetect.php';
-$mtemplateFile			= JPATH_THEMES.'/'.$this->template.'/mobile/'.$mtemplate;
+$mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/mdetect.php';
+$mTemplate				= JPATH_THEMES.'/'.$this->template.'/mobile.php';
+$alternatemTemplate		= JPATH_THEMES.'/'.$this->template.'/layouts/mobile.php';
 
 // Change generator tag
 $this->setGenerator($setGeneratorTag);
@@ -78,12 +83,12 @@ if ( $loadMoo && $loadModal ) {
 }
 
 // Remove MooTools if set to no.
-if (!$loadMoo) {	
-	$head = $this->getHeadData();	
+if ( !$loadMoo ) {
+	$head=$this->getHeadData();
 	reset($head['scripts']);
-	$moo = key($head['scripts']);	
-	unset($head['scripts'][$moo]);		
-	$this->setHeadData($head);	
+	unset($head['scripts'][$this->baseurl . '/media/system/js/mootools.js']);
+	unset($head['scripts'][$this->baseurl . '/plugins/system/mtupgrade/mootools.js']);
+	$this->setHeadData($head);
 }
 
 // Fix Google Web Font name for CSS

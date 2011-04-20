@@ -1,6 +1,10 @@
 <?php // from http://forum.joomla.org/viewtopic.php?p=2102441#p2102441
 defined('_JEXEC') or die;
 
+global $mainframe;
+jimport('joomla.filesystem.file');
+$tparams = new JParameter(JFile::read(JPATH_BASE.DS.'templates'.DS.$mainframe->getTemplate().DS.'params.ini'));
+
 if ( ! defined('CmodMainMenuXMLCallbackDefined') )
 {
 function CmodMainMenuXMLCallback(&$node, $args)
@@ -102,4 +106,8 @@ function CmodMainMenuXMLCallback(&$node, $args)
 	define('CmodMainMenuXMLCallbackDefined', true);
 }
 
+// http://stackoverflow.com/questions/398476/joomla-main-menu-html-output
+ob_start();
 modMainMenuHelper::render($params, 'CmodMainMenuXMLCallback');
+$mainMenuContent = ob_get_clean();
+echo str_replace('<ul class="menu">','<ul class="menu" data-role="listview" data-inset="true" data-theme="'.$tparams->get('mNavDataTheme').'" >', $mainMenuContent);

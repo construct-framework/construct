@@ -16,7 +16,8 @@ $uagent_obj 			= new uagent_info();
 $isMobile 				= $uagent_obj->DetectMobileLong();
 // Check if mobile device detecion is turned on and, test if visitor is a mobile device, and if so, load mobile sub-template
 if ( $mdetect && $isMobile ) {
-	if(file_exists($mtemplateFile)) include_once $mtemplateFile;
+	if(file_exists($alternatemTemplate)) include_once $alternatemTemplate;
+	elseif(file_exists($mTemplate)) include_once $mTemplate;
 }
 // If mobile detection is off, or visitor is not a mobile device, check for alternate index file and load it if it exists
 elseif (isset($alternateIndexFile)) {

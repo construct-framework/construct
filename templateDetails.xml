@@ -346,6 +346,7 @@
 		<filename>css/editor.css</filename>
 		<filename>css/ie6.css</filename>
 		<filename>css/index.html</filename>
+		<filename>css/mobile.css</filename>
 		<filename>css/modal.css</filename>
 		<filename>css/overrides.css</filename>
 		<filename>css/print.css</filename>
@@ -386,10 +387,9 @@
 		<filename>layouts/component/index.html</filename>
 		<filename>layouts/item/index.html</filename>
 		<filename>layouts/section/index.html</filename>
-		<filename>mobile/index.html</filename>
-        <filename>mobile/mdetect.php</filename>
-        <filename>mobile/mobile.php</filename>
-        <filename>mobile/mobile.css</filename>
+        <filename>mdetect.php</filename>
+        <filename>mobile.php</filename>
+        <filename>mobile-offline.php</filename>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
         <filename>favicon.ico</filename>
@@ -522,12 +522,54 @@
     	</param>
 		<param name="stickyFooterHeight" type="text" default="175" label="Sticky Footer Height" description="Set the fixed height, in pixels, of your sticky footer." size="5" />		
 		<param type="panel" title="Mobile" />			
-		<param name="mdetect" type="radio" default="1" label="Mobile Device Detection" description="Enable automatic detecion of mobile devices and load a mobile version of the template.">
-        	<option value="1">Yes</option> 
-        	<option value="0">No</option>
-    		</param>
-		<param name="mtemplate" type="filelist" default="mobile.php" label="Mobile Template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile-offline\.php" description="Name of mobile version of this template to load, located within this templates' mobile folder. Default is mobile.php" />
-		<param name="mtemplateoffline" type="filelist" default="mobile-offline.php" label="Offline Mobile Template" directory="templates/je-construct-pro/mobile" filter="\.php" exclude="mdetect\.php|mobile\.php" description="Name of offline mobile version of this template to load, located within this templates' mobile folder. Default is mobile-offline.php." />						
+			<param name="mdetect" type="radio" default="1" label="Mobile Device Detection" description="Enable automatic detecion of mobile devices and load a mobile version of the template.">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</param>
+			<param name="mNavPosition" type="radio" default="1" label="Navigation Position" description="Placement of the navigation, in relation to the main content area.">
+				<option value="1">Before Content</option>
+				<option value="0">After Content</option>
+			</param>
+			<param name="mPageDataTheme" type="list" default="" label="Page Theme" description="The jQuery Mobile swatch theme to apply to the page portion of the mobile template. See http://jquerymobile.com/test/docs/api/themes.html for more details.">
+				<option value="">- None Selected -</option>
+				<option value="a">Black</option>
+				<option value="b">Blue</option>
+				<option value="c">Gray</option>
+				<option value="d">Dark Gray</option>
+				<option value="e">Accent</option>
+			</param>
+			<param name="mHeaderDataTheme" type="list" default="" label="Header Theme" description="The jQuery Mobile swatch theme to apply to the header portion of the mobile template.">
+				<option value="">- None Selected -</option>
+				<option value="a">Black</option>
+				<option value="b">Blue</option>
+				<option value="c">Gray</option>
+				<option value="d">Dark Gray</option>
+				<option value="e">Accent</option>
+			</param>	
+			<param name="mNavDataTheme" type="list" default="" label="Navigation Theme" description="The jQuery Mobile swatch theme to apply to the navigation portion of the mobile template.">
+				<option value="">- None Selected -</option>
+				<option value="a">Black</option>
+				<option value="b">Blue</option>
+				<option value="c">Gray</option>
+				<option value="d">Dark Gray</option>
+				<option value="e">Accent</option>
+			</param>	
+			<param name="mContentDataTheme" type="list" default="" label="Content Theme" description="The jQuery Mobile swatch theme to apply to the content portion of the mobile template.">
+				<option value="">- None Selected -</option>
+				<option value="a">Black</option>
+				<option value="b">Blue</option>
+				<option value="c">Gray</option>
+				<option value="d">Dark Gray</option>
+				<option value="e">Accent</option>
+			</param>																	
+			<param name="mFooterDataTheme" type="list" default="" label="Footer Theme" description="The jQuery Mobile swatch theme to apply to the footer portion of the mobile template.">
+				<option value="">- None Selected -</option>
+				<option value="a">Black</option>
+				<option value="b">Blue</option>
+				<option value="c">Gray</option>
+				<option value="d">Dark Gray</option>
+				<option value="e">Accent</option>
+			</param>						
 		<param type="panel" title="Typography" />	
 		<param name="bodyFontFamily" type="list" default="" label="Body Font Family" description="The body font family to be used.">
 			<option value="">- None Selected -</option>		
