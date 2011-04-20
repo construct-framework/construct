@@ -12,30 +12,38 @@ $app 					= JFactory::getApplication();
 $baseUrl 				= JURI::base();
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
-<head>
-<meta http-equiv="Content-Type" content="<?php echo $contenttype; ?>; charset=utf-8" />
-<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/mobile/mobile.css" type="text/css" media="screen" />
-</head>
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="<?php echo $contenttype; ?>; charset=utf-8" />
+		<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/mobile.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('body').removeClass("noscript");
+			});
+		</script>
+	</head>
 
-<body>
-	<span>You are viewing the mobile device friendly version of this website.</span>
-	<div id="header">	
-		<h1><a href="<?php echo $baseUrl; ?>" title="<?php echo $app->getCfg('sitename'); ?>"><?php echo $app->getCfg('sitename'); ?></a></h1>
-	</div>
-
-	<?php if ($this->countModules('nav')) : ?>
-		<div id="nav">
-			
-		</div><!-- end nav-->
-	<?php endif; ?>
+<body class="noscript">	
+	<div data-role="page" data-theme="<?php echo $mPageDataTheme; ?>">
+		<div id="header" data-role="header" data-theme="<?php echo $mHeaderDataTheme; ?>">
+			<h1><a href="<?php echo $baseUrl; ?>/" title="<?php echo $app->getCfg('sitename'); ?>"><?php echo $app->getCfg('sitename'); ?></a></h1>
+		</div>
 	
-	<div id="content-container">	  
-
-		<?php if ($this->getBuffer('message')) : ?>
-			<jdoc:include type="message" />
+		<?php if ( $mNavPosition && ($this->countModules('nav'))) : ?>
+			<div id="nav">
+				<jdoc:include type="modules" name="nav" style="raw" />
+			</div><!-- end nav-->
 		<?php endif; ?>
+		
+		<div id="content-container" data-role="content" data-theme="<?php echo $mContentDataTheme; ?>">	  
+	
+			<?php if ($this->getBuffer('message')) : ?>
+				<jdoc:include type="message" />
+			<?php endif; ?>
 			<p>
 				<?php echo $app->getCfg('offline_message'); ?>
 			</p>
@@ -59,15 +67,21 @@ $baseUrl 				= JURI::base();
 				<input type="hidden" name="return" value="<?php echo base64_encode(JURI::base()) ?>" />
 				<?php echo JHtml::_('form.token'); ?>
 			</fieldset>
-			</form>
-
-
-	</div>
-								
-	<div id="footer">
-		<?php if ($this->countModules('footer')) : ?>
-			<jdoc:include type="modules" name="footer" style="xhtml" />
-		<?php endif; ?>
+			</form>						
+			
+		</div>
+		
+		<?php if ( !$mNavPosition && ($this->countModules('nav'))) : ?>
+			<div id="nav">
+				<jdoc:include type="modules" name="nav" style="raw" />
+			</div><!-- end nav-->
+		<?php endif; ?>		
+									
+		<div id="footer" data-role="footer" data-theme="<?php echo $mFooterDataTheme; ?>">
+			<?php if ($this->countModules('footer')) : ?>
+				<jdoc:include type="modules" name="footer" style="xhtml" />
+			<?php endif; ?>
+		</div>
 	</div>
 	  
 </body>

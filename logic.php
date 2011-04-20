@@ -46,9 +46,13 @@ $googleWebFontTargets3	= $this->params->get('googleWebFontTargets3');
 $loadMoo 				= $this->params->get('loadMoo');
 $loadModal				= $this->params->get('loadModal');
 $loadjQuery 			= $this->params->get('loadjQuery');
+$mContentDataTheme		= $this->params->get('mContentDataTheme');
 $mdetect 				= $this->params->get('mdetect');
-$mtemplate				= $this->params->get('mtemplate');
-$mtemplateoffline		= $this->params->get('mtemplateoffline');
+$mFooterDataTheme		= $this->params->get('mFooterDataTheme');
+$mHeaderDataTheme		= $this->params->get('mHeaderDataTheme');
+$mNavPosition			= $this->params->get('mNavPosition');
+$mNavDataTheme			= $this->params->get('mNavDataTheme');
+$mPageDataTheme			= $this->params->get('mPageDataTheme');
 $setGeneratorTag		= $this->params->get('setGeneratorTag');
 $showDate 				= $this->params->get('showDate');		
 $showDiagnostics 		= $this->params->get('showDiagnostics');
@@ -62,8 +66,9 @@ $useStickyFooter 		= $this->params->get('useStickyFooter');
 $useSubBodyClasses		= $this->params->get('useSubBodyClasses');
 
 // Define absolute paths to files
-$mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/mobile/mdetect.php';
-$mtemplateFile			= JPATH_THEMES.'/'.$this->template.'/mobile/'.$mtemplate;
+$mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/mdetect.php';
+$mTemplate				= JPATH_THEMES.'/'.$this->template.'/mobile.php';
+$alternatemTemplate		= JPATH_THEMES.'/'.$this->template.'/layouts/mobile.php';
 
 // Change generator tag
 $this->setGenerator($setGeneratorTag);
@@ -75,6 +80,15 @@ if ($loadMoo) {
 		// Enable modal pop-ups - see html/mod_footer/default.php to customize
 		JHTML::_('behavior.modal');
 	}
+}
+
+// Remove MooTools if set to no.
+if ( !$loadMoo ) {
+	$head=$this->getHeadData();
+	reset($head['scripts']);
+	unset($head['scripts'][$this->baseurl . '/media/system/js/mootools-core.js']);
+	unset($head['scripts'][$this->baseurl . '/media/system/js/mootools-more.js']);		
+	$this->setHeadData($head);
 }
 
 // Fix Google Web Font name for CSS
@@ -281,11 +295,11 @@ elseif(file_exists($categoryIndex)){
 elseif(file_exists($componentGroupIndex)){
 		$alternateIndexFile = $componentGroupIndex;}
 elseif(file_exists($componentIndex)){
-		$alternateIndexFile = $componentIndex;}	
+		$alternateIndexFile = $componentIndex;}
 elseif(file_exists($templateGroupIndex)){
 		$alternateIndexFile = $templateGroupIndex;}
 elseif(file_exists($templateIndex)){
-		$alternateIndexFile = $templateIndex;}		
+		$alternateIndexFile = $templateIndex;}
 else unset($alternateIndexFile);
 
 #---------------------------- Head Elements --------------------------------#

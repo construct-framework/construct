@@ -46,3 +46,6 @@ mod_sectioncss.php written by Alex de Winne - www.therefore.ca
 
 Prevention of loading mootools.js and caption.js based on work by Joe at
 http://www.eboga.org/cms/joomla/how-to-remove-mootoolsjs-and-captionjs-from-joomla15.html
+
+Enabling accessing template parameters
+http://demente-design.com/blog/39-joomla/69-access-template-parameters-in-error-file.html
