@@ -21,7 +21,7 @@ $user 					= JFactory::getUser();
 // Get the current view
 $view     				= JRequest::getCmd('view');
 
-// Get and define template parameters
+// Define shortcuts for template parameters
 $bodyFontFamily 		= $this->params->get('bodyFontFamily');
 $customFontFamily		= $this->params->get('customFontFamily');
 $customFontFamilySize	= $this->params->get('customFontFamilySize');
@@ -66,7 +66,7 @@ $useStickyFooter 		= $this->params->get('useStickyFooter');
 $useSubBodyClasses		= $this->params->get('useSubBodyClasses');
 
 // Define absolute paths to files
-$mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/mdetect.php';
+$mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/elements/mdetect.php';
 $mTemplate				= JPATH_THEMES.'/'.$this->template.'/mobile.php';
 $alternatemTemplate		= JPATH_THEMES.'/'.$this->template.'/layouts/mobile.php';
 
@@ -92,9 +92,9 @@ if ( !$loadMoo ) {
 }
 
 // Fix Google Web Font name for CSS
-$googleWebFontFamily 	= str_replace("+"," ",$googleWebFont);
-$googleWebFontFamily2 	= str_replace("+"," ",$googleWebFont2);
-$googleWebFontFamily3 	= str_replace("+"," ",$googleWebFont3);
+$googleWebFontFamily 	= str_replace(array('+',':bold',':italic')," ",$googleWebFont);
+$googleWebFontFamily2 	= str_replace(array('+',':bold',':italic')," ",$googleWebFont2);
+$googleWebFontFamily3 	= str_replace(array('+',':bold',':italic')," ",$googleWebFont3);
 
 // Get the name of the extended template override group
 if ($useCustomStyleSheet)
