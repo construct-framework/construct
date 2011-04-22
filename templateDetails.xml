@@ -342,6 +342,11 @@
 	<div class="b"><div class="b"><div class="b"></div></div></div><!-- bottom -->
 	]]></description>
     <files>		
+		<filename>css/article/index.html</filename>
+		<filename>css/category/index.html</filename>
+		<filename>css/component/index.html</filename>
+		<filename>css/item/index.html</filename>
+		<filename>css/section/index.html</filename>	
 		<filename>css/diagnostic.css</filename>
 		<filename>css/editor.css</filename>
 		<filename>css/ie6.css</filename>
@@ -353,12 +358,9 @@
 		<filename>css/rtl.css</filename>
 		<filename>css/screen.css</filename>
 		<filename>css/wireframe.css</filename>
-		<filename>css/article/index.html</filename>
-		<filename>css/category/index.html</filename>
-		<filename>css/component/index.html</filename>
-		<filename>css/item/index.html</filename>
-		<filename>css/section/index.html</filename>		
+		<filename>elements/googlewebfont.php</filename>		
 		<filename>elements/index.html</filename>
+		<filename>elements/mdetect.php</filename>		
 		<filename>elements/panel.php</filename>
 		<filename>elements/panels.php</filename>
 		<filename>elements/upgradecheck.php</filename>
@@ -387,9 +389,6 @@
 		<filename>layouts/component/index.html</filename>
 		<filename>layouts/item/index.html</filename>
 		<filename>layouts/section/index.html</filename>
-        <filename>mdetect.php</filename>
-        <filename>mobile.php</filename>
-        <filename>mobile-offline.php</filename>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
         <filename>favicon.ico</filename>
@@ -397,6 +396,8 @@
         <filename>index.html</filename>
         <filename>index.php</filename>
 		<filename>logic.php</filename>
+        <filename>mobile.php</filename>
+        <filename>mobile-offline.php</filename>		
 		<filename>modal.php</filename>
 		<filename>offline.php</filename>
         <filename>params.ini</filename>
@@ -446,11 +447,15 @@
 		<position>user8</position>
 	</positions>
 	<params addpath="/templates/je-construct-pro/elements">
-		<param type="panel" title="General" />			
+		<param type="panel" title="General" />
 		<param name="showDate" type="radio" default="1" label="Date" description="Display today's date within the template.">
 			<option value="1">Show</option>
 			<option value="0">Hide</option>
 		</param>
+		<param name="showBackToTop" type="radio" default="1" label="Back to Top" description="Display the Back to Top link.">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>		
 		<param name="showPageLinks" type="radio" default="1" label="In-page Links" description="Display dynamically enabled in-page links that offer quick access to navigation, content, and sub-content areas.">
 			<option value="1">Show</option>
 			<option value="0">Hide</option>
@@ -572,11 +577,12 @@
 			</param>						
 		<param type="panel" title="Typography" />	
 		<param name="bodyFontFamily" type="list" default="" label="Body Font Family" description="The body font family to be used.">
-			<option value="">- None Selected -</option>		
+			<option value="">- None Selected -</option>
 			<option value="arial">Arial</option>
 			<option value="arial-black">Arial Black</option>
 			<option value="courier">Courier New</option>			
 			<option value="georgia">Georgia</option>
+			<option value="helvetica">Helvetica</option>
 			<option value="impact">Impact</option>			
 			<option value="lucida-console">Lucida Console</option>	
 			<option value="lucida-grande">Lucida Grande</option>								
@@ -592,324 +598,15 @@
 		<param name="customFontFamilyTargets" type="text" default="" label="Font Family Targets" description="A comma seperated list of  the html elements, CSS IDs, and classes to apply the custom defined font family to. If targeting the body, be sure to set the Body Font Family to None Selected." size="50" />
 		<param name="customFontFamilySize" type="text" default="76%" label="Custom Font Family Size" description="Define the font size, including the unit of measure, of the font family defined above. Percentage is preferred. NOTE: Construct's base typography uses a font size of 76%, which is 12px in most modern browsers." size="5" />		
 		<param type="spacer" default=" " />
-		<param name="googleWebFont" type="list" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information.">
-					<option value="">- None Selected -</option>
-					<option value="Allan">Allan</option>
-					<option value="Allerta">Allerta</option>
-					<option value="Allerta+Stencil">Allerta Stencil</option>
-					<option value="Anonymous+Pro">Anonymous Pro</option>
-					<option value="Anton">Anton</option>
-					<option value="Arimo">Arimo</option>
-					<option value="Arvo">Arvo</option>
-					<option value="Astloch">Astloch</option>
-					<option value="Bentham">Bentham</option>
-					<option value="Bevan">Bevan</option>
-					<option value="Buda">Buda</option>
-					<option value="Cabin">Cabin</option>
-					<option value="Calibri">Calibri</option>
-					<option value="Calligraffitti">Calligraffitti</option>
-					<option value="Cambria">Cambria</option>
-					<option value="Cantarell">Cantarell</option>
-					<option value="Cardo">Cardo</option>
-					<option value="Cherry+Cream+Soda">Cherry Cream Soda</option>
-					<option value="Chewy">Chewy</option>
-					<option value="Coda">Coda</option>
-					<option value="Coming+Soon">Coming Soon</option>
-					<option value="Consolas">Consolas</option>
-					<option value="Copse">Copse</option>
-					<option value="Corben">Corben</option>
-					<option value="Corsiva">Corsiva</option>
-					<option value="Cousine">Cousine</option>
-					<option value="Covered+By+Your+Grace">Covered By Your Grace</option>
-					<option value="Crafty+Girls">Crafty Girls</option>
-					<option value="Crimson+Text">Crimson Text</option>
-					<option value="Crushed">Crushed</option>
-					<option value="Cuprum">Cuprum</option>
-					<option value="Dancing+Script">Dancing Script</option>
-					<option value="Droid+Sans">Droid Sans</option>
-					<option value="Droid+Sans+Mono">Droid Sans Mono</option>
-					<option value="Droid+Serif">Droid Serif</option>
-					<option value="Fontdiner+Swanky">Fontdiner Swanky</option>
-					<option value="GFS+Didot">GFS Didot</option>
-					<option value="GFS+Neohellenic">GFS Neohellenic</option>
-					<option value="Geo">Geo</option>
-					<option value="Goudy+Bookletter+1911">Goudy Bookletter 1911</option>
-					<option value="Gruppo">Gruppo</option>
-					<option value="Hanuman">Hanuman</option>
-					<option value="Homemade+Apple">Homemade Apple</option>
-					<option value="IM+Fell+DW+Pica">IM Fell DW Pica</option>
-					<option value="IM+Fell+DW+Pica+SC">IM Fell DW Pica SC</option>
-					<option value="IM+Fell+Double+Pica">IM Fell Double Pica</option>
-					<option value="IM+Fell+Double+Pica+SC">IM Fell Double Pica SC</option>
-					<option value="IM+Fell+English">IM Fell English</option>
-					<option value="IM+Fell+English+SC">IM Fell English SC</option>
-					<option value="IM+Fell+French+Canon">IM Fell French Canon</option>
-					<option value="IM+Fell+French+Canon+SC">IM Fell French Canon SC</option>
-					<option value="IM+Fell+Great+Primer">IM Fell Great Primer</option>
-					<option value="IM+Fell+Great+Primer+SC">IM Fell Great Primer SC</option>
-					<option value="Inconsolata">Inconsolata</option>
-					<option value="Irish+Growler">Irish Growler</option>
-					<option value="Josefin+Sans">Josefin Sans</option>
-					<option value="Josefin+Slab">Josefin Slab</option>
-					<option value="Just+Another+Hand">Just Another Hand</option>
-					<option value="Just+Me+Again+Down+Here">Just Me Again Down Here</option>
-					<option value="Kenia">Kenia</option>
-					<option value="Kranky">Kranky</option>
-					<option value="Kreon">Kreon</option>
-					<option value="Kristi">Kristi</option>
-					<option value="Lato">Lato</option>
-					<option value="Lekton">Lekton</option>
-					<option value="Lobster">Lobster</option>
-					<option value="Luckiest+Guy">Luckiest Guy</option>
-					<option value="Meddon">Meddon</option>
-					<option value="Merriweather">Merriweather</option>
-					<option value="Molengo">Molengo</option>
-					<option value="Mountains+of+Christmas">Mountains of Christmas</option>
-					<option value="Neucha">Neucha</option>
-					<option value="Neuton">Neuton</option>
-					<option value="Nobile">Nobile</option>
-					<option value="OFL+Sorts+Mill+Goudy+TT">OFL Sorts Mill Goudy TT</option>
-					<option value="Old+Standard+TT">Old Standard TT</option>
-					<option value="PT+Sans">PT Sans</option>
-					<option value="PT+Sans+Caption">PT Sans Caption</option>
-					<option value="PT+Sans+Narrow">PT Sans Narrow</option>
-					<option value="PT+Serif">PT Serif</option>
-					<option value="Permanent+Marker">Permanent Marker</option>
-					<option value="Philosopher">Philosopher</option>
-					<option value="Puritan">Puritan</option>
-					<option value="Radley">Radley</option>
-					<option value="Raleway">Raleway</option>
-					<option value="Reenie+Beanie">Reenie Beanie</option>
-					<option value="Rock+Salt">Rock Salt</option>
-					<option value="Schoolbell">Schoolbell</option>
-					<option value="Slackey">Slackey</option>
-					<option value="Sniglet">Sniglet</option>
-					<option value="Sunshiney">Sunshiney</option>
-					<option value="Syncopate">Syncopate</option>
-					<option value="Tangerine">Tangerine</option>
-					<option value="Tinos">Tinos</option>
-					<option value="Ubuntu">Ubuntu</option>
-					<option value="UnifrakturMaguntia">UnifrakturMaguntia</option>
-					<option value="Unkempt">Unkempt</option>
-					<option value="Vibur">Vibur</option>
-					<option value="Vollkorn">Vollkorn</option>
-					<option value="Walter+Turncoat">Walter Turncoat</option>
-					<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>											
-		</param>
+		<param name="googleWebFont" type="googlewebfont" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information." />
 		<param name="googleWebFontTargets" type="text" default="h1,h2,h3,h4,h5,h6" label="Google Web Font Targets" description="A comma seperated list of the html elements, CSS IDs, and classes to apply the selected Google Web Font to. If targeting the body, be sure to set the Body Font Family to None Selected." size="50" />
 		<param name="googleWebFontSize" type="text" default="2.5em" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above. Percentage is preferred. NOTE: Construct's base typography uses a font size of 76%, which is 12px in most modern browsers." size="5" />				
 		<param type="spacer" default=" " />
-		<param name="googleWebFont2" type="list" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information.">
-					<option value="">- None Selected -</option>
-					<option value="Allan">Allan</option>
-					<option value="Allerta">Allerta</option>
-					<option value="Allerta+Stencil">Allerta Stencil</option>
-					<option value="Anonymous+Pro">Anonymous Pro</option>
-					<option value="Anton">Anton</option>
-					<option value="Arimo">Arimo</option>
-					<option value="Arvo">Arvo</option>
-					<option value="Astloch">Astloch</option>
-					<option value="Bentham">Bentham</option>
-					<option value="Bevan">Bevan</option>
-					<option value="Buda">Buda</option>
-					<option value="Cabin">Cabin</option>
-					<option value="Calibri">Calibri</option>
-					<option value="Calligraffitti">Calligraffitti</option>
-					<option value="Cambria">Cambria</option>
-					<option value="Cantarell">Cantarell</option>
-					<option value="Cardo">Cardo</option>
-					<option value="Cherry+Cream+Soda">Cherry Cream Soda</option>
-					<option value="Chewy">Chewy</option>
-					<option value="Coda">Coda</option>
-					<option value="Coming+Soon">Coming Soon</option>
-					<option value="Consolas">Consolas</option>
-					<option value="Copse">Copse</option>
-					<option value="Corben">Corben</option>
-					<option value="Corsiva">Corsiva</option>
-					<option value="Cousine">Cousine</option>
-					<option value="Covered+By+Your+Grace">Covered By Your Grace</option>
-					<option value="Crafty+Girls">Crafty Girls</option>
-					<option value="Crimson+Text">Crimson Text</option>
-					<option value="Crushed">Crushed</option>
-					<option value="Cuprum">Cuprum</option>
-					<option value="Dancing+Script">Dancing Script</option>
-					<option value="Droid+Sans">Droid Sans</option>
-					<option value="Droid+Sans+Mono">Droid Sans Mono</option>
-					<option value="Droid+Serif">Droid Serif</option>
-					<option value="Fontdiner+Swanky">Fontdiner Swanky</option>
-					<option value="GFS+Didot">GFS Didot</option>
-					<option value="GFS+Neohellenic">GFS Neohellenic</option>
-					<option value="Geo">Geo</option>
-					<option value="Goudy+Bookletter+1911">Goudy Bookletter 1911</option>
-					<option value="Gruppo">Gruppo</option>
-					<option value="Hanuman">Hanuman</option>
-					<option value="Homemade+Apple">Homemade Apple</option>
-					<option value="IM+Fell+DW+Pica">IM Fell DW Pica</option>
-					<option value="IM+Fell+DW+Pica+SC">IM Fell DW Pica SC</option>
-					<option value="IM+Fell+Double+Pica">IM Fell Double Pica</option>
-					<option value="IM+Fell+Double+Pica+SC">IM Fell Double Pica SC</option>
-					<option value="IM+Fell+English">IM Fell English</option>
-					<option value="IM+Fell+English+SC">IM Fell English SC</option>
-					<option value="IM+Fell+French+Canon">IM Fell French Canon</option>
-					<option value="IM+Fell+French+Canon+SC">IM Fell French Canon SC</option>
-					<option value="IM+Fell+Great+Primer">IM Fell Great Primer</option>
-					<option value="IM+Fell+Great+Primer+SC">IM Fell Great Primer SC</option>
-					<option value="Inconsolata">Inconsolata</option>
-					<option value="Irish+Growler">Irish Growler</option>
-					<option value="Josefin+Sans">Josefin Sans</option>
-					<option value="Josefin+Slab">Josefin Slab</option>
-					<option value="Just+Another+Hand">Just Another Hand</option>
-					<option value="Just+Me+Again+Down+Here">Just Me Again Down Here</option>
-					<option value="Kenia">Kenia</option>
-					<option value="Kranky">Kranky</option>
-					<option value="Kreon">Kreon</option>
-					<option value="Kristi">Kristi</option>
-					<option value="Lato">Lato</option>
-					<option value="Lekton">Lekton</option>
-					<option value="Lobster">Lobster</option>
-					<option value="Luckiest+Guy">Luckiest Guy</option>
-					<option value="Meddon">Meddon</option>
-					<option value="Merriweather">Merriweather</option>
-					<option value="Molengo">Molengo</option>
-					<option value="Mountains+of+Christmas">Mountains of Christmas</option>
-					<option value="Neucha">Neucha</option>
-					<option value="Neuton">Neuton</option>
-					<option value="Nobile">Nobile</option>
-					<option value="OFL+Sorts+Mill+Goudy+TT">OFL Sorts Mill Goudy TT</option>
-					<option value="Old+Standard+TT">Old Standard TT</option>
-					<option value="PT+Sans">PT Sans</option>
-					<option value="PT+Sans+Caption">PT Sans Caption</option>
-					<option value="PT+Sans+Narrow">PT Sans Narrow</option>
-					<option value="PT+Serif">PT Serif</option>
-					<option value="Permanent+Marker">Permanent Marker</option>
-					<option value="Philosopher">Philosopher</option>
-					<option value="Puritan">Puritan</option>
-					<option value="Radley">Radley</option>
-					<option value="Raleway">Raleway</option>
-					<option value="Reenie+Beanie">Reenie Beanie</option>
-					<option value="Rock+Salt">Rock Salt</option>
-					<option value="Schoolbell">Schoolbell</option>
-					<option value="Slackey">Slackey</option>
-					<option value="Sniglet">Sniglet</option>
-					<option value="Sunshiney">Sunshiney</option>
-					<option value="Syncopate">Syncopate</option>
-					<option value="Tangerine">Tangerine</option>
-					<option value="Tinos">Tinos</option>
-					<option value="Ubuntu">Ubuntu</option>
-					<option value="UnifrakturMaguntia">UnifrakturMaguntia</option>
-					<option value="Unkempt">Unkempt</option>
-					<option value="Vibur">Vibur</option>
-					<option value="Vollkorn">Vollkorn</option>
-					<option value="Walter+Turncoat">Walter Turncoat</option>
-					<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>											
-		</param>
+		<param name="googleWebFont2" type="googlewebfont" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information." />
 		<param name="googleWebFontTargets2" type="text" default="" label="Google Web Font Targets" description="A comma seperated list of the html elements, CSS IDs, and classes to apply the selected Google Web Font to. If targeting the body, be sure to set the Body Font Family to None Selected." size="50" />
 		<param name="googleWebFontSize2" type="text" default="" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above. Percentage is preferred. NOTE: Construct's base typography uses a font size of 76%, which is 12px in most modern browsers." size="5" />			
 		<param type="spacer" default=" " />
-		<param name="googleWebFont3" type="list" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information.">
-					<option value="">- None Selected -</option>
-					<option value="Allan">Allan</option>
-					<option value="Allerta">Allerta</option>
-					<option value="Allerta+Stencil">Allerta Stencil</option>
-					<option value="Anonymous+Pro">Anonymous Pro</option>
-					<option value="Anton">Anton</option>
-					<option value="Arimo">Arimo</option>
-					<option value="Arvo">Arvo</option>
-					<option value="Astloch">Astloch</option>
-					<option value="Bentham">Bentham</option>
-					<option value="Bevan">Bevan</option>
-					<option value="Buda">Buda</option>
-					<option value="Cabin">Cabin</option>
-					<option value="Calibri">Calibri</option>
-					<option value="Calligraffitti">Calligraffitti</option>
-					<option value="Cambria">Cambria</option>
-					<option value="Cantarell">Cantarell</option>
-					<option value="Cardo">Cardo</option>
-					<option value="Cherry+Cream+Soda">Cherry Cream Soda</option>
-					<option value="Chewy">Chewy</option>
-					<option value="Coda">Coda</option>
-					<option value="Coming+Soon">Coming Soon</option>
-					<option value="Consolas">Consolas</option>
-					<option value="Copse">Copse</option>
-					<option value="Corben">Corben</option>
-					<option value="Corsiva">Corsiva</option>
-					<option value="Cousine">Cousine</option>
-					<option value="Covered+By+Your+Grace">Covered By Your Grace</option>
-					<option value="Crafty+Girls">Crafty Girls</option>
-					<option value="Crimson+Text">Crimson Text</option>
-					<option value="Crushed">Crushed</option>
-					<option value="Cuprum">Cuprum</option>
-					<option value="Dancing+Script">Dancing Script</option>
-					<option value="Droid+Sans">Droid Sans</option>
-					<option value="Droid+Sans+Mono">Droid Sans Mono</option>
-					<option value="Droid+Serif">Droid Serif</option>
-					<option value="Fontdiner+Swanky">Fontdiner Swanky</option>
-					<option value="GFS+Didot">GFS Didot</option>
-					<option value="GFS+Neohellenic">GFS Neohellenic</option>
-					<option value="Geo">Geo</option>
-					<option value="Goudy+Bookletter+1911">Goudy Bookletter 1911</option>
-					<option value="Gruppo">Gruppo</option>
-					<option value="Hanuman">Hanuman</option>
-					<option value="Homemade+Apple">Homemade Apple</option>
-					<option value="IM+Fell+DW+Pica">IM Fell DW Pica</option>
-					<option value="IM+Fell+DW+Pica+SC">IM Fell DW Pica SC</option>
-					<option value="IM+Fell+Double+Pica">IM Fell Double Pica</option>
-					<option value="IM+Fell+Double+Pica+SC">IM Fell Double Pica SC</option>
-					<option value="IM+Fell+English">IM Fell English</option>
-					<option value="IM+Fell+English+SC">IM Fell English SC</option>
-					<option value="IM+Fell+French+Canon">IM Fell French Canon</option>
-					<option value="IM+Fell+French+Canon+SC">IM Fell French Canon SC</option>
-					<option value="IM+Fell+Great+Primer">IM Fell Great Primer</option>
-					<option value="IM+Fell+Great+Primer+SC">IM Fell Great Primer SC</option>
-					<option value="Inconsolata">Inconsolata</option>
-					<option value="Irish+Growler">Irish Growler</option>
-					<option value="Josefin+Sans">Josefin Sans</option>
-					<option value="Josefin+Slab">Josefin Slab</option>
-					<option value="Just+Another+Hand">Just Another Hand</option>
-					<option value="Just+Me+Again+Down+Here">Just Me Again Down Here</option>
-					<option value="Kenia">Kenia</option>
-					<option value="Kranky">Kranky</option>
-					<option value="Kreon">Kreon</option>
-					<option value="Kristi">Kristi</option>
-					<option value="Lato">Lato</option>
-					<option value="Lekton">Lekton</option>
-					<option value="Lobster">Lobster</option>
-					<option value="Luckiest+Guy">Luckiest Guy</option>
-					<option value="Meddon">Meddon</option>
-					<option value="Merriweather">Merriweather</option>
-					<option value="Molengo">Molengo</option>
-					<option value="Mountains+of+Christmas">Mountains of Christmas</option>
-					<option value="Neucha">Neucha</option>
-					<option value="Neuton">Neuton</option>
-					<option value="Nobile">Nobile</option>
-					<option value="OFL+Sorts+Mill+Goudy+TT">OFL Sorts Mill Goudy TT</option>
-					<option value="Old+Standard+TT">Old Standard TT</option>
-					<option value="PT+Sans">PT Sans</option>
-					<option value="PT+Sans+Caption">PT Sans Caption</option>
-					<option value="PT+Sans+Narrow">PT Sans Narrow</option>
-					<option value="PT+Serif">PT Serif</option>
-					<option value="Permanent+Marker">Permanent Marker</option>
-					<option value="Philosopher">Philosopher</option>
-					<option value="Puritan">Puritan</option>
-					<option value="Radley">Radley</option>
-					<option value="Raleway">Raleway</option>
-					<option value="Reenie+Beanie">Reenie Beanie</option>
-					<option value="Rock+Salt">Rock Salt</option>
-					<option value="Schoolbell">Schoolbell</option>
-					<option value="Slackey">Slackey</option>
-					<option value="Sniglet">Sniglet</option>
-					<option value="Sunshiney">Sunshiney</option>
-					<option value="Syncopate">Syncopate</option>
-					<option value="Tangerine">Tangerine</option>
-					<option value="Tinos">Tinos</option>
-					<option value="Ubuntu">Ubuntu</option>
-					<option value="UnifrakturMaguntia">UnifrakturMaguntia</option>
-					<option value="Unkempt">Unkempt</option>
-					<option value="Vibur">Vibur</option>
-					<option value="Vollkorn">Vollkorn</option>
-					<option value="Walter+Turncoat">Walter Turncoat</option>
-					<option value="Yanone+Kaffeesatz">Yanone Kaffeesatz</option>											
-		</param>
+		<param name="googleWebFont3" type="googlewebfont" default="" label="Google Web Font" description="The Google Web font to be applied to the designated targets below. Visit http://code.google.com/webfonts for more information." />
 		<param name="googleWebFontTargets3" type="text" default="" label="Google Web Font Targets" description="A comma seperated list of A comma seperated list of the html elements, CSS IDs, and classes to apply the selected Google Web Font to. If targeting the body, be sure to set the Body Font Family to None Selected." size="50" />
 		<param name="googleWebFontSize3" type="text" default="" label="Google Web Font Size" description="Define the font size, including the unit of measure, of the font family defined above. Percentage is preferred. NOTE: Construct's base typography uses a font size of 76%, which is 12px in most modern browsers." size="5" />			
 		<param type="panel" title="Version Check" />			
