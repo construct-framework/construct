@@ -27,6 +27,7 @@ $customFontFamily		= $this->params->get('customFontFamily');
 $customFontFamilySize	= $this->params->get('customFontFamilySize');
 $customFontFamilyTargets= $this->params->get('customFontFamilyTargets');
 $customStyleSheet 		= $this->params->get('customStyleSheet');
+$detectTablets			= $this->params->get('detectTablets');
 $enableSwitcher 		= $this->params->get('enableSwitcher');
 $IECSS3					= $this->params->get('IECSS3');
 $IECSS3Targets			= $this->params->get('IECSS3Targets');

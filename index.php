@@ -14,9 +14,9 @@ if(file_exists($logicFile)) include $logicFile;
 if(file_exists($mdetectFile)) include_once $mdetectFile;
 $uagent_obj 	= new uagent_info();
 $isMobile 		= $uagent_obj->DetectMobileLong();
-
-// Check if mobile device detecion is turned on and test if visitor is a mobile device. If so, load mobile sub-template
-if ( $mdetect && $isMobile ) {
+$isTablet		= $uagent_obj->DetectTierTablet();
+// Check if mobile device detecion is turned on and, test if visitor is a mobile device, and if so, load mobile sub-template
+if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
 	if(file_exists($alternatemTemplate)) include_once $alternatemTemplate;
 	elseif(file_exists($mTemplate)) include_once $mTemplate;
 }
