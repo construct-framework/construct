@@ -289,13 +289,7 @@
 			</fieldset>							
 			<fieldset name="version_check">
 				<field label="TPL_JE_CONSTRUCT_PRO_VERSION_CHECK_LABEL" type="upgradecheck" />
-			</fieldset>
-			<fieldset name="changelog">
-				<field label="TPL_JE_CONSTRUCT_PRO_CHANGELOG" type="spacer" />
-			</fieldset>
-			<fieldset name="features">
-				<field label="TPL_JE_CONSTRUCT_PRO_FEATURES" type="spacer" />
-			</fieldset>			
+			</fieldset>	
 		</fields>
 	</config>	
 </extension>
