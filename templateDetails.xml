@@ -214,6 +214,10 @@
 				<option value="1">Yes</option>
 				<option value="0">No</option>
 			</param>
+			<param name="detectTablets" type="radio" default="1" label="Include Tablet Devices" description="Include tablet devices in the mobile detection and load the mobile version of the temeplate.">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</param>			
 			<param name="mNavPosition" type="radio" default="1" label="Navigation Position" description="Placement of the navigation, in relation to the main content area.">
 				<option value="1">Before Content</option>
 				<option value="0">After Content</option>
