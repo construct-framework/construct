@@ -55,6 +55,7 @@ $mNavPosition			= $this->params->get('mNavPosition');
 $mNavDataTheme			= $this->params->get('mNavDataTheme');
 $mPageDataTheme			= $this->params->get('mPageDataTheme');
 $setGeneratorTag		= $this->params->get('setGeneratorTag');
+$showBackToTop			= $this->params->get('showBackToTop');
 $showDate 				= $this->params->get('showDate');		
 $showDiagnostics 		= $this->params->get('showDiagnostics');
 $siteWidth				= $this->params->get('siteWidth');

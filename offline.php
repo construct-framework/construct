@@ -364,8 +364,11 @@ else {
 	</div><!-- end footer-push -->
     
 	<div id="footer" class="clear clearfix">
-		<div class="gutter clearfix">
-			<a id="to-page-top" href="<?php $url->setFragment('page-top'); echo $url->toString();?>" class="to-additional">Back to Top</a>
+		<div class="gutter clearfix">			
+
+			<?php if ($showBackToTop) : ?>
+				<a id="to-page-top" href="<?php $url->setFragment('page-top'); echo $url->toString();?>" class="to-additional">Back to Top</a>
+			<?php endif; ?>
 
 			<?php if ($this->countModules('syndicate')) : ?>			
 			<div id="syndicate">

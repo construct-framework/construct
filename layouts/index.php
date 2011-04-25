@@ -5,27 +5,6 @@
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
-
-// Load template logic
-$logicFile 		= JPATH_THEMES.'/'.$this->template.'/logic.php';
-if(file_exists($logicFile)) include $logicFile;
-
-// Initialize mobile device detection
-if(file_exists($mdetectFile)) include_once $mdetectFile;
-$uagent_obj 	= new uagent_info();
-$isMobile 		= $uagent_obj->DetectMobileLong();
-$isTablet		= $uagent_obj->DetectTierTablet();
-// Check if mobile device detecion is turned on and, test if visitor is a mobile device, and if so, load mobile sub-template
-if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
-	if(file_exists($alternatemTemplate)) include_once $alternatemTemplate;
-	elseif(file_exists($mTemplate)) include_once $mTemplate;
-}
-
-// If mobile detection is off, or visitor is not a mobile device, check for layout override and load it if it exists
-elseif (isset($alternateIndexFile)) {
-	include_once($alternateIndexFile);		
-}
-else {
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -373,4 +352,3 @@ else {
 	
 	</body>
 </html>
-<?php } ?>
