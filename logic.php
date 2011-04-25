@@ -84,13 +84,13 @@ if ( $loadMoo && $loadModal ) {
 }
 
 // Remove MooTools if set to no.
-if ( !$loadMoo ) {
+/*if ( !$loadMoo ) {
 	$head=$this->getHeadData();
 	reset($head['scripts']);
 	unset($head['scripts'][$this->baseurl . '/media/system/js/mootools.js']);
 	unset($head['scripts'][$this->baseurl . '/plugins/system/mtupgrade/mootools.js']);
 	$this->setHeadData($head);
-}
+}*/
 
 // Fix Google Web Font name for CSS
 $googleWebFontFamily 	= str_replace(array('+',':bold',':italic')," ",$googleWebFont);

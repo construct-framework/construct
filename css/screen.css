@@ -325,7 +325,8 @@ td.sectiontableheader:last-child,
 #sub-nav .moduletable_menu{border:1px solid #999;padding:5px;margin:5px;}
 #syndicate{position:absolute;left:20px}
 #system-message dt{display:none}
-#system-message dd{clear:both;padding:5px 20px;text-align:left;}
+#system-message dd{clear:both;padding:5px 0;text-align:left;}
+#system-message dd:after{clear:both;content:".";font:1px/0;display:block;height:0;visibility:hidden}
 #system-message dd ul li{list-style:none}
 #system-message dd.message{color:#0055BB;background:#C3D2E5;border-top:2px solid #84A7DB;border-bottom:2px solid #84A7DB}
 #system-message dd.message ul{margin-bottom:0}
