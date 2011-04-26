@@ -11,16 +11,18 @@ $logicFile 				= JPATH_THEMES.'/'.$this->template.'/logic.php';
 if(file_exists($logicFile)) include $logicFile;
 
 // Mobile device detection
-$mtemplateFile			= JPATH_THEMES.'/'.$this->template.'/mobile/'.$mtemplateoffline;
+$mTemplate				= JPATH_THEMES.'/'.$this->template.'/mobile-offline.php';
+$alternatemTemplate		= JPATH_THEMES.'/'.$this->template.'/layouts/mobile-offline.php';
 
 // Initialize mobile device detection
 if(file_exists($mdetectFile)) include_once $mdetectFile;
 $uagent_obj 			= new uagent_info();
 $isMobile 				= $uagent_obj->DetectMobileLong();
-
+$isTablet				= $uagent_obj->DetectTierTablet();
 // Check if mobile device detecion is turned on and test if visitor is a mobile device. If so, load mobile sub-template
-if ( $mdetect && $isMobile ) {
-	if(file_exists($mtemplateFile)) include_once $mtemplateFile;
+if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
+	if(file_exists($alternatemTemplate)) include_once $alternatemTemplate;
+	elseif(file_exists($mTemplate)) include_once $mTemplate;
 }
 else {
 ?>
