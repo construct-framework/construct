@@ -136,7 +136,7 @@
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
 				</field>
-				<field name="showBackToTop" type="radio" default="1" label="TPL_CONSTRUCT_PRO_SHOW_BACK_TO_TOP_LABEL" description="TPL_CONSTRUCT_PRO_SHOW_BACK_TO_TOP_DESC">
+				<field name="showBackToTop" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_SHOW_BACK_TO_TOP_LABEL" description="TPL_JE_CONSTRUCT_PRO_SHOW_BACK_TO_TOP_DESC">
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
 				</field>
