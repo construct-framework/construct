@@ -17,8 +17,7 @@ $isMobile 				= $uagent_obj->DetectMobileLong();
 $isTablet				= $uagent_obj->DetectTierTablet();
 // Check if mobile device detecion is turned on and, test if visitor is a mobile device, and if so, load mobile sub-template
 if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
-	if(file_exists($alternatemTemplate)) include_once $alternatemTemplate;
-	elseif(file_exists($mTemplate)) include_once $mTemplate;
+	if(file_exists($mTemplate)) include_once $mTemplate;
 }
 // If mobile detection is off, or visitor is not a mobile device, check for alternate index file and load it if it exists
 elseif (isset($alternateIndexFile)) {
@@ -33,7 +32,7 @@ else {
 <jdoc:include type="head" />
 </head>
 
-<body class="<?php echo $columnLayout; if ($bodyFontFamily) echo ' '.$bodyFontFamily; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId;} ?>">
+<body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId; ?>">
 
 	<div id="footer-push">
 		<a id="page-top" name="page-top"></a>

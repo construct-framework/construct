@@ -33,7 +33,7 @@ else {
 <jdoc:include type="head" />
 </head>
 
-<body class="<?php echo $columnLayout; if ($bodyFontFamily) echo ' '.$bodyFontFamily; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId;} ?>">
+<body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId; ?>">
 
 <?php if ($this->countModules('analytics')) : ?>
 	<jdoc:include type="modules" name="analytics" />
