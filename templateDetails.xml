@@ -27,6 +27,7 @@
 		table.admintable td.paramlist_key {font-weight:normal;text-transform:uppercase;text-align:left;}
 		table.admintable td.paramlist_value label {text-transform:none;}
 		table.admintable td.key, table.admintable td.paramlist_key,.pane-sliders .content,.pane-sliders .panel h3, div.panel fieldset {background:none;}
+		div.panel fieldset {margin-bottom:0;padding-bottom:0;}
 		table.admintable td.key, table.admintable td.paramlist_key {border:none;}
 	</style>	
 	<a href="http://joomlaengineering.com/" target="_blank"><img src="../templates/je-construct-pro/images/logo.png"></a>	

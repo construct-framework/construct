@@ -90,7 +90,6 @@ $googleWebFontFamily2 	= str_replace(array('+',':bold',':italic')," ",$googleWeb
 $googleWebFontFamily3 	= str_replace(array('+',':bold',':italic')," ",$googleWebFont3);
 
 // Get the name of the extended template override group
-if ($useCustomStyleSheet)
 $overrideGroup 			= str_replace(".css","",$customStyleSheet);
 
 #----------------------------- Moldule Counts -----------------------------#
@@ -393,7 +392,7 @@ $doc->addFavicon($template.'/favicon.png','image/png','icon');
 $doc->addStyleSheet($template.'/css/screen.css','text/css','screen');
 $doc->addStyleSheet($template.'/css/overrides.css','text/css','screen');
 $doc->addStyleSheet($template.'/css/print.css','text/css','print');
-if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
+if ($customStyleSheet !='-1')
 	$doc->addStyleSheet($template.'/css/'.$customStyleSheet,'text/css','screen');
 if ($this->direction == 'rtl')
 	$doc->addStyleSheet($template.'/css/rtl.css','text/css','screen');
@@ -407,9 +406,7 @@ if ($enableSwitcher) {
 	$doc->addScript($template.'/js/styleswitch.js');
 } 	
 
-// Typography
-if ( $customFontFamily && $customFontFamilyTargets )
-	$doc->addStyleDeclaration('  '.$customFontFamilyTargets.' {font-family:'.$customFontFamily.';font-size:'.$customFontFamilySize.';}');	
+// Typography	
 if ($googleWebFont) {
 	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleWebFont.'');
 	$doc->addStyleDeclaration('  '.$googleWebFontTargets.' {font-family:'.$googleWebFontFamily.', serif;font-size:'.$googleWebFontSize.';}');
@@ -426,7 +423,7 @@ if ($googleWebFont3) {
 // JavaScript
 $doc->addCustomTag("\n".'  <script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
 if ($loadjQuery)
-	$doc->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js');
+	$doc->addScript($loadjQuery);
 
 // Layout Declarations
 if ($siteWidth)

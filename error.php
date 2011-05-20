@@ -35,14 +35,11 @@ $loadModal				= '1';
 $loadjQuery 			= '0';
 $mdetect 				= '1';
 $setGeneratorTag		= 'Joomla Engineering | http://JoomlaEngineering.com';
-$showDate 				= '1';
-$showPageLinks			= '1';
 $showDiagnostics 		= '0';
 $siteWidth				= '80.5';
 $siteWidthType			= 'max-width';
 $siteWidthUnit			= 'em';
 $stickyFooterHeight		= '175';
-$useCustomStyleSheet 	= '1';
 $useStickyFooter 		= '1';
 
 // Define module counts
@@ -99,7 +96,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
   <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/wireframe.css" type="text/css" title="wireframe"/>';
 } ?>  
 <?php	
-	if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
+	if ($customStyleSheet !='-1')
 		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/'.$customStyleSheet.'"  type="text/css" media="screen" />';
 	if ($this->direction == 'rtl')
 		echo "\n".'  <link rel="stylesheet" href="'.$baseUrl.'"templates/"'.$this->template.'"/css/rtl.css"  type="text/css" media="screen" />';
@@ -170,27 +167,25 @@ echo "\n"; ?>
 		<div id="header" class="clear clearfix">
 			<div class="gutter">
 
-				<?php if ($showDate) : ?>
-					<div class="date-container">
-						<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
-						<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
-						<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
-						<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
-					</div>
-				<?php endif; ?>
+				<div class="date-container">
+					<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
+					<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
+					<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
+					<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
+				</div>
+
+
 			
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo $this->baseurl ?>/"><?php echo $this->baseurl ?></a></h1>
 				
-				<?php echo $renderer->render('header', $jexhtml, null);  ?>
-				
-				<?php if ($showPageLinks) : ?>						
-					<ul id="access">
-						<li>Jump to:</li>
-						<li><a href="<?php echo $baseUrl; ?>index.php#content" class="to-content">Content</a></li>					
-						<li><a href="<?php echo $baseUrl; ?>index.php#nav" class="to-nav">Navigation</a></li>
-						<li><a href="<?php echo $baseUrl; ?>index.php#additional" class="to-additional">Additional Information</a></li>
-					</ul>				
-				<?php endif; ?>	
+				<?php echo $renderer->render('header', $jexhtml, null);  ?>			
+						
+				<ul id="access">
+					<li>Jump to:</li>
+					<li><a href="<?php echo $baseUrl; ?>index.php#content" class="to-content">Content</a></li>					
+					<li><a href="<?php echo $baseUrl; ?>index.php#nav" class="to-nav">Navigation</a></li>
+					<li><a href="<?php echo $baseUrl; ?>index.php#additional" class="to-additional">Additional Information</a></li>
+				</ul>				
 				
 				<?php if ($enableSwitcher) : ?>
 					<ul id="style-switch">
