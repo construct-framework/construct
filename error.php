@@ -148,7 +148,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 echo "\n"; ?>
 </head>
 
-<body class="<?php echo $columnLayout; if ($bodyFontFamily) echo ' '.$bodyFontFamily; if($useStickyFooter) echo ' sticky-footer'; ?> error">
+<body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; ?> error">
 	<div id="footer-push">
 		<?php if ($supraModuleClass) : ?>
 			<div id="top" class="clearfix">
@@ -170,14 +170,14 @@ echo "\n"; ?>
 		<div id="header" class="clear clearfix">
 			<div class="gutter">
 
-				<?php if ($showDate) : ?>
-					<div class="date-container">
-						<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
-						<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
-						<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
-						<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
-					</div>
-				<?php endif; ?>
+				<div class="date-container">
+					<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
+					<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
+					<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
+					<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
+				</div>
+
+
 			
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo $this->baseurl ?>/"><?php echo $this->baseurl ?></a></h1>
 				

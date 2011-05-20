@@ -17,8 +17,7 @@ $isMobile 		= $uagent_obj->DetectMobileLong();
 $isTablet		= $uagent_obj->DetectTierTablet();
 // Check if mobile device detecion is turned on and, test if visitor is a mobile device, and if so, load mobile sub-template
 if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
-	if(file_exists($alternatemTemplate)) include_once $alternatemTemplate;
-	elseif(file_exists($mTemplate)) include_once $mTemplate;
+	if(file_exists($mTemplate)) include_once $mTemplate;
 }
 
 // If mobile detection is off, or visitor is not a mobile device, check for layout override and load it if it exists
@@ -34,7 +33,7 @@ else {
 <jdoc:include type="head" />
 </head>
 
-<body class="<?php echo $columnLayout; if ($bodyFontFamily) echo ' '.$bodyFontFamily; if($useStickyFooter) echo ' sticky-footer'; if ($useSubBodyClasses) { echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId;} ?>">
+<body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; ?>">
 
 	<div id="footer-push">
 		<a id="page-top" name="page-top"></a>
@@ -67,14 +66,12 @@ else {
 		<div id="header" class="clear clearfix">
 			<div class="gutter clearfix">
 
-				<?php if ($showDate) : ?>
-					<div class="date-container">
-						<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
-						<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
-						<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
-						<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
-					</div>
-				<?php endif; ?>	
+				<div class="date-container">
+					<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
+					<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
+					<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
+					<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
+				</div>
 				
 				<?php if ($showDiagnostics) : ?>
 					<ul id="diagnostics">
@@ -346,9 +343,7 @@ else {
 	<div id="footer" class="clear clearfix">
 		<div class="gutter clearfix">			
 
-			<?php if ($showBackToTop) : ?>
-				<a id="to-page-top" href="<?php $url->setFragment('page-top'); echo $url->toString();?>" class="to-additional">Back to Top</a>
-			<?php endif; ?>
+			<a id="to-page-top" href="<?php $url->setFragment('page-top'); echo $url->toString();?>" class="to-additional">Back to Top</a>
 
 			<?php if ($this->countModules('syndicate')) : ?>			
 			<div id="syndicate">

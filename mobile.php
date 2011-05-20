@@ -6,10 +6,11 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */	
 
-// To enable use of site configuration
-$app 					= JFactory::getApplication();
-// Get the base URL of the website
-$baseUrl 				= JURI::base();
+// Check for Mobile Extended Template Layout Override and load it if it exists
+if (isset($alternateMobileIndexFile)) {
+	include_once($alternateMobileIndexFile);
+}
+else {
 ?>
 
 <!DOCTYPE html> 
@@ -18,12 +19,18 @@ $baseUrl 				= JURI::base();
 		<meta http-equiv="Content-Type" content="<?php echo $contenttype; ?>; charset=utf-8" />
 		<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+		<?php //Load Mobile Extended Template Style Overrides
+		if (isset($mobileCssFile)) : ?>
+			<link rel="stylesheet" href="<?php echo $baseUrl.$mobileCssFile; ?>" type="text/css" media="screen" />			
+		<?php endif; ?>		
 		<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
 		<script>
-			$(document).ready(function() {
-				$('body').removeClass("noscript");
-			});
+			(function($) { //enable using $ along side of other libraries
+				$(document).ready(function() {
+					$('body').removeClass("noscript");
+				});
+			})(jQuery) // releases $ to other libraries
 		</script>
 	</head>
 
@@ -31,6 +38,15 @@ $baseUrl 				= JURI::base();
 	<div data-role="page" data-theme="<?php echo $mPageDataTheme; ?>">
 		<div id="header" data-role="header" data-theme="<?php echo $mHeaderDataTheme; ?>">
 			<h1><a href="<?php echo $baseUrl; ?>/" title="<?php echo $app->getCfg('sitename'); ?>"><?php echo $app->getCfg('sitename'); ?></a></h1>
+			<?php if ($showDiagnostics) : ?>
+				<ul id="diagnostics">
+					<li><?php echo $currentComponent; ?></li>
+					<li><?php if($articleId)	echo 'article-'.$articleId; ?></li>
+					<li><?php if($itemId)		echo 'item-'.$itemId; ?></li>
+					<li><?php if($catId)		echo 'category-'.$catId; ?></li>
+					<li><?php if($sectionId) 	echo 'section-'.$sectionId; ?></li>
+				</ul>
+			<?php endif; ?>				
 		</div>
 	
 		<?php if ( $mNavPosition && ($this->countModules('nav'))) : ?>
@@ -61,3 +77,4 @@ $baseUrl 				= JURI::base();
 	  
 </body>
 </html>
+<?php }

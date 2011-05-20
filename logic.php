@@ -315,7 +315,7 @@ $doc->addFavicon($template.'/favicon.png', 'image/png','icon');
 // Style sheets
 $doc->addStyleSheet($template.'/css/screen.css','text/css','screen');
 $doc->addStyleSheet($template.'/css/print.css','text/css','print');
-if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
+if ($customStyleSheet !='-1')
 	$doc->addStyleSheet($template.'/css/'.$customStyleSheet,'text/css','screen');
 if ($this->direction == 'rtl')
 	$doc->addStyleSheet($template.'/css/rtl.css','text/css','screen');
@@ -348,7 +348,7 @@ if ($googleWebFont3) {
 // JavaScript
 $doc->addCustomTag("\n".'  <script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
 if ($loadjQuery)
-	$doc->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js');
+	$doc->addScript($loadjQuery);
 
 // Layout Declarations
 if ($siteWidth)
