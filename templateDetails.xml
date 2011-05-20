@@ -123,35 +123,15 @@
 	<config>
 		<fields name="params">
 			<fieldset name="general" addfieldpath="/templates/je-construct-pro/elements" >									
-				<field name="showDate" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_SHOW_DATE_LABEL" description="TPL_JE_CONSTRUCT_PRO_SHOW_DATE_DESC">
-					<option value="1">Show</option>
-					<option value="0">Hide</option>
-				</field>
-				<field name="showPageLinks" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_SHOW_PAGE_LINKS_LABEL" description="TPL_JE_CONSTRUCT_PRO_SHOW_PAGE_LINKS_DESC">
-					<option value="1">Show</option>
-					<option value="0">Hide</option>
-				</field>
 				<field name="enableSwitcher" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_ENABLE_SWITCHER_LABEL" description="TPL_JE_CONSTRUCT_PRO_ENABLE_SWITCHER_DESC">
-					<option value="1">Show</option>
-					<option value="0">Hide</option>
-				</field>
-				<field name="showBackToTop" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_SHOW_BACK_TO_TOP_LABEL" description="TPL_JE_CONSTRUCT_PRO_SHOW_BACK_TO_TOP_DESC">
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
 				</field>
 				<field name="showDiagnostics" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_SHOW_DIAGNOSTICS_LABEL" description="TPL_JE_CONSTRUCT_PRO_SHOW_DIAGNOSTICS_DESC">
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
-				</field>
-				<field name="useSubBodyClasses" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_USE_SUB_BODY_CLASSES_LABEL" description="TPL_JE_CONSTRUCT_PRO_USE_SUB_BODY_CLASSES_DESC">
-		        	<option value="1">Show</option>
-		        	<option value="0">Hide</option>
-		    	</field>
-				<field name="useCustomStyleSheet" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_USE_CUSTOM_STYLE_SHEET_LABEL" description="TPL_JE_CONSTRUCT_PRO_USE_CUSTOM_STYLE_SHEET_DESC">
-					<option value="1">Yes</option>
-					<option value="0">No</option>
-				</field>				
-				<field name="customStyleSheet" type="filelist" default="example.css" label="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_LABEL" directory="templates/je-construct-pro/css" filter="\.css" exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css" description="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_DESC" />
+				</field>		
+				<field name="customStyleSheet" type="filelist" default="example.css" label="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_LABEL" directory="templates/je-construct-pro/css" filter="\.css" exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css" description="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_DESC" />
 				<field name="setGeneratorTag" type="text" default="Joomla Engineering | http://JoomlaEngineering.com" label="Generator Meta Tag" description="Customize the generator meta tag output by your template." size="56" />		
 			</fieldset>
 			<fieldset name="IE">
@@ -175,10 +155,7 @@
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
-				<field name="loadjQuery" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_LOAD_JQUERY_LABEL" description="TPL_JE_CONSTRUCT_PRO_LOAD_JQUERY_DESC">
-					<option value="1">Yes</option>
-					<option value="0">No</option>
-				</field>
+				<field name="loadjQuery" type="jqueryversion" default="" label="TPL_JE_CONSTRUCT_PRO_LOAD_JQUERY_LABEL" description="TPL_JE_CONSTRUCT_PRO_LOAD_JQUERY_DESC" />
 			</fieldset>
 			<fieldset name="Layout">				
 				<field name="siteWidth" type="text" default="80.5" label="TPL_JE_CONSTRUCT_PRO_SITE_WIDTH_LABEL" description="TPL_JE_CONSTRUCT_PRO_SITE_WIDTH_DESC" size="10" />	
@@ -259,29 +236,7 @@
 					<option value="e">Accent</option>
 				</field>					
 			</fieldset>								
-			<fieldset name="typography" >
-				<field name="bodyFontFamily" type="list" default="" label="TPL_JE_CONSTRUCT_PRO_FONT_FAMILY_LABEL" description="TPL_JE_CONSTRUCT_PRO_FONT_FAMILY_DESC">
-					<option value="">- None Selected -</option>
-					<option value="arial">Arial</option>
-					<option value="arial-black">Arial Black</option>
-					<option value="courier">Courier New</option>			
-					<option value="georgia">Georgia</option>
-					<option value="helvetica">Helvetica</option>
-					<option value="impact">Impact</option>			
-					<option value="lucida-console">Lucida Console</option>	
-					<option value="lucida-grande">Lucida Grande</option>								
-					<option value="lucida-sans">Lucida Sans</option>
-					<option value="palatino">Palatino</option>			
-					<option value="tahoma">Tahoma</option>
-					<option value="times">Times New Roman</option>
-					<option value="trebuchet">Trebuchet</option>
-					<option value="verdana">Verdana</option>
-				</field>
-				<field type="spacer" default=" " />										
-				<field name="customFontFamily" type="text" default="" label="TPL_JE_CONSTRUCT_PRO_CUSTOM_FONT_FAMILY_LABEL" description="TPL_JE_CONSTRUCT_PRO_CUSTOM_FONT_FAMILY_DESC" size="50" />		
-				<field name="customFontFamilyTargets" type="text" default="" label="TPL_JE_CONSTRUCT_PRO_CUSTOM_FONT_FAMILY_TARGETS_LABEL" description="TPL_JE_CONSTRUCT_PRO_CUSTOM_FONT_FAMILY_TARGETS_DESC" size="50" />
-				<field name="customFontFamilySize" type="text" default="76%" label="TPL_JE_CONSTRUCT_PRO_CUSTOM_FONT_FAMILY_SIZE_LABEL" description="TPL_JE_CONSTRUCT_PRO_CUSTOM_FONT_FAMILY_SIZE_DESC" size="5" />		
-				<field type="spacer" default=" " />				
+			<fieldset name="typography" >		
 				<field name="googleWebFont" type="googlewebfont" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC" />
 				<field name="googleWebFontTargets" type="text" default="h1,h2,h3,h4,h5,h6" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_DESC" size="50" />
 				<field name="googleWebFontSize" type="text" default="85%" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_DESC" size="5" />					

@@ -22,7 +22,6 @@ if ($offLine) {
 $columnLayout			= 'left-1-main-right-1';
 $customStyleSheet 		= 'example.css';
 $enableSwitcher 		= '0';
-$bodyFontFamily			= 'lucida-grande';
 $fullWidth				= '1';
 $IECSS3					= '1';
 $IECSS3Targets			= '.drop-shadow, .outline, .rounded, ul.menu li, ul.menu ul, #nav,#content-left .moduletable, #content-left .moduletable_menu, #content-right .moduletable, #content-right .moduletable_menu, #content-top .moduletable, #content-top .moduletable_menu, #sub-nav .moduletable, #sub-nav .moduletable_menu';
@@ -35,14 +34,12 @@ $loadModal				= '1';
 $loadjQuery 			= '0';
 $mdetect 				= '1';
 $setGeneratorTag		= 'Joomla Engineering | http://JoomlaEngineering.com';
-$showDate 				= '1';
 $showPageLinks			= '1';
 $showDiagnostics 		= '0';
 $siteWidth				= '80.5';
 $siteWidthType			= 'max-width';
 $siteWidthUnit			= 'em';
 $stickyFooterHeight		= '175';
-$useCustomStyleSheet 	= '1';
 $useStickyFooter 		= '1';
 
 // Define module counts
@@ -99,7 +96,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
   <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/wireframe.css" type="text/css" title="wireframe"/>';
 } ?>
 <?php	
-	if (($useCustomStyleSheet) && ($customStyleSheet !='-1'))
+	if ($customStyleSheet !='-1')
 		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/'.$customStyleSheet.'"  type="text/css" media="screen" />';
 	if ($this->direction == 'rtl')
 		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/rtl.css"  type="text/css" media="screen" />';

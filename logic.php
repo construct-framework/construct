@@ -22,10 +22,6 @@ $user 					= JFactory::getUser();
 $view     				= JRequest::getCmd('view');
 
 // Define shortcuts for template parameters
-$bodyFontFamily 		= $this->params->get('bodyFontFamily');
-$customFontFamily		= $this->params->get('customFontFamily');
-$customFontFamilySize	= $this->params->get('customFontFamilySize');
-$customFontFamilyTargets= $this->params->get('customFontFamilyTargets');
 $customStyleSheet 		= $this->params->get('customStyleSheet');
 $detectTablets			= $this->params->get('detectTablets');
 $enableSwitcher 		= $this->params->get('enableSwitcher');
@@ -55,19 +51,15 @@ $mNavPosition			= $this->params->get('mNavPosition');
 $mNavDataTheme			= $this->params->get('mNavDataTheme');
 $mPageDataTheme			= $this->params->get('mPageDataTheme');
 $setGeneratorTag		= $this->params->get('setGeneratorTag');
-$showBackToTop			= $this->params->get('showBackToTop');
-$showDate 				= $this->params->get('showDate');		
 $showDiagnostics 		= $this->params->get('showDiagnostics');
 $siteWidth				= $this->params->get('siteWidth');
 $siteWidthType			= $this->params->get('siteWidthType');
 $siteWidthUnit			= $this->params->get('siteWidthUnit');
 $showPageLinks 			= $this->params->get('showPageLinks');
 $stickyFooterHeight		= $this->params->get('stickyFooterHeight');
-$useCustomStyleSheet 	= $this->params->get('useCustomStyleSheet');
 $useStickyFooter 		= $this->params->get('useStickyFooter');
-$useSubBodyClasses		= $this->params->get('useSubBodyClasses');
 
-// Define absolute paths to files
+// Define absolute paths to filess
 $mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/elements/mdetect.php';
 $mTemplate				= JPATH_THEMES.'/'.$this->template.'/mobile.php';
 $alternatemTemplate		= JPATH_THEMES.'/'.$this->template.'/layouts/mobile.php';
@@ -85,13 +77,13 @@ if ($loadMoo) {
 }
 
 // Remove MooTools if set to no.
-/*if ( !$loadMoo ) {
+if ( !$loadMoo ) {
 	$head=$this->getHeadData();
 	reset($head['scripts']);
 	unset($head['scripts'][$this->baseurl . '/media/system/js/mootools-core.js']);
 	unset($head['scripts'][$this->baseurl . '/media/system/js/mootools-more.js']);		
 	$this->setHeadData($head);
-}*/
+}
 
 // Fix Google Web Font name for CSS
 $googleWebFontFamily 	= str_replace(array('+',':bold',':italic')," ",$googleWebFont);
@@ -99,7 +91,6 @@ $googleWebFontFamily2 	= str_replace(array('+',':bold',':italic')," ",$googleWeb
 $googleWebFontFamily3 	= str_replace(array('+',':bold',':italic')," ",$googleWebFont3);
 
 // Get the name of the extended template override group
-if ($useCustomStyleSheet)
 $overrideGroup 			= str_replace(".css","",$customStyleSheet);
 
 #----------------------------- Moldule Counts -----------------------------#
@@ -245,6 +236,7 @@ $componentGroupIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$
 $categoryGroupIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/category/'.$overrideGroup.'-category-'.$catId.'.php';
 $itemGroupIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/item/'.$overrideGroup.'-item-'.$itemId.'.php';
 $articleGroupIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/article/'.$overrideGroup.'-article-'.$articleId.'.php';
+
 $componentGroupCss 		= JPATH_THEMES.'/'.$this->template.'/css/component/'.$overrideGroup.'-'.$currentComponent.'.css';
 $categoryGroupCss 		= JPATH_THEMES.'/'.$this->template.'/css/category/'.$overrideGroup.'-category-'.$catId.'.css';
 $itemGroupCss 			= JPATH_THEMES.'/'.$this->template.'/css/item/'.$overrideGroup.'-item-'.$itemId.'.css';
@@ -255,6 +247,7 @@ $componentIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$curr
 $categoryIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/category/category-'.$catId.'.php';
 $itemIndex 				= JPATH_THEMES.'/'.$this->template.'/layouts/item/item-'.$itemId.'.php';
 $articleIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/article/article-'.$articleId.'.php';
+
 $componentCss 			= JPATH_THEMES.'/'.$this->template.'/css/component/'.$currentComponent.'.css';
 $categoryCss 			= JPATH_THEMES.'/'.$this->template.'/css/category/category-'.$catId.'.css';
 $itemCss 				= JPATH_THEMES.'/'.$this->template.'/css/item/item-'.$itemId.'.css';
@@ -329,9 +322,7 @@ if ($enableSwitcher) {
 	$doc->addScript($template.'/js/styleswitch.js');
 }
 
-// Typography
-if ( $customFontFamily && $customFontFamilyTargets )
-	$doc->addStyleDeclaration('  '.$customFontFamilyTargets.' {font-family:'.$customFontFamily.';font-size:'.$customFontFamilySize.';}');	
+// Typography	
 if ($googleWebFont) {
 	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleWebFont.'');
 	$doc->addStyleDeclaration('  '.$googleWebFontTargets.' {font-family:'.$googleWebFontFamily.', serif;font-size:'.$googleWebFontSize.';}');

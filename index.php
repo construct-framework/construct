@@ -88,18 +88,16 @@ else {
 					<jdoc:include type="modules" name="header" style="jexhtml" />	
 				<?php endif; ?>		
 				
-				<?php if ($showPageLinks) : ?>						
-					<ul id="access">
-						<li>Jump to:</li>
-						<li><a href="<?php $url->setFragment('content'); echo $url->toString();?>" class="to-content">Content</a></li>					
-						<?php if ($this->countModules('nav')) : ?>
-							<li><a href="<?php $url->setFragment('nav'); echo $url->toString();?>" class="to-nav">Navigation</a></li>
-						<?php endif; ?>					
-						<?php if ($contentBottomCount) : ?>
-							<li><a href="<?php $url->setFragment('additional'); echo $url->toString();?>" class="to-additional">Additional Information</a></li>
-						<?php endif; ?>
-					</ul>				
-				<?php endif; ?>	
+				<ul id="access">
+					<li>Jump to:</li>
+					<li><a href="<?php $url->setFragment('content'); echo $url->toString();?>" class="to-content">Content</a></li>					
+					<?php if ($this->countModules('nav')) : ?>
+						<li><a href="<?php $url->setFragment('nav'); echo $url->toString();?>" class="to-nav">Navigation</a></li>
+					<?php endif; ?>					
+					<?php if ($contentBottomCount) : ?>
+						<li><a href="<?php $url->setFragment('additional'); echo $url->toString();?>" class="to-additional">Additional Information</a></li>
+					<?php endif; ?>
+				</ul>				
 				
 				<?php if ($enableSwitcher) : ?>
 					<ul id="style-switch">
@@ -368,4 +366,4 @@ else {
 	
 	</body>
 </html>
-<?php } ?>
+<?php }
