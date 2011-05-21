@@ -86,6 +86,7 @@ else {
 						<li><?php if($itemId)		echo 'item-'.$itemId; ?></li>
 						<li><?php if($catId)		echo 'category-'.$catId; ?></li>
 						<li><?php if($sectionId) 	echo 'section-'.$sectionId; ?></li>
+						<li><?php if($view)			echo 'view '.$view; ?></i>
 					</ul>
 				<?php endif; ?>	
 

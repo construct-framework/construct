@@ -259,16 +259,22 @@ $currentComponent = JRequest::getCmd('option');
 
 $templateIndex			= JPATH_THEMES.'/'.$this->template.'/layouts/index.php';
 $componentIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$currentComponent.'.php';
-$sectionIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/section/section-'.$sectionId.'.php';
-$categoryIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/category/category-'.$catId.'.php';
-$itemIndex 				= JPATH_THEMES.'/'.$this->template.'/layouts/item/item-'.$itemId.'.php';
-$articleIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/article/article-'.$articleId.'.php';
+$sectionIdIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/section/section-'.$sectionId.'.php';
+$sectionIndex	 		= JPATH_THEMES.'/'.$this->template.'/layouts/section/section.php';
+$categoryIdIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/category/category-'.$catId.'.php';
+$categoryIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/category/category.php';
+$itemIdIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/item/item-'.$itemId.'.php';
+$articleIdIndex 		= JPATH_THEMES.'/'.$this->template.'/layouts/article/article-'.$articleId.'.php';
+$articleIndex 			= JPATH_THEMES.'/'.$this->template.'/layouts/article/article.php';
 
 $componentCss 			= JPATH_THEMES.'/'.$this->template.'/css/component/'.$currentComponent.'.css';
-$sectionCss 			= JPATH_THEMES.'/'.$this->template.'/css/section/section-'.$sectionId.'.css';
-$categoryCss 			= JPATH_THEMES.'/'.$this->template.'/css/category/category-'.$catId.'.css';
-$itemCss 				= JPATH_THEMES.'/'.$this->template.'/css/item/item-'.$itemId.'.css';
-$articleCss 			= JPATH_THEMES.'/'.$this->template.'/css/article/article-'.$articleId.'.css';
+$sectionIdCss 			= JPATH_THEMES.'/'.$this->template.'/css/section/section-'.$sectionId.'.css';
+$sectionCss 			= JPATH_THEMES.'/'.$this->template.'/css/section/section.css';
+$categoryIdCss 			= JPATH_THEMES.'/'.$this->template.'/css/category/category-'.$catId.'.css';
+$categoryCss 			= JPATH_THEMES.'/'.$this->template.'/css/category/category.css';
+$itemIdCss 				= JPATH_THEMES.'/'.$this->template.'/css/item/item-'.$itemId.'.css';
+$articleIdCss 			= JPATH_THEMES.'/'.$this->template.'/css/article/article-'.$articleId.'.css';
+$articleCss 			= JPATH_THEMES.'/'.$this->template.'/css/article/article.css';
 
 $templateGroupIndex		= JPATH_THEMES.'/'.$this->template.'/layouts/'.$overrideGroup.'-index.php';
 $componentGroupIndex 	= JPATH_THEMES.'/'.$this->template.'/layouts/component/'.$overrideGroup.'-'.$currentComponent.'.php';
@@ -300,20 +306,26 @@ $mobileArticleCss 		= JPATH_THEMES.'/'.$this->template.'/css/article/article-'.$
 
 if(file_exists($articleGroupCss)){
 		$cssFile = $template.'/css/article/'.$overrideGroup.'-article-'.$articleId.'.css';}
-elseif(file_exists($articleCss)){
+elseif(file_exists($articleIdCss)){
 		$cssFile = $template.'/css/article/article-'.$articleId.'.css';}
+elseif( ($view == 'article') && (file_exists($articleCss)) ){
+		$cssFile = $template.'/css/article/article.css';}	
 elseif(file_exists($itemGroupCss)){
 		$cssFile = $template.'/css/item/'.$overrideGroup.'-item-'.$itemId.'.css';}		
-elseif(file_exists($itemCss)){
+elseif(file_exists($itemIdCss)){
 		$cssFile = $template.'/css/item/item-'.$itemId.'.css';}
 elseif(file_exists($categoryGroupCss)){
 		$cssFile = $template.'/css/category/'.$overrideGroup.'-category-'.$catId.'.css';}
-elseif(file_exists($categoryCss)){
+elseif(file_exists($categoryIdCss)){
 		$cssFile = $template.'/css/category/category-'.$catId.'.css';}
+elseif( ($view == 'category') && (file_exists($categoryCss)) ){
+		$cssFile = $template.'/css/category/category.css';}
 elseif(file_exists($sectionGroupCss)){
 		$cssFile = $template.'/css/section/'.$overrideGroup.'-section-'.$sectionId.'.css';}	
-elseif(file_exists($sectionCss)){
-		$cssFile = $template.'/css/section/section-'.$sectionId.'.css';}	
+elseif(file_exists($sectionIdCss)){
+		$cssFile = $template.'/css/section/section-'.$sectionId.'.css';}
+elseif( ($view == 'section') && (file_exists($sectionCss)) ){
+		$cssFile = $template.'/css/section/section.css';}	
 elseif(file_exists($componentGroupCss)){
 		$cssFile = $template.'/css/component/'.$overrideGroup.'-'.$currentComponent.'.css';}		
 elseif(file_exists($componentCss)){
@@ -338,20 +350,26 @@ else unset($mobileCssFile);
 
 if(file_exists($articleGroupIndex)){
 		$alternateIndexFile = $articleGroupIndex;}
-elseif(file_exists($articleIndex)){
-		$alternateIndexFile = $articleIndex;}		
+elseif( ($view == 'article' ) && (file_exists($articleIndex)) ){
+		$alternateIndexFile = $articleIndex;}
+elseif(file_exists($articleIdIndex)){
+		$alternateIndexFile = $articleIdIndex;}	
 elseif(file_exists($itemGroupIndex)){
 		$alternateIndexFile = $itemGroupIndex;}
-elseif(file_exists($itemIndex)){
-		$alternateIndexFile = $itemIndex;}		
+elseif(file_exists($itemIdIndex)){
+		$alternateIndexFile = $itemIdIndex;}		
 elseif(file_exists($categoryGroupIndex)){
 		$alternateIndexFile = $categoryGroupIndex;}
-elseif(file_exists($categoryIndex)){
-		$alternateIndexFile = $categoryIndex;}
+elseif( ($view == 'category') && (file_exists($categoryIndex)) ){
+		$alternateIndexFile = $categoryIndex;}	
+elseif(file_exists($categoryIdIndex)){
+		$alternateIndexFile = $categoryIdIndex;}
 elseif(file_exists($sectionGroupIndex)){
 		$alternateIndexFile = $sectionGroupIndex;}
-elseif(file_exists($sectionIndex)){
-		$alternateIndexFile = $sectionIndex;}		
+elseif( ($view == 'section') && (file_exists($sectionIndex)) ){
+		$alternateIndexFile = $sectionIndex;}
+elseif(file_exists($sectionIdIndex)){
+		$alternateIndexFile = $sectionIdIndex;}
 elseif(file_exists($componentGroupIndex)){
 		$alternateIndexFile = $componentGroupIndex;}
 elseif(file_exists($componentIndex)){
