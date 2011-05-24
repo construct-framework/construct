@@ -46,6 +46,7 @@ defined('_JEXEC') or die;
 	</div>
 	<?php endif; ?>
 	<button class="button validate" type="submit"><?php echo JText::_('Send'); ?></button>
+	<input type="hidden" name="option" value="com_contact" />
 	<input type="hidden" name="view" value="contact" />
 	<input type="hidden" name="id" value="<?php echo (int)$this->contact->id; ?>" />
 	<input type="hidden" name="task" value="submit" />
