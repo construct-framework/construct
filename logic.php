@@ -395,6 +395,6 @@ $doc->addCustomTag('<!--[if lt IE 7]>
   $doc->addCustomTag('</style>');
   if ($IE6TransFix) {
   $doc->addCustomTag('  <script type="text/javascript" src="'.$template.'/js/DD_belatedPNG_0.0.8a-min.js"></script>
-  <script>DD_belatedPNG.fix('.$IE6TransFixTargets.');</script>');
+  <script>DD_belatedPNG.fix(\''.$IE6TransFixTargets.'\');</script>');
   }
   $doc->addCustomTag('<![endif]-->');
