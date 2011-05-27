@@ -120,7 +120,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
   <!--[if lt IE 7]>
 <?php if ($IE6TransFix) {
   echo '  <script type="text/javascript" src="'.$baseUrl.'/templates/'.$this->template.'/js/DD_belatedPNG_0.0.8a-min.js"></script>
-  <script>DD_belatedPNG.fix('.$IE6TransFixTargets.');</script>'."\n";
+  <script>DD_belatedPNG.fix(\''.$IE6TransFixTargets.'\');</script>'."\n";
 } ?>
   <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/ie6.css" type="text/css" media="screen" />
   <style type="text/css">

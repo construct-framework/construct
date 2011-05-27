@@ -55,7 +55,6 @@ ul.menu ul{border:1px solid #999;}
 #breadcrumbs{padding:18px 0 10px 32px;background:url(../images/example-location-icon.png) 0 0 no-repeat}
 #content-left ul.menu li#current a{color:#ED1F24;font-weight:bold}
 #content-left ul.menu li#current li a{color:#1A61AE;font-weight:normal}
-/* menu parent item indicator */
 #content-left ul.menu li.parent a,
 #content-left ul.menu li.parent li.parent a,
 #content-left ul.menu li.parent li.parent li.parent a,
@@ -64,24 +63,9 @@ ul.menu ul{border:1px solid #999;}
 #content-left ul.menu li.parent li.parent li a,
 #content-left ul.menu li.parent li.parent li.parent li a,
 #content-left ul.menu li.parent li.parent li.parent li.parent li a{background:none}
-/*
-ul.menu li.parent a:after,
-ul.menu li ul li.parent a:after,
-ul.menu li ul li ul li.parent a:after,
-ul.menu li ul li ul li ul li.parent a:after,
-ul.menu li.parent span.separator:after,
-ul.menu li ul li.parent span.separator:after,
-ul.menu li ul li ul li.parent span.separator:after,
-ul.menu li ul li ul li ul li.parent span.separator:after{content:" +"}
-ul.menu li.parent li a:after,
-ul.menu li ul li.parent li a:after,
-ul.menu li ul li ul li.parent li a:after,
-ul.menu li ul li ul li ul li.parent li a:after,
-ul.menu li.parent li span.separator:after,
-ul.menu li ul li.parent li span.separator:after,
-ul.menu li ul li ul li.parent li span.separator:after,
-ul.menu li ul li ul li ul li.parent li span.separator:after{content:""}
-*/
+#content-left ul.menu li.parent a:after,
+#content-left ul.menu li li.parent a:after,
+#content-left ul.menu li li li.parent a:after{content:none}
 #content-left .moduletable,
 #content-left .moduletable_menu,
 #content-right .moduletable,
