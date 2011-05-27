@@ -2,12 +2,12 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
 <install version="1.5" type="template" method="upgrade">
 	<name>JE-Construct-Pro</name>
-	<creationDate>April 25th, 2011</creationDate>
+	<creationDate>May 27th, 2011</creationDate>
 	<author>Joomla Engineering</author>
 	<copyright>Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com/</authorUrl>
-	<version>1.5.644 Pro</version>
+	<version>1.5.650 Pro</version>
 	<description><![CDATA[
 	<style type="text/css">
 		.panel {background: #ddd;
@@ -64,6 +64,7 @@
 		<filename>css/wireframe.css</filename>
 		<filename>elements/googlewebfont.php</filename>		
 		<filename>elements/index.html</filename>
+		<filename>elements/jqueryversion.php</filename>			
 		<filename>elements/mdetect.php</filename>		
 		<filename>elements/panel.php</filename>
 		<filename>elements/panels.php</filename>
