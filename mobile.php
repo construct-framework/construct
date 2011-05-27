@@ -44,7 +44,7 @@ else {
 					<li><?php if($articleId)	echo 'article-'.$articleId; ?></li>
 					<li><?php if($itemId)		echo 'item-'.$itemId; ?></li>
 					<li><?php if($catId)		echo 'category-'.$catId; ?></li>					
-					<li><?php if($view)			echo $view.' view'; ?></li>>
+					<li><?php if($view)			echo $view.' view'; ?></li>
 				</ul>
 			<?php endif; ?>				
 		</div>
