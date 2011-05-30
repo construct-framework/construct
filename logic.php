@@ -350,26 +350,28 @@ else unset($mobileCssFile);
 
 if(file_exists($articleGroupIndex)){
 		$alternateIndexFile = $articleGroupIndex;}
-elseif( ($view == 'article' ) && (file_exists($articleIndex)) ){
-		$alternateIndexFile = $articleIndex;}
 elseif(file_exists($articleIdIndex)){
 		$alternateIndexFile = $articleIdIndex;}	
+elseif( ($view == 'article' ) && (file_exists($articleIndex)) ){
+		$alternateIndexFile = $articleIndex;}
 elseif(file_exists($itemGroupIndex)){
 		$alternateIndexFile = $itemGroupIndex;}
 elseif(file_exists($itemIdIndex)){
 		$alternateIndexFile = $itemIdIndex;}		
 elseif(file_exists($categoryGroupIndex)){
 		$alternateIndexFile = $categoryGroupIndex;}
-elseif( ($view == 'category') && (file_exists($categoryIndex)) ){
-		$alternateIndexFile = $categoryIndex;}	
 elseif(file_exists($categoryIdIndex)){
 		$alternateIndexFile = $categoryIdIndex;}
+elseif( ($view == 'category') && (file_exists($categoryIndex)) ){
+		$alternateIndexFile = $categoryIndex;}
+elseif( ($view == 'categories') && (file_exists($categoriesIndex)) ){
+		$alternateIndexFile = $categoriesIndex;}		
+elseif(file_exists($sectionIdIndex)){
+		$alternateIndexFile = $sectionIdIndex;}
 elseif(file_exists($sectionGroupIndex)){
 		$alternateIndexFile = $sectionGroupIndex;}
 elseif( ($view == 'section') && (file_exists($sectionIndex)) ){
 		$alternateIndexFile = $sectionIndex;}
-elseif(file_exists($sectionIdIndex)){
-		$alternateIndexFile = $sectionIdIndex;}
 elseif(file_exists($componentGroupIndex)){
 		$alternateIndexFile = $componentGroupIndex;}
 elseif(file_exists($componentIndex)){
