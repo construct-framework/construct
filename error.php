@@ -25,7 +25,7 @@ $enableSwitcher 		= '0';
 $bodyFontFamily 		= 'lucida-grande';
 $fullWidth				= '1';
 $IECSS3					= '1';
-$IECSS3Targets			= '.drop-shadow, .outline, .rounded, ul.menu li, ul.menu ul, #nav,#content-left .moduletable, #content-left .moduletable_menu, #content-right .moduletable, #content-right .moduletable_menu, #content-top .moduletable, #content-top .moduletable_menu, #sub-nav .moduletable, #sub-nav .moduletable_menu';
+$IECSS3Targets			= '.drop-shadow, .outline, .rounded, ul.menu li, ul.menu ul, #nav,#column-group-alpha .moduletable, #column-group-alpha .moduletable_menu, #column-group-beta .moduletable, #column-group-beta .moduletable_menu, #content-top .moduletable, #content-top .moduletable_menu, #nav-below .moduletable, #nav-below .moduletable_menu';
 $IE6TransFix			= '1';
 $IE6TransFixTargets		= 'h1 a, .readon, .parent a, #breadcrumbs';
 $googleWebFont 			= '';
@@ -110,7 +110,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 	if ($enableSwitcher)
 		echo "\n".'  <script type="text/javascript" src="'.$baseUrl.'/templates/'.$this->template.'/js/styleswitch.js"></script>';
 	if ($siteWidth)
-		echo "\n".'  <style type="text/css"> #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}</style>';
+		echo "\n".'  <style type="text/css"> #body-container, #header-above {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.' !important}</style>';
 	if (!$fullWidth)
 		echo "\n".'  <style type="text/css"> #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.';margin:0 auto}</style>';
 	if (($siteWidthType == 'max-width') && $fluidMedia )
@@ -126,7 +126,7 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
   <style type="text/css">
   body {text-align:center}
   #body-container{text-align:left}
-  #body-container, #supra<?php if (!$fullWidth) echo ',#header, #footer'; ?>{width: expression( document.body.clientWidth > <?php echo ($siteWidth -1); ?> ? "<?php echo $siteWidth.$siteWidthUnit; ?>" : "auto" );margin:0 auto}	
+  #body-container, #header-above<?php if (!$fullWidth) echo ',#header, #footer'; ?>{width: expression( document.body.clientWidth > <?php echo ($siteWidth -1); ?> ? "<?php echo $siteWidth.$siteWidthUnit; ?>" : "auto" );margin:0 auto}	
   </style>
 <![endif]-->  
 <?php if ($useStickyFooter) {

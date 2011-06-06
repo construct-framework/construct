@@ -95,102 +95,107 @@ $overrideGroup 			= str_replace(".css","",$customStyleSheet);
 #----------------------------- Moldule Counts -----------------------------#
 // from http://groups.google.com/group/joomla-dev-general/browse_thread/thread/b54f3f131dd173d
 
-$supraCount1 = (int) ($this->countModules('supra1') > 0);
-$supraCount2 = (int) ($this->countModules('supra2') > 0);
-$supraCount3 = (int) ($this->countModules('supra3') > 0);
-$supraCount4 = (int) ($this->countModules('supra4') > 0);
+$headerAboveCount1 = (int) ($this->countModules('header-above-1') > 0);
+$headerAboveCount2 = (int) ($this->countModules('header-above-2') > 0);
+$headerAboveCount3 = (int) ($this->countModules('header-above-3') > 0);
+$headerAboveCount4 = (int) ($this->countModules('header-above-4') > 0);
+$headerAboveCount5 = (int) ($this->countModules('header-above-5') > 0);
+$headerAboveCount6 = (int) ($this->countModules('header-above-6') > 0);
 
-$supraModuleCount = $supraCount1 + $supraCount2 + $supraCount3 + $supraCount4;
+$headerAboveCount = $headerAboveCount1 + $headerAboveCount2 + $headerAboveCount3 + $headerAboveCount4 + $headerAboveCount5 + $headerAboveCount6;
 
-if ($supraModuleCount) : $supraModuleClass = 'count-'.$supraModuleCount; endif;
-
-#--------------------------------------------------------------------------#
-
-$subHeadCount1 = (int) ($this->countModules('subhead1') > 0);
-$subHeadCount2 = (int) ($this->countModules('subhead2') > 0);
-$subHeadCount3 = (int) ($this->countModules('subhead3') > 0);
-$subHeadCount4 = (int) ($this->countModules('subhead4') > 0);
-$subHeadCount5 = (int) ($this->countModules('subhead5') > 0);
-$subHeadCount6 = (int) ($this->countModules('subhead6') > 0);
-
-$subHeadCount = $subHeadCount1 + $subHeadCount2 + $subHeadCount3 + $subHeadCount4 + $subHeadCount5 + $subHeadCount6;
-
-if ($subHeadCount) : $subHeadClass = 'count-'.$subHeadCount; endif;
+if ($headerAboveCount) : $headerAboveClass = 'count-'.$headerAboveCount; endif;
 
 #--------------------------------------------------------------------------#
 
-$subNavCount1 = (int) ($this->countModules('user1') > 0);
-$subNavCount2 = (int) ($this->countModules('user2') > 0);
-$subNavCount3 = (int) ($this->countModules('user3') > 0);
-$subNavCount4 = (int) ($this->countModules('user4') > 0);
+$headerBelowCount1 = (int) ($this->countModules('header-below-1') > 0);
+$headerBelowCount2 = (int) ($this->countModules('header-below-2') > 0);
+$headerBelowCount3 = (int) ($this->countModules('header-below-3') > 0);
+$headerBelowCount4 = (int) ($this->countModules('header-below-4') > 0);
+$headerBelowCount5 = (int) ($this->countModules('header-below-5') > 0);
+$headerBelowCount6 = (int) ($this->countModules('header-below-6') > 0);
 
-$subNavCount = $subNavCount1 + $subNavCount2 + $subNavCount3 + $subNavCount4;
+$headerBelowCount = $headerBelowCount1 + $headerBelowCount2 + $headerBelowCount3 + $headerBelowCount4 + $headerBelowCount5 + $headerBelowCount6;
 
-if ($subNavCount) : $subNavClass = 'count-'.$subNavCount; endif;
-
-#--------------------------------------------------------------------------#
-
-$contentTopCount1 = (int) ($this->countModules('top') > 0);
-$contentTopCount2 = (int) ($this->countModules('top2') > 0);
-$contentTopCount3 = (int) ($this->countModules('top3') > 0);
-$contentTopCount4 = (int) ($this->countModules('top4') > 0);
-
-$contentTopCount = $contentTopCount1 + $contentTopCount2 + $contentTopCount3 + $contentTopCount4;
-
-if ($contentTopCount) : $contentTopClass = 'count-'.$contentTopCount; endif;
+if ($headerBelowCount) : $headerBelowClass = 'count-'.$headerBelowCount; endif;
 
 #--------------------------------------------------------------------------#
 
-$contentBottomCount1 = (int) ($this->countModules('user5') > 0);
-$contentBottomCount2 = (int) ($this->countModules('user6') > 0);
-$contentBottomCount3 = (int) ($this->countModules('user7') > 0);
-$contentBottomCount4 = (int) ($this->countModules('user8') > 0);
+$navBelowCount1 = (int) ($this->countModules('nav-below-1') > 0);
+$navBelowCount2 = (int) ($this->countModules('nav-below-2') > 0);
+$navBelowCount3 = (int) ($this->countModules('nav-below-3') > 0);
+$navBelowCount4 = (int) ($this->countModules('nav-below-4') > 0);
+$navBelowCount5 = (int) ($this->countModules('nav-below-5') > 0);
+$navBelowCount6 = (int) ($this->countModules('nav-below-6') > 0);
 
-$contentBottomCount = $contentBottomCount1 + $contentBottomCount2 + $contentBottomCount3 + $contentBottomCount4;
+$navBelowCount = $navBelowCount1 + $navBelowCount2 + $navBelowCount3 + $navBelowCount4 + $navBelowCount5 + $navBelowCount6;
 
-if ($contentBottomCount) : $contentBottomClass = 'count-'.$contentBottomCount; endif;
-
-#--------------------------------------------------------------------------#
-
-$contentLeftCount1 = (int) ($this->countModules('left') > 0);
-$contentLeftCount2 = (int) ($this->countModules('left2') > 0);
-
-$contentLeftCount = $contentLeftCount1 + $contentLeftCount2;
-
-if ($contentLeftCount) : $contentLeftClass = 'count-'.$contentLeftCount; endif;
+if ($navBelowCount) : $navBelowClass = 'count-'.$navBelowCount; endif;
 
 #--------------------------------------------------------------------------#
 
-$contentRightCount1 = (int) ($this->countModules('right') > 0);
-$contentRightCount2 = (int) ($this->countModules('right2') > 0);
+$contentAboveCount1 = (int) ($this->countModules('content-above-1') > 0);
+$contentAboveCount2 = (int) ($this->countModules('content-above-2') > 0);
+$contentAboveCount3 = (int) ($this->countModules('content-above-3') > 0);
+$contentAboveCount4 = (int) ($this->countModules('content-above-4') > 0);
+$contentAboveCount5 = (int) ($this->countModules('content-above-5') > 0);
+$contentAboveCount6 = (int) ($this->countModules('content-above-6') > 0);
 
-$contentRightCount = $contentRightCount1 + $contentRightCount2;
+$contentAboveCount = $contentAboveCount1 + $contentAboveCount2 + $contentAboveCount3 + $contentAboveCount4 + $contentAboveCount5 + $contentAboveCount6;
 
-if ($contentRightCount) : $contentRightClass = 'count-'.$contentRightCount; endif;
+if ($contentAboveCount) : $contentAboveClass = 'count-'.$contentAboveCount; endif;
 
 #--------------------------------------------------------------------------#
 
-$subContentCount1 = (int) ($this->countModules('sub1') > 0);
-$subContentCount2 = (int) ($this->countModules('sub2') > 0);
-$subContentCount3 = (int) ($this->countModules('sub3') > 0);
-$subContentCount4 = (int) ($this->countModules('sub4') > 0);
-$subContentCount5 = (int) ($this->countModules('sub5') > 0);
-$subContentCount6 = (int) ($this->countModules('sub6') > 0);
+$contentBelowCount1 = (int) ($this->countModules('content-below-1') > 0);
+$contentBelowCount2 = (int) ($this->countModules('content-below-2') > 0);
+$contentBelowCount3 = (int) ($this->countModules('content-below-3') > 0);
+$contentBelowCount4 = (int) ($this->countModules('content-below-4') > 0);
+$contentBelowCount5 = (int) ($this->countModules('content-below-5') > 0);
+$contentBelowCount6 = (int) ($this->countModules('content-below-6') > 0);
 
-$subContentCount = $subContentCount1 + $subContentCount2 + $subContentCount3 + $subContentCount4 + $subContentCount5 + $subContentCount6;
+$contentBelowCount = $contentBelowCount1 + $contentBelowCount2 + $contentBelowCount3 + $contentBelowCount4 + $contentBelowCount5 + $contentBelowCount6;
 
-if ($subContentCount) : $subContentClass = 'count-'.$subContentCount; endif;
+if ($contentBelowCount) : $contentBelowClass = 'count-'.$contentBelowCount; endif;
+
+#--------------------------------------------------------------------------#
+
+$footerAboveCount1 = (int) ($this->countModules('footer-above-1') > 0);
+$footerAboveCount2 = (int) ($this->countModules('footer-above-2') > 0);
+$footerAboveCount3 = (int) ($this->countModules('footer-above-3') > 0);
+$footerAboveCount4 = (int) ($this->countModules('footer-above-4') > 0);
+$footerAboveCount5 = (int) ($this->countModules('footer-above-5') > 0);
+$footerAboveCount6 = (int) ($this->countModules('footer-above-6') > 0);
+
+$footerAboveCount = $footerAboveCount1 + $footerAboveCount2 + $footerAboveCount3 + $footerAboveCount4 + $footerAboveCount5 + $footerAboveCount6;
+
+if ($footerAboveCount) : $footerAboveClass = 'count-'.$footerAboveCount; endif;
+
+#------------------------------ Column Layout -----------------------------#
+
+$column1Count = (int) ($this->countModules('column-1') > 0);
+$column2Count = (int) ($this->countModules('column-2') > 0);
+
+$columnGroupAlphaCount = $column1Count + $column2Count;
+
+if ($columnGroupAlphaCount) : $columnGroupAlphaClass = 'count-'.$columnGroupAlphaCount; endif;
+
+$column3Count = (int) ($this->countModules('column-3') > 0);
+$column4Count = (int) ($this->countModules('column-4') > 0);
+
+$columnGroupBetaCount = $column3Count + $column4Count;
+if ($columnGroupBetaCount) : $columnGroupBetaClass = 'count-'.$columnGroupBetaCount; endif;
 
 #------------------------------ Column Layout -----------------------------#
 
 $columnLayout= 'main-only';
 	
-if (($contentLeftCount > 0 ) && ($contentRightCount == 0)) :
-	$columnLayout = 'left-'.$contentLeftCount.'-main';
-elseif (($contentLeftCount > 0) && ($contentRightCount > 0)) :
-	$columnLayout = 'left-'.$contentLeftCount.'-main-right-'.$contentRightCount;
-elseif (($contentLeftCount == 0) && ($contentRightCount > 0)) :
-	$columnLayout = 'main-right-'.$contentRightCount;
+if (($columnGroupAlphaCount > 0 ) && ($columnGroupBetaCount == 0)) :
+	$columnLayout = 'alpha-'.$columnGroupAlphaCount.'-main';
+elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
+	$columnLayout = 'alpha-'.$columnGroupAlphaCount.'-main-beta-'.$columnGroupBetaCount;
+elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
+	$columnLayout = 'main-beta-'.$columnGroupBetaCount;
 endif;
 	
 #-------------------------------- Item ID ---------------------------------#
@@ -447,7 +452,7 @@ if ($loadjQuery)
 
 // Layout Declarations
 if ($siteWidth)
-	$doc->addStyleDeclaration("\n".'  #body-container, #supra {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.';}');
+	$doc->addStyleDeclaration("\n".'  #body-container, #header-above {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.';}');
 if (($siteWidthType == 'max-width') && $fluidMedia )
 	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%;}');		
 if (!$fullWidth)
@@ -473,10 +478,10 @@ $doc->addCustomTag('<!--[if lt IE 7]>
   body {text-align:center}
   #body-container {text-align:left}');  
   if (!$fullWidth) {
-  $doc->addCustomTag('#body-container, #supra, #header, #footer {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto}');
+  $doc->addCustomTag('#body-container, #header-above, #header, #footer {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto}');
   }
   else {
-  $doc->addCustomTag('#body-container, #supra {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto}');
+  $doc->addCustomTag('#body-container, #header-above {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto}');
   }
   $doc->addCustomTag('</style>');
   if ($IE6TransFix) {

@@ -15,52 +15,52 @@ img,a img{border:0}
 /* -- Layout -- */
 body{font-size:76%/* 12px in most modern browsers - used as basis of layout and typography. Calculate em based dims as "target dim(px) / container dim(px) = result in em" */}
 #body-container,
-#supra{margin:0 auto;padding:0}
+#header-above{margin:0 auto;padding:0}
 
 #load-first{float:left;}
 .main-only #content-main{float:left;width:100%;}
 .main-only #load-first{width:100%;}
 
-.left-1-main #load-first{width:100%;}
-.left-1-main #content-main{float:right;width:80%;}
-.left-1-main #content-left{float:left;width:20%;}
+.alpha-1-main #load-first{width:100%;}
+.alpha-1-main #content-main{float:right;width:80%;}
+.alpha-1-main #column-group-alpha{float:left;width:20%;}
 
-.left-2-main #load-first{width:100%;}
-.left-2-main #content-main{float:right;width:60%;}
-.left-2-main #content-left{float:left;width:40%;}
+.alpha-2-main #load-first{width:100%;}
+.alpha-2-main #content-main{float:right;width:60%;}
+.alpha-2-main #column-group-alpha{float:left;width:40%;}
 
-.main-right-1 #content-main{float:left;width:100%;}
-.main-right-1 #load-first{width:80%;}
-.main-right-1 #content-right{float:right;width:20%;}
+.main-beta-1 #content-main{float:left;width:100%;}
+.main-beta-1 #load-first{width:80%;}
+.main-beta-1 #column-group-beta{float:right;width:20%;}
 
-.main-right-2 #content-main{float:left;width:100%;}
-.main-right-2 #load-first{width:60%;}
-.main-right-2 #content-right{float:right;width:40%;}
+.main-beta-2 #content-main{float:left;width:100%;}
+.main-beta-2 #load-first{width:60%;}
+.main-beta-2 #column-group-beta{float:right;width:40%;}
 
-.left-1-main-right-1 #load-first{width:80%;} 
-.left-1-main-right-1 #content-main{float:right;width:74.2%;}
-.left-1-main-right-1 #content-left{float:left;width:25.8%;}
-.left-1-main-right-1 #content-right{float:right;width:20%;}
+.alpha-1-main-beta-1 #load-first{width:80%;} 
+.alpha-1-main-beta-1 #content-main{float:right;width:74.2%;}
+.alpha-1-main-beta-1 #column-group-alpha{float:left;width:25.8%;}
+.alpha-1-main-beta-1 #column-group-beta{float:right;width:20%;}
 
-.left-2-main-right-1 #load-first{width:80%;} 
-.left-2-main-right-1 #content-main{float:right;width:60%;} 
-.left-2-main-right-1 #content-left{float:left;width:40%;}
-.left-2-main-right-1 #content-right{float:right;width:20%;}
+.alpha-2-main-beta-1 #load-first{width:80%;} 
+.alpha-2-main-beta-1 #content-main{float:right;width:60%;} 
+.alpha-2-main-beta-1 #column-group-alpha{float:left;width:40%;}
+.alpha-2-main-beta-1 #column-group-beta{float:right;width:20%;}
 
-.left-1-main-right-2 #load-first{width:60%;} 
-.left-1-main-right-2 #content-main{float:right;width:65.5%;}
-.left-1-main-right-2 #content-left{float:left;width:34.5%;}
-.left-1-main-right-2 #content-right{float:right;width:40%;}
+.alpha-1-main-beta-2 #load-first{width:60%;} 
+.alpha-1-main-beta-2 #content-main{float:right;width:65.5%;}
+.alpha-1-main-beta-2 #column-group-alpha{float:left;width:34.5%;}
+.alpha-1-main-beta-2 #column-group-beta{float:right;width:40%;}
 
-.left-2-main-right-2 #load-first{width:60%;} 
-.left-2-main-right-2 #content-main{float:right;width:33%;} 
-.left-2-main-right-2 #content-left{float:left;width:66%;}
-.left-2-main-right-2 #content-right{float:right;width:40%;}
+.alpha-2-main-beta-2 #load-first{width:60%;} 
+.alpha-2-main-beta-2 #content-main{float:right;width:33%;} 
+.alpha-2-main-beta-2 #column-group-alpha{float:left;width:66%;}
+.alpha-2-main-beta-2 #column-group-beta{float:right;width:40%;}
 
 /* -- spacing rules -- */
 .gutter{margin:10px}
-#content-left .gutter{margin:0 10px 0 0}
-#content-right .gutter{margin:0 0 0 10px}
+#column-group-alpha .gutter{margin:0 10px 0 0}
+#column-group-beta .gutter{margin:0 0 0 10px}
 #bottom-user-modules .gutter{margin-top:0}
 #top-user-modules .gutter{margin-bottom:0}
 
@@ -293,14 +293,14 @@ td.sectiontableheader:last-child,
 #branding{float:left;margin:0;padding:10px 0 10px 20px;text-align:left;width:40%;}
 #content-container{margin:0;padding:0;text-align:left}
 #content-main ul{margin-bottom:1.25em; list-style:disc}
-#content-left h3{padding:0}
-#content-left ul{list-style-type:none}
-#content-left li{margin:0 0 0 20px;padding:0}
-#content-left p{padding:10px 0 0 0}
-#content-right h3{padding:0}
-#content-right ul{list-style-type:none}
-#content-right li{margin:0 0 0 20px;padding:0}
-#content-right p{padding:10px 0 0 0}
+#column-group-alpha h3{padding:0}
+#column-group-alpha ul{list-style-type:none}
+#column-group-alpha li{margin:0 0 0 20px;padding:0}
+#column-group-alpha p{padding:10px 0 0 0}
+#column-group-beta h3{padding:0}
+#column-group-beta ul{list-style-type:none}
+#column-group-beta li{margin:0 0 0 20px;padding:0}
+#column-group-beta p{padding:10px 0 0 0}
 #diagnostics{float:right;clear:right}
 #editor-xtd-buttons{background:#efefef;margin-top:1em}
 #footer{text-align:center;position:relative}
@@ -320,9 +320,9 @@ td.sectiontableheader:last-child,
 #siteinfo-legal{text-align:left;width:500px;margin:0 auto}	
 #style-switch{float:right;clear:right}
 #style-switch li{float:left;margin:0;padding:2px 5px 3px}
-#sub-nav .module,
-#sub-nav .moduletable,
-#sub-nav .moduletable_menu{border:1px solid #999;padding:5px;margin:5px;}
+#nav-below .module,
+#nav-below .moduletable,
+#nav-below .moduletable_menu{border:1px solid #999;padding:5px;margin:5px;}
 #syndicate{position:absolute;left:20px}
 #system-message dt{display:none}
 #system-message dd{clear:both;padding:5px 0;text-align:left;}
@@ -342,15 +342,15 @@ ul.menu ul{position:absolute;left:-999em;width:16em;/*sub-menu widths*/z-index:9
 ul.menu ul li{width:100%;}
 ul.menu ul ul{margin:0 0 0 100%;top:0}
 #nav:after,
-#content-left ul.menu:after,
-#content-right ul.menu:after{clear:both;content:".";font:1px/0;display:block;height:0;visibility:hidden}
-#content-left ul.menu,
-#content-right ul.menu {padding:0}/*adjust to resize menus*/
-#content-left ul.menu li,
+#column-group-alpha ul.menu:after,
+#column-group-beta ul.menu:after{clear:both;content:".";font:1px/0;display:block;height:0;visibility:hidden}
+#column-group-alpha ul.menu,
+#column-group-beta ul.menu {padding:0}/*adjust to resize menus*/
+#column-group-alpha ul.menu li,
 
-#content-right ul.menu li {width:100%;margin:0}
-#content-left ul.menu ul {margin:0 0 0 100%;top:0}
-#content-right ul.menu ul {right:100%;top:0}
+#column-group-beta ul.menu li {width:100%;margin:0}
+#column-group-alpha ul.menu ul {margin:0 0 0 100%;top:0}
+#column-group-beta ul.menu ul {right:100%;top:0}
 #nav ul, #nav li{margin:0;padding:0}
 #nav ul.menu ul ul{margin:0 0 0 100%;top:0}
 
@@ -425,6 +425,6 @@ html, .sticky-footer{height:100%;}
 .mod-preview-wrapper div.moduletable, .mod-preview-wrapper div.moduletable_menu, .mod-preview-wrapper div.moduletable_text, .mod-preview-wrapper ul.menu, .mod-preview-wrapper #breadcrumbs{opacity:0}
 .mod-preview-info{color:#fff;background:none;border:none;z-index:999;position:absolute;left:5px;top:5px;font-family:BebasNeueRegular;font-size:2em}
 #left .mod-preview-wrapper,#left2 .mod-preview-wrapper,#right .mod-preview-wrapper,#right2 .mod-preview-wrapper{height:940px}
-/*#breadcrumbs .mod-preview-wrapper{min-width:125px}.left-2-main-right-2 #content-left{width:33%;}.left-2-main-right-2 #load-first{width:74% !important;}.left-2-main-right-2 #content-right{width:25%;}.left-2-main-right-2 #content-main{width:67% !important;}#syndicate{bottom:120px;left:80px;position:absolute;}*/
+/*#breadcrumbs .mod-preview-wrapper{min-width:125px}.alpha-2-main-beta-2 #column-group-alpha{width:33%;}.alpha-2-main-beta-2 #load-first{width:74% !important;}.alpha-2-main-beta-2 #column-group-beta{width:25%;}.alpha-2-main-beta-2 #content-main{width:67% !important;}#syndicate{bottom:120px;left:80px;position:absolute;}*/
 
 /*bb*/
