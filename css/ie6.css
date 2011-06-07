@@ -7,56 +7,56 @@
 .main-only #content-main img,
 .main-only #content-main object{width: expression(this.width > 966 ? '100%' : true)}
 
-.left-1-main #content-main img,
-.left-1-main #content-main object{width: expression(this.width > 800 ? '100%' : true)}
-.left-1-main #content-left img,
-.left-1-main #content-left object{width: expression(this.width > 200 ? '100%' : true)}
+.alpha-1-main #content-main img,
+.alpha-1-main #content-main object{width: expression(this.width > 800 ? '100%' : true)}
+.alpha-1-main #column-group-alpha img,
+.alpha-1-main #column-group-alpha object{width: expression(this.width > 200 ? '100%' : true)}
 
-.left-2-main #content-main img,
-.left-2-main #content-main object{width: expression(this.width > 600 ? '100%' : true)} 
-.left-2-main #content-left img,
-.left-2-main #content-left object{width: expression(this.width > 400 ? '100%' : true)}
+.alpha-2-main #content-main img,
+.alpha-2-main #content-main object{width: expression(this.width > 600 ? '100%' : true)} 
+.alpha-2-main #column-group-alpha img,
+.alpha-2-main #column-group-alpha object{width: expression(this.width > 400 ? '100%' : true)}
 
-.left-1-main-right-1 #content-main img,
-.left-1-main-right-1 #content-main object{width: expression(this.width > 742 ? "100%" : true)}
-.left-1-main-right-1 #content-left img,
-.left-1-main-right-1 #content-left object{width: expression(this.width > 258 ? '100%' : true)}
-.left-1-main-right-1 #content-right img,
-.left-1-main-right-1 #content-right object{width: expression(this.width > 200 ? '100%' : true)}
+.alpha-1-main-beta-1 #content-main img,
+.alpha-1-main-beta-1 #content-main object{width: expression(this.width > 742 ? "100%" : true)}
+.alpha-1-main-beta-1 #column-group-alpha img,
+.alpha-1-main-beta-1 #column-group-alpha object{width: expression(this.width > 258 ? '100%' : true)}
+.alpha-1-main-beta-1 #column-group-beta img,
+.alpha-1-main-beta-1 #column-group-beta object{width: expression(this.width > 200 ? '100%' : true)}
 
-.left-2-main-right-1 #content-main img,
-.left-2-main-right-1 #content-main object{width: expression(this.width > 600 ? '100%' : true)} 
-.left-2-main-right-1 #content-left img,
-.left-2-main-right-1 #content-left object{width: expression(this.width > 400 ? '100%' : true)}
-.left-2-main-right-1 #content-right img,
-.left-2-main-right-1 #content-right object{width: expression(this.width > 200 ? '100%' : true)}
+.alpha-2-main-beta-1 #content-main img,
+.alpha-2-main-beta-1 #content-main object{width: expression(this.width > 600 ? '100%' : true)} 
+.alpha-2-main-beta-1 #column-group-alpha img,
+.alpha-2-main-beta-1 #column-group-alpha object{width: expression(this.width > 400 ? '100%' : true)}
+.alpha-2-main-beta-1 #column-group-beta img,
+.alpha-2-main-beta-1 #column-group-beta object{width: expression(this.width > 200 ? '100%' : true)}
 
-.left-1-main-right-2 #content-main img,
-.left-1-main-right-2 #content-main object{width: expression(this.width > 655 ? '100%' : true)}
-.left-1-main-right-2 #content-left img,
-.left-1-main-right-2 #content-left object{width: expression(this.width > 345 ? '100%' : true)}
-.left-1-main-right-2 #content-right img,
-.left-1-main-right-2 #content-right object{width: expression(this.width > 400 ? '100%' : true)}
+.alpha-1-main-beta-2 #content-main img,
+.alpha-1-main-beta-2 #content-main object{width: expression(this.width > 655 ? '100%' : true)}
+.alpha-1-main-beta-2 #column-group-alpha img,
+.alpha-1-main-beta-2 #column-group-alpha object{width: expression(this.width > 345 ? '100%' : true)}
+.alpha-1-main-beta-2 #column-group-beta img,
+.alpha-1-main-beta-2 #column-group-beta object{width: expression(this.width > 400 ? '100%' : true)}
 
-.left-2-main-right-2 #content-main img,
-.left-2-main-right-2 #content-main object{width: expression(this.width > 330 ? '100%' : true)} 
-.left-2-main-right-2 #content-left img,
-.left-2-main-right-2 #content-left object{width: expression(this.width > 660 ? '100%' : true)}
-.left-2-main-right-2 #content-right img,
-.left-2-main-right-2 #content-right object{width: expression(this.width > 400 ? '100%' : true)}
+.alpha-2-main-beta-2 #content-main img,
+.alpha-2-main-beta-2 #content-main object{width: expression(this.width > 330 ? '100%' : true)} 
+.alpha-2-main-beta-2 #column-group-alpha img,
+.alpha-2-main-beta-2 #column-group-alpha object{width: expression(this.width > 660 ? '100%' : true)}
+.alpha-2-main-beta-2 #column-group-beta img,
+.alpha-2-main-beta-2 #column-group-beta object{width: expression(this.width > 400 ? '100%' : true)}
 
-.main-right-1 #content-main img, 
-.main-right-1 #content-main object,
-.main-right-2 #content-main img,
-.main-right-2 #content-main object{width: expression(this.width > 966 ? '100%' : true)} 
-.main-right-1 #load-first img,
-.main-right-1 #load-first object{width: expression(this.width > 800 ? '100%' : true)} 
-.main-right-2 #load-first img,
-.main-right-2 #load-first object{width: expression(this.width > 600 ? '100%' : true)} 
-.main-right-1 #content-right img,
-.main-right-1 #content-right object{width: expression(this.width > 200 ? '100%' : true)}
-.main-right-2 #content-right img,
-.main-right-2 #content-right object{width: expression(this.width > 400 ? '100%' : true)}
+.main-beta-1 #content-main img, 
+.main-beta-1 #content-main object,
+.main-beta-2 #content-main img,
+.main-beta-2 #content-main object{width: expression(this.width > 966 ? '100%' : true)} 
+.main-beta-1 #load-first img,
+.main-beta-1 #load-first object{width: expression(this.width > 800 ? '100%' : true)} 
+.main-beta-2 #load-first img,
+.main-beta-2 #load-first object{width: expression(this.width > 600 ? '100%' : true)} 
+.main-beta-1 #column-group-beta img,
+.main-beta-1 #column-group-beta object{width: expression(this.width > 200 ? '100%' : true)}
+.main-beta-2 #column-group-beta img,
+.main-beta-2 #column-group-beta object{width: expression(this.width > 400 ? '100%' : true)}
 
 div.outline-dark,
 div.outline-medium,
@@ -65,4 +65,4 @@ div.outline-dark div.m,
 div.outline-medium div.m,
 div.outline-light div.m {padding:5px}
 
-#content-left ul.menu a {width:100%}
+#column-group-alpha ul.menu a {width:100%}

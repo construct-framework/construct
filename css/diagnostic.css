@@ -2,12 +2,12 @@ body {background:#999}
 #body-container {background:#CCC}
 #load-first{background:#09F} 
 #content-main {background:#990}
-#content-left,#content-right {background:#9F0}
-#content-left .moduletable,#content-right .moduletable,#bottom-user-modules .moduletable,#footer .moduletable{background:#9C3}
-#user1 {background:#C00}
-#user2 {background:#C60}
-#user3 {background:#C90}
-#user4 {background:#CC0}
+#column-group-alpha,#column-group-beta {background:#9F0}
+#column-group-alpha .moduletable,#column-group-beta .moduletable,#bottom-user-modules .moduletable,#footer .moduletable{background:#9C3}
+#content-above-1 {background:#C00}
+#content-above-2 {background:#C60}
+#content-above-3 {background:#C90}
+#content-above-4 {background:#CC0}
 .gutter {background:#FF0}
 #access,#diagnostics,#style-switch {background:#69F}
 #breadcrumbs {background:#963}
