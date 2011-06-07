@@ -151,7 +151,7 @@ class JElementGooglewebfont extends JElement
         $options[]	= JHtml::_('select.option', 'Walter+Turncoat', 'Walter Turncoat');
         $options[]	= JHtml::_('select.option', 'Yanone+Kaffeesatz', 'Yanone Kaffeesatz');
 
-        return JHTML::_('select.genericlist',  $options, ''.$control_name.'['.$name.']', $class, 'value', 'text', $value, $control_name.$name);
+        return JHTML::_('select.genericlist',  $options, ''.$control_name.'['.$name.']', '', 'value', 'text', $value, $control_name.$name);
 
     }
 }
