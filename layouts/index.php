@@ -70,10 +70,10 @@
 				<?php if ($showDiagnostics) : ?>
 					<ul id="diagnostics">
 						<li><?php echo $currentComponent; ?></li>
-						<li><?php if($articleId)	echo 'article-'.$articleId; ?></li>
-						<li><?php if($itemId)		echo 'item-'.$itemId; ?></li>
-						<li><?php if($catId)		echo 'category-'.$catId; ?></li>
-						<li><?php if($view)			echo $view.' view'; ?></li>
+						<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
+						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
+						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
+						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>
 					</ul>
 				<?php endif; ?>	
 
