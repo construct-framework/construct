@@ -8,27 +8,33 @@
 
 // Load template logic
 $logicFile 		= JPATH_THEMES.'/'.$this->template.'/logic.php';
-if(file_exists($logicFile)) include $logicFile;
+if(JFile::exists($logicFile)) {
+	include $logicFile;
+}
 
 // Initialize mobile device detection
-if(file_exists($mdetectFile)) {
-	 include_once $mdetectFile;
+if(JFile::exists($mdetectFile)) {
+	include_once $mdetectFile;
+	// Instantiate the mobile object class
+	$uagent_obj 		= new uagent_info();
+	$isMobile 			= $uagent_obj->DetectMobileLong();
+	$isTablet			= $uagent_obj->DetectTierTablet();
 }
-$uagent_obj 	= new uagent_info();
-$isMobile 		= $uagent_obj->DetectMobileLong();
-$isTablet		= $uagent_obj->DetectTierTablet();
+
 // Check if mobile device detecion is turned on and, test if visitor is a mobile device, and if so, load mobile sub-template
 if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
-	if(file_exists($mTemplate)) {
+	if(JFile::exists($mTemplate)) {
 	 	include_once $mTemplate;
 	}
 }
 
 // If mobile detection is off, or visitor is not a mobile device, check for layout override and load it if it exists
-elseif (isset($alternateIndexFile)) {
-	include_once($alternateIndexFile);		
-}
-else {
+$results = $layoutOverride->getIncludeFile ();
+
+if ($results) {
+    $alternateIndexFile = $results;
+	include_once $alternateIndexFile;	
+} else {
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -94,10 +100,25 @@ else {
 				<?php if ($showDiagnostics) : ?>
 					<ul id="diagnostics">
 						<li><?php echo $currentComponent; ?></li>
+						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 						<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
-						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
-						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
-						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>
+						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>					
+						<?php if ($catId) : ?>
+							<?php echo '<li>category-'.$catId.'</li>'; ?>		
+							<?php if ($inheritParentCatStyle)
+								echo '<li>Parent Category '.$parentCategory.'</li>';?>
+							<?php if ($inheritRootCatStyle)
+								echo '<li>Root Category '.$rootCategory.'</li>';?>
+							<?php if ($inheritAncestorCatStyle)	{
+								echo '<li>Ancestor Categories:';		
+								$results = getAncestorCategories($catId);
+									if (count($results) > 0) {
+										foreach ($results as $item) {
+											echo ' '.$item->id.',';
+										}			
+									}
+								echo'</li>';} ?>
+						<?php endif; ?>
 					</ul>
 				<?php endif; ?>	
 

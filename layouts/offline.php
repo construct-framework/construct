@@ -5,33 +5,6 @@
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
-
-// Load template logic
-$logicFile 				= JPATH_THEMES.'/'.$this->template.'/logic.php';
-if(JFile::exists($logicFile)) {
-	include $logicFile;
-}
-
-// Mobile device detection
-$mTemplate				= JPATH_THEMES.'/'.$this->template.'/mobile-offline.php';
-$alternatemTemplate		= JPATH_THEMES.'/'.$this->template.'/layouts/mobile-offline.php';
-
-// Initialize mobile device detection
-if(JFile::exists($mdetectFile)) {
-	include_once $mdetectFile;
-	// Instantiate the mobile object class
-	$uagent_obj 		= new uagent_info();
-	$isMobile 			= $uagent_obj->DetectMobileLong();
-	$isTablet			= $uagent_obj->DetectTierTablet();
-}
-
-// Check if mobile device detecion is turned on and test if visitor is a mobile device. If so, load mobile sub-template
-if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
-	if(JFile::exists($mTemplate)) {
-	 	include_once $mTemplate;
-	}
-}
-else {
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -99,7 +72,23 @@ else {
 						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 						<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
 						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
-						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>						
+						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
+						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
+						<?php if ($isOnward && $catId) : ?>
+							<?php if ($inheritParentCatStyle)
+								echo '<li>Parent Category '.$parentCategory.'</li>';?>
+							<?php if ($inheritRootCatStyle)
+								echo '<li>Root Category '.$rootCategory.'</li>';?>
+							<?php if ($inheritAncestorCatStyle)	{
+								echo '<li>Ancestor Categories:';		
+								$results = getAncestorCategories($catId);
+									if (count($results) > 0) {
+										foreach ($results as $item) {
+											echo ' '.$item->id.',';
+										}			
+									}
+								echo'</li>';} ?>
+						<?php endif; ?>
 					</ul>
 				<?php endif; ?>
 				
@@ -447,4 +436,3 @@ else {
 	
 	</body>
 </html>
-<?php } ?>

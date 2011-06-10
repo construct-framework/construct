@@ -28,8 +28,10 @@
 		<filename>css/wireframe.css</filename>
 		<filename>elements/googlewebfont.php</filename>
 		<filename>elements/index.html</filename>
-		<filename>elements/jqueryversion.php</filename>		
-		<filename>elements/mdetect.php</filename>		
+		<filename>elements/jqueryversion.php</filename>
+		<filename>elements/logic.php</filename>					
+		<filename>elements/mdetect.php</filename>	
+		<filename>elements/template.php</filename>				
 		<filename>elements/upgradecheck.php</filename>
 		<filename>html/modules.php</filename>
 		<filename>html/pagination.php</filename>
