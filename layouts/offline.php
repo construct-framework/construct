@@ -74,12 +74,8 @@
 						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
 						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
 						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
-						<?php if ($isOnward && $catId) : ?>
-							<?php if ($inheritParentCatStyle)
-								echo '<li>Parent Category '.$parentCategory.'</li>';?>
-							<?php if ($inheritRootCatStyle)
-								echo '<li>Root Category '.$rootCategory.'</li>';?>
-							<?php if ($inheritAncestorCatStyle)	{
+						<?php if ($isOnward && $catId) {							
+								echo '<li>Parent Category '.$parentCategory.'</li>';							
 								echo '<li>Ancestor Categories:';		
 								$results = getAncestorCategories($catId);
 									if (count($results) > 0) {
@@ -87,10 +83,10 @@
 											echo ' '.$item->id.',';
 										}			
 									}
-								echo'</li>';} ?>
-						<?php endif; ?>
+								echo'</li>';
+								} ?>
 					</ul>
-				<?php endif; ?>
+				<?php endif; ?>	
 				
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo $app->getCfg('sitename');?>"><?php echo $app->getCfg('sitename');?></a></h1>
 				

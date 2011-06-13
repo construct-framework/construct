@@ -78,6 +78,11 @@ $mastheads = "From: ".$emailaddress."\nDate: ".$errortime." +0100\n";
 $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 //mail($emailaddress, $subject, $message, $mastheads);
 							
+// Check for layout override
+if(JFile::exists('layouts/error.php')) {
+	include_once 'layouts/error.php';
+}
+else {						
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

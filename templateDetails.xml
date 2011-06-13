@@ -2,13 +2,13 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="1.6" type="template" client="site" method="upgrade">
 	<name>je-construct-pro</name>
-	<creationDate>May 27th, 2011</creationDate>
+	<creationDate>June 13th, 2011</creationDate>
 	<author>Joomla Engineering</author>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com</authorUrl>
 	<copyright>Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.6.652</version>
+	<version>1.6.655</version>
 	<description>TPL_JE_CONSTRUCT_PRO_DESCRIPTION</description>
 	<files>
 		<filename>css/article/index.html</filename>
@@ -27,11 +27,11 @@
 		<filename>css/screen.css</filename>
 		<filename>css/wireframe.css</filename>
 		<filename>elements/googlewebfont.php</filename>
+		<filename>elements/helper.php</filename>			
 		<filename>elements/index.html</filename>
 		<filename>elements/jqueryversion.php</filename>
 		<filename>elements/logic.php</filename>					
-		<filename>elements/mdetect.php</filename>	
-		<filename>elements/template.php</filename>				
+		<filename>elements/mdetect.php</filename>			
 		<filename>elements/upgradecheck.php</filename>
 		<filename>html/modules.php</filename>
 		<filename>html/pagination.php</filename>
@@ -83,44 +83,44 @@
 	<positions>
 		<position>analytics</position>
 		<position>breadcrumbs</position>
+		<position>column-1</position>		
+		<position>column-2</position>
+		<position>column-3</position>
+		<position>column-4</position>	
+		<position>content-above-1</position>
+		<position>content-above-2</position>
+		<position>content-above-3</position>
+		<position>content-above-4</position>			
+		<position>content-below-1</position>
+		<position>content-below-2</position>
+		<position>content-below-3</position>
+		<position>content-below-4</position>
 		<position>debug</position>		
-		<position>footer</position>		
-		<position>header</position>		
-		<position>left</position>		
-		<position>left2</position>
+		<position>footer</position>							
+		<position>footer-above-1</position>
+		<position>footer-above-2</position>
+		<position>footer-above-3</position>
+		<position>footer-above-4</position>		
+		<position>footer-above-5</position>
+		<position>footer-above-6</position>	
+		<position>header</position>					
+		<position>header-above-1</position>
+		<position>header-above-2</position>
+		<position>header-above-3</position>
+		<position>header-above-4</position>
+		<position>header-below-1</position>
+		<position>header-below-2</position>
+		<position>header-below-3</position>
+		<position>header-below-4</position>
+		<position>header-below-5</position>
+		<position>header-below-6</position>
 		<position>nav</position>
+		<position>nav-below-1</position>
+		<position>nav-below-2</position>
+		<position>nav-below-3</position>
+		<position>nav-below-4</position>
 		<position>offline</position>
-		<position>right</position>
-		<position>right2</position>
-		<position>sub1</position>
-		<position>sub2</position>
-		<position>sub3</position>
-		<position>sub4</position>
-		<position>sub5</position>
-		<position>sub6</position>
-		<position>subhead1</position>
-		<position>subhead2</position>
-		<position>subhead3</position>
-		<position>subhead4</position>
-		<position>subhead5</position>
-		<position>subhead6</position>
-		<position>supra1</position>
-		<position>supra2</position>
-		<position>supra3</position>
-		<position>supra4</position>
 		<position>syndicate</position>
-		<position>top</position>
-		<position>top2</position>
-		<position>top3</position>
-		<position>top4</position>
-		<position>user1</position>
-		<position>user2</position>
-		<position>user3</position>
-		<position>user4</position>
-		<position>user5</position>
-		<position>user6</position>
-		<position>user7</position>
-		<position>user8</position>
 	</positions>
 	
 	<config>
@@ -133,7 +133,15 @@
 				<field name="showDiagnostics" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_SHOW_DIAGNOSTICS_LABEL" description="TPL_JE_CONSTRUCT_PRO_SHOW_DIAGNOSTICS_DESC">
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
-				</field>		
+				</field>
+				<field name="inheritLayout" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_INHERIT_CAT_LAYOUT_LABEL" description="TPL_JE_CONSTRUCT_PRO_INHERIT_CAT_LAYOUT_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>				
+				<field name="inheritStyle" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_INHERIT_CAT_STYLE_LABEL" description="TPL_JE_CONSTRUCT_PRO_INHERIT_CAT_STYLE_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>				
 				<field name="customStyleSheet" type="filelist" default="example.css" label="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_LABEL" directory="templates/je-construct-pro/css" filter="\.css" exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css" description="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_DESC" />
 				<field name="setGeneratorTag" type="text" default="Joomla Engineering | http://JoomlaEngineering.com" label="Generator Meta Tag" description="Customize the generator meta tag output by your template." size="56" />		
 			</fieldset>

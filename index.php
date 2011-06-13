@@ -102,14 +102,11 @@ if ($results) {
 						<li><?php echo $currentComponent; ?></li>
 						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 						<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
-						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>					
-						<?php if ($catId) : ?>
-							<?php echo '<li>category-'.$catId.'</li>'; ?>		
-							<?php if ($inheritParentCatStyle)
-								echo '<li>Parent Category '.$parentCategory.'</li>';?>
-							<?php if ($inheritRootCatStyle)
-								echo '<li>Root Category '.$rootCategory.'</li>';?>
-							<?php if ($inheritAncestorCatStyle)	{
+						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
+						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
+						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
+						<?php if ($isOnward && $catId) {							
+								echo '<li>Parent Category '.$parentCategory.'</li>';							
 								echo '<li>Ancestor Categories:';		
 								$results = getAncestorCategories($catId);
 									if (count($results) > 0) {
@@ -117,8 +114,8 @@ if ($results) {
 											echo ' '.$item->id.',';
 										}			
 									}
-								echo'</li>';} ?>
-						<?php endif; ?>
+								echo'</li>';
+								} ?>
 					</ul>
 				<?php endif; ?>	
 

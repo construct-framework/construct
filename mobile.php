@@ -7,10 +7,12 @@
 */	
 
 // Check for Mobile Extended Template Layout Override and load it if it exists
-if (isset($alternateMobileIndexFile)) {
-	include_once($alternateMobileIndexFile);
-}
-else {
+$mobileResults = $mobileLayoutOverride->getIncludeFile ();
+
+if ($mobileResults) {
+    $alternateIndexFile = $mobileResults;
+	include_once $alternateIndexFile;	
+} else {
 ?>
 
 <!DOCTYPE html> 
