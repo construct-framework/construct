@@ -5,17 +5,6 @@
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
-
-// Load template logic
-$logicFile				= JPATH_THEMES.'/'.$this->template.'/elements/logic.php';
-if(JFile::exists($logicFile)) {
-	include $logicFile;
-}
-// Check for layout override
-if(JFile::exists('layouts/modal.php')) {
-	include_once 'layouts/modal.php';
-}
-else {
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

@@ -1,16 +1,23 @@
 <?php defined('_JEXEC') or die;
 /**
-* @package		Template Framework for Joomla! 1.6
+* @package		Template Framework for Joomla! 1.5
 * @author		Joomla Engineering http://joomlaengineering.com
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */	
 
+// To enable use of site configuration
+$app 					= JFactory::getApplication();
+// Get the base URL of the website
+$baseUrl 				= JURI::base();
+
 // Check for Mobile Extended Template Layout Override and load it if it exists
-if (isset($alternateMobileIndexFile)) {
-	include_once($alternateMobileIndexFile);
-}
-else {
+$mobileResults = $mobileLayoutOverride->getIncludeFile ();
+
+if ($mobileResults) {
+    $alternateIndexFile = $mobileResults;
+	include_once $alternateIndexFile;	
+} else {
 ?>
 
 <!DOCTYPE html> 

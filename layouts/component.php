@@ -5,17 +5,6 @@
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
-
-// Returns a reference to the global document object
-$doc 					= JFactory::getDocument();
-// Define relative shortcut for current template directory
-$template 				= 'templates/'.$this->template;
-
-// Check for layout override
-if(JFile::exists('layouts/component.php')) {
-	include_once 'layouts/component.php';
-}
-else {
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
