@@ -225,7 +225,7 @@ else ($articleId = NULL);
 
 function getCategory($id) {
 	$database = JFactory::getDBO();
-		if(JRequest::getCmd('view', 0) == "category") {
+		if(JRequest::getCmd('view', 0) == ("category" || "categories")) {
 			return $id;
 		}		
 		elseif(JRequest::getCmd('view', 0) == "article") {
