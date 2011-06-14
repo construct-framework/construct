@@ -12,8 +12,8 @@ if(JFile::exists($logicFile)) {
 	include $logicFile;
 }
 // Check for layout override
-if(JFile::exists('layouts/modal.php')) {
-	include_once 'layouts/modal.php';
+if(JFile::exists($template.'layouts/modal.php')) {
+	include_once $template.'layouts/modal.php';
 }
 else {
 ?>
