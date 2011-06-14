@@ -6,9 +6,6 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-// Load Template Helper
-jimport('joomla.filesystem.file');
-
 // Call the Construct Template Helper Class
 if (JFile::exists(dirname(__FILE__).'/helper.php')) {
     include dirname(__FILE__).'/helper.php';

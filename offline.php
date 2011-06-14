@@ -6,6 +6,9 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+// Load Joomla filesystem package
+jimport('joomla.filesystem.file');
+
 // Load template logic
 $logicFile 				= JPATH_THEMES.'/'.$this->template.'/logic.php';
 if(JFile::exists($logicFile)) {
