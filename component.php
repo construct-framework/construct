@@ -15,8 +15,8 @@ $doc 					= JFactory::getDocument();
 $template 				= 'templates/'.$this->template;
 
 // Check for layout override
-if(JFile::exists($template.'layouts/component.php')) {
-	include_once $template.'layouts/component.php';
+if(JFile::exists($template.'/layouts/component.php')) {
+	include_once $template.'/layouts/component.php';
 }
 else {
 ?>
