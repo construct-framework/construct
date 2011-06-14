@@ -80,8 +80,8 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 //mail($emailaddress, $subject, $message, $mastheads);
 							
 // Check for layout override
-if(JFile::exists('layouts/error.php')) {
-	include_once 'layouts/error.php';
+if(JFile::exists($template.'layouts/error.php')) {
+	include_once $template.'layouts/error.php';
 }
 else {						
 ?>

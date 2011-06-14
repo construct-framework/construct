@@ -33,8 +33,8 @@ if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
 }
 
 // Check for layout override
-if(JFile::exists('layouts/offline.php')) {
-	include_once 'layouts/offline.php';
+if(JFile::exists($template.'layouts/offline.php')) {
+	include_once $template.'layouts/offline.php';
 }
 else {
 ?>
