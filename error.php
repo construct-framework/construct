@@ -6,6 +6,9 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+// Load Joomla filesystem package
+jimport('joomla.filesystem.file');
+
 // To enable use of site configuration
 $app 					= JFactory::getApplication();
 // Get the base URL of the website

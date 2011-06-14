@@ -6,6 +6,9 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+// Load Joomla filesystem package
+jimport('joomla.filesystem.file');
+
 // Returns a reference to the global document object
 $doc 					= JFactory::getDocument();
 // Define relative shortcut for current template directory
