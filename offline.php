@@ -10,7 +10,7 @@
 jimport('joomla.filesystem.file');
 
 // Load template logic
-$logicFile 				= JPATH_THEMES.'/'.$this->template.'/logic.php';
+$logicFile				= JPATH_THEMES.'/'.$this->template.'/elements/logic.php';
 if(JFile::exists($logicFile)) {
 	include $logicFile;
 }
@@ -107,9 +107,21 @@ else {
 						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 						<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
 						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
-						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>						
+						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
+						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
+						<?php if($isOnward && $catId && ($inheritStyle || $inheritLayout)) {							
+								echo '<li>Parent Category '.$parentCategory.'</li>';							
+								echo '<li>Ancestor Categories:';		
+								$results = getAncestorCategories($catId);
+									if (count($results) > 0) {
+										foreach ($results as $item) {
+											echo ' '.$item->id.',';
+										}			
+									}
+								echo'</li>';
+								} ?>
 					</ul>
-				<?php endif; ?>
+				<?php endif; ?>	
 				
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo $app->getCfg('sitename');?>"><?php echo $app->getCfg('sitename');?></a></h1>
 				
@@ -175,18 +187,6 @@ else {
 				</div><!-- end header-below -->
 			<?php endif; ?>
 		
-			<?php if ($this->countModules('breadcrumbs')) : ?>		
-				<div id="breadcrumbs">
-					
-				</div>				
-			<?php endif; ?>		
-			
-			<?php if ($this->countModules('nav')) : ?>
-				<div id="nav" class="clear clearfix">
-					
-				</div><!-- end nav-->
-			<?php endif; ?>
-	  
 			<div id="content-container" class="clear clearfix">    
 
 				<?php if ($navBelowCount) : ?>
@@ -455,4 +455,4 @@ else {
 	
 	</body>
 </html>
-<?php } ?>
+<?php }

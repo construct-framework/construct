@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die;
 /**
-* @package		Template Framework for Joomla! 1.6
+* @package		Template Framework for Joomla! 1.5
 * @author		Joomla Engineering http://joomlaengineering.com
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,7 +74,7 @@
 						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
 						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
 						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
-						<?php if($catId && ($inheritStyle || $inheritLayout)) {							
+						<?php if($isOnward && $catId && ($inheritStyle || $inheritLayout)) {							
 								echo '<li>Parent Category '.$parentCategory.'</li>';							
 								echo '<li>Ancestor Categories:';		
 								$results = getAncestorCategories($catId);
@@ -150,18 +150,6 @@
 						</div><!-- end header-below-6 -->
 					<?php endif; ?>											
 				</div><!-- end header-below -->
-			<?php endif; ?>
-		
-			<?php if ($this->countModules('breadcrumbs')) : ?>		
-				<div id="breadcrumbs">
-					
-				</div>				
-			<?php endif; ?>		
-			
-			<?php if ($this->countModules('nav')) : ?>
-				<div id="nav" class="clear clearfix">
-					
-				</div><!-- end nav-->
 			<?php endif; ?>
 	  
 			<div id="content-container" class="clear clearfix">    
