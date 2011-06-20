@@ -74,6 +74,17 @@
 						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
 						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
 						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
+						<?php if($isOnward && $catId && ($inheritStyle || $inheritLayout)) {							
+								echo '<li>Parent Category '.$parentCategory.'</li>';							
+								echo '<li>Ancestor Categories:';		
+								$results = getAncestorCategories($catId);
+									if (count($results) > 0) {
+										foreach ($results as $item) {
+											echo ' '.$item->id.',';
+										}			
+									}
+								echo'</li>';
+								} ?>
 					</ul>
 				<?php endif; ?>	
 				
@@ -139,18 +150,6 @@
 						</div><!-- end header-below-6 -->
 					<?php endif; ?>											
 				</div><!-- end header-below -->
-			<?php endif; ?>
-		
-			<?php if ($this->countModules('breadcrumbs')) : ?>		
-				<div id="breadcrumbs">
-					
-				</div>				
-			<?php endif; ?>		
-			
-			<?php if ($this->countModules('nav')) : ?>
-				<div id="nav" class="clear clearfix">
-					
-				</div><!-- end nav-->
 			<?php endif; ?>
 	  
 			<div id="content-container" class="clear clearfix">    

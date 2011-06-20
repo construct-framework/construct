@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die;
 /**
-* @package		Template Framework for Joomla! 1.5
+* @package		Template Framework for Joomla! 1.6
 * @author		Joomla Engineering http://joomlaengineering.com
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
@@ -55,9 +55,8 @@ else {
 <?php endif; ?>
 
 	<div id="footer-push">
-		<a id="page-top" name="page-top"></a>
-
-		<?php if ($headerAboveCount) : ?>
+			<a id="page-top" name="page-top"></a>
+			<?php if ($headerAboveCount) : ?>
 			<div id="header-above" class="clearfix">						
 				<?php if ($this->countModules('header-above-1')) : ?>
 					<div id="header-above-1" class="<?php echo $headerAboveClass ?>">
@@ -90,7 +89,7 @@ else {
 					</div><!-- end header-above-6 -->								
 				<?php endif; ?>									
 			</div><!-- end header-above -->
-		<?php endif; ?>
+		<?php endif; ?>	
 	
 		<div id="header" class="clear clearfix">
 			<div class="gutter clearfix">
@@ -105,14 +104,25 @@ else {
 				<?php if ($showDiagnostics) : ?>
 					<ul id="diagnostics">
 						<li><?php echo $currentComponent; ?></li>
+						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 						<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
 						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
 						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
 						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
-						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>
+						<?php if($isOnward && $catId && ($inheritStyle || $inheritLayout)) {							
+								echo '<li>Parent Category '.$parentCategory.'</li>';							
+								echo '<li>Ancestor Categories:';		
+								$results = getAncestorCategories($catId);
+									if (count($results) > 0) {
+										foreach ($results as $item) {
+											echo ' '.$item->id.',';
+										}			
+									}
+								echo'</li>';
+								} ?>
 					</ul>
 				<?php endif; ?>	
-
+				
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo $app->getCfg('sitename');?>"><?php echo $app->getCfg('sitename');?></a></h1>
 				
 				<?php if ($this->countModules('header')) : ?>
@@ -177,18 +187,6 @@ else {
 				</div><!-- end header-below -->
 			<?php endif; ?>
 		
-			<?php if ($this->countModules('breadcrumbs')) : ?>		
-				<div id="breadcrumbs">
-					
-				</div>				
-			<?php endif; ?>		
-			
-			<?php if ($this->countModules('nav')) : ?>
-				<div id="nav" class="clear clearfix">
-					
-				</div><!-- end nav-->
-			<?php endif; ?>
-	  
 			<div id="content-container" class="clear clearfix">    
 
 				<?php if ($navBelowCount) : ?>
@@ -457,4 +455,4 @@ else {
 	
 	</body>
 </html>
-<?php } ?>
+<?php }

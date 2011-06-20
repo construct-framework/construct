@@ -22,6 +22,7 @@ button:active,
 .poll a:active,
 a[title="Cancel"]:active,
 input[type="submit"]:active{-webkit-box-shadow:none;-moz-box-shadow:none; box-shadow:none}
+.breadcrumbs{padding:18px 0 10px 32px;background:url(../images/example-location-icon.png) 0 0 no-repeat}
 table.category {border:1px solid rgba(10, 163, 74,.8)}
 .category th a img {padding-left:5px}
 .category .cat-list-row0,
@@ -52,7 +53,6 @@ ul.menu ul{border:1px solid #999;}
 .sectiontableentry1:hover,
 .sectiontableentry2:hover {background: rgba(10, 163, 74,.5)!important}
 #body-container {padding-top:15px}
-#breadcrumbs{padding:18px 0 10px 32px;background:url(../images/example-location-icon.png) 0 0 no-repeat}
 #column-group-alpha ul.menu li#current a{color:#ED1F24;font-weight:bold}
 #column-group-alpha ul.menu li#current li a{color:#1A61AE;font-weight:normal}
 #column-group-alpha ul.menu li.parent a,

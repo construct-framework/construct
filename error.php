@@ -21,14 +21,16 @@ $offLine 				= $app->getCfg('offline');
 if ($offLine) {
 	$app->redirect($baseUrl);
 }
+// Define relative path to the  current template directory
+$template 				= 'templates/'.$this->template;
+
 // Manually set and define template parameters
-$columnLayout			= 'left-1-main-right-1';
+$columnLayout			= 'alpha-1-main-beta-1';
 $customStyleSheet 		= 'example.css';
 $enableSwitcher 		= '0';
-$bodyFontFamily 		= 'lucida-grande';
 $fullWidth				= '1';
 $IECSS3					= '1';
-$IECSS3Targets			= '.drop-shadow, .outline, .rounded, ul.menu li, ul.menu ul, #nav,#column-group-alpha .moduletable, #column-group-alpha .moduletable_menu, #column-group-beta .moduletable, #column-group-beta .moduletable_menu, #content-top .moduletable, #content-top .moduletable_menu, #nav-below .moduletable, #nav-below .moduletable_menu';
+$IECSS3Targets			= '.drop-shadow, .outline, .rounded, ul.menu li, ul.menu ul, #nav,#column-group-alpha .moduletable, #column-group-alpha .moduletable_menu, #column-group-beta .moduletable, #column-group-beta .moduletable_menu, #content-above .moduletable, #content-above .moduletable_menu, #nav-below .moduletable, #nav-below .moduletable_menu';
 $IE6TransFix			= '1';
 $IE6TransFixTargets		= 'h1 a, .readon, .parent a, #breadcrumbs';
 $googleWebFont 			= '';
@@ -46,14 +48,14 @@ $stickyFooterHeight		= '175';
 $useStickyFooter 		= '1';
 
 // Define module counts
-$supraModuleClass 		= 'count-1';
-$subHeadClass 			= 'count-6';
-$subNavClass 			= 'count-4';
-$contentTopClass 		= 'count-4';
-$contentBottomClass 	= '';
-$contentLeftClass 		= 'count-1';
-$contentRightClass 		= '';
-$subContentClass 		= 'count-4';
+$headerAboveClass 		= 'count-1';
+$headerBelowClass 		= 'count-6';
+$navBelowClass 			= 'count-4';
+$contentAboveClass 		= 'count-1';
+$contentBelowClass 		= '';
+$columnGroupAlphaClass 	= 'count-1';
+$columnGroupBetaClass 	= '';
+$footerAboveClass 		= 'count-4';
 
 // Based on http://forum.joomla.org/index.php/viewtopic.php?p=1077558#p1077558
 $renderer   			= $doc->loadRenderer( 'modules' );
@@ -81,7 +83,7 @@ $message .= "The used client was:\n".$_SERVER['HTTP_USER_AGENT']."\r\n\r\n";
 $mastheads = "From: ".$emailaddress."\nDate: ".$errortime." +0100\n";
 $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 //mail($emailaddress, $subject, $message, $mastheads);
-							
+
 // Check for layout override
 if(JFile::exists($template.'/layouts/error.php')) {
 	include_once $template.'/layouts/error.php';
@@ -97,7 +99,7 @@ else {
   <link rel="icon" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/favicon.png" type="image/png" />	
   <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/screen.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/overrides.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/print.css" type="text/css" media="print" />  
+  <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/print.css" type="text/css" media="print" />
 <?php if ($enableSwitcher) {
   echo '  <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/diagnostic.css" type="text/css" title="diagnostic"/>
   <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/normal.css" type="text/css" title="normal"/>
@@ -155,39 +157,45 @@ echo "\n"; ?>
 
 <body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; ?> error">
 	<div id="footer-push">
-		<?php if ($supraModuleClass) : ?>
-			<div id="top" class="clearfix">
-				<div id="supra1" class="<?php echo $supraModuleClass ?>">
-					<?php echo $renderer->render('supra1', $jexhtml, null);  ?>
+		<?php if ($headerAboveClass) : ?>
+			<div id="header-above" class="clearfix">
+				<div id="header-above-1" class="<?php echo $headerAboveClass ?>">
+					<?php echo $renderer->render('header-above-1', $jexhtml, null);  ?>
 				</div>	
-				<div id="supra2" class="<?php echo $supraModuleClass ?>">
-					<?php echo $renderer->render('supra2', $jexhtml, null);  ?>
+				<div id="header-above-2" class="<?php echo $headerAboveClass ?>">
+					<?php echo $renderer->render('header-above-2', $jexhtml, null);  ?>
 				</div>	
-				<div id="supra3" class="<?php echo $supraModuleClass ?>">
-					<?php echo $renderer->render('supra3', $jexhtml, null);  ?>
+				<div id="header-above-3" class="<?php echo $headerAboveClass ?>">
+					<?php echo $renderer->render('header-above-3', $jexhtml, null);  ?>
 				</div>	
-				<div id="supra4" class="<?php echo $supraModuleClass ?>">
-					<?php echo $renderer->render('supra4', $jexhtml, null);  ?>
+				<div id="header-above-4" class="<?php echo $headerAboveClass ?>">
+					<?php echo $renderer->render('header-above-4', $jexhtml, null);  ?>
 				</div>		
+				<div id="header-above-5" class="<?php echo $headerAboveClass ?>">
+					<?php echo $renderer->render('header-above-5', $jexhtml, null);  ?>
+				</div>	
+				<div id="header-above-6" class="<?php echo $headerAboveClass ?>">
+					<?php echo $renderer->render('header-above-6', $jexhtml, null);  ?>
+				</div>									
 			</div>
 		<?php endif; ?>	
 		
 		<div id="header" class="clear clearfix">
 			<div class="gutter">
 
+				
 				<div class="date-container">
 					<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
 					<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
 					<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
 					<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
 				</div>
-
-
+				
 			
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo $this->baseurl ?>/"><?php echo $this->baseurl ?></a></h1>
 				
-				<?php echo $renderer->render('header', $jexhtml, null);  ?>			
-						
+				<?php echo $renderer->render('header', $jexhtml, null);  ?>
+			
 				<ul id="access">
 					<li>Jump to:</li>
 					<li><a href="<?php echo $baseUrl; ?>index.php#content" class="to-content">Content</a></li>					
@@ -201,78 +209,88 @@ echo "\n"; ?>
 						<li><a href="#" onclick="setActiveStyleSheet('diagnostic'); return false;" title="Diagnostic">Diagnostic Mode</a></li>
 						<li><a href="#" onclick="setActiveStyleSheet('normal'); return false;" title="Normal">Normal Mode</a></li>
 					</ul>
-				<?php endif; ?>	
+				<?php endif; ?>					
 				
 			</div><!-- end gutter -->
 		</div><!-- end header -->
  
 		<div id="body-container">
-			<?php if ($subHeadClass) : ?>
-				<div id="sub-header" class="clearfix">						
-						<div id="subhead1" class="<?php echo $subHeadClass ?>">
-							<?php echo $renderer->render('subhead1', $jexhtml, null);  ?>
-						</div><!-- end subhead1 -->								
-						<div id="subhead2" class="<?php echo $subHeadClass ?>">
-							<?php echo $renderer->render('subhead2', $jexhtml, null);  ?>
-						</div><!-- end subhead2 -->
-						<div id="subhead3" class="<?php echo $subHeadClass ?>">
-							<?php echo $renderer->render('subhead3', $jexhtml, null);  ?>
-						</div><!-- end subhead3 -->
-						<div id="subhead4" class="<?php echo $subHeadClass ?>">
-							<?php echo $renderer->render('subhead4', $jexhtml, null);  ?>
-						</div><!-- end subhead4 -->
-						<div id="subhead5" class="<?php echo $subHeadClass ?>">
-							<?php echo $renderer->render('subhead5', $jexhtml, null);  ?>
-						</div><!-- end subhead5 -->
-						<div id="subhead6" class="<?php echo $subHeadClass ?>">
-							<?php echo $renderer->render('subhead6', $jexhtml, null);  ?>
-						</div><!-- end subhead6 -->												
-				</div><!-- end sub-header -->
+			<?php if ($headerBelowClass) : ?>
+				<div id="header-below" class="clearfix">						
+						<div id="header-below-1" class="<?php echo $headerBelowClass ?>">
+							<?php echo $renderer->render('header-below-1', $jexhtml, null);  ?>
+						</div><!-- end header-below-1 -->								
+						<div id="header-below-2" class="<?php echo $headerBelowClass ?>">
+							<?php echo $renderer->render('header-below-2', $jexhtml, null);  ?>
+						</div><!-- end header-below-2 -->
+						<div id="header-below-3" class="<?php echo $headerBelowClass ?>">
+							<?php echo $renderer->render('header-below-3', $jexhtml, null);  ?>
+						</div><!-- end header-below-3 -->
+						<div id="header-below-4" class="<?php echo $headerBelowClass ?>">
+							<?php echo $renderer->render('header-below-4', $jexhtml, null);  ?>
+						</div><!-- end header-below-4 -->
+						<div id="header-below-5" class="<?php echo $headerBelowClass ?>">
+							<?php echo $renderer->render('header-below-5', $jexhtml, null);  ?>
+						</div><!-- end header-below-5 -->
+						<div id="header-below-6" class="<?php echo $headerBelowClass ?>">
+							<?php echo $renderer->render('header-below-6', $jexhtml, null);  ?>
+						</div><!-- end header-below-6 -->												
+				</div><!-- end header-below -->
 			<?php endif; ?>			
 				
-				<div id="breadcrumbs">
-					<?php echo $renderer->render('breadcrumbs', $raw, null);  ?>
-				</div><!-- end breadcrumbs -->
+			<?php echo $renderer->render('breadcrumbs', $raw, null);  ?>
 				
 			<div id="nav" class="clear">    
 				<?php echo $renderer->render('nav', $raw, null);  ?>
 			</div>
  
 			<div id="content-container" class="clear clearfix">  
-				<?php if ($subNavClass) : ?>			
-					<div id="sub-nav" class="clearfix">						
-						<div id="user1" class="<?php echo $subNavClass ?>">
-							<?php echo $renderer->render('user1', $jexhtml, null);  ?>
-						</div><!-- end user1 -->								
-						<div id="user2" class="<?php echo $subNavClass ?>">
-							<?php echo $renderer->render('user2', $jexhtml, null);  ?>
-						</div><!-- end user2 -->
-						<div id="user3" class="<?php echo $subNavClass ?>">
-							<?php echo $renderer->render('user3', $jexhtml, null);  ?>
-						</div><!-- end user3 -->
-						<div id="user4" class="<?php echo $subNavClass ?>">
-							<?php echo $renderer->render('user4', $jexhtml, null);  ?>
-						</div><!-- end user4 -->					
+				<?php if ($navBelowClass) : ?>			
+					<div id="nav-below" class="clearfix">						
+						<div id="nav-below-1" class="<?php echo $navBelowClass ?>">
+							<?php echo $renderer->render('nav-below-1', $jexhtml, null);  ?>
+						</div><!-- end nav-below-1 -->								
+						<div id="nav-below-2" class="<?php echo $navBelowClass ?>">
+							<?php echo $renderer->render('nav-below-2', $jexhtml, null);  ?>
+						</div><!-- end nav-below-2 -->
+						<div id="nav-below-3" class="<?php echo $navBelowClass ?>">
+							<?php echo $renderer->render('nav-below-3', $jexhtml, null);  ?>
+						</div><!-- end nav-below-3 -->
+						<div id="nav-below-4" class="<?php echo $navBelowClass ?>">
+							<?php echo $renderer->render('nav-below-4', $jexhtml, null);  ?>
+						</div><!-- end nav-below-4 -->				
+						<div id="nav-below-5" class="<?php echo $navBelowClass ?>">
+							<?php echo $renderer->render('nav-below-5', $jexhtml, null);  ?>
+						</div><!-- end nav-below-5 -->	
+						<div id="nav-below-6" class="<?php echo $navBelowClass ?>">
+							<?php echo $renderer->render('nav-below-6', $jexhtml, null);  ?>
+						</div><!-- end nav-below-6 -->								
 					</div>
 				<?php endif; ?>	
 				
 				<div id="load-first" class="clearfix">
 					<div id="content-main">
 						<div class="gutter">
-						<?php if ($contentTopClass) : ?>						
-								<div id="content-top" class="clearfix">	
-									<div id="top" class="<?php echo $contentTopClass ?>">
-										<?php echo $renderer->render('top', $jexhtml, null);  ?>
+						<?php if ($contentAboveClass) : ?>						
+								<div id="content-above" class="clearfix">	
+									<div id="content-above" class="<?php echo $contentAboveClass ?>">
+										<?php echo $renderer->render('content-above-1', $jexhtml, null);  ?>
 									</div><!-- end top -->						   
-									<div id="top2" class="<?php echo $contentTopClass ?>">
-										<?php echo $renderer->render('top2', $jexhtml, null);  ?>
-									</div><!-- end top2 -->							
-									<div id="top3" class="<?php echo $contentTopClass ?>">
-										<?php echo $renderer->render('top3', $jexhtml, null);  ?>	
-									</div><!-- end top3 -->								
-									<div id="top4" class="<?php echo $contentTopClass ?>">
-										<?php echo $renderer->render('top4', $jexhtml, null);  ?>
-									</div><!-- end top4 -->			
+									<div id="content-above-2" class="<?php echo $contentAboveClass ?>">
+										<?php echo $renderer->render('content-above-2', $jexhtml, null);  ?>
+									</div><!-- end content-above-2 -->							
+									<div id="content-above-3" class="<?php echo $contentAboveClass ?>">
+										<?php echo $renderer->render('content-above-3', $jexhtml, null);  ?>	
+									</div><!-- end content-above-3 -->								
+									<div id="content-above-4" class="<?php echo $contentAboveClass ?>">
+										<?php echo $renderer->render('content-above-4', $jexhtml, null);  ?>
+									</div><!-- end content-above-4 -->		
+									<div id="content-above-5" class="<?php echo $contentAboveClass ?>">
+										<?php echo $renderer->render('content-above-5', $jexhtml, null);  ?>
+									</div><!-- end content-above-5 -->		
+									<div id="content-above-6" class="<?php echo $contentAboveClass ?>">
+										<?php echo $renderer->render('content-above-6', $jexhtml, null);  ?>
+									</div><!-- end content-above-6 -->																					
 								</div>
 							<?php endif; ?>
 							
@@ -287,12 +305,10 @@ echo "\n"; ?>
 										<li><?php echo JText::_('The requested resource was not found'); ?></li>
 										<li><?php echo JText::_('An error has occurred while processing your request.'); ?></li>
 									</ol>
-								<p><strong><?php echo JText::_('Please try one of the following pages:'); ?></strong></p>
-								<p>
-									<ul>
-										<li><a href="<?php echo $this->baseurl; ?>/" title="<?php echo JText::_('Go to the home page'); ?>"><?php echo JText::_('Home Page'); ?></a></li>
-									</ul>
-								</p>
+								<p><strong><?php echo JText::_('Please try one of the following pages:'); ?></strong></p>								
+								<ul>
+									<li><a href="<?php echo $this->baseurl; ?>/" title="<?php echo JText::_('Go to the home page'); ?>"><?php echo JText::_('Home Page'); ?></a></li>
+								</ul>								
 								<p><?php echo JText::_('If difficulties persist, please contact the system administrator of this site.'); ?></p>
 								<p><?php echo $this->error->getMessage(); ?></p>
 								<p>
@@ -301,72 +317,78 @@ echo "\n"; ?>
 									endif; ?>
 								</p>
 							</div>
-							<?php if ($contentBottomClass) : ?>							
-								<div id="content-bottom" class="clearfix">	
-									<div id="user5" class="<?php echo $contentBottomClass ?>">
-										<?php echo $renderer->render('user5', $jexhtml, null);  ?>
-									</div><!-- end user5 -->						   
-									<div id="user6" class="<?php echo $contentBottomClass ?>">
-										<?php echo $renderer->render('user6', $jexhtml, null);  ?>
-									</div><!-- end user6 -->							
-									<div id="user7" class="<?php echo $contentBottomClass ?>">
-										<?php echo $renderer->render('user7', $jexhtml, null);  ?>	
-									</div><!-- end user7 -->								
-									<div id="user8" class="<?php echo $contentBottomClass ?>">
-										<?php echo $renderer->render('user8', $jexhtml, null);  ?>
-									</div><!-- end user8 -->			
+							<?php if ($contentBelowClass) : ?>							
+								<div id="content-below" class="clearfix">	
+									<div id="content-below-1" class="<?php echo $contentBelowClass ?>">
+										<?php echo $renderer->render('content-below-1', $jexhtml, null);  ?>
+									</div><!-- end content-below-1 -->						   
+									<div id="content-below-2" class="<?php echo $contentBelowClass ?>">
+										<?php echo $renderer->render('content-below-2', $jexhtml, null);  ?>
+									</div><!-- end content-below-2 -->							
+									<div id="content-below-3" class="<?php echo $contentBelowClass ?>">
+										<?php echo $renderer->render('content-below-3', $jexhtml, null);  ?>	
+									</div><!-- end content-below-3 -->								
+									<div id="content-below-4" class="<?php echo $contentBelowClass ?>">
+										<?php echo $renderer->render('content-below-4', $jexhtml, null);  ?>
+									</div><!-- end content-below-4 -->	
+									<div id="content-below-5" class="<?php echo $contentBelowClass ?>">
+										<?php echo $renderer->render('content-below-5', $jexhtml, null);  ?>
+									</div><!-- end content-below-5 -->	
+									<div id="content-below-6" class="<?php echo $contentBelowClass ?>">
+										<?php echo $renderer->render('content-below-6', $jexhtml, null);  ?>
+									</div><!-- end content-below-6 -->																					
 								</div>	
 							<?php endif; ?>						
 						</div><!-- end gutter -->					
 					</div><!-- end content-main --> 
-					<?php if ($contentLeftClass) : ?>								
-						<div id="content-left">
+					<?php if ($columnGroupAlphaClass) : ?>								
+						<div id="column-group-alpha">
 							<div class="gutter clearfix">
-								<div id="left" class="<?php echo $contentLeftClass ?>">
-									<?php echo $renderer->render('left', $jexhtml, null);  ?>
-								</div><!-- end left -->
-								<div id="left2" class="<?php echo $contentLeftClass ?>">
-									<?php echo $renderer->render('left2', $jexhtml, null);  ?>
-								</div><!-- end left2 -->
+								<div id="column-1" class="<?php echo $columnGroupAlphaClass ?>">
+									<?php echo $renderer->render('column-1', $jexhtml, null);  ?>
+								</div><!-- end column-1 -->
+								<div id="column-2" class="<?php echo $columnGroupAlphaClass ?>">
+									<?php echo $renderer->render('column-2', $jexhtml, null);  ?>
+								</div><!-- end column-2 -->
 							</div><!--end gutter -->
-						</div><!-- end content-left -->
+						</div><!-- end column-group-alpha -->
 					<?php endif; ?>
 				</div><!--end load-first-->
 				
-					<?php if ($contentRightClass) : ?>								
-						<div id="content-right">
+					<?php if ($columnGroupBetaClass) : ?>								
+						<div id="column-group-beta">
 							<div class="gutter clearfix">
-								<div id="right" class="<?php echo $contentRightClass ?>">
-									<?php echo $renderer->render('right', $jexhtml, null);  ?>
-								</div><!-- end right -->
-								<div id="right2" class="<?php echo $contentRightClass ?>">
-									<?php echo $renderer->render('right2', $jexhtml, null);  ?>
-								</div><!-- end right2 -->
+								<div id="column-3" class="<?php echo $columnGroupBetaClass ?>">
+									<?php echo $renderer->render('column-3', $jexhtml, null);  ?>
+								</div><!-- end column-3 -->
+								<div id="column-4" class="<?php echo $columnGroupBetaClass ?>">
+									<?php echo $renderer->render('column-4', $jexhtml, null);  ?>
+								</div><!-- end column-4 -->
 							</div><!--end gutter -->
-						</div><!-- end content-right -->
+						</div><!-- end column-group-beta -->
 					<?php endif; ?>	
 	   
-				<?php if ($subContentClass) : ?>
-					<div id="sub-content" class="clearfix">						
-						<div id="sub1" class="<?php echo $subContentClass ?>">
-							<?php echo $renderer->render('sub1', $jexhtml, null);  ?>
-						</div><!-- end sub1 -->								
-						<div id="sub2" class="<?php echo $subContentClass ?>">
-							<?php echo $renderer->render('sub2', $jexhtml, null);  ?>
-						</div><!-- end sub2 -->
-						<div id="sub3" class="<?php echo $subContentClass ?>">
-							<?php echo $renderer->render('sub3', $jexhtml, null);  ?>
-						</div><!-- end sub3 -->
-						<div id="sub4" class="<?php echo $subContentClass ?>">
-							<?php echo $renderer->render('sub4', $jexhtml, null);  ?>
-						</div><!-- end sub4 -->
-						<div id="sub5" class="<?php echo $subContentClass ?>">
-							<?php echo $renderer->render('sub5', $jexhtml, null);  ?>
-						</div><!-- end sub5 -->
-						<div id="sub6" class="<?php echo $subContentClass ?>">
-							<?php echo $renderer->render('sub6', $jexhtml, null);  ?>
-						</div><!-- end sub6 -->				
-					</div><!-- end sub-content --> 
+				<?php if ($footerAboveClass) : ?>
+					<div id="footer-above" class="clearfix">						
+						<div id="footer-above-1" class="<?php echo $footerAboveClass ?>">
+							<?php echo $renderer->render('footer-above-1', $jexhtml, null);  ?>
+						</div><!-- end footer-above-1 -->								
+						<div id="footer-above-2" class="<?php echo $footerAboveClass ?>">
+							<?php echo $renderer->render('footer-above-2', $jexhtml, null);  ?>
+						</div><!-- end footer-above-2 -->
+						<div id="footer-above-3" class="<?php echo $footerAboveClass ?>">
+							<?php echo $renderer->render('footer-above-3', $jexhtml, null);  ?>
+						</div><!-- end footer-above-3 -->
+						<div id="footer-above-4" class="<?php echo $footerAboveClass ?>">
+							<?php echo $renderer->render('footer-above-4', $jexhtml, null);  ?>
+						</div><!-- end footer-above-4 -->
+						<div id="footer-above-5" class="<?php echo $footerAboveClass ?>">
+							<?php echo $renderer->render('footer-above-5', $jexhtml, null);  ?>
+						</div><!-- end footer-above-5 -->
+						<div id="footer-above-6" class="<?php echo $footerAboveClass ?>">
+							<?php echo $renderer->render('footer-above-6', $jexhtml, null);  ?>
+						</div><!-- end footer-above-6 -->				
+					</div><!-- end footer-above --> 
 				<?php endif; ?>	 
 			</div><!-- end content-container -->
 		</div><!-- end body-container -->
@@ -384,3 +406,4 @@ echo "\n"; ?>
 
 </body>
 </html>
+<?php }
