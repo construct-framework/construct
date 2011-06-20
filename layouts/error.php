@@ -102,9 +102,9 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 } ?>  
 <?php	
 	if ($customStyleSheet !='-1')
-		echo "\n".'  <link rel="stylesheet" href="templates/'.$this->template.'/css/'.$customStyleSheet.'"  type="text/css" media="screen" />';
+		echo "\n".'  <link rel="stylesheet" href="'.$baseUrl.'templates/'.$this->template.'/css/'.$customStyleSheet.'"  type="text/css" media="screen" />';
 	if ($this->direction == 'rtl')
-		echo "\n".'  <link rel="stylesheet" href="'.$baseUrl.'"templates/"'.$this->template.'"/css/rtl.css"  type="text/css" media="screen" />';
+		echo "\n".'  <link rel="stylesheet" href="'.$baseUrl.'templates/'.$this->template.'/css/rtl.css"  type="text/css" media="screen" />';
 	if (isset($cssFile))
 		echo "\n".$cssFile;
 	if ($googleWebFont != "")
