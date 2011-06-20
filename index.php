@@ -10,7 +10,7 @@
 jimport('joomla.filesystem.file');
 
 // Load template logic
-$logicFile 		= JPATH_THEMES.'/'.$this->template.'/logic.php';
+$logicFile 		= JPATH_THEMES.'/'.$this->template.'/elements/logic.php';
 if(JFile::exists($logicFile)) {
 	include $logicFile;
 }
