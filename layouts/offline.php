@@ -377,7 +377,7 @@
 						<?php endif; ?>					
 						<?php if ($this->countModules('footer-above-5')) : ?>
 							<div id="footer-above-5" class="<?php echo $footerAboveClass ?>">
-								<jdoc:include type="modules" name="footer-above-5" style="jexhtml" module-class="gutter" />
+								
 							</div><!-- end footer-above-5 -->
 						<?php endif; ?>						
 						<?php if ($this->countModules('footer-above-6')) : ?>

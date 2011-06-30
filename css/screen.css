@@ -132,7 +132,7 @@ h3+ul, h3+ol {margin-top:-.3em}
 i{font-style:italic}
 input.button{padding:0 10px}
 li > p{margin:0.2em 0 0 1em}
-ol,ul,li{font-size:1em;margin:0.2em 0 0.1em 0}
+ol,ul,li{font-size:1em;margin:0.2em 0;}
 li{margin-left:1.25em}
 .item ol,
 .intro ol,
