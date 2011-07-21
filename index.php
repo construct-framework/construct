@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die;
 /**
-* @package		Template Framework for Joomla! 1.6
+* @package		Template Framework for Joomla! 1.6+
 * @author		Joomla Engineering http://joomlaengineering.com
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
@@ -47,7 +47,7 @@ if ($results) {
 </head>
 
 <body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; ?>">
-
+z
 	<div id="footer-push">
 			<a id="page-top" name="page-top"></a>
 			<?php if ($headerAboveCount) : ?>

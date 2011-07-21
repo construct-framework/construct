@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die;
 /**
-* @package		Template Framework for Joomla! 1.6
+* @package		Template Framework for Joomla! 1.6+
 * @author		Joomla Engineering http://joomlaengineering.com
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
@@ -10,6 +10,12 @@
 $app 					= JFactory::getApplication();
 // Get the base URL of the website
 $baseUrl 				= JURI::base();
+
+// Check for layout override
+if(JFile::exists($template.'/layouts/mobile-offline.php')) {
+	include_once $template.'/layouts/mobile-offline.php';
+}
+else {
 ?>
 
 <!DOCTYPE html> 
@@ -86,3 +92,4 @@ $baseUrl 				= JURI::base();
 	  
 </body>
 </html>
+<?php } 

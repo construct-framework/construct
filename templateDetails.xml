@@ -79,7 +79,8 @@
 		<language tag="en-GB">language/en-GB/en-GB.tpl_je-construct-pro.sys.ini</language>
 	</languages>
 	
-	<positions>		<position>analytics</position>
+	<positions>
+		<position>analytics</position>
 		<position>breadcrumbs</position>
 		<position>column-1</position>		
 		<position>column-2</position>

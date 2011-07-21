@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die;
 /**
-* @package		Template Framework for Joomla! 1.6
+* @package		Template Framework for Joomla! 1.6+
 * @author		Joomla Engineering http://joomlaengineering.com
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,10 +31,6 @@ $view     				= JRequest::getCmd('view');
 $customStyleSheet 		= $this->params->get('customStyleSheet');
 $detectTablets			= $this->params->get('detectTablets');
 $enableSwitcher 		= $this->params->get('enableSwitcher');
-$IECSS3					= $this->params->get('IECSS3');
-$IECSS3Targets			= $this->params->get('IECSS3Targets');
-$IE6TransFix			= $this->params->get('IE6TransFix');
-$IE6TransFixTargets		= $this->params->get('IE6TransFixTargets');
 $fluidMedia				= $this->params->get('fluidMedia');
 $fullWidth				= $this->params->get('fullWidth');
 $googleWebFont 			= $this->params->get('googleWebFont');
@@ -46,6 +42,10 @@ $googleWebFontTargets2	= $this->params->get('googleWebFontTargets2');
 $googleWebFont3			= $this->params->get('googleWebFont3');
 $googleWebFontSize3		= $this->params->get('googleWebFontSize3');
 $googleWebFontTargets3	= $this->params->get('googleWebFontTargets3');
+$IECSS3					= $this->params->get('IECSS3');
+$IECSS3Targets			= $this->params->get('IECSS3Targets');
+$IE6TransFix			= $this->params->get('IE6TransFix');
+$IE6TransFixTargets		= $this->params->get('IE6TransFixTargets');
 $inheritLayout			= $this->params->get('inheritLayout');
 $inheritStyle			= $this->params->get('inheritStyle');
 $loadMoo 				= $this->params->get('loadMoo');

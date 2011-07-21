@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die;
 /**
-* @package		Template Framework for Joomla! 1.6
+* @package		Template Framework for Joomla! 1.6+
 * @author		Joomla Engineering http://joomlaengineering.com
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
@@ -17,7 +17,6 @@ if(JFile::exists($logicFile)) {
 
 // Mobile device detection
 $mTemplate				= JPATH_THEMES.'/'.$this->template.'/mobile-offline.php';
-$alternatemTemplate		= JPATH_THEMES.'/'.$this->template.'/layouts/mobile-offline.php';
 
 // Initialize mobile device detection
 if(JFile::exists($mdetectFile)) {
@@ -28,7 +27,7 @@ if(JFile::exists($mdetectFile)) {
 	$isTablet			= $uagent_obj->DetectTierTablet();
 }
 
-// Check if mobile device detecion is turned on and test if visitor is a mobile device. If so, load mobile sub-template
+// Check if mobile device detecion is turned on and test if visitor is a mobile device. If so, load mobile version
 if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
 	if(JFile::exists($mTemplate)) {
 	 	include_once $mTemplate;
