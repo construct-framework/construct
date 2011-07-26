@@ -6,6 +6,11 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */	
 
+// To enable use of site configuration
+$app 					= JFactory::getApplication();
+// Get the base URL of the website
+$baseUrl 				= JURI::base();
+
 // Check for Mobile Extended Template Layout Override and load it if it exists
 $mobileResults = $mobileLayoutOverride->getIncludeFile ();
 
@@ -22,7 +27,8 @@ if ($mobileResults) {
 		<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
 		<?php //Load Mobile Extended Template Style Overrides
-		if (isset($mobileCssFile)) : ?>
+		$mobileCssFile = $mobileStyleOverride->getIncludeFile ();		
+		if ($mobileCssFile) : ?>
 			<link rel="stylesheet" href="<?php echo $baseUrl.$mobileCssFile; ?>" type="text/css" media="screen" />			
 		<?php endif; ?>		
 		<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
