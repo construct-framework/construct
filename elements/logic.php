@@ -17,12 +17,13 @@ $app 					= JFactory::getApplication();
 $baseUrl 				= JURI::base();
 // Returns a reference to the global document object
 $doc 					= JFactory::getDocument();
+// Define relative shortcut for current template directory
 $template 				= 'templates/'.$this->template;
 // Define absolute path to the template directory
 $templateDir			= JPATH_THEMES.'/'.$this->template;
 // Get the current URL
 $url 					= clone(JURI::getInstance());
-// To access the current user object.
+// To access the current user object
 $user 					= JFactory::getUser();
 // Get the current view
 $view     				= JRequest::getCmd('view');
@@ -71,7 +72,7 @@ $mdetectFile 			= JPATH_THEMES.'/'.$this->template.'/elements/mdetect.php';
 $mTemplate				= JPATH_THEMES.'/'.$this->template.'/mobile.php';
 $alternatemTemplate		= JPATH_THEMES.'/'.$this->template.'/layouts/mobile.php';
 
-// Change generatot tag
+// Change generator tag
 $this->setGenerator($setGeneratorTag);
 
 // Enable Mootols
@@ -196,7 +197,6 @@ $column4Count = (int) ($this->countModules('column-4') > 0);
 
 $columnGroupBetaCount = $column3Count + $column4Count;
 if ($columnGroupBetaCount) : $columnGroupBetaClass = 'count-'.$columnGroupBetaCount; endif;
-
 
 $columnLayout= 'main-only';
 	
