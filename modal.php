@@ -34,3 +34,4 @@ $doc->addStyleSheet($template.'/css/modal.css','text/css','screen');
 	<jdoc:include type="component" />     
 </body>
 </html>
+<?php }

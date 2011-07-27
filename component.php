@@ -39,3 +39,4 @@ if ($this->direction == 'rtl')
 	<jdoc:include type="component" />
 </body>
 </html>
+<?php }

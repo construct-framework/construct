@@ -30,10 +30,6 @@ $view     				= JRequest::getCmd('view');
 $customStyleSheet 		= $this->params->get('customStyleSheet');
 $detectTablets			= $this->params->get('detectTablets');
 $enableSwitcher 		= $this->params->get('enableSwitcher');
-$IECSS3					= $this->params->get('IECSS3');
-$IECSS3Targets			= $this->params->get('IECSS3Targets');
-$IE6TransFix			= $this->params->get('IE6TransFix');
-$IE6TransFixTargets		= $this->params->get('IE6TransFixTargets');
 $fluidMedia				= $this->params->get('fluidMedia');
 $fullWidth				= $this->params->get('fullWidth');
 $googleWebFont 			= $this->params->get('googleWebFont');
@@ -45,6 +41,10 @@ $googleWebFontTargets2	= $this->params->get('googleWebFontTargets2');
 $googleWebFont3			= $this->params->get('googleWebFont3');
 $googleWebFontSize3		= $this->params->get('googleWebFontSize3');
 $googleWebFontTargets3	= $this->params->get('googleWebFontTargets3');
+$IECSS3					= $this->params->get('IECSS3');
+$IECSS3Targets			= $this->params->get('IECSS3Targets');
+$IE6TransFix			= $this->params->get('IE6TransFix');
+$IE6TransFixTargets		= $this->params->get('IE6TransFixTargets');
 $loadMoo 				= $this->params->get('loadMoo');
 $loadModal				= $this->params->get('loadModal');
 $loadjQuery 			= $this->params->get('loadjQuery');
@@ -191,8 +191,6 @@ $column4Count = (int) ($this->countModules('column-4') > 0);
 $columnGroupBetaCount = $column3Count + $column4Count;
 if ($columnGroupBetaCount) : $columnGroupBetaClass = 'count-'.$columnGroupBetaCount; endif;
 
-#------------------------------ Column Layout -----------------------------#
-
 $columnLayout= 'main-only';
 	
 if (($columnGroupAlphaCount > 0 ) && ($columnGroupBetaCount == 0)) :
@@ -211,7 +209,7 @@ $itemId = JRequest::getInt('Itemid', 0);
 
 if ($view == 'article') 
 $articleId = JRequest::getInt('id');
-else ($articleId = NULL);;
+else ($articleId = NULL);
 
 #------------------------------- Section ID -------------------------------#
 
@@ -260,11 +258,11 @@ $catId = getCategory(JRequest::getInt('id'));
 
 #--------------------------------- Alias ----------------------------------#
 
-$currentAlias = JSite::getMenu()->getActive()->alias;
+$currentAlias 								= JSite::getMenu()->getActive()->alias;
 
 #----------------------------- Component Name -----------------------------#
 
-$currentComponent = JRequest::getCmd('option');
+$currentComponent 							= JRequest::getCmd('option');
 
 #------------------Extended Template Style Overrides------------------------#
 
@@ -350,10 +348,12 @@ $doc->addFavicon($template.'/favicon.png','image/png','icon');
 $doc->addStyleSheet($template.'/css/screen.css','text/css','screen');
 $doc->addStyleSheet($template.'/css/overrides.css','text/css','screen');
 $doc->addStyleSheet($template.'/css/print.css','text/css','print');
-if ($customStyleSheet !='-1')
+if ($customStyleSheet !='-1') {
 	$doc->addStyleSheet($template.'/css/'.$customStyleSheet,'text/css','screen');
-if ($this->direction == 'rtl')
+}
+if ($this->direction == 'rtl') {
 	$doc->addStyleSheet($template.'/css/rtl.css','text/css','screen');
+}
 // Override style sheet returned from our template helper
 $cssFile = $styleOverride->getIncludeFile ();
 if ($cssFile) {
@@ -367,7 +367,7 @@ if ($enableSwitcher) {
 	$doc->addScript($template.'/js/styleswitch.js');
 } 	
 
-// Typography	
+// Typography
 if ($googleWebFont) {
 	$doc->addStyleSheet('http://fonts.googleapis.com/css?family='.$googleWebFont.'');
 	$doc->addStyleDeclaration('  '.$googleWebFontTargets.' {font-family:'.$googleWebFontFamily.', serif;font-size:'.$googleWebFontSize.';}');
@@ -383,17 +383,21 @@ if ($googleWebFont3) {
 
 // JavaScript
 $doc->addCustomTag("\n".'  <script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
-if ($loadjQuery)
+if ($loadjQuery) {
 	$doc->addScript($loadjQuery);
+}
 
 // Layout Declarations
-if ($siteWidth)
-	$doc->addStyleDeclaration("\n".'  #body-container, #header-above {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.';}');
-if (($siteWidthType == 'max-width') && $fluidMedia )
-	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%;}');		
-if (!$fullWidth)
-	$doc->addStyleDeclaration("\n".'  #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'; margin:0 auto;}');
-	
+if ($siteWidth) {
+	$doc->addStyleDeclaration("\n".'  #body-container, #header-above {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'}');
+}
+if (($siteWidthType == 'max-width') && $fluidMedia ) {
+	$doc->addStyleDeclaration("\n".'  img, object {max-width:100%}');
+}
+if (!$fullWidth) {
+	$doc->addStyleDeclaration("\n".'  #header, #footer {'.$siteWidthType.':'.$siteWidth.$siteWidthUnit.'; margin:0 auto}');
+}
+
 // Internet Explorer Fixes	
 if ($IECSS3) {
   $doc->addCustomTag("\n".'  <!--[if !IE 9]>
@@ -401,8 +405,8 @@ if ($IECSS3) {
   <![endif]-->');
 }
 if ($useStickyFooter) {
-	$doc->addStyleDeclaration("\n".'  .sticky-footer #body-container{padding-bottom:'.$stickyFooterHeight.'px;}
-  .sticky-footer #footer{margin-top:-'.$stickyFooterHeight.'px;height:'.$stickyFooterHeight.'px;}');
+	$doc->addStyleDeclaration("\n".'  .sticky-footer #body-container {padding-bottom:'.$stickyFooterHeight.'px;}
+  .sticky-footer #footer {margin-top:-'.$stickyFooterHeight.'px;height:'.$stickyFooterHeight.'px;}');
 	$doc->addCustomTag("\n".'  <!--[if lt IE 7]>
   <style type="text/css">body.sticky-footer #footer-push {display:table;height:100%}</style>
   <![endif]-->');
