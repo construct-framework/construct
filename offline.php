@@ -50,10 +50,6 @@ else {
 
 <body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId; ?>">
 
-<?php if ($this->countModules('analytics')) : ?>
-	<jdoc:include type="modules" name="analytics" />
-<?php endif; ?>
-
 	<div id="footer-push">
 			<a id="page-top" name="page-top"></a>
 			<?php if ($headerAboveCount) : ?>
@@ -412,7 +408,7 @@ else {
 						<?php endif; ?>					
 						<?php if ($this->countModules('footer-above-5')) : ?>
 							<div id="footer-above-5" class="<?php echo $footerAboveClass ?>">
-								<jdoc:include type="modules" name="footer-above-5" style="jexhtml" module-class="gutter" />
+								
 							</div><!-- end footer-above-5 -->
 						<?php endif; ?>						
 						<?php if ($this->countModules('footer-above-6')) : ?>
