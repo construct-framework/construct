@@ -17,7 +17,6 @@ if(JFile::exists($logicFile)) {
 
 // Mobile device detection
 $mTemplate				= JPATH_THEMES.'/'.$this->template.'/mobile-offline.php';
-$alternatemTemplate		= JPATH_THEMES.'/'.$this->template.'/layouts/mobile-offline.php';
 
 // Initialize mobile device detection
 if(JFile::exists($mdetectFile)) {
@@ -28,7 +27,7 @@ if(JFile::exists($mdetectFile)) {
 	$isTablet			= $uagent_obj->DetectTierTablet();
 }
 
-// Check if mobile device detecion is turned on and test if visitor is a mobile device. If so, load mobile sub-template
+// Check if mobile device detecion is turned on and test if visitor is a mobile device. If so, load mobile version
 if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
 	if(JFile::exists($mTemplate)) {
 	 	include_once $mTemplate;

@@ -6,38 +6,27 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-// Load Joomla filesystem package
-jimport('joomla.filesystem.file');
-
-// To enable use of site configuration
-$app 					= JFactory::getApplication();
-// Get the base URL of the website
-$baseUrl 				= JURI::base();
-// Returns a reference to the global document object
-$doc 					= JFactory::getDocument();
-// Get the offline status of the webiste
-$offLine 				= $app->getCfg('offline');
-// Send the user to the home page if the website is offline
-if ($offLine) {
-	$app->redirect($baseUrl);
-}
-// Define relative path to the  current template directory
-$template 				= 'templates/'.$this->template;
-
 // Manually set and define template parameters
 $columnLayout			= 'alpha-1-main-beta-1';
 $customStyleSheet 		= 'example.css';
 $enableSwitcher 		= '0';
 $fullWidth				= '1';
+$googleWebFont 			= '';
+$googleWebFontSize		= '85%';
+$googleWebFontTargets	= 'h1,h2,h3,h4,h5,h6';
+$googleWebFont2			= '';
+$googleWebFontSize2		= '';
+$googleWebFontTargets2	= '';
+$googleWebFont3 		= '';
+$googleWebFontSize3		= '';
+$googleWebFontTargets3	= '';
 $IECSS3					= '1';
 $IECSS3Targets			= '.drop-shadow, .outline, .rounded, ul.menu li, ul.menu ul, #nav,#column-group-alpha .moduletable, #column-group-alpha .moduletable_menu, #column-group-beta .moduletable, #column-group-beta .moduletable_menu, #content-above .moduletable, #content-above .moduletable_menu, #nav-below .moduletable, #nav-below .moduletable_menu';
 $IE6TransFix			= '1';
 $IE6TransFixTargets		= 'h1 a, .readon, .parent a, #breadcrumbs';
-$googleWebFont 			= '';
-$googleWebFontTargets	= 'h1,h2,h3,h4,h5,h6';
 $loadMoo 				= '1';
 $loadModal				= '1';
-$loadjQuery 			= '0';
+$loadjQuery 			= '1.4.2';
 $mdetect 				= '1';
 $setGeneratorTag		= 'Joomla Engineering | http://JoomlaEngineering.com';
 $showDiagnostics 		= '0';
@@ -65,8 +54,9 @@ $jexhtml 				= array( 'style' => 'jexhtml' );
 
 #--------------------------------------------------------------------------#
 
+/*
 // Email notification feature from http://forum.joomla.org/viewtopic.php?p=1760233#p1760233
-	 
+ 
 // change this to whatever email address you want the notifications to be sent to
 $emailaddress = "you@yourdomain.com";
 
@@ -82,8 +72,9 @@ $message .= "The referring page, if any, was:\n".$_SERVER['HTTP_REFERER']."\r\n\
 $message .= "The used client was:\n".$_SERVER['HTTP_USER_AGENT']."\r\n\r\n";
 $mastheads = "From: ".$emailaddress."\nDate: ".$errortime." +0100\n";
 $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
-//mail($emailaddress, $subject, $message, $mastheads);
-				
+mail($emailaddress, $subject, $message, $mastheads);
+*/
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -97,7 +88,6 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
   <link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/print.css" type="text/css" media="print" />
 <?php if ($enableSwitcher) {
   echo '  <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/diagnostic.css" type="text/css" title="diagnostic"/>
-  <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/normal.css" type="text/css" title="normal"/>
   <link rel="alternate stylesheet" href="templates/'.$this->template.'/css/wireframe.css" type="text/css" title="wireframe"/>';
 } ?>  
 <?php	
@@ -109,9 +99,15 @@ $subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
 		echo "\n".$cssFile;
 	if ($googleWebFont != "")
 		echo "\n".'  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='.$googleWebFont.'">
-		<style type="text/css">'.$googleWebFontTargets.'{font-family:'.$googleWebFont.', serif !important} </style>';
-	if ($loadjQuery)
-		$doc->addScript("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");
+		<style type="text/css">'.$googleWebFontTargets.'{font-family:'.$googleWebFont.', serif !important;font-size:'.$googleWebFontSize.'} </style>';
+	if ($googleWebFont2 != "")
+		echo "\n".'  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='.$googleWebFont2.'">
+		<style type="text/css">'.$googleWebFontTargets2.'{font-family:'.$googleWebFont2.', serif !important;font-size:'.$googleWebFontSize2.'} </style>';
+	if ($googleWebFont3 != "")
+		echo "\n".'  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family='.$googleWebFont3.'">
+		<style type="text/css">'.$googleWebFontTargets3.'{font-family:'.$googleWebFont3.', serif !important;font-size:'.$googleWebFontSize3.'} </style>';
+	if ($loadjQuery != "")
+		$doc->addScript("http://ajax.googleapis.com/ajax/libs/jquery/'.$loadjQuery.'/jquery.min.js");
 	if ($enableSwitcher)
 		echo "\n".'  <script type="text/javascript" src="'.$baseUrl.'/templates/'.$this->template.'/js/styleswitch.js"></script>';
 	if ($siteWidth)
