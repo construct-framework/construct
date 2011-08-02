@@ -10,12 +10,12 @@
 jimport('joomla.filesystem.file');
 
 // Load template logic
-$logicFile 		= JPATH_THEMES.'/'.$this->template.'/elements/logic.php';
+$logicFile		= JPATH_THEMES.'/'.$this->template.'/elements/logic.php';
 if(JFile::exists($logicFile)) {
 	include $logicFile;
 }
 
-// Initialize mobile device detection
+// Mobile device detection
 if(JFile::exists($mdetectFile)) {
 	include_once $mdetectFile;
 	// Instantiate the mobile object class
@@ -103,22 +103,10 @@ if ($results) {
 				<?php if ($showDiagnostics) : ?>
 					<ul id="diagnostics">
 						<li><?php echo $currentComponent; ?></li>
-						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 						<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
 						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
 						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
-						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
-						<?php if($isOnward && $catId && ($inheritStyle || $inheritLayout)) {							
-								echo '<li>Parent Category '.$parentCategory.'</li>';							
-								echo '<li>Ancestor Categories:';		
-								$results = getAncestorCategories($catId);
-									if (count($results) > 0) {
-										foreach ($results as $item) {
-											echo ' '.$item->id.',';
-										}			
-									}
-								echo'</li>';
-								} ?>
+						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>
 					</ul>
 				<?php endif; ?>	
 
@@ -193,9 +181,7 @@ if ($results) {
 			<?php endif; ?>
 		
 			<?php if ($this->countModules('breadcrumbs')) : ?>		
-				<div id="breadcrumbs">
-					<jdoc:include type="module" name="breadcrumbs" />
-				</div>
+				<jdoc:include type="module" name="breadcrumbs" />			
 			<?php endif; ?>		
 			
 			<?php if ($this->countModules('nav')) : ?>
@@ -420,7 +406,7 @@ if ($results) {
 	</div><!-- end footer-push -->
     
 	<div id="footer" class="clear clearfix">
-		<div class="gutter clearfix">			
+		<div class="gutter clearfix">
 
 			<a id="to-page-top" href="<?php $url->setFragment('page-top'); echo $url->toString();?>" class="to-additional">Back to Top</a>
 

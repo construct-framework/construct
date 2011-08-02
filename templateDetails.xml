@@ -20,7 +20,6 @@
 		<filename>css/ie6.css</filename>
 		<filename>css/index.html</filename>
 		<filename>css/mobile.css</filename>
-		<filename>css/mobile.css</filename>
 		<filename>css/modal.css</filename>
 		<filename>css/print.css</filename>
 		<filename>css/rtl.css</filename>
@@ -148,7 +147,7 @@
 				<field name="inheritStyle" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_INHERIT_CAT_STYLE_LABEL" description="TPL_JE_CONSTRUCT_PRO_INHERIT_CAT_STYLE_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
-				</field>				
+				</field>		
 				<field name="customStyleSheet" type="filelist" default="example.css" label="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_LABEL" directory="templates/je-construct-pro/css" filter="\.css" exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css" description="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_DESC" />
 				<field name="setGeneratorTag" type="text" default="Joomla Engineering | http://JoomlaEngineering.com" label="Generator Meta Tag" description="Customize the generator meta tag output by your template." size="56" />		
 			</fieldset>
@@ -185,7 +184,7 @@
 					<option value="em">Em</option>
 					<option value="px">Pixel</option>
 					<option value="%">Percent</option>
-				</field>				
+				</field>	
 				<field name="fluidMedia" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_FLUID_MEDIA_LABEL" description="TPL_JE_CONSTRUCT_PRO_FLUID_MEDIA_DESC">
 				  <option value="1">Yes</option>
 				  <option value="0">No</option>
@@ -253,7 +252,7 @@
 					<option value="d">Dark Gray</option>
 					<option value="e">Accent</option>
 				</field>					
-			</fieldset>								
+			</fieldset>							
 			<fieldset name="typography" >		
 				<field name="googleWebFont" type="googlewebfont" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC" />
 				<field name="googleWebFontTargets" type="text" default="h1,h2,h3,h4,h5,h6" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_DESC" size="50" />
@@ -266,7 +265,7 @@
 				<field name="googleWebFont3" type="googlewebfont" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC" />					
 				<field name="googleWebFontTargets3" type="text" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_DESC" size="50" />
 				<field name="googleWebFontSize3" type="text" default="20px" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_DESC" size="5" />									
-			</fieldset>							
+			</fieldset>			
 			<fieldset name="version_check">
 				<field label="TPL_JE_CONSTRUCT_PRO_VERSION_CHECK_LABEL" type="upgradecheck" />
 			</fieldset>	

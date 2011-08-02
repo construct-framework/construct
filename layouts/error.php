@@ -58,7 +58,7 @@ $jexhtml 				= array( 'style' => 'jexhtml' );
 
 /*
 // Email notification feature from http://forum.joomla.org/viewtopic.php?p=1760233#p1760233
- 
+
 // change this to whatever email address you want the notifications to be sent to
 $emailaddress = "you@yourdomain.com";
 
