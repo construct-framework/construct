@@ -18,40 +18,45 @@
 	<div id="footer-push">
 			<a id="page-top" name="page-top"></a>
 			<?php if ($headerAboveCount) : ?>
-			<div id="header-above" class="clearfix">						
-				<?php if ($this->countModules('header-above-1')) : ?>
-					<div id="header-above-1" class="<?php echo $headerAboveClass ?>">
-						<jdoc:include type="modules" name="header-above-1" style="jexhtml" />
-					</div><!-- end header-above-1 -->								
-				<?php endif; ?>		   
-				<?php if ($this->countModules('header-above-2')) : ?>
-					<div id="header-above-2" class="<?php echo $headerAboveClass ?>">
-						<jdoc:include type="modules" name="header-above-2" style="jexhtml" />
-					</div><!-- end header-above-2 -->
-				<?php endif; ?>				
-				<?php if ($this->countModules('header-above-3')) : ?>
-					<div id="header-above-3" class="<?php echo $headerAboveClass ?>">
-						<jdoc:include type="modules" name="header-above-3" style="jexhtml" />
-					</div><!-- end header-above-3 -->								
-				<?php endif; ?>
-				<?php if ($this->countModules('header-above-4')) : ?>
-					<div id="header-above-4" class="<?php echo $headerAboveClass ?>">
-						<jdoc:include type="modules" name="header-above-4" style="jexhtml" />
-					</div><!-- end header-above-4 -->								
-				<?php endif; ?>
-				<?php if ($this->countModules('header-above-5')) : ?>
-					<div id="header-above-5" class="<?php echo $headerAboveClass ?>">
-						<jdoc:include type="modules" name="header-above-5" style="jexhtml" />
-					</div><!-- end header-above-5 -->								
-				<?php endif; ?>
-				<?php if ($this->countModules('header-above-6')) : ?>
-					<div id="header-above-6" class="<?php echo $headerAboveClass ?>">
-						<jdoc:include type="modules" name="header-above-6" style="jexhtml" />
-					</div><!-- end header-above-6 -->								
-				<?php endif; ?>
-			</div><!-- end header-above -->
-		<?php endif; ?>
-		
+				<div id="header-above" class="clearfix">						
+					<?php if ($this->countModules('header-above-1')) : ?>
+						<div id="header-above-1" class="<?php echo $headerAboveClass ?>">
+							<jdoc:include type="modules" name="header-above-1" style="jexhtml" />
+						</div><!-- end header-above-1 -->								
+					<?php endif; ?>
+					
+					<?php if ($this->countModules('header-above-2')) : ?>
+						<div id="header-above-2" class="<?php echo $headerAboveClass ?>">
+							<jdoc:include type="modules" name="header-above-2" style="jexhtml" />
+						</div><!-- end header-above-2 -->
+					<?php endif; ?>
+					
+					<?php if ($this->countModules('header-above-3')) : ?>
+						<div id="header-above-3" class="<?php echo $headerAboveClass ?>">
+							<jdoc:include type="modules" name="header-above-3" style="jexhtml" />
+						</div><!-- end header-above-3 -->								
+					<?php endif; ?>
+					
+					<?php if ($this->countModules('header-above-4')) : ?>
+						<div id="header-above-4" class="<?php echo $headerAboveClass ?>">
+							<jdoc:include type="modules" name="header-above-4" style="jexhtml" />
+						</div><!-- end header-above-4 -->								
+					<?php endif; ?>
+					
+					<?php if ($this->countModules('header-above-5')) : ?>
+						<div id="header-above-5" class="<?php echo $headerAboveClass ?>">
+							<jdoc:include type="modules" name="header-above-5" style="jexhtml" />
+						</div><!-- end header-above-5 -->								
+					<?php endif; ?>
+					
+					<?php if ($this->countModules('header-above-6')) : ?>
+						<div id="header-above-6" class="<?php echo $headerAboveClass ?>">
+							<jdoc:include type="modules" name="header-above-6" style="jexhtml" />
+						</div><!-- end header-above-6 -->								
+					<?php endif; ?>
+				</div><!-- end header-above -->
+			<?php endif; ?>
+
 		<div id="header" class="clear clearfix">
 			<div class="gutter clearfix">
 
@@ -65,10 +70,10 @@
 				<?php if ($showDiagnostics) : ?>
 					<ul id="diagnostics">
 						<li><?php echo $currentComponent; ?></li>
+						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 						<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
 						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
 						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
-						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>
 					</ul>
 				<?php endif; ?>	
 
@@ -76,7 +81,7 @@
 				
 				<?php if ($this->countModules('header')) : ?>
 					<jdoc:include type="modules" name="header" style="jexhtml" />	
-				<?php endif; ?>		
+				<?php endif; ?>
 				
 				<ul id="access">
 				  <li>Jump to:</li>
@@ -87,8 +92,8 @@
 				  <?php if ($contentBelowCount) : ?>
 					<li><a href="<?php $url->setFragment('additional'); echo $url->toString();?>" class="to-additional">Additional Information</a></li>
 				  <?php endif; ?>
-				</ul>	
-				
+				</ul>				
+
 				<?php if ($enableSwitcher) : ?>
 					<ul id="style-switch">
 						<li><a href="#" onclick="setActiveStyleSheet('wireframe'); return false;" title="Wireframe">Wireframe</a></li>
@@ -109,31 +114,31 @@
 							<jdoc:include type="modules" name="header-below-1" style="jexhtml" module-class="gutter"/>
 						</div><!-- end header-below-1 -->								
 					<?php endif; ?>
-					
+
 					<?php if ($this->countModules('header-below-2')) : ?>
 						<div id="header-below-2" class="<?php echo $headerBelowClass ?>">
 							<jdoc:include type="modules" name="header-below-2" style="jexhtml" module-class="gutter"/>
 						</div><!-- end header-below-2 -->
 					<?php endif; ?>
-					
+
 					<?php if ($this->countModules('header-below-3')) : ?>
 						<div id="header-below-3" class="<?php echo $headerBelowClass ?>">
 							<jdoc:include type="modules" name="header-below-3" style="jexhtml" module-class="gutter"/>
 						</div><!-- end header-below-3 -->
 					<?php endif; ?>
-					
+
 					<?php if ($this->countModules('header-below-4')) : ?>
 						<div id="header-below-4" class="<?php echo $headerBelowClass ?>">
 							<jdoc:include type="modules" name="header-below-4" style="jexhtml" module-class="gutter"/>
 						</div><!-- end header-below-4 -->
 					<?php endif; ?>
-					
+
 					<?php if ($this->countModules('header-below-5')) : ?>
 						<div id="header-below-5" class="<?php echo $headerBelowClass ?>">
 							<jdoc:include type="modules" name="header-below-5" style="jexhtml" module-class="gutter"/>
 						</div><!-- end header-below-5 -->
 					<?php endif; ?>
-					
+
 					<?php if ($this->countModules('header-below-6')) : ?>
 						<div id="header-below-6" class="<?php echo $headerBelowClass ?>">
 							<jdoc:include type="modules" name="header-below-6" style="jexhtml" module-class="gutter"/>
@@ -161,13 +166,13 @@
 								<jdoc:include type="modules" name="nav-below-1" style="jexhtml" module-class="gutter" />
 							</div><!-- end nav-below-1 -->								
 						<?php endif; ?>
-				
+
 						<?php if ($this->countModules('nav-below-2')) : ?>
 							<div id="nav-below-2" class="<?php echo $navBelowClass ?>">
 								<jdoc:include type="modules" name="nav-below-2" style="jexhtml" module-class="gutter" />
 							</div><!-- end nav-below-2 -->
 						<?php endif; ?>
-						
+
 						<?php if ($this->countModules('nav-below-3')) : ?>
 							<div id="nav-below-3" class="<?php echo $navBelowClass ?>">
 								<jdoc:include type="modules" name="nav-below-3" style="jexhtml" module-class="gutter" />
@@ -240,7 +245,9 @@
 							<?php endif; ?>
 					  
 							<?php if ($this->getBuffer('message')) : ?>
-								<jdoc:include type="message" />
+								<div class="error">
+									<jdoc:include type="message" />
+								</div>
 							<?php endif; ?>
 
 							<jdoc:include type="component" />
@@ -395,3 +402,4 @@
 	
 	</body>
 </html>
+<?php }

@@ -49,10 +49,6 @@ else {
 
 <body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId; ?>">
 
-<?php if ($this->countModules('analytics')) : ?>
-	<jdoc:include type="modules" name="analytics" />
-<?php endif; ?>
-
 	<div id="footer-push">
 			<a id="page-top" name="page-top"></a>
 			<?php if ($headerAboveCount) : ?>
@@ -107,20 +103,8 @@ else {
 						<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
 						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
 						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
-						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
-						<?php if($isOnward && $catId && ($inheritStyle || $inheritLayout)) {							
-								echo '<li>Parent Category '.$parentCategory.'</li>';							
-								echo '<li>Ancestor Categories:';		
-								$results = getAncestorCategories($catId);
-									if (count($results) > 0) {
-										foreach ($results as $item) {
-											echo ' '.$item->id.',';
-										}			
-									}
-								echo'</li>';
-								} ?>
 					</ul>
-				<?php endif; ?>	
+				<?php endif; ?>
 				
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo $app->getCfg('sitename');?>"><?php echo $app->getCfg('sitename');?></a></h1>
 				
