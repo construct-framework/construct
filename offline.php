@@ -104,17 +104,6 @@ else {
 						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
 						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
 						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
-						<?php if($isOnward && $catId && ($inheritStyle || $inheritLayout)) {							
-								echo '<li>Parent Category '.$parentCategory.'</li>';							
-								echo '<li>Ancestor Categories:';		
-								$results = getAncestorCategories($catId);
-									if (count($results) > 0) {
-										foreach ($results as $item) {
-											echo ' '.$item->id.',';
-										}			
-									}
-								echo'</li>';
-								} ?>
 					</ul>
 				<?php endif; ?>	
 				

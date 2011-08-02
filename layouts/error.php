@@ -9,7 +9,9 @@
 // Manually set and define template parameters
 $columnLayout			= 'alpha-1-main-beta-1';
 $customStyleSheet 		= 'example.css';
-$enableSwitcher 		= '0';
+$detectTablets			= '1';
+$enableSwitcher 		= '1';
+$fluidMedia				= '1';
 $fullWidth				= '1';
 $googleWebFont 			= '';
 $googleWebFontSize		= '85%';
@@ -56,7 +58,7 @@ $jexhtml 				= array( 'style' => 'jexhtml' );
 
 /*
 // Email notification feature from http://forum.joomla.org/viewtopic.php?p=1760233#p1760233
- 
+
 // change this to whatever email address you want the notifications to be sent to
 $emailaddress = "you@yourdomain.com";
 

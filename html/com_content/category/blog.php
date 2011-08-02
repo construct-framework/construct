@@ -15,7 +15,7 @@ $cparams = JComponentHelper::getParams ('com_media');
 	<div class="contentdescription<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
 
 		<?php if ($this->params->get('show_description_image') && $this->category->image) : ?>
-		<img src="<?php echo $this->baseurl . $cparams->get('image_path') . '/' . $this->category->image; ?>" class="image_<?php echo $this->category->image_position; ?>" />
+		<img src="<?php echo $this->baseurl . '/' . $cparams->get('image_path') . '/' . $this->category->image; ?>" class="image_<?php echo $this->category->image_position; ?>" />
 		<?php endif; ?>
 
 		<?php if ($this->params->get('show_description') && $this->category->description) :
