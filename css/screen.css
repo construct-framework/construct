@@ -18,6 +18,7 @@ body{font-size:76%/* 12px in most modern browsers - used as basis of layout and 
 #header-above{margin:0 auto;padding:0;}
 #load-first,
 #footer-above {float:left;}
+#footer-above {width:100%;}
 
 .main-only #content-main{float:left;width:100%;}
 .main-only #load-first{width:100%;}
