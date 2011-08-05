@@ -105,7 +105,7 @@ else {
 						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
 						<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
 					</ul>
-				<?php endif; ?>	
+				<?php endif; ?>
 				
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo $app->getCfg('sitename');?>"><?php echo $app->getCfg('sitename');?></a></h1>
 				

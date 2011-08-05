@@ -99,7 +99,7 @@ if ($results) {
 					<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
 					<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
 				</div>
-				
+	
 				<?php if ($showDiagnostics) : ?>
 					<ul id="diagnostics">
 						<li><?php echo $currentComponent; ?></li>
@@ -126,7 +126,7 @@ if ($results) {
 				  <?php if ($contentBelowCount) : ?>
 					<li><a href="<?php $url->setFragment('additional'); echo $url->toString();?>" class="to-additional">Additional Information</a></li>
 				  <?php endif; ?>
-				</ul>				
+				</ul>	
 
 				<?php if ($enableSwitcher) : ?>
 					<ul id="style-switch">
@@ -279,9 +279,7 @@ if ($results) {
 							<?php endif; ?>
 					  
 							<?php if ($this->getBuffer('message')) : ?>
-								<div class="error">
-									<jdoc:include type="message" />
-								</div>
+								<jdoc:include type="message" />
 							<?php endif; ?>
 
 							<jdoc:include type="component" />
