@@ -182,8 +182,8 @@ if ($results) {
 		
 			<?php if ($this->countModules('breadcrumbs')) : ?>		
 				<jdoc:include type="module" name="breadcrumbs" />			
-			<?php endif; ?>		
-			
+			<?php endif; ?>	
+
 			<?php if ($this->countModules('nav')) : ?>
 				<div id="nav" class="clear clearfix">
 					<jdoc:include type="modules" name="nav" style="raw" />
@@ -231,7 +231,7 @@ if ($results) {
 						<?php endif; ?>													
 					</div><!-- end nav-below -->
 				<?php endif; ?>
-			
+
 				<div id="load-first" class="clearfix">
 					<a id="content" name="content"></a>     
 					<div id="content-main">
@@ -273,7 +273,7 @@ if ($results) {
 										<div id="content-above-6" class="<?php echo $contentAboveClass ?>">
 											<jdoc:include type="modules" name="content-above-6" style="jexhtml" module-class="gutter" />
 										</div><!-- end content-above-6 -->
-									<?php endif; ?>									
+									<?php endif; ?>
 								</div><!-- end content-above -->
 							<?php endif; ?>
 					  
@@ -319,7 +319,7 @@ if ($results) {
 										<div id="content-below-6" class="<?php echo $contentAboveClass ?>">
 											<jdoc:include type="modules" name="content-below-6" style="jexhtml" module-class="gutter" />
 										</div><!-- end content-below-6 -->
-									<?php endif; ?>									
+									<?php endif; ?>
 								</div><!-- end content-below -->
 							<?php endif; ?>
 							
@@ -372,27 +372,32 @@ if ($results) {
 							<div id="footer-above-1" class="<?php echo $footerAboveClass ?>">
 								<jdoc:include type="modules" name="footer-above-1" style="jexhtml" module-class="gutter" />
 							</div><!-- end footer-above-1 -->								
-						<?php endif; ?>			   
+						<?php endif; ?>
+
 						<?php if ($this->countModules('footer-above-2')) : ?>
 							<div id="footer-above-2" class="<?php echo $footerAboveClass ?>">
 								<jdoc:include type="modules" name="footer-above-2" style="jexhtml" module-class="gutter" />
 							</div><!-- end footer-above-2 -->
 						<?php endif; ?>					
+
 						<?php if ($this->countModules('footer-above-3')) : ?>
 							<div id="footer-above-3" class="<?php echo $footerAboveClass ?>">
 								<jdoc:include type="modules" name="footer-above-3" style="jexhtml" module-class="gutter" />
 							</div><!-- end footer-above-3 -->
 						<?php endif; ?>					
+
 						<?php if ($this->countModules('footer-above-4')) : ?>
 							<div id="footer-above-4" class="<?php echo $footerAboveClass ?>">
 								<jdoc:include type="modules" name="footer-above-4" style="jexhtml" module-class="gutter" />
 							</div><!-- end footer-above-4 -->
 						<?php endif; ?>					
+
 						<?php if ($this->countModules('footer-above-5')) : ?>
 							<div id="footer-above-5" class="<?php echo $footerAboveClass ?>">
 								<jdoc:include type="modules" name="footer-above-5" style="jexhtml" module-class="gutter" />
 							</div><!-- end footer-above-5 -->
 						<?php endif; ?>						
+
 						<?php if ($this->countModules('footer-above-6')) : ?>
 							<div id="footer-above-6" class="<?php echo $footerAboveClass ?>">
 								<jdoc:include type="modules" name="footer-above-6" style="jexhtml" module-class="gutter" />
@@ -425,12 +430,12 @@ if ($results) {
 
 	<?php if ($this->countModules('debug')) : ?>
 		<jdoc:include type="modules" name="debug" style="raw" />
-	<?php endif; ?>	  
+	<?php endif; ?>
 	
 	<?php if ($this->countModules('analytics')) : ?>
 		<jdoc:include type="modules" name="analytics" />
 	<?php endif; ?>
-	
+
 	</body>
 </html>
 <?php }
