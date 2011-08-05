@@ -2,13 +2,13 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
 <install version="1.5" type="template" method="upgrade">
 	<name>JE-Construct-Pro</name>
-	<creationDate>August 2nd, 2011</creationDate>
+	<creationDate>August 5th, 2011</creationDate>
 	<author>Joomla Engineering</author>
 	<copyright>Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<license>GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html</license>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com/</authorUrl>
-	<version>1.5.666 Pro</version>
+	<version>1.5.668 Pro</version>
 	<description><![CDATA[
 	<style type="text/css">
 		.panel {background: #ddd;
