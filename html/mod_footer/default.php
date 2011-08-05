@@ -9,4 +9,4 @@ $app = JFactory::getApplication();
 $sitename = $app->getCfg('sitename');
 ?>
 <p id="siteinfo-legal">All rights reserved. &copy; <?php echo $cur_year ?> <a href="<?php echo JURI::base( true ) ?>" title="<?php echo $sitename ?>"><?php echo $sitename ?></a>.<br/>
-Developed using the <a href="http://joomlaengineering.com">Construct</a>&trade; Template Development Framework.<br/>Joomla! is a registered trademark of Open Source Matters, Inc. - <a class="modal" href="index.php?option=com_content&view=article&id=30&tmpl=modal" rel="{handler: 'iframe', size: {x: 640, y: 480}}">Disclaimer</a></p>
+Developed using the <a href="http://joomlaengineering.com">Construct</a>&trade; Template Development Framework.<br/>Joomla! is a registered trademark of Open Source Matters, Inc. - <a class="modal" href="index.php?option=com_content&view=article&id=1&tmpl=modal" rel="{handler: 'iframe', size: {x: 640, y: 480}}">Disclaimer</a></p>
