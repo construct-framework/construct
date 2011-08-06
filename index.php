@@ -354,7 +354,7 @@ if ($results) {
 									<div class="gutter clearfix">
 										<jdoc:include type="modules" name="column-3" style="jexhtml" />
 									</div><!--end gutter -->
-								</div><!-- end column-2 -->								
+								</div><!-- end column-3 -->								
 							<?php endif; ?>
 							<?php if ($this->countModules('column-4')) : ?>
 								<div id="column-4" class="<?php echo $columnGroupBetaClass ?>">
