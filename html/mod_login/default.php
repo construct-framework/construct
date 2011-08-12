@@ -9,9 +9,9 @@
 JHtml::_('behavior.keepalive');
 ?>
 <?php if ($type == 'logout') : ?>
-<form action="index.php" method="post" name="form-login" id="form-login">
+<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form">
 <?php if ($params->get('greeting')) : ?>
-	<div>
+	<div class="login-greeting">
 	<?php if($params->get('name') == 0) : {
 		echo JText::sprintf('MOD_LOGIN_HINAME', $user->get('name'));
 	} else : {
@@ -21,15 +21,18 @@ JHtml::_('behavior.keepalive');
 <?php endif; ?>
 	<div class="logout-button">
 		<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGOUT'); ?>" />
+		<input type="hidden" name="option" value="com_users" />
+		<input type="hidden" name="task" value="user.logout" />
+		<input type="hidden" name="return" value="<?php echo $return; ?>" />
+		<?php echo JHtml::_('form.token'); ?>
 	</div>
-	<input type="hidden" name="option" value="com_users" />
-	<input type="hidden" name="task" value="user.logout" />
-	<input type="hidden" name="return" value="<?php echo $return; ?>" />
 </form>
 <?php else : ?>
-<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" name="form-login" id="form-login" >
-	<?php echo $params->get('pretext'); ?>
-	<fieldset class="input">
+<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form" >
+	<?php if ($params->get('pretext')): ?>
+		<?php echo $params->get('pretext'); ?>
+	<?php endif; ?>	
+	<fieldset class="userdata">
 		<label id="form-login-username" for="modlgn_username"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>
 			<input id="modlgn_username" type="text" name="username" class="inputbox"  size="18" />
 		</label>
@@ -65,6 +68,8 @@ JHtml::_('behavior.keepalive');
 		</li>
 		<?php endif; ?>
 	</ul>
-	<?php echo $params->get('posttext'); ?>
+	<?php if ($params->get('posttext')): ?>
+		<?php echo $params->get('posttext'); ?>
+	<?php endif; ?>
 </form>
 <?php endif; ?>
