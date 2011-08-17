@@ -24,17 +24,16 @@ if(JFile::exists($mdetectFile)) {
 	$isTablet			= $uagent_obj->DetectTierTablet();
 }
 
+// Layout override
+$results = $layoutOverride->getIncludeFile ();
+
 // Check if mobile device detecion is turned on and, test if visitor is a mobile device, and if so, load mobile sub-template
 if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
 	if(JFile::exists($mTemplate)) {
 	 	include_once $mTemplate;
 	}
-}
-
-// If mobile detection is off, or visitor is not a mobile device, check for layout override and load it if it exists
-$results = $layoutOverride->getIncludeFile ();
-
-if ($results) {
+} elseif ($results) {
+	// If mobile detection is off, or visitor is not a mobile device, check for layout override and load it if it exists
     $alternateIndexFile = $results;
 	include_once $alternateIndexFile;	
 } else {
