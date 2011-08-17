@@ -32,8 +32,8 @@ if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
 	if(JFile::exists($mTemplate)) {
 	 	include_once $mTemplate;
 	}
-} elseif ($results) {
-	// If mobile detection is off, or visitor is not a mobile device, check for layout override and load it if it exists
+} // Check for layout override
+elseif ($results) {
     $alternateIndexFile = $results;
 	include_once $alternateIndexFile;	
 } else {
