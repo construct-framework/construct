@@ -69,13 +69,30 @@
 				
 				<?php if ($showDiagnostics) : ?>
 					<ul id="diagnostics">
-						<li><?php echo $currentComponent; ?></li>
-						<?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
-						<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
-						<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
-						<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
-					</ul>
-				<?php endif; ?>	
+						<li>layout override</li>
+					    <li>column layout <?php echo $columnLayout; ?></li>
+						<li>component <?php echo $currentComponent; ?></li>					
+					    <?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
+					    <?php if($articleId)	echo '<li>article '.$articleId.'</li>'; ?>
+					    <?php if($itemId)		echo '<li>menu item '.$itemId.'</li>'; ?>
+					    <?php if($catId) {
+					    		echo '<li>category '.$catId.'</li>'; 
+					    		if ($parentCategory) {
+					    		    echo '<li>parent category '.$parentCategory.'</li>';
+					    		}
+					    		$results = getAncestorCategories($catId);
+							    if ($results) {
+							        echo '<li>ancestor categories';
+								        if (count($results) > 0) {
+									        foreach ($results as $item) {
+										        echo ' '.$item->id.' ';
+									        }			
+								        }								
+							        echo'</li>';
+							    }
+							  } ?>
+				    </ul>
+				<?php endif; ?>
 
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo $app->getCfg('sitename');?>"><?php echo $app->getCfg('sitename');?></a></h1>
 				

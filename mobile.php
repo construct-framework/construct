@@ -48,13 +48,28 @@ if ($mobileResults) {
 			<h1><a href="<?php echo $baseUrl; ?>/" title="<?php echo $app->getCfg('sitename'); ?>"><?php echo $app->getCfg('sitename'); ?></a></h1>
 			<?php if ($showDiagnostics) : ?>
 				<ul id="diagnostics">
-					<li><?php echo $currentComponent; ?></li>
+					<li>component <?php echo $currentComponent; ?></li>					
 					<?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
-					<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
-					<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
-					<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
+					<?php if($articleId)	echo '<li>article '.$articleId.'</li>'; ?>
+					<?php if($itemId)		echo '<li>menu item '.$itemId.'</li>'; ?>
+				    <?php if($catId) {
+				    		echo '<li>category '.$catId.'</li>'; 
+				    		if ($parentCategory) {
+				    		    echo '<li>parent category '.$parentCategory.'</li>';
+				    		}
+				    		$results = getAncestorCategories($catId);
+						    if ($results) {
+						        echo '<li>ancestor categories';
+							        if (count($results) > 0) {
+								        foreach ($results as $item) {
+									        echo ' '.$item->id.' ';
+								        }			
+							        }								
+						        echo'</li>';
+						    }
+						  } ?>
 				</ul>
-			<?php endif; ?>				
+			<?php endif; ?>			
 		</div>
 	
 		<?php if ( $mNavPosition && ($this->countModules('nav'))) : ?>
