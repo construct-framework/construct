@@ -105,9 +105,9 @@ elseif ($results) {
 					    <li>component <?php echo $currentComponent; ?></li>	
 					    <?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 					    <?php if($articleId)	echo '<li>article '.$articleId.'</li>'; ?>
-					    <?php if($itemId)		echo '<li>item '.$itemId.'</li>'; ?>
-					    <?php if($catId)		echo '<li>category '.$catId.'</li>'; ?>
+					    <?php if($itemId)		echo '<li>item '.$itemId.'</li>'; ?>					    
 					    <?php if($sectionId) 	echo '<li>section '.$sectionId.'</li>'; ?>
+					    <?php if($catId)		echo '<li>category '.$catId.'</li>'; ?>
 				    </ul>
 			    <?php endif; ?>	
 
