@@ -2,13 +2,13 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="1.6" type="template" client="site" method="upgrade">
 	<name>je-construct-pro</name>
-	<creationDate>August 5th, 2011</creationDate>
+	<creationDate>August 19th, 2011</creationDate>
 	<author>Joomla Engineering</author>
 	<authorEmail>support@joomlaengineering.com</authorEmail>
 	<authorUrl>http://joomlaengineering.com</authorUrl>
 	<copyright>Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.6.670</version>
+	<version>1.6.676</version>
 	<description>TPL_JE_CONSTRUCT_PRO_DESCRIPTION</description>
 	<files>
 		<filename>css/article/index.html</filename>
