@@ -258,7 +258,9 @@ $catId = getCategory(JRequest::getInt('id'));
 
 #--------------------------------- Alias ----------------------------------#
 
-$currentAlias 								= JSite::getMenu()->getActive()->alias;
+if ($itemId) {
+    $currentAlias 							= JSite::getMenu()->getActive()->alias;
+}
 
 #----------------------------- Component Name -----------------------------#
 
