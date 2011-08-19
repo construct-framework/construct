@@ -48,12 +48,12 @@ if ($mobileResults) {
 			<h1><a href="<?php echo $baseUrl; ?>/" title="<?php echo $app->getCfg('sitename'); ?>"><?php echo $app->getCfg('sitename'); ?></a></h1>
 			<?php if ($showDiagnostics) : ?>
 				<ul id="diagnostics">
-					<li><?php echo $currentComponent; ?></li>
+					<li>component <?php echo $currentComponent; ?></li>	
 					<?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
-					<?php if($articleId)	echo '<li>article-'.$articleId.'</li>'; ?>
-					<?php if($itemId)		echo '<li>item-'.$itemId.'</li>'; ?>
-					<?php if($catId)		echo '<li>category-'.$catId.'</li>'; ?>
-					<?php if($sectionId) 	echo '<li>section-'.$sectionId.'</li>'; ?>
+					<?php if($articleId)	echo '<li>article '.$articleId.'</li>'; ?>
+					<?php if($itemId)		echo '<li>item '.$itemId.'</li>'; ?>
+					<?php if($catId)		echo '<li>category '.$catId.'</li>'; ?>
+					<?php if($sectionId) 	echo '<li>section '.$sectionId.'</li>'; ?>
 				</ul>
 			<?php endif; ?>				
 		</div>
