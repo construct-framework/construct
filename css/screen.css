@@ -231,8 +231,10 @@ ul.menu-horizontal li{float:left} /* Use -horizontal menu class suffix */
 .pagination{margin:10px 0 0;padding:10px 0;}
 .pagination{list-style-type:none;margin:0;padding:0;}
 .pagination li{display:inline;margin:0;padding:2px 5px 0 0;}
+.pagenav {list-style:none !important;}
 .pagenav li {margin:0;}
-.pagenav-next {text-align:right}
+.pagenav li.pagenav-prev {float:left;}
+.pagenav li.pagenav-next {float:right;text-align:right}
 .red,
 .red a,
 .green,
