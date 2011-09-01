@@ -5,7 +5,7 @@ defined('_JEXEC') or die;
 <form action="<?php echo JRoute::_( 'index.php' ); ?>" method="post" name="login" id="login" class="logout_form<?php echo $this->escape($this->params->get( 'pageclass_sfx' )); ?>">
 	<?php if ( $this->params->get( 'show_logout_title' ) ) : ?>
 	<h1 class="componentheading<?php echo $this->escape($this->params->get( 'pageclass_sfx' )); ?>">
-		<?php echo $this->params->get( 'masthead_logout' ); ?>
+		<?php echo $this->params->get( 'header_logout' ); ?>
 	</h1>
 	<?php endif; ?>
 
