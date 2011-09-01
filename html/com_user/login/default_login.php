@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 <form action="<?php echo JRoute::_( 'index.php', true, $this->params->get('usesecure')); ?>" method="post" name="login" id="login" class="login_form<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
 	<?php if ( $this->params->get( 'show_login_title' ) ) : ?>
 	<h1 class="componentheading<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
-		<?php echo $this->params->get( 'masthead_login' ); ?>
+		<?php echo $this->params->get( 'header_login' ); ?>
 	</h1>
 	<?php endif; ?>
 
