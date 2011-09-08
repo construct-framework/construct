@@ -6,37 +6,47 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+$params = JFactory::getApplication()->getTemplate(true)->params;
+
 // Manually set and define template parameters
 $columnLayout			= 'alpha-1-main-beta-1';
-$customStyleSheet 		= 'example.css';
-$detectTablets			= '1';
-$enableSwitcher 		= '1';
-$fluidMedia				= '1';
-$fullWidth				= '1';
-$googleWebFont 			= '';
-$googleWebFontSize		= '85%';
-$googleWebFontTargets	= 'h1,h2,h3,h4,h5,h6';
-$googleWebFont2			= '';
-$googleWebFontSize2		= '';
-$googleWebFontTargets2	= '';
-$googleWebFont3 		= '';
-$googleWebFontSize3		= '';
-$googleWebFontTargets3	= '';
-$IECSS3					= '1';
-$IECSS3Targets			= '.drop-shadow, .outline, .rounded, ul.menu li, ul.menu ul, #nav,#column-group-alpha .moduletable, #column-group-alpha .moduletable_menu, #column-group-beta .moduletable, #column-group-beta .moduletable_menu, #content-above .moduletable, #content-above .moduletable_menu, #nav-below .moduletable, #nav-below .moduletable_menu';
-$IE6TransFix			= '1';
-$IE6TransFixTargets		= 'h1 a, .readon, .parent a, #breadcrumbs';
-$loadMoo 				= '1';
-$loadModal				= '1';
-$loadjQuery 			= '1.4.2';
-$mdetect 				= '1';
-$setGeneratorTag		= 'Joomla Engineering | http://JoomlaEngineering.com';
-$showDiagnostics 		= '0';
-$siteWidth				= '80.5';
-$siteWidthType			= 'max-width';
-$siteWidthUnit			= 'em';
-$stickyFooterHeight		= '175';
-$useStickyFooter 		= '1';
+$customStyleSheet 		= $params->get('customStyleSheet');
+$detectTablets			= $params->get('detectTablets');
+$enableSwitcher 		= $params->get('enableSwitcher');
+$fluidMedia				= $params->get('fluidMedia');
+$fullWidth				= $params->get('fullWidth');
+$googleWebFont 			= $params->get('googleWebFont');
+$googleWebFontSize		= $params->get('googleWebFontSize');
+$googleWebFontTargets	= $params->get('googleWebFontTargets');
+$googleWebFont2			= $params->get('googleWebFont2');
+$googleWebFontSize2		= $params->get('googleWebFontSize2');
+$googleWebFontTargets2	= $params->get('googleWebFontTargets2');
+$googleWebFont3			= $params->get('googleWebFont3');
+$googleWebFontSize3		= $params->get('googleWebFontSize3');
+$googleWebFontTargets3	= $params->get('googleWebFontTargets3');
+$IECSS3					= $params->get('IECSS3');
+$IECSS3Targets			= $params->get('IECSS3Targets');
+$IE6TransFix			= $params->get('IE6TransFix');
+$IE6TransFixTargets		= $params->get('IE6TransFixTargets');
+$inheritLayout			= $params->get('inheritLayout');
+$inheritStyle			= $params->get('inheritStyle');
+$loadMoo 				= $params->get('loadMoo');
+$loadModal				= $params->get('loadModal');
+$loadjQuery 			= $params->get('loadjQuery');
+$mContentDataTheme		= $params->get('mContentDataTheme');
+$mdetect 				= $params->get('mdetect');
+$mFooterDataTheme		= $params->get('mFooterDataTheme');
+$mHeaderDataTheme		= $params->get('mHeaderDataTheme');
+$mNavPosition			= $params->get('mNavPosition');
+$mNavDataTheme			= $params->get('mNavDataTheme');
+$mPageDataTheme			= $params->get('mPageDataTheme');
+$setGeneratorTag		= $params->get('setGeneratorTag');
+$showDiagnostics 		= $params->get('showDiagnostics');
+$siteWidth				= $params->get('siteWidth');
+$siteWidthType			= $params->get('siteWidthType');
+$siteWidthUnit			= $params->get('siteWidthUnit');
+$stickyFooterHeight		= $params->get('stickyFooterHeight');
+$useStickyFooter 		= $params->get('useStickyFooter');
 
 // Define module counts
 $headerAboveClass 		= 'count-1';
@@ -53,6 +63,11 @@ $renderer   			= $doc->loadRenderer( 'modules' );
 $raw 					= array( 'style' => 'raw' );
 $xhtml 					= array( 'style' => 'xhtml' );
 $jexhtml 				= array( 'style' => 'jexhtml' );
+
+//get language and direction
+$doc = JFactory::getDocument();
+$this->language = $doc->language;
+$this->direction = $doc->direction;
 
 #--------------------------------------------------------------------------#
 
@@ -82,6 +97,8 @@ mail($emailaddress, $subject, $message, $mastheads);
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <head>
+  
+ 
   <meta name="copyright" content="<?php echo $app->getCfg('sitename');?>" />	
   <link rel="shortcut icon" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/favicon.ico" type="image/x-icon" />
   <link rel="icon" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/favicon.png" type="image/png" />	

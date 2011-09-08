@@ -16,7 +16,7 @@ $templateParams = JFactory::getApplication()->getTemplate(true)->params;
 // Note. It is important to remove spaces between elements.
 ?>
 
-<ul data-role="listview" data-inset="true" data-theme="<?php echo $templateParams->get('mNavDataTheme'); ?>" class="menu<?php echo $class_sfx;?>"<?php
+<ul data-role="listview" data-inset="true" data-theme="<?php echo $templateParams->get('mNavDataTheme'); ?>" class="menu<?php echo $class_sfx;?> clearfix"<?php
 	$tag = '';
 	if ($params->get('tag_id')!=NULL) {
 		$tag = $params->get('tag_id').'';
