@@ -5,100 +5,11 @@
 * @copyright	Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
-
-$params = JFactory::getApplication()->getTemplate(true)->params;
-
-// Manually set and define template parameters
-$columnLayout			= 'alpha-1-main-beta-1';
-$customStyleSheet 		= $params->get('customStyleSheet');
-$detectTablets			= $params->get('detectTablets');
-$enableSwitcher 		= $params->get('enableSwitcher');
-$fluidMedia				= $params->get('fluidMedia');
-$fullWidth				= $params->get('fullWidth');
-$googleWebFont 			= $params->get('googleWebFont');
-$googleWebFontSize		= $params->get('googleWebFontSize');
-$googleWebFontTargets	= $params->get('googleWebFontTargets');
-$googleWebFont2			= $params->get('googleWebFont2');
-$googleWebFontSize2		= $params->get('googleWebFontSize2');
-$googleWebFontTargets2	= $params->get('googleWebFontTargets2');
-$googleWebFont3			= $params->get('googleWebFont3');
-$googleWebFontSize3		= $params->get('googleWebFontSize3');
-$googleWebFontTargets3	= $params->get('googleWebFontTargets3');
-$IECSS3					= $params->get('IECSS3');
-$IECSS3Targets			= $params->get('IECSS3Targets');
-$IE6TransFix			= $params->get('IE6TransFix');
-$IE6TransFixTargets		= $params->get('IE6TransFixTargets');
-$inheritLayout			= $params->get('inheritLayout');
-$inheritStyle			= $params->get('inheritStyle');
-$loadMoo 				= $params->get('loadMoo');
-$loadModal				= $params->get('loadModal');
-$loadjQuery 			= $params->get('loadjQuery');
-$mContentDataTheme		= $params->get('mContentDataTheme');
-$mdetect 				= $params->get('mdetect');
-$mFooterDataTheme		= $params->get('mFooterDataTheme');
-$mHeaderDataTheme		= $params->get('mHeaderDataTheme');
-$mNavPosition			= $params->get('mNavPosition');
-$mNavDataTheme			= $params->get('mNavDataTheme');
-$mPageDataTheme			= $params->get('mPageDataTheme');
-$setGeneratorTag		= $params->get('setGeneratorTag');
-$showDiagnostics 		= $params->get('showDiagnostics');
-$siteWidth				= $params->get('siteWidth');
-$siteWidthType			= $params->get('siteWidthType');
-$siteWidthUnit			= $params->get('siteWidthUnit');
-$stickyFooterHeight		= $params->get('stickyFooterHeight');
-$useStickyFooter 		= $params->get('useStickyFooter');
-
-// Define module counts
-$headerAboveClass 		= 'count-1';
-$headerBelowClass 		= 'count-6';
-$navBelowClass 			= 'count-4';
-$contentAboveClass 		= 'count-1';
-$contentBelowClass 		= '';
-$columnGroupAlphaClass 	= 'count-1';
-$columnGroupBetaClass 	= '';
-$footerAboveClass 		= 'count-4';
-
-// Based on http://forum.joomla.org/index.php/viewtopic.php?p=1077558#p1077558
-$renderer   			= $doc->loadRenderer( 'modules' );
-$raw 					= array( 'style' => 'raw' );
-$xhtml 					= array( 'style' => 'xhtml' );
-$jexhtml 				= array( 'style' => 'jexhtml' );
-
-//get language and direction
-$doc = JFactory::getDocument();
-$this->language = $doc->language;
-$this->direction = $doc->direction;
-
-#--------------------------------------------------------------------------#
-
-/*
-// Email notification feature from http://forum.joomla.org/viewtopic.php?p=1760233#p1760233
-
-// change this to whatever email address you want the notifications to be sent to
-$emailaddress = "you@yourdomain.com";
-
-// only change this number if you plan on making other error pages.. eg. 403, 500, etc..
-$errorNum = "404";
-
-// message area - you can stop the emailing of error notices by commented out each of the lines below
-$errortime = (date("M d Y h:m:s"));
-$message = $errorNum." Error Report\r\n\r\nA ".$errorNum." error was encountered by ".$_SERVER['REMOTE_ADDR'];
-$message .= " on $errortime.\r\n\r\n";
-$message .= "The URL which generated the 404 error is: \nhttp://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."\r\n\r\n";
-$message .= "The referring page, if any, was:\n".$_SERVER['HTTP_REFERER']."\r\n\r\n";
-$message .= "The used client was:\n".$_SERVER['HTTP_USER_AGENT']."\r\n\r\n";
-$mastheads = "From: ".$emailaddress."\nDate: ".$errortime." +0100\n";
-$subject = "Error: ".$errorNum." from ".$_SERVER['HTTP_REFERER'];
-mail($emailaddress, $subject, $message, $mastheads);
-*/
-
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
-<head>
-  
- 
+<head> 
   <meta name="copyright" content="<?php echo $app->getCfg('sitename');?>" />	
   <link rel="shortcut icon" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/favicon.ico" type="image/x-icon" />
   <link rel="icon" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/favicon.png" type="image/png" />	
