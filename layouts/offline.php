@@ -70,9 +70,8 @@
 					    <?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 					    <?php if($articleId)	echo '<li>article '.$articleId.'</li>'; ?>
 					    <?php if($itemId)		echo '<li>menu item '.$itemId.'</li>'; ?>
-					    <?php if($sectionId) 	echo '<li>section '.$sectionId.'</li>'; ?>
-					    <?php if($catId) {							
-					    		echo '<li>category '.$catId.'</li>'; 
+					    <?php if($catId)   		echo '<li>category '.$catId.'</li>'; ?>
+					    <?php if ($catId && ($inheritStyle || $inheritLayout)) {
 					    		if ($parentCategory) {
 					    		    echo '<li>parent category '.$parentCategory.'</li>';
 					    		}
@@ -88,7 +87,7 @@
 							    }
 							  } ?>
 				    </ul>
-				<?php endif; ?>	
+				<?php endif; ?>
 				
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo $app->getCfg('sitename');?>"><?php echo $app->getCfg('sitename');?></a></h1>
 				

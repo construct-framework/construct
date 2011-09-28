@@ -100,8 +100,8 @@ else {
 					    <?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 					    <?php if($articleId)	echo '<li>article '.$articleId.'</li>'; ?>
 					    <?php if($itemId)		echo '<li>menu item '.$itemId.'</li>'; ?>
-					    <?php if($catId) {
-					    		echo '<li>category '.$catId.'</li>'; 
+					    <?php if($catId)   		echo '<li>category '.$catId.'</li>'; ?>
+					    <?php if ($catId && ($inheritStyle || $inheritLayout)) {
 					    		if ($parentCategory) {
 					    		    echo '<li>parent category '.$parentCategory.'</li>';
 					    		}
