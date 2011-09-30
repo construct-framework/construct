@@ -434,7 +434,6 @@ if ($useStickyFooter) {
 	
 // Internet Explorer Fixes
 $doc->addCustomTag("\n".'  <!--[if lt IE 9]>');
-$doc->addCustomTag("\n".'  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>');
 if ($IECSS3) {
   $doc->addCustomTag("\n".'  <style type="text/css">'.$IECSS3Targets.' {behavior:url("'.$baseUrl.'templates/'.$this->template.'/js/PIE.htc")}</style>');
 }
