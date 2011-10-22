@@ -3,10 +3,10 @@
 <extension version="1.6" type="template" client="site" method="upgrade">
 	<name>je-construct-pro</name>
 	<creationDate>September 27th, 2011</creationDate>
-	<author>Joomla Engineering</author>
-	<authorEmail>support@joomlaengineering.com</authorEmail>
-	<authorUrl>http://joomlaengineering.com</authorUrl>
-	<copyright>Copyright (C) 2010, 2011 Matt Thomas | Joomla Engineering. All rights reserved.</copyright>
+	<author>Matt Thomas</author>
+	<authorEmail>support@construct-framework.com</authorEmail>
+	<authorUrl>http://construct-framework.com</authorUrl>
+	<copyright>Copyright (C) 2009 - 2011 Matt Thomas. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<version>1.6.692</version>
 	<description>TPL_JE_CONSTRUCT_PRO_DESCRIPTION</description>
@@ -149,7 +149,7 @@
 					<option value="0">No</option>
 				</field>		
 				<field name="customStyleSheet" type="filelist" default="example.css" label="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_LABEL" directory="templates/je-construct-pro/css" filter="\.css" exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css" description="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_DESC" />
-				<field name="setGeneratorTag" type="text" default="Joomla Engineering | http://JoomlaEngineering.com" label="Generator Meta Tag" description="Customize the generator meta tag output by your template." size="56" />		
+				<field name="setGeneratorTag" type="text" default="Construct Framework | http://Construct-Framework.com" label="Generator Meta Tag" description="Customize the generator meta tag output by your template." size="56" />
 			</fieldset>
 			<fieldset name="IE">
 				<field name="IECSS3" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_IE_CSS3_LABEL" description="TPL_JE_CONSTRUCT_PRO_IE_CSS3_DESC">
@@ -212,7 +212,7 @@
 					<option value="1">Before Content</option>
 					<option value="0">After Content</option>
 				</field>
-				<field name="mPageDataTheme" type="list" default="" label="TPL_JE_CONSTRUCT_PRO_MPAGEDATATHEME_LABEL" description="TPL_JE_CONSTRUCT_PRO_MPAGEDATATHEME_DESC">
+				<field name="mPageDataTheme" type="list" default="b" label="TPL_JE_CONSTRUCT_PRO_MPAGEDATATHEME_LABEL" description="TPL_JE_CONSTRUCT_PRO_MPAGEDATATHEME_DESC">
 					<option value="">- None Selected -</option>
 					<option value="a">Black</option>
 					<option value="b">Blue</option>
