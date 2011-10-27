@@ -27,7 +27,7 @@ if ($mobileResults) {
 		<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
 		<?php //Load Mobile Extended Template Style Overrides
-		$mobileCssFile = $mobileStyleOverride->getIncludeFile ();		
+		$mobileCssFile = $mobileStyleOverride->getIncludeFile ();
 		if ($mobileCssFile) : ?>
 			<link rel="stylesheet" href="<?php echo $baseUrl.$mobileCssFile; ?>" type="text/css" media="screen" />			
 		<?php endif; ?>		
@@ -51,7 +51,7 @@ if ($mobileResults) {
 			<?php if ($showDiagnostics) : ?>
 				<ul id="diagnostics">
 				    <li>column layout <?php echo $columnLayout; ?></li>
-					<li>component <?php echo $currentComponent; ?></li>					
+					<li>component <?php echo $currentComponent; ?></li>
 				    <?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
 				    <?php if($articleId)	echo '<li>article '.$articleId.'</li>'; ?>
 				    <?php if($itemId)		echo '<li>menu item '.$itemId.'</li>'; ?>
