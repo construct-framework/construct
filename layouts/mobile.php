@@ -15,7 +15,7 @@ $baseUrl 				= JURI::base();
 <!DOCTYPE html> 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="<?php echo $contenttype; ?>; charset=utf-8" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/mobile.css" type="text/css" media="screen" />
 		<?php //Load Mobile Extended Template Style Overrides
 		if (isset($mobileCssFile)) : ?>
