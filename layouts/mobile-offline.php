@@ -8,21 +8,21 @@
 ?>
 
 <!DOCTYPE html> 
-<html>
+<html class="no-js">
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Type" content="<?php echo $contenttype; ?>; charset=utf-8" />
 		<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/mobile.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
-		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+		<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
 		<script>
 			$(document).ready(function() {
-				$('body').removeClass("noscript");
+				$('html').removeClass("no-js");
 			});
 		</script>
 	</head>
 
-<body class="noscript">	
+<body>
 	<div data-role="page" data-theme="<?php echo $mPageDataTheme; ?>">
 		<div id="header" data-role="header" data-theme="<?php echo $mHeaderDataTheme; ?>">
 			<h1><a href="<?php echo $baseUrl; ?>/" title="<?php echo $app->getCfg('sitename'); ?>"><?php echo $app->getCfg('sitename'); ?></a></h1>

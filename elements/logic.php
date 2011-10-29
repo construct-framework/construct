@@ -6,6 +6,9 @@
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+// Load Joomla browser class
+jimport('joomla.environment.browser');
+
 // Call the Construct Template Helper Class
 if (JFile::exists(dirname(__FILE__).'/helper.php')) {
     include dirname(__FILE__).'/helper.php';
@@ -15,12 +18,16 @@ if (JFile::exists(dirname(__FILE__).'/helper.php')) {
 $app 					= JFactory::getApplication();
 // Get the base URL of the website
 $baseUrl 				= JURI::base();
+// Instantiate JBrowser
+$browser 				= JBrowser::getInstance();
+// Get the browser type
+$browserType 			= $browser->getBrowser();
+// Get the browser version
+$browserVersion 		= $browser->getMajor();
 // Returns a reference to the global document object
 $doc 					= JFactory::getDocument();
 // Define relative shortcut for current template directory
 $template 				= 'templates/'.$this->template;
-// Define absolute path to the template directory
-$templateDir			= JPATH_THEMES.'/'.$this->template;
 // Get the current URL
 $url 					= clone(JURI::getInstance());
 // To access the current user object
@@ -78,7 +85,7 @@ if ($loadMoo) {
 	JHTML::_('behavior.mootools');
 }
 
-// Enable modal pop-ups
+// Enable modal pop-ups - see html/mod_footer/default.php to customize
 if ( $loadMoo && $loadModal ) {	
 	JHTML::_('behavior.modal');
 }
@@ -92,7 +99,7 @@ if ( !$loadMoo ) {
 	$this->setHeadData($head);
 }
 
-// Change Google Web Font name for CSS
+// Fix Google Web Font name for CSS
 $googleWebFontFamily 	= str_replace(array('+',':bold',':italic')," ",$googleWebFont);
 $googleWebFontFamily2 	= str_replace(array('+',':bold',':italic')," ",$googleWebFont2);
 $googleWebFontFamily3 	= str_replace(array('+',':bold',':italic')," ",$googleWebFont3);
@@ -408,30 +415,30 @@ if ($useStickyFooter) {
 }
 
 // Internet Explorer Fixes
-$doc->addCustomTag("\n".'  <!--[if lt IE 9]>');
-if ($IECSS3) {
-  $doc->addCustomTag("\n".'  <style type="text/css">'.$IECSS3Targets.' {behavior:url("'.$baseUrl.'templates/'.$this->template.'/js/PIE.htc")}</style>');
+if(($browserType == 'msie') && ($browserVersion < 9)) {
+	$doc->addCustomTag("\n".'  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>');
+	if ($IECSS3) {
+	  $doc->addCustomTag("\n".'  <style type="text/css">'.$IECSS3Targets.' {behavior:url("'.$baseUrl.'templates/'.$this->template.'/js/PIE.htc")}</style>');
+	}
 }
-$doc->addCustomTag('<![endif]-->');
 
 // Internet Explorer 6 Fixes
-$doc->addCustomTag("\n".'  <!--[if lt IE 7]>');
-$doc->addCustomTag("\n".'  <link rel="stylesheet" href="'.$template.'/css/ie6.css" type="text/css" media="screen" />');
-$doc->addCustomTag("\n".'  <style type="text/css">');
-$doc->addCustomTag("\n".'  body {text-align:center;}');
-$doc->addCustomTag("\n".'  #body-container {text-align:left;}');
-if ($useStickyFooter) {
-	$doc->addCustomTag("\n".'  body.sticky-footer #footer-push {display:table;height:100%;}');
+if(($browserType == 'msie') && ($browserVersion < 7)) {
+	$doc->addStyleSheet($template.'/css/ie6.css','text/css','screen');
+	$doc->addStyleDeclaration("\n".'  body {text-align:center;}');
+	$doc->addStyleDeclaration("\n".'  #body-container {text-align:left;}');	
+	if ($useStickyFooter) {
+		$doc->addStyleDeclaration("\n".'  body.sticky-footer #footer-push {display:table;height:100%;}');		
+	}
+	if(!$fullWidth){
+		$doc->addCustomTag('<style type="text/css">#body-container, #header-above, #header, #footer {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto;}');
+	}
+	else {
+		$doc->addCustomTag('<style type="text/css">#body-container, #header-above {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto;}');
+	}
+	$doc->addCustomTag('</style>');
+	if($IE6TransFix) {
+		$doc->addCustomTag('  <script type="text/javascript" src="'.$template.'/js/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script>DD_belatedPNG.fix(\''.$IE6TransFixTargets.'\');</script>');
+	}
 }
-if(!$fullWidth){
-	$doc->addCustomTag("\n".'  #body-container, #header-above, #header, #footer {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto;}');
-}
-else {
-	$doc->addCustomTag("\n".'  #body-container, #header-above {width: expression( document.body.clientWidth >'.($siteWidth -1).' ? "'.$siteWidth.$siteWidthUnit.'" : "auto" );margin:0 auto;}');
-}
-$doc->addCustomTag("\n".'  </style>');
-if($IE6TransFix) {
-	$doc->addCustomTag("\n".'  <script type="text/javascript" src="'.$template.'/js/DD_belatedPNG_0.0.8a-min.js"></script>');
-	$doc->addCustomTag("\n".'  <script type="text/javascript">DD_belatedPNG.fix(\''.$IE6TransFixTargets.'\');</script>');
-}
-$doc->addCustomTag('<![endif]-->');
