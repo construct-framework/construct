@@ -13,25 +13,25 @@ $baseUrl 				= JURI::base();
 ?>
 
 <!DOCTYPE html> 
-<html class="no-js">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="<?php echo $contenttype; ?>; charset=utf-8" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/mobile.css" type="text/css" media="screen" />
 		<?php //Load Mobile Extended Template Style Overrides
 		if (isset($mobileCssFile)) : ?>
 			<link rel="stylesheet" href="<?php echo $baseUrl.$mobileCssFile; ?>" type="text/css" media="screen" />			
 		<?php endif; ?>	
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
-		<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
 		<script>
 			$(document).ready(function() {
-				$('html').removeClass("no-js");
+				$('body').removeClass("noscript");
 			});
 		</script>
 	</head>
 
-<body>
+<body class="noscript">	
 	<div data-role="page" data-theme="<?php echo $mPageDataTheme; ?>">
 		<div id="header" data-role="header" data-theme="<?php echo $mHeaderDataTheme; ?>">
 			<h1><a href="<?php echo $baseUrl; ?>/" title="<?php echo $app->getCfg('sitename'); ?>"><?php echo $app->getCfg('sitename'); ?></a></h1>
