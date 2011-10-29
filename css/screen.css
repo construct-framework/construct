@@ -304,7 +304,7 @@ ul.menu-horizontal li{float:left} /* Use -horizontal menu class suffix */
 
 /* -- Menu CSS -- */
 ul.menu a,
-ul.menu span.seprator{display:block;padding:.1em .7em/*use padding to indent text*/}
+ul.menu span.separator{display:block;padding:.1em .7em/*use padding to indent text*/}
 ul.menu li{float:left;position:relative}
 ul.menu ul{position:absolute;left:-999em;width:16em;/*sub-menu widths*/z-index:999}
 ul.menu ul li{width:100%;}
