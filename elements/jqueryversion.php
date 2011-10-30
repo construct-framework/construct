@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') or die;
 /**
-* @package		Template Framework for Joomla! 1.5
-* @author		Joomla Engineering http://joomlaengineering.com
+* @package		Template Framework for Joomla!
+* @author		Matt Thomas http://construct-framework.com
 * @copyright	Copyright (C) 2010 Matt Thomas | Joomla Engineering. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */

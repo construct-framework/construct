@@ -11,7 +11,7 @@ class JElementUpgradecheck extends JElement {
 		//If cURL is supported, check the current version available.
 		else 
 				$version = 700;
-				$target = 'http://joomlaengineering.com/upgradecheck/je-construct-pro';
+				$target = 'http://construct-framework.com/upgradecheck/je-construct-pro';
 				$curl = curl_init();
 				curl_setopt($curl, CURLOPT_URL, $target);
 				curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -23,10 +23,10 @@ class JElementUpgradecheck extends JElement {
 				
 				//If the current version is out of date, notify the user and provide a download link.
 				if ($version < $str)
-					$message = $message . '<a href="http://joomlaengineering.com" target="_blank">Version 1.5.'.$str.' is now available.</a><br /><a href="http://joomlaengineering.com/construct-pro-changelog" target="_blank">See what&rsquo;s new</a>.';
+					$message = $message . '<a href="http://construct-framework.com" target="_blank">Version 1.5.'.$str.' is now available.</a><br /><a href="http://construct-framework.com/construct-pro-changelog" target="_blank">See what&rsquo;s new</a>.';
 				//If the current version is up to date, notify the user. 	
 				elseif (($version == $str) || ($version > $str))
-					$message = $message . 'There are no updates available at this time.<br /><a href="http://joomlaengineering.com/construct-pro-changelog" target="_blank">View the change log</a>.';
+					$message = $message . 'There are no updates available at this time.<br /><a href="http://construct-framework.com/construct-pro-changelog" target="_blank">View the change log</a>.';
 				return $message;							
 	  }
 }
