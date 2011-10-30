@@ -84,7 +84,7 @@ body{font-size:76%/* 12px in most modern browsers - used as basis of layout and 
 .count-5{float:left;width:20%;}
 .count-6{float:left;width:16.6%;}
 
-/* -- Base Typography -- *//* Inspration from http://www.thenoodleincident.com/tutorials/typography/template.html*/
+/* -- Base Typography -- *//* Inspiration from http://www.thenoodleincident.com/tutorials/typography/template.html*/
 body{color:#333;line-height:1.8em}
 body.arial{font-family:Arial, Helvetica, sans-serif;}
 body.arial-black{font-family:Arial Black, Gadget, sans-serif;}
