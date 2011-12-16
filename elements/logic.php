@@ -414,7 +414,8 @@ if ($googleWebFont3) {
 // JavaScript
 $doc->addCustomTag("\n".'  <script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
 if ($loadjQuery) {
-	$doc->addScript($loadjQuery);
+	$doc->addCustomTag("\n".'  <script type="text/javascript" src="'.$loadjQuery.'"></script>');
+	$doc->addCustomTag("\n".'  <script type="text/javascript">jQuery.noConflict();</script>');
 }
 
 // Layout Declarations
