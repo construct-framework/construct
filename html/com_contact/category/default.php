@@ -4,13 +4,13 @@ $cparams = JComponentHelper::getParams ('com_media');
 ?>
 
 <?php if ($this->params->get('show_page_title',1)) : ?>
-<h1 class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
-	<?php echo $this->escape($this->params->get('page_title')); ?>
+<h1 class="componentheading<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
+	<?php echo htmlspecialchars($this->params->get('page_title')); ?>
 </h1>
 <?php endif; ?>
 
 <?php if ($this->category->image || $this->category->description) : ?>
-<div class="contentdescription<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+<div class="contentdescription<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 
 	<?php if ($this->params->get('image') != -1 && $this->params->get('image') != '') : ?>
 	<img src="<?php echo $this->baseurl .'/'. 'images/stories' . '/'. $this->params->get('image'); ?>" class="image_<?php echo $this->params->get('image_align'); ?>" alt="<?php echo JText::_( 'Contacts' ); ?>" />
@@ -52,44 +52,44 @@ function tableOrdering( order, dir, task )
 
 </form>
 
-<table class="category<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+<table class="category<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 
 	<?php if ($this->params->get('show_headings')) : ?>
 	<tr>
-		<th id="Count" class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+		<th id="Count" class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 			<?php echo JText::_('Num'); ?>
 		</th>
 
 		<?php if ($this->params->get('show_position')) : ?>
-		<th id="Position" class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+		<th id="Position" class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 			<?php echo JHTML::_('grid.sort', 'Position', 'cd.con_position', $this->lists['order_Dir'], $this->lists['order'] ); ?>
 		</th>
 		<?php endif; ?>
 
-		<th id="Name" class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+		<th id="Name" class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 			<?php echo JHTML::_('grid.sort', 'Name', 'cd.name', $this->lists['order_Dir'], $this->lists['order'] ); ?>
 		</th>
 
 		<?php if ($this->params->get('show_email')) : ?>
-		<th id="Mail" class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+		<th id="Mail" class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 			<?php echo JText::_('Email'); ?>
 		</th>
 		<?php endif; ?>
 
 		<?php if ( $this->params->get('show_telephone')) : ?>
-		<th id="Phone" class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+		<th id="Phone" class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 			<?php echo JText::_('Phone'); ?>
 		</th>
 		<?php endif; ?>
 
 		<?php if ($this->params->get('show_mobile')) : ?>
-		<th id="mobile" class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+		<th id="mobile" class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 			<?php echo JText::_('Mobile'); ?>
 		</th>
 		<?php endif; ?>
 
 		<?php if ( $this->params->get('show_fax')) : ?>
-		<th id="Fax" class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+		<th id="Fax" class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 			<?php echo JText::_('Fax'); ?>
 		</th>
 		<?php endif; ?>

@@ -3,9 +3,9 @@ defined('_JEXEC') or die;
 ?>
 
 <h3>
-	<?php echo $this->escape($this->message->title); ?>
+	<?php echo htmlspecialchars($this->message->title); ?>
 </h3>
 
 <p class="message">
-	<?php echo $this->escape($this->message->text); ?>
+	<?php echo htmlspecialchars($this->message->text); ?>
 </p>

@@ -3,9 +3,9 @@ defined('_JEXEC') or die;
 ?>
 
 <?php if (!empty($this->searchword)) : ?>
-<div class="searchintro<?php echo $this->escape($this->params->get('pageclass_sfx')) ?>">
+<div class="searchintro<?php echo htmlspecialchars($this->params->get('pageclass_sfx')) ?>">
 	<p>
-		<?php echo JText::_('Search Keyword') ?> <strong><?php echo $this->escape($this->searchword) ?></strong>
+		<?php echo JText::_('Search Keyword') ?> <strong><?php echo htmlspecialchars($this->searchword) ?></strong>
 		<?php echo $this->result ?>
 	</p>
 	<p>
@@ -18,26 +18,26 @@ defined('_JEXEC') or die;
 <div class="results">
 	<h3><?php echo JText :: _('Search_result'); ?></h3>
 	<?php $start = $this->pagination->limitstart + 1; ?>
-	<ol class="list<?php echo $this->escape($this->params->get('pageclass_sfx')) ?>" start="<?php echo (int)$start ?>">
+	<ol class="list<?php echo htmlspecialchars($this->params->get('pageclass_sfx')) ?>" start="<?php echo (int)$start ?>">
 		<?php foreach ($this->results as $result) : ?>
 		<li>
 			<?php if ($result->href) : ?>
 			<h4>
 				<a href="<?php echo JRoute :: _($result->href) ?>" <?php echo ($result->browsernav == 1) ? 'target="_blank"' : ''; ?> >
-					<?php echo $this->escape($result->title); ?></a>
+					<?php echo htmlspecialchars($result->title); ?></a>
 			</h4>
 			<?php endif; ?>
 			<?php if ($result->section) : ?>
 			<p><?php echo JText::_('Category') ?>:
-				<span class="small<?php echo $this->escape($this->params->get('pageclass_sfx')) ?>">
-					<?php echo $this->escape($result->section); ?>
+				<span class="small<?php echo htmlspecialchars($this->params->get('pageclass_sfx')) ?>">
+					<?php echo htmlspecialchars($result->section); ?>
 				</span>
 			</p>
 			<?php endif; ?>
 
 			<?php echo $result->text; ?>
-			<span class="small<?php echo $this->escape($this->params->get('pageclass_sfx')) ?>">
-				<?php echo $this->escape($result->created); ?>
+			<span class="small<?php echo htmlspecialchars($this->params->get('pageclass_sfx')) ?>">
+				<?php echo htmlspecialchars($result->created); ?>
 			</span>
 		</li>
 		<?php endforeach; ?>

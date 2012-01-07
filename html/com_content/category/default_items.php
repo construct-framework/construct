@@ -21,7 +21,7 @@ document.adminForm.submit( task );
 <div class="filter">
 	<p>
 		<?php echo JText::_($this->escape($this->params->get('filter_type')) . ' ' . 'Filter').'&nbsp;'; ?>
-		<input type="text" name="filter" value="<?php echo $this->escape($this->lists['filter']); ?>" class="inputbox" onchange="document.adminForm.submit();" />
+		<input type="text" name="filter" value="<?php echo htmlspecialchars($this->lists['filter']); ?>" class="inputbox" onchange="document.adminForm.submit();" />
 	</p>
 </div>
 <?php endif; ?>
@@ -37,30 +37,30 @@ document.adminForm.submit( task );
 
 	<?php if ($this->params->get('show_headings')) : ?>
 	<tr>
-		<th class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>" id="count">
+		<th class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>" id="count">
 			<?php echo JText::_('Num'); ?>
 		</th>
 
 		<?php if ($this->params->get('show_title')) : ?>
-		<th class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>" id="tableOrdering">
+		<th class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>" id="tableOrdering">
 			<?php echo JHTML::_('grid.sort', 'Item Title', 'a.title', $this->lists['order_Dir'], $this->lists['order']); ?>
 		</th>
 		<?php endif; ?>
 
 		<?php if ($this->params->get('show_date')) : ?>
-		<th class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>" id="tableOrdering2">
+		<th class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>" id="tableOrdering2">
 			<?php echo JHTML::_('grid.sort', 'Date', 'a.created', $this->lists['order_Dir'], $this->lists['order']); ?>
 		</th>
 		<?php endif; ?>
 
 		<?php if ($this->params->get('show_author')) : ?>
-		<th class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>" id="author">
+		<th class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>" id="author">
 			<?php echo JHTML::_('grid.sort', 'Author', 'author', $this->lists['order_Dir'], $this->lists['order']); ?>
 		</th>
 		<?php endif; ?>
 
 		<?php if ($this->params->get('show_hits')) : ?>
-		<th align="center" class="sectiontablemasthead<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>" width="5%" nowrap="nowrap" id="hits">
+		<th align="center" class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>" width="5%" nowrap="nowrap" id="hits">
 			<?php echo JHTML::_('grid.sort', 'Hits', 'a.hits', $this->lists['order_Dir'], $this->lists['order']); ?>
 		</th>
 		<?php endif; ?>
@@ -77,7 +77,7 @@ document.adminForm.submit( task );
 		<td mastheads="tableOrdering">
 			<?php if ($item->access <= $this->user->get('aid', 0)) : ?>
 				<a href="<?php echo $item->link; ?>">
-					<?php echo $this->escape($item->title); ?></a>
+					<?php echo htmlspecialchars($item->title); ?></a>
 				<?php echo JHTML::_('icon.edit', $item, $this->params, $this->access);
 			else :
 				echo $item->title; ?> :
@@ -89,7 +89,7 @@ document.adminForm.submit( task );
 
 		<?php if ($this->params->get('show_date')) : ?>
 		<td  mastheads="tableOrdering2">
-			<?php echo $this->escape($item->created); ?>
+			<?php echo htmlspecialchars($item->created); ?>
 		</td>
 		<?php endif; ?>
 

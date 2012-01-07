@@ -2,8 +2,8 @@
 defined('_JEXEC') or die;
 ?>
 <?php if($this->params->get('show_page_title',1)) : ?>
-<h2 class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')) ?>">
-        <?php echo $this->escape($this->params->get('page_title')) ?>
+<h2 class="componentheading<?php echo htmlspecialchars($this->params->get('pageclass_sfx')) ?>">
+        <?php echo htmlspecialchars($this->params->get('page_title')) ?>
 </h2>
 <?php endif; ?>
 <script type="text/javascript">
@@ -35,7 +35,7 @@ function submitbutton(pressbutton)
 <legend><?php echo JText::_( 'Submit A Web Link' );?></legend>
 	<div>
 	<label for="jformtitle"><?php echo JText::_( 'Name' ); ?>:</label>
-     <input class="inputbox" type="text" id="jformtitle" name="jform[title]" size="50" maxlength="250" value="<?php echo $this->escape($this->weblink->title);?>" />
+     <input class="inputbox" type="text" id="jformtitle" name="jform[title]" size="50" maxlength="250" value="<?php echo htmlspecialchars($this->weblink->title);?>" />
 	</div>
 
 	<div>
@@ -44,7 +44,7 @@ function submitbutton(pressbutton)
     </div>
 	<div>
 	<label for="jformurl"><?php echo JText::_( 'URL' ); ?>:</label>
-	<input class="inputbox" type="text" id="jformurl" name="jform[url]" value="<?php echo $this->escape($this->weblink->url); ?>" size="50" maxlength="250" />
+	<input class="inputbox" type="text" id="jformurl" name="jform[url]" value="<?php echo htmlspecialchars($this->weblink->url); ?>" size="50" maxlength="250" />
 	</div>
 
 	<div>

@@ -4,12 +4,12 @@ $cparams = JComponentHelper::getParams ('com_media');
 ?>
 
 <?php if ($this->params->get('show_page_title',1) && $this->params->get('page_title') != $this->contact->name) : ?>
-<h1 class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
-	<?php echo $this->escape($this->params->get('page_title')); ?>
+<h1 class="componentheading<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
+	<?php echo htmlspecialchars($this->params->get('page_title')); ?>
 </h1>
 <?php endif; ?>
 
-<div class="contact<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
+<div class="contact<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
 	<?php if ($this->params->get('show_contact_list') && count($this->contacts) > 1) : ?>
 	<form method="post" name="selectForm" id="selectForm">
 		<?php echo JText::_('Select Contact'); ?>
@@ -21,13 +21,13 @@ $cparams = JComponentHelper::getParams ('com_media');
 
 	<?php if ($this->contact->name && $this->contact->params->get('show_name')) : ?>
 	<p>
-		<?php echo $this->escape($this->contact->name); ?>
+		<?php echo htmlspecialchars($this->contact->name); ?>
 	</p>
 	<?php endif; ?>
 
 	<?php if ($this->contact->con_position && $this->contact->params->get('show_position')) : ?>
 	<p>
-		<?php echo $this->escape($this->contact->con_position); ?>
+		<?php echo htmlspecialchars($this->contact->con_position); ?>
 	</p>
 	<?php endif; ?>
 

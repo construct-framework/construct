@@ -2,8 +2,8 @@
 defined('_JEXEC') or die;
 ?>
 <?php if($this->params->get('show_page_title',1)) : ?>
-<h2 class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')) ?>">
-	<?php echo $this->escape($this->params->get('page_title')) ?>
+<h2 class="componentheading<?php echo htmlspecialchars($this->params->get('pageclass_sfx')) ?>">
+	<?php echo htmlspecialchars($this->params->get('page_title')) ?>
 </h2>
 <?php endif; ?>
 <h1 class="componentheading">

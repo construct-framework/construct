@@ -2,12 +2,12 @@
 defined('_JEXEC') or die;
 ?>
 
-<form action="<?php echo JRoute::_( 'index.php?option=com_search#content' ) ?>" method="post" class="search_result<?php echo $this->escape($this->params->get('pageclass_sfx')) ?>">
+<form action="<?php echo JRoute::_( 'index.php?option=com_search#content' ) ?>" method="post" class="search_result<?php echo htmlspecialchars($this->params->get('pageclass_sfx')) ?>">
 <a name="form1"></a>
 <h3><?php echo JText::_('search_again'); ?></h3>
 <fieldset class="word">
 <label for="search_searchword"><?php echo JText::_('Search Keyword') ?> </label>
-<input type="text" name="searchword" id="search_searchword"  maxlength="20" value="<?php echo $this->escape($this->searchword) ?>" class="inputbox" />
+<input type="text" name="searchword" id="search_searchword"  maxlength="20" value="<?php echo htmlspecialchars($this->searchword) ?>" class="inputbox" />
 </fieldset>
 
 <fieldset class="phrase">

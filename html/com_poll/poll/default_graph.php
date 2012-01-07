@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 </dl>
 
 <h3>
-	<?php echo $this->escape($this->poll->title); ?>
+	<?php echo htmlspecialchars($this->poll->title); ?>
 </h3>
 
 <table class="pollstableborder"><?php JPlugin::loadLanguage( 'tpl_beez' ); ?>

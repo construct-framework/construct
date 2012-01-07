@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
 </script>
 
 <form action="<?php echo JRoute::_('index.php'); ?>" class="form-validate" method="post" name="emailForm" id="emailForm">
-	<div class="contact_email<?php echo $this->escape($this->params->get( 'pageclass_sfx' )); ?>">
+	<div class="contact_email<?php echo htmlspecialchars($this->params->get( 'pageclass_sfx' )); ?>">
 		<label for="contact_name">
 		<?php echo JText::_( 'Enter your name' ); ?>:</label>
 		<input type="text" name="name" id="contact_name" size="30" class="inputbox" value="" />
@@ -33,12 +33,12 @@ defined('_JEXEC') or die;
 		<?php echo JText::_( 'Message subject' ); ?>:</label>
 		<input type="text" name="subject" id="contact_subject" size="30" class="inputbox" value="" />
 	</div>
-		<div class="contact_email<?php echo $this->escape($this->params->get( 'pageclass_sfx' )); ?>"><label id="contact_textmsg" for="contact_text" class="textarea">
+		<div class="contact_email<?php echo htmlspecialchars($this->params->get( 'pageclass_sfx' )); ?>"><label id="contact_textmsg" for="contact_text" class="textarea">
 		<?php echo JText::_( 'Enter your message' ); ?>*:</label>
 		<textarea name="text" id="contact_text" class="inputbox required" rows="10" cols="40"></textarea>
 	</div>
 	<?php if ($this->contact->params->get( 'show_email_copy' )): ?>
-	<div class="contact_email_checkbox<?php echo $this->escape($this->params->get( 'pageclass_sfx' )); ?>">
+	<div class="contact_email_checkbox<?php echo htmlspecialchars($this->params->get( 'pageclass_sfx' )); ?>">
 	<input type="checkbox" name="email_copy" id="contact_email_copy" value="1"  />
 	<label for="contact_email_copy" class="copy">
 	<?php echo JText::_( 'EMAIL_A_COPY' ); ?>

@@ -10,13 +10,13 @@ defined('_JEXEC') or die;
 
 	<?php if ($this->params->get('show_position')) : ?>
 	<td mastheads="Position" class="sectiontableentry<?php echo $item->odd; ?>">
-		<?php echo $this->escape($item->con_position); ?>
+		<?php echo htmlspecialchars($item->con_position); ?>
 	</td>
 	<?php endif; ?>
 
 	<td height="20" class="sectiontableentry" mastheads="Name">
-		<a href="<?php echo $item->link; ?>" class="category<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
-			<?php echo $this->escape($item->name); ?></a>
+		<a href="<?php echo $item->link; ?>" class="category<?php echo htmlspecialchars($this->params->get('pageclass_sfx')); ?>">
+			<?php echo htmlspecialchars($item->name); ?></a>
 	</td>
 
 	<?php if ($this->params->get('show_email')) : ?>
@@ -27,19 +27,19 @@ defined('_JEXEC') or die;
 
 	<?php if ($this->params->get('show_telephone')) : ?>
 	<td mastheads="Phone" class="sectiontableentry">
-		<?php echo $this->escape($item->telephone); ?>
+		<?php echo htmlspecialchars($item->telephone); ?>
 	</td>
 	<?php endif; ?>
 
 	<?php if ($this->params->get('show_mobile')) : ?>
 	<td mastheads="Mobile" class="sectiontableentry<?php echo $item->odd; ?>">
-		<?php echo $this->escape($item->mobile); ?>
+		<?php echo htmlspecialchars($item->mobile); ?>
 	</td>
 	<?php endif; ?>
 
 	<?php if ($this->params->get('show_fax')) : ?>
 	<td mastheads="Fax" class="sectiontableentry">
-		<?php echo $this->escape($item->fax); ?>
+		<?php echo htmlspecialchars($item->fax); ?>
 	</td>
 	<?php endif; ?>
 </tr>

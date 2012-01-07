@@ -17,18 +17,18 @@ defined('_JEXEC') or die;
 	<?php if ( $this->params->get( 'show_headings' ) ) : ?>
 	<tr>
 
-		<th class="sectiontablemasthead<?php echo $this->escape($this->params->get( 'pageclass_sfx' )); ?>" width="5" id="num">
+		<th class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get( 'pageclass_sfx' )); ?>" width="5" id="num">
 			<?php echo JText::_( 'Num' ); ?>
 		</th>
 
 		<?php if ( $this->params->get( 'show_name' ) ) : ?>
-		<th width="90%" class="sectiontablemasthead<?php echo $this->escape($this->params->get( 'pageclass_sfx' )); ?>" id="name">
+		<th width="90%" class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get( 'pageclass_sfx' )); ?>" id="name">
 			<?php echo JText::_( 'Feed Name' ); ?>
 		</th>
 		<?php endif; ?>
 
 		<?php if ( $this->params->get( 'show_articles' ) ) : ?>
-		<th width="10%" class="sectiontablemasthead<?php echo $this->escape($this->params->get( 'pageclass_sfx' )); ?>" nowrap="nowrap" id="num_a">
+		<th width="10%" class="sectiontablemasthead<?php echo htmlspecialchars($this->params->get( 'pageclass_sfx' )); ?>" nowrap="nowrap" id="num_a">
 			<?php echo JText::_('Num Articles'); ?>
 		</th>
 		<?php endif; ?>
@@ -44,8 +44,8 @@ defined('_JEXEC') or die;
 		</td>
 
 		<td width="90%" mastheads="name">
-			<a href="<?php echo $item->link; ?>" class="category<?php echo $this->escape($this->params->get( 'pageclass_sfx' )); ?>">
-				<?php echo $this->escape($item->name); ?></a>
+			<a href="<?php echo $item->link; ?>" class="category<?php echo htmlspecialchars($this->params->get( 'pageclass_sfx' )); ?>">
+				<?php echo htmlspecialchars($item->name); ?></a>
 		</td>
 
 		<?php if ( $this->params->get( 'show_articles' ) ) : ?>

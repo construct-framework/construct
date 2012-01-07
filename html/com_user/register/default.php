@@ -2,8 +2,8 @@
 defined('_JEXEC') or die;
 ?>
 <?php if($this->params->get('show_page_title',1)) : ?>
-<h2 class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')) ?>">
-	<?php echo $this->escape($this->params->get('page_title')) ?>
+<h2 class="componentheading<?php echo htmlspecialchars($this->params->get('pageclass_sfx')) ?>">
+	<?php echo htmlspecialchars($this->params->get('page_title')) ?>
 </h2>
 <?php endif; ?>
 
@@ -21,15 +21,15 @@ defined('_JEXEC') or die;
 		<p><?php echo JText::_('REGISTER_REQUIRED'); ?></p>
 		<div class="name">
 			<label id="namemsg" for="name"><?php echo JText::_('Name'); ?>: *</label>
-			<input type="text" name="name" id="name" value="<?php echo $this->escape($this->user->get('name')); ?>" class="inputbox validate required none namemsg" maxlength="50" />
+			<input type="text" name="name" id="name" value="<?php echo htmlspecialchars($this->user->get('name')); ?>" class="inputbox validate required none namemsg" maxlength="50" />
 		</div>
 		<div class="user">
 			<label id="usernamemsg" for="username"><?php echo JText::_('Username'); ?>: *</label>
-			<input type="text" id="username" name="username"  value="<?php echo $this->escape($this->user->get('username')); ?>" class="inputbox validate required username usernamemsg" maxlength="25" />
+			<input type="text" id="username" name="username"  value="<?php echo htmlspecialchars($this->user->get('username')); ?>" class="inputbox validate required username usernamemsg" maxlength="25" />
 		</div>
 		<div class="email">
 			<label id="emailmsg" for="email"><?php echo JText::_('Email'); ?>: *</label>
-			<input type="text" id="email" name="email"  value="<?php echo $this->escape($this->user->get('email')); ?>" class="inputbox validate required email emailmsg" maxlength="100" />
+			<input type="text" id="email" name="email"  value="<?php echo htmlspecialchars($this->user->get('email')); ?>" class="inputbox validate required email emailmsg" maxlength="100" />
 		</div>
 	</fieldset>
 	<fieldset>

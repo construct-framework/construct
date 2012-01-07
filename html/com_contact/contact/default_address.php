@@ -26,19 +26,19 @@ if (($this->contact->params->get('address_check') > 0) && ($this->contact->addre
 	endif;
 
 	if ($this->contact->suburb && $this->contact->params->get('show_suburb')) :
-		echo $this->escape($this->contact->suburb).'<br />';
+		echo htmlspecialchars($this->contact->suburb).'<br />';
 	endif;
 
 	if ($this->contact->state && $this->contact->params->get('show_state')) :
-		echo $this->escape($this->contact->state).'<br />';
+		echo htmlspecialchars($this->contact->state).'<br />';
 	endif;
 
 	if ($this->contact->country && $this->contact->params->get('show_country')) :
-		echo $this->escape($this->contact->country).'<br />';
+		echo htmlspecialchars($this->contact->country).'<br />';
 	endif;
 
 	if ($this->contact->postcode && $this->contact->params->get('show_postcode')) :
-		echo $this->escape($this->contact->postcode).'<br />';
+		echo htmlspecialchars($this->contact->postcode).'<br />';
 	endif;
 
 endif;
