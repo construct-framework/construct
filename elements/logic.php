@@ -344,7 +344,7 @@ $mobileLayoutOverride->includeFile[]		= $template.'/layouts/mobile.php';
 #---------------------------- Head Elements --------------------------------#
 
 // Custom tags
-$doc->addCustomTag('<meta name="copyright" content="'.$app->getCfg('sitename').'" />');
+$doc->addCustomTag('<meta name="copyright" content="'.htmlspecialchars($app->getCfg('sitename')).'" />');
 
 // Transparent favicon
 $doc->addFavicon($template.'/favicon.png','image/png','icon');
