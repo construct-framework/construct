@@ -2,7 +2,7 @@
 /**
 * @package		Template Framework for Joomla! 1.6+
 * @author		Matt Thomas http://construct-framework.com | http://betweenbrain.com
-* @copyright	Copyright (C) 2009 - 2011 Matt Thomas. All rights reserved.
+* @copyright	Copyright (C) 2009 - 2012 Matt Thomas. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
 */
 $app = JFactory::getApplication();
