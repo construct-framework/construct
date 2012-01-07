@@ -2,13 +2,13 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="1.6" type="template" client="site" method="upgrade">
 	<name>je-construct-pro</name>
-	<creationDate>December 14th, 2011</creationDate>
+	<creationDate>January 7th, 2012</creationDate>
 	<author>Matt Thomas</author>
 	<authorEmail>support@construct-framework.com</authorEmail>
 	<authorUrl>http://construct-framework.com</authorUrl>
 	<copyright>Copyright (C) 2009 - 2012 Matt Thomas. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>1.6.706</version>
+	<version>2.5.708</version>
 	<description>TPL_JE_CONSTRUCT_PRO_DESCRIPTION</description>
 	<files>
 		<filename>css/article/index.html</filename>
@@ -26,11 +26,11 @@
 		<filename>css/screen.css</filename>
 		<filename>css/wireframe.css</filename>
 		<filename>elements/googlewebfont.php</filename>
-		<filename>elements/helper.php</filename>			
+		<filename>elements/helper.php</filename>
 		<filename>elements/index.html</filename>
 		<filename>elements/jqueryversion.php</filename>
-		<filename>elements/logic.php</filename>					
-		<filename>elements/mdetect.php</filename>			
+		<filename>elements/logic.php</filename>
+		<filename>elements/mdetect.php</filename>
 		<filename>elements/upgradecheck.php</filename>
 		<filename>html/modules.php</filename>
 		<filename>html/pagination.php</filename>
@@ -40,7 +40,7 @@
 		<filename>html/mod_login/index.html</filename>
 		<filename>html/mod_login/default.php</filename>
 		<filename>html/mod_menu/index.html</filename>
-		<filename>html/mod_menu/default.php</filename>		
+		<filename>html/mod_menu/default.php</filename>
 		<filename>images/index.html</filename>
 		<filename>images/editor-buttons/index.html</filename>
 		<filename>images/editor-buttons/j_button2_blank.png</filename>
@@ -66,52 +66,52 @@
         <filename>index.html</filename>
         <filename>index.php</filename>
 		<filename>mobile.php</filename>
-		<filename>mobile-offline.php</filename>			
+		<filename>mobile-offline.php</filename>
 		<filename>modal.php</filename>
 		<filename>offline.php</filename>
 		<filename>template_thumbnail.png</filename>
 		<filename>templateDetails.xml</filename>
 	</files>
-	
+
 	<languages>
 		<language tag="en-GB">language/en-GB/en-GB.tpl_je-construct-pro.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.tpl_je-construct-pro.sys.ini</language>
 	</languages>
-	
+
 	<positions>
 		<position>analytics</position>
 		<position>breadcrumbs</position>
-		<position>column-1</position>		
+		<position>column-1</position>
 		<position>column-2</position>
 		<position>column-3</position>
-		<position>column-4</position>	
+		<position>column-4</position>
 		<position>content-above-1</position>
 		<position>content-above-2</position>
 		<position>content-above-3</position>
-		<position>content-above-4</position>			
-		<position>content-above-5</position>		
-		<position>content-above-6</position>		
+		<position>content-above-4</position>
+		<position>content-above-5</position>
+		<position>content-above-6</position>
 		<position>content-below-1</position>
 		<position>content-below-2</position>
 		<position>content-below-3</position>
 		<position>content-below-4</position>
 		<position>content-below-5</position>
-		<position>content-below-6</position>		
-		<position>debug</position>		
-		<position>footer</position>							
+		<position>content-below-6</position>
+		<position>debug</position>
+		<position>footer</position>
 		<position>footer-above-1</position>
 		<position>footer-above-2</position>
 		<position>footer-above-3</position>
-		<position>footer-above-4</position>		
+		<position>footer-above-4</position>
 		<position>footer-above-5</position>
-		<position>footer-above-6</position>	
-		<position>header</position>					
+		<position>footer-above-6</position>
+		<position>header</position>
 		<position>header-above-1</position>
 		<position>header-above-2</position>
 		<position>header-above-3</position>
 		<position>header-above-4</position>
 		<position>header-above-5</position>
-		<position>header-above-6</position>		
+		<position>header-above-6</position>
 		<position>header-below-1</position>
 		<position>header-below-2</position>
 		<position>header-below-3</position>
@@ -124,14 +124,14 @@
 		<position>nav-below-3</position>
 		<position>nav-below-4</position>
 		<position>nav-below-5</position>
-		<position>nav-below-6</position>		
+		<position>nav-below-6</position>
 		<position>offline</position>
-		<position>syndicate</position>		
+		<position>syndicate</position>
 </positions>
-	
+
 	<config>
 		<fields name="params">
-			<fieldset name="general" addfieldpath="/templates/je-construct-pro/elements" >									
+			<fieldset name="general" addfieldpath="/templates/je-construct-pro/elements" >
 				<field name="enableSwitcher" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_ENABLE_SWITCHER_LABEL" description="TPL_JE_CONSTRUCT_PRO_ENABLE_SWITCHER_DESC">
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
@@ -143,11 +143,11 @@
 				<field name="inheritLayout" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_INHERIT_CAT_LAYOUT_LABEL" description="TPL_JE_CONSTRUCT_PRO_INHERIT_CAT_LAYOUT_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
-				</field>				
+				</field>
 				<field name="inheritStyle" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_INHERIT_CAT_STYLE_LABEL" description="TPL_JE_CONSTRUCT_PRO_INHERIT_CAT_STYLE_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
-				</field>		
+				</field>
 				<field name="customStyleSheet" type="filelist" default="example.css" label="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_LABEL" directory="templates/je-construct-pro/css" filter="\.css" exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css" description="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_DESC" />
 				<field name="setGeneratorTag" type="text" default="Construct Framework | http://Construct-Framework.com" label="Generator Meta Tag" description="Customize the generator meta tag output by your template." size="56" />
 			</fieldset>
@@ -155,15 +155,15 @@
 				<field name="IECSS3" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_IE_CSS3_LABEL" description="TPL_JE_CONSTRUCT_PRO_IE_CSS3_DESC">
 		        	<option value="1">Yes</option>
 		        	<option value="0">No</option>
-		    	</field>			
+		    	</field>
 				<field name="IECSS3Targets" type="textarea" default=".drop-shadow, .outline, .rounded, ul.menu li" label="TPL_JE_CONSTRUCT_PRO_IE_CSS3_TARGETS_LABEL" description="TPL_JE_CONSTRUCT_PRO_IE_CSS3_TARGETS_DESC" rows="5" cols="50" />
 				<field name="IE6TransFix" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_IE6_TRANS_FIX_LABEL" description="TPL_JE_CONSTRUCT_PRO_IE6_TRANS_FIX_DESC">
 		        	<option value="1">Yes</option>
 		        	<option value="0">No</option>
-		    	</field>		
+		    	</field>
 				<field name="IE6TransFixTargets" type="textarea" default="h1 a" label="TPL_JE_CONSTRUCT_PRO_IE6_TRANS_FIX_TARGETS_LABEL" description="TPL_JE_CONSTRUCT_PRO_IE6_TRANS_FIX_TARGETS_DESC" rows="5" cols="50" />
-			</fieldset>			
-			<fieldset name="javascript">									
+			</fieldset>
+			<fieldset name="javascript">
 				<field name="loadMoo" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_LOAD_MOO_LABEL" description="TPL_JE_CONSTRUCT_PRO_LOAD_MOO_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
@@ -174,8 +174,8 @@
 				</field>
 				<field name="loadjQuery" type="jqueryversion" default="" label="TPL_JE_CONSTRUCT_PRO_LOAD_JQUERY_LABEL" description="TPL_JE_CONSTRUCT_PRO_LOAD_JQUERY_DESC" />
 			</fieldset>
-			<fieldset name="Layout">				
-				<field name="siteWidth" type="text" default="80.5" label="TPL_JE_CONSTRUCT_PRO_SITE_WIDTH_LABEL" description="TPL_JE_CONSTRUCT_PRO_SITE_WIDTH_DESC" size="10" />	
+			<fieldset name="Layout">
+				<field name="siteWidth" type="text" default="80.5" label="TPL_JE_CONSTRUCT_PRO_SITE_WIDTH_LABEL" description="TPL_JE_CONSTRUCT_PRO_SITE_WIDTH_DESC" size="10" />
 				<field name="siteWidthType" type="radio" default="max-width" label="TPL_JE_CONSTRUCT_PRO_SITE_WIDTH_TYPE_LABEL" description="TPL_JE_CONSTRUCT_PRO_SITE_WIDTH_TYPE_DESC">
 					<option value="max-width">Fluid Max Width</option>
 					<option value="width">Fixed Width</option>
@@ -184,11 +184,11 @@
 					<option value="em">Em</option>
 					<option value="px">Pixel</option>
 					<option value="%">Percent</option>
-				</field>	
+				</field>
 				<field name="fluidMedia" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_FLUID_MEDIA_LABEL" description="TPL_JE_CONSTRUCT_PRO_FLUID_MEDIA_DESC">
 				  <option value="1">Yes</option>
 				  <option value="0">No</option>
-				</field>				
+				</field>
 				<field name="fullWidth" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_FULL_WIDTH_LABEL" description="TPL_JE_CONSTRUCT_PRO_FULL_WIDTH_DESC">
 				  <option value="1">Yes</option>
 				  <option value="0">No</option>
@@ -207,7 +207,7 @@
 				<field name="detectTablets" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_DETECT_TABLETS_LABEL" description="TPL_JE_CONSTRUCT_PRO_DETECT_TABLETS_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
-				</field>				
+				</field>
 				<field name="mNavPosition" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_MNAVPOSITION_LABEL" description="TPL_JE_CONSTRUCT_PRO_MNAVPOSITION_DESC">
 					<option value="1">Before Content</option>
 					<option value="0">After Content</option>
@@ -227,7 +227,7 @@
 					<option value="c">Gray</option>
 					<option value="d">Dark Gray</option>
 					<option value="e">Accent</option>
-				</field>	
+				</field>
 				<field name="mNavDataTheme" type="list" default="" label="TPL_JE_CONSTRUCT_PRO_MNAVDATATHEME_LABEL" description="TPL_JE_CONSTRUCT_PRO_MNAVDATATHEME_DESC">
 					<option value="">- None Selected -</option>
 					<option value="a">Black</option>
@@ -235,7 +235,7 @@
 					<option value="c">Gray</option>
 					<option value="d">Dark Gray</option>
 					<option value="e">Accent</option>
-				</field>	
+				</field>
 				<field name="mContentDataTheme" type="list" default="" label="TPL_JE_CONSTRUCT_PRO_MCONTENTDATATHEME_LABEL" description="TPL_JE_CONSTRUCT_PRO_MCONTENTDATATHEME_DESC">
 					<option value="">- None Selected -</option>
 					<option value="a">Black</option>
@@ -243,7 +243,7 @@
 					<option value="c">Gray</option>
 					<option value="d">Dark Gray</option>
 					<option value="e">Accent</option>
-				</field>																	
+				</field>
 				<field name="mFooterDataTheme" type="list" default="" label="TPL_JE_CONSTRUCT_PRO_MFOOTERDATATHEME_LABEL" description="TPL_JE_CONSTRUCT_PRO_MFOOTERDATATHEME_DESC">
 					<option value="">- None Selected -</option>
 					<option value="a">Black</option>
@@ -251,24 +251,25 @@
 					<option value="c">Gray</option>
 					<option value="d">Dark Gray</option>
 					<option value="e">Accent</option>
-				</field>					
-			</fieldset>							
-			<fieldset name="typography" >		
+				</field>
+			</fieldset>
+			<fieldset name="typography" >
 				<field name="googleWebFont" type="googlewebfont" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC" />
 				<field name="googleWebFontTargets" type="text" default="h1,h2,h3,h4,h5,h6" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_DESC" size="50" />
-				<field name="googleWebFontSize" type="text" default="85%" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_DESC" size="5" />					
-				<field type="spacer" default=" " />				
-				<field name="googleWebFont2" type="googlewebfont" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC" />										
+				<field name="googleWebFontSize" type="text" default="85%" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_DESC" size="5" />
+				<field type="spacer" default=" " />
+				<field name="googleWebFont2" type="googlewebfont" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC" />
 				<field name="googleWebFontTargets2" type="text" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_DESC" size="50"/>
-				<field name="googleWebFontSize2" type="text" default="2.1em" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_DESC" size="5" />					
-				<field type="spacer" default=" " />				
-				<field name="googleWebFont3" type="googlewebfont" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC" />					
+				<field name="googleWebFontSize2" type="text" default="2.1em" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_DESC" size="5" />
+				<field type="spacer" default=" " />
+				<field name="googleWebFont3" type="googlewebfont" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_DESC" />
 				<field name="googleWebFontTargets3" type="text" default="" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_TARGETS_DESC" size="50" />
-				<field name="googleWebFontSize3" type="text" default="20px" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_DESC" size="5" />									
-			</fieldset>			
+				<field name="googleWebFontSize3" type="text" default="20px" label="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_LABEL" description="TPL_JE_CONSTRUCT_PRO_GOOGLE_WEB_FONT_SIZE_DESC" size="5" />
+			</fieldset>
 			<fieldset name="version_check">
 				<field label="TPL_JE_CONSTRUCT_PRO_VERSION_CHECK_LABEL" type="upgradecheck" />
-			</fieldset>	
+			</fieldset>
 		</fields>
-	</config>	
+	</config>
 </extension>
+
