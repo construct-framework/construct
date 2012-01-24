@@ -77,12 +77,12 @@ $this->setGenerator($setGeneratorTag);
 
 // Enable Mootols
 if ( $loadMoo ) {
-	JHTML::_('behavior.framework', true);
+	JHtml::_('behavior.framework', true);
 }
 
 // Enable modal pop-ups
 if ( $loadMoo && $loadModal ) {	
-	JHTML::_('behavior.modal');
+	JHtml::_('behavior.modal');
 }
 
 // Remove MooTools if set to no.
