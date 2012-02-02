@@ -27,8 +27,13 @@ if(JFile::exists($mdetectFile)) {
 	$isTablet			= $uagent_obj->DetectTierTablet();
 }
 
+// Check if mobile device has opted for desktop version
+if(isset($_GET['viewDesktop'])){
+	$_SESSION['viewDesktop']=$_GET['viewDesktop'];
+}
+
 // Check if mobile device detection is turned on and test if visitor is a mobile device. If so, load mobile version
-if (( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) {
+if ((( $mdetect && $isMobile ) || ( $mdetect && $detectTablets && $isTablet )) && (!isset($_SESSION['viewDesktop']))) {
 	if(JFile::exists($mTemplate)) {
 	 	include_once $mTemplate;
 	}
