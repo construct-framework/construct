@@ -101,11 +101,7 @@ body.times{font-family:"Times New Roman", Times, serif;}
 body.trebuchet{font-family:"Trebuchet MS", Helvetica, sans-serif;}
 body.verdana{font-family:Verdana, Geneva, sans-serif;}
 
-a, 
-a:link, 
-a:visited,
-a:focus,
-a:active{text-decoration:none;}
+a{text-decoration:none;}
 a:hover{text-decoration:underline;}
 b{font-weight:bold}
 blockquote{border-left:10px solid #ddd;margin-left:10px;}
@@ -311,9 +307,7 @@ td.sectiontableheader:last-child,
 #header{margin:0;text-align:left}
 #login label,
 #josForm label{display:block;float:left;width:14em}
-#logo a:link,
-#logo a:visited,
-#logo a:hover{background:url(../images/logo.png) 0 0 no-repeat;display:block;width:300px;height:103px;text-decoration:none;text-indent:-9000em}
+#logo a{background:url(../images/logo.png) 0 0 no-repeat;display:block;width:300px;height:103px;text-decoration:none;text-indent:-9000em}
 #logo a:focus{outline:none;}
 #mod_login_password,
 #mod_login_username{width:80%;}
