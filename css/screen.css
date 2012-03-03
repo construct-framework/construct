@@ -107,11 +107,7 @@ body.times{font-family:"Times New Roman", Times, serif;}
 body.trebuchet{font-family:"Trebuchet MS", Helvetica, sans-serif;}
 body.verdana{font-family:Verdana, Geneva, sans-serif;}
 
-a, 
-a:link, 
-a:visited,
-a:focus,
-a:active{text-decoration:none;}
+a{text-decoration:none;}
 a:hover{text-decoration:underline;}
 b{font-weight:bold}
 blockquote{border-left:10px solid #ddd;margin-left:10px;}
@@ -284,11 +280,8 @@ ul.menu-horizontal li{float:left} /* Use -horizontal menu class suffix */
 #form-login ul li {margin-left:0;}
 #header{margin:0;text-align:left}
 #logo {float:left;margin:0;}
-#logo a:link,
-#logo a:visited,
-#logo a:hover{background:url(../images/logo.png) 0 0 no-repeat;display:block;width:300px;height:103px;text-decoration:none;text-indent:-9000em}
-#logo a:focus{outline:none;}
-#siteinfo-legal{text-align:left;width:500px;margin:0 auto}	
+#logo a{background:url(../images/logo.png) 0 0 no-repeat;display:block;width:300px;height:103px;text-decoration:none;text-indent:-9000em}
+#logo a:focus{outline:none;}#siteinfo-legal{text-align:left;width:500px;margin:0 auto}
 #style-switch{list-style-type:none;float:right;clear:right}
 #style-switch li{float:left;margin:0;padding:2px 5px 3px;}
 #syndicate {position:absolute;left:20px;}
