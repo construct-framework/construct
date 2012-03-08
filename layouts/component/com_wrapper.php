@@ -25,7 +25,7 @@ $baseUrl 				= JURI::base();
 
 <body>
 	<div id="wrapper-header">
-		Return To <a href="<?php echo $baseurl; ?>/" title="<?php echo $app->getCfg('sitename');?>"><?php echo $app->getCfg('sitename');?></a>
+		Return To <a href="<?php echo $baseUrl; ?>/" title="<?php echo $app->getCfg('sitename');?>"><?php echo $app->getCfg('sitename');?></a>
 	</div>
 	<jdoc:include type="component" />
 </body>

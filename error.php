@@ -403,7 +403,7 @@ echo "\n"; ?>
 	
 	<div id="footer" class="clear clearfix">
 		<div class="gutter clearfix">
-			<a id="to-page-top" href="<?php echo $baseurl; ?>index.php#page-top">Back to Top</a>
+			<a id="to-page-top" href="<?php echo $baseUrl; ?>index.php#page-top">Back to Top</a>
 			<?php echo $renderer->render('syndicate', $jexhtml, null);  ?>
 			<?php echo $renderer->render('footer', $jexhtml, null);  ?>
 		</div><!--end gutter -->
