@@ -8,8 +8,6 @@
 
 // To enable use of site configuration
 $app 					= JFactory::getApplication();
-// Get the base URL of the website
-$baseUrl 				= JURI::base();
 
 // Check for layout override
 if(JFile::exists($template.'/layouts/mobile-offline.php')) {
@@ -22,7 +20,7 @@ else {
 <html class="no-js">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" href="<?php echo $baseUrl.'templates/'.$this->template; ?>/css/mobile.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php echo $this->baseurl . '/templates/' . $this->template ?>/css/mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		<script>(function($) {$(document).bind("mobileinit", function() {$.mobile.ajaxEnabled = false;});})(jQuery);</script>
@@ -31,24 +29,24 @@ else {
 	</head>
 
 <body class="noscript">	
-	<div data-role="page" data-theme="<?php echo $mPageDataTheme; ?>">
-		<div id="header" data-role="header" data-theme="<?php echo $mHeaderDataTheme; ?>">
-			<h1><a href="<?php echo $baseUrl; ?>/" title="<?php echo $app->getCfg('sitename'); ?>"><?php echo $app->getCfg('sitename'); ?></a></h1>
+	<div data-role="page" data-theme="<?php echo $mPageDataTheme ?>">
+		<div id="header" data-role="header" data-theme="<?php echo $mHeaderDataTheme ?>">
+			<h1><a href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo $app->getCfg('sitename') ?></a></h1>
 		</div>
 	
 		<?php if ( $mNavPosition && ($this->countModules('nav'))) : ?>
 			<div id="nav">
 				<jdoc:include type="modules" name="nav" style="raw" />
 			</div><!-- end nav-->
-		<?php endif; ?>
+		<?php endif ?>
 		
-		<div id="content-container" data-role="content" data-theme="<?php echo $mContentDataTheme; ?>">	  
+		<div id="content-container" data-role="content" data-theme="<?php echo $mContentDataTheme ?>">
 	
 			<?php if ($this->getBuffer('message')) : ?>
 				<jdoc:include type="message" />
-			<?php endif; ?>
+			<?php endif ?>
 			<p>
-				<?php echo $app->getCfg('offline_message'); ?>
+				<?php echo $app->getCfg('offline_message') ?>
 			</p>
 			<form action="index.php" method="post" name="login" id="form-login">
 			<fieldset class="input">
@@ -68,7 +66,7 @@ else {
 				<input type="hidden" name="option" value="com_users" />
 				<input type="hidden" name="task" value="user.login" />
 				<input type="hidden" name="return" value="<?php echo base64_encode(JURI::base()) ?>" />
-				<?php echo JHtml::_('form.token'); ?>
+				<?php echo JHtml::_('form.token') ?>
 			</fieldset>
 			</form>						
 			
@@ -78,13 +76,13 @@ else {
 			<div id="nav">
 				<jdoc:include type="modules" name="nav" style="raw" />
 			</div><!-- end nav-->
-		<?php endif; ?>		
+		<?php endif ?>
 									
-		<div id="footer" data-role="footer" data-theme="<?php echo $mFooterDataTheme; ?>">
-			<a class="view-desktop" href="<?php echo JURI::current(); ?>?viewDesktop=true">View Desktop Version</a>
+		<div id="footer" data-role="footer" data-theme="<?php echo $mFooterDataTheme ?>">
+			<a class="view-desktop" href="<?php echo JURI::current() ?>?viewDesktop=true">View Desktop Version</a>
 			<?php if ($this->countModules('footer')) : ?>
 				<jdoc:include type="modules" name="footer" style="xhtml" />
-			<?php endif; ?>
+			<?php endif ?>
 		</div>
 	</div>
 	  
