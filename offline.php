@@ -40,12 +40,12 @@ else {
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language ?>" lang="<?php echo $this->language ?>" dir="<?php echo $this->direction ?>" >
 <head>
 <jdoc:include type="head" />
 </head>
 
-<body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId; ?>">
+<body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId ?>">
 
 	<div id="footer-push">
 			<a id="page-top" name="page-top"></a>
@@ -55,72 +55,72 @@ else {
 					<div id="header-above-1" class="<?php echo $headerAboveClass ?>">
 						
 					</div><!-- end header-above-1 -->								
-				<?php endif; ?>		   
+				<?php endif ?>
 				<?php if ($this->countModules('header-above-2')) : ?>
 					<div id="header-above-2" class="<?php echo $headerAboveClass ?>">
 						
 					</div><!-- end header-above-2 -->								
-				<?php endif; ?>				
+				<?php endif ?>
 				<?php if ($this->countModules('header-above-3')) : ?>
 					<div id="header-above-3" class="<?php echo $headerAboveClass ?>">
 						
 					</div><!-- end header-above-3 -->								
-				<?php endif; ?>				
+				<?php endif ?>
 				<?php if ($this->countModules('header-above-4')) : ?>
 					<div id="header-above-4" class="<?php echo $headerAboveClass ?>">
 						
 					</div><!-- end header-above-4 -->								
-				<?php endif; ?>
+				<?php endif ?>
 				<?php if ($this->countModules('header-above-5')) : ?>
 					<div id="header-above-5" class="<?php echo $headerAboveClass ?>">
 						
 					</div><!-- end header-above-5 -->								
-				<?php endif; ?>	
+				<?php endif ?>
 				<?php if ($this->countModules('header-above-6')) : ?>
 					<div id="header-above-6" class="<?php echo $headerAboveClass ?>">
 						
 					</div><!-- end header-above-6 -->								
-				<?php endif; ?>									
+				<?php endif ?>
 			</div><!-- end header-above -->
-		<?php endif; ?>	
+		<?php endif ?>
 	
 		<div id="header" class="clear clearfix">
 			<div class="gutter clearfix">
 
 				<div class="date-container">
-					<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').','; ?></span>
-					<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B'); ?></span>
-					<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').','; ?></span>
-					<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y'); ?></span>
+					<span class="date-weekday"><?php	$now = &JFactory::getDate(); echo $now->toFormat('%A').',' ?></span>
+					<span class="date-month"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%B') ?></span>
+					<span class="date-day"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%d').',' ?></span>
+					<span class="date-year"><?php 		$now = &JFactory::getDate(); echo $now->toFormat('%Y') ?></span>
 				</div>
 				
 			    <?php if ($showDiagnostics) : ?>
 				    <ul id="diagnostics">
-    				    <li>column layout <?php echo $columnLayout; ?></li>
-					    <li>component <?php echo $currentComponent; ?></li>	
-					    <?php if($view)			echo '<li>'.$view.' view</li>'; ?>						
-					    <?php if($articleId)	echo '<li>article '.$articleId.'</li>'; ?>
-					    <?php if($itemId)		echo '<li>item '.$itemId.'</li>'; ?>
-					    <?php if($sectionId) 	echo '<li>section '.$sectionId.'</li>'; ?>
-					    <?php if($catId)   		echo '<li>category '.$catId.'</li>'; ?>
+    				    <li>column layout <?php echo $columnLayout ?></li>
+					    <li>component <?php echo $currentComponent ?></li>
+					    <?php if($view)			echo '<li>'.$view.' view</li>' ?>
+					    <?php if($articleId)	echo '<li>article '.$articleId.'</li>' ?>
+					    <?php if($itemId)		echo '<li>item '.$itemId.'</li>' ?>
+					    <?php if($sectionId) 	echo '<li>section '.$sectionId.'</li>' ?>
+					    <?php if($catId)   		echo '<li>category '.$catId.'</li>' ?>
 				    </ul>
-			    <?php endif; ?>	
+			    <?php endif ?>
 				
 				<h1 id="logo"><a href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename'));?>"><?php echo htmlspecialchars($app->getCfg('sitename'));?></a></h1>
 				
 				<?php if ($this->countModules('header')) : ?>
 					<jdoc:include type="modules" name="header" style="jexhtml" />	
-				<?php endif; ?>						
+				<?php endif ?>
 										
 				<ul id="access">
 					<li>Jump to:</li>
 					<li><a href="<?php $url->setFragment('content'); echo $url->toString();?>" class="to-content">Content</a></li>					
 					<?php if ($this->countModules('nav')) : ?>
 						<li><a href="<?php $url->setFragment('nav'); echo $url->toString();?>" class="to-nav">Navigation</a></li>
-					<?php endif; ?>					
+					<?php endif ?>
 					<?php if ($contentBelowCount) : ?>
 						<li><a href="<?php $url->setFragment('additional'); echo $url->toString();?>" class="to-additional">Additional Information</a></li>
-					<?php endif; ?>
+					<?php endif ?>
 				</ul>				
 				
 				<?php if ($enableSwitcher) : ?>
@@ -128,7 +128,7 @@ else {
 						<li class="narrow"><a href="#" onclick="setActiveStyleSheet('diagnostic'); return false;" title="Diagnostic">Diagnostic Mode</a></li>
 						<li class="wide"><a href="#" onclick="setActiveStyleSheet('normal'); return false;" title="Normal">Normal Mode</a></li>
 					</ul>
-				<?php endif; ?>	
+				<?php endif ?>
 
 			</div><!--end gutter -->
 		</div><!-- end header-->
@@ -141,34 +141,34 @@ else {
 						<div id="header-below-1" class="<?php echo $headerBelowClass ?>">
 							
 						</div><!-- end head -->								
-					<?php endif; ?>			   
+					<?php endif ?>
 					<?php if ($this->countModules('header-below-2')) : ?>
 						<div id="header-below-2" class="<?php echo $headerBelowClass ?>">
 							
 						</div><!-- end header-below-2 -->
-					<?php endif; ?>					
+					<?php endif ?>
 					<?php if ($this->countModules('header-below-3')) : ?>
 						<div id="header-below-3" class="<?php echo $headerBelowClass ?>">
 							
 						</div><!-- end header-below-3 -->
-					<?php endif; ?>					
+					<?php endif ?>
 					<?php if ($this->countModules('header-below-4')) : ?>
 						<div id="header-below-4" class="<?php echo $headerBelowClass ?>">
 							
 						</div><!-- end header-below-4 -->
-					<?php endif; ?>					
+					<?php endif ?>
 					<?php if ($this->countModules('header-below-5')) : ?>
 						<div id="header-below-5" class="<?php echo $headerBelowClass ?>">
 							
 						</div><!-- end header-below-5 -->
-					<?php endif; ?>					
+					<?php endif ?>
 					<?php if ($this->countModules('header-below-6')) : ?>
 						<div id="header-below-6" class="<?php echo $headerBelowClass ?>">
 							
 						</div><!-- end header-below-6 -->
-					<?php endif; ?>											
+					<?php endif ?>
 				</div><!-- end header-below -->
-			<?php endif; ?>
+			<?php endif ?>
 		
 			<div id="content-container" class="clear clearfix">    
 
@@ -178,39 +178,39 @@ else {
 							<div id="nav-below-1" class="<?php echo $navBelowClass ?>">
 								
 							</div><!-- end nav-below-1 -->								
-						<?php endif; ?>
+						<?php endif ?>
 				   
 						<?php if ($this->countModules('nav-below-2')) : ?>
 							<div id="nav-below-2" class="<?php echo $navBelowClass ?>">
 								
 							</div><!-- end nav-below-2 -->
-						<?php endif; ?>
+						<?php endif ?>
 						
 						<?php if ($this->countModules('nav-below-3')) : ?>
 							<div id="nav-below-3" class="<?php echo $navBelowClass ?>">
 								
 							</div><!-- end nav-below-3 -->
-						<?php endif; ?>
+						<?php endif ?>
 						
 						<?php if ($this->countModules('nav-below-4')) : ?>
 							<div id="nav-below-4" class="<?php echo $navBelowClass ?>">
 								
 							</div><!-- end nav-below-4 -->
-						<?php endif; ?>
+						<?php endif ?>
 
 						<?php if ($this->countModules('nav-below-5')) : ?>
 							<div id="nav-below-5" class="<?php echo $navBelowClass ?>">
 								
 							</div><!-- end nav-below-5 -->
-						<?php endif; ?>
+						<?php endif ?>
 						
 						<?php if ($this->countModules('nav-below-6')) : ?>
 							<div id="nav-below-6" class="<?php echo $navBelowClass ?>">
 								
 							</div><!-- end nav-below-6 -->
-						<?php endif; ?>								
+						<?php endif ?>
 					</div><!-- end nav-below -->
-				<?php endif; ?>
+				<?php endif ?>
 			
 				<div id="load-first" class="clearfix">
 					<a id="content" name="content"></a>     
@@ -223,54 +223,54 @@ else {
 										<div id="content-above" class="<?php echo $contentAboveClass ?>">
 											
 										</div><!-- end content-above-1 -->								
-									<?php endif; ?>
+									<?php endif ?>
 							
 									<?php if ($this->countModules('content-above-2')) : ?>
 										<div id="content-above-2" class="<?php echo $contentAboveClass ?>">
 											
 										</div><!-- end content-above-2 -->
-									<?php endif; ?>
+									<?php endif ?>
 									
 									<?php if ($this->countModules('content-above-3')) : ?>
 										<div id="content-above-3" class="<?php echo $contentAboveClass ?>">
 											
 										</div><!-- end content-above-3 -->
-									<?php endif; ?>
+									<?php endif ?>
 									
 									<?php if ($this->countModules('content-above-4')) : ?>
 										<div id="content-above-4" class="<?php echo $contentAboveClass ?>">
 											
 										</div><!-- end content-above-4 -->
-									<?php endif; ?>
+									<?php endif ?>
 									
 									<?php if ($this->countModules('content-above-5')) : ?>
 										<div id="content-above-5" class="<?php echo $contentAboveClass ?>">
 											
 										</div><!-- end content-above-5 -->
-									<?php endif; ?>		
+									<?php endif ?>
 									
 									<?php if ($this->countModules('content-above-6')) : ?>
 										<div id="content-above-6" class="<?php echo $contentAboveClass ?>">
 											
 										</div><!-- end content-above-6 -->
-									<?php endif; ?>																				
+									<?php endif ?>
 															
 								</div><!-- end content-above -->
-							<?php endif; ?>
+							<?php endif ?>
 							
 							<div id="offline">
 								<?php if ($this->countModules('offline')) : ?>								
 										<jdoc:include type="modules" name="offline" style="jexhtml" />								
-								<?php endif; ?>	
+								<?php endif ?>
 					  
 								<?php if ($this->getBuffer('message')) : ?>
 									<jdoc:include type="message" />
-								<?php endif; ?>	
+								<?php endif ?>
 																
-								<h3><?php echo $app->getCfg('offline_message'); ?></h3>
+								<h3><?php echo $app->getCfg('offline_message') ?></h3>
 								<?php if(JPluginHelper::isEnabled('authentication', 'openid')) : ?>
-								<?php JHTML::_('script', 'openid.js'); ?>
-								<?php endif; ?>
+								<?php JHTML::_('script', 'openid.js') ?>
+								<?php endif ?>
 									<form action="index.php" method="post" name="login" id="form-login">
 										<fieldset class="input">								
 											<label id="form-login-username" for="username"><?php echo JText::_('Username') ?>
@@ -287,7 +287,7 @@ else {
 										<input type="hidden" name="option" value="com_user" />
 										<input type="hidden" name="task" value="login" />
 										<input type="hidden" name="return" value="<?php echo base64_encode(JURI::base()) ?>" />
-										<?php echo JHTML::_( 'form.token' ); ?>
+										<?php echo JHTML::_( 'form.token' ) ?>
 									</form>
 								</div><!--end offline-->
 								
@@ -297,40 +297,40 @@ else {
 										<div id="content-below-1" class="<?php echo $contentBelowClass ?>">
 											
 										</div><!-- end content-below-1 -->								
-									<?php endif; ?>
+									<?php endif ?>
 						
 									<?php if ($this->countModules('content-below-2')) : ?>
 										<div id="content-below-2" class="<?php echo $contentBelowClass ?>">
 											
 										</div><!-- end content-below-2 -->
-									<?php endif; ?>
+									<?php endif ?>
 									
 									<?php if ($this->countModules('content-below-3')) : ?>
 										<div id="content-below-3" class="<?php echo $contentBelowClass ?>">
 											
 										</div><!-- end content-below-3 -->
-									<?php endif; ?>
+									<?php endif ?>
 									
 									<?php if ($this->countModules('content-below-4')) : ?>
 										<div id="content-below-4" class="<?php echo $contentBelowClass ?>">
 											
 										</div><!-- end content-below-4 -->
-									<?php endif; ?>		
+									<?php endif ?>
 									
 									<?php if ($this->countModules('content-below-5')) : ?>
 										<div id="content-below-5" class="<?php echo $contentBelowClass ?>">
 											
 										</div><!-- end content-below-5 -->
-									<?php endif; ?>	
+									<?php endif ?>
 									
 									<?php if ($this->countModules('content-below-6')) : ?>
 										<div id="content-below-6" class="<?php echo $contentBelowClass ?>">
 											
 										</div><!-- end content-below-6 -->
-									<?php endif; ?>										
+									<?php endif ?>
 																						
 								</div><!-- end content-below -->
-							<?php endif; ?>
+							<?php endif ?>
 						 
 						</div><!--end gutter -->        
 					</div><!-- end content-main -->
@@ -342,15 +342,15 @@ else {
 									<div id="column-1" class="<?php echo $columnGroupAlphaClass ?>">
 										
 									</div><!-- end column-1 -->								
-								<?php endif; ?>			   
+								<?php endif ?>
 								<?php if ($this->countModules('column-2')) : ?>
 									<div id="column-2" class="<?php echo $columnGroupAlphaClass ?>">
 										
 									</div><!-- end column-2 -->
-								<?php endif; ?>	
+								<?php endif ?>
 							</div><!--end gutter -->
 						</div><!-- end column-group-alpha -->
-					<?php endif; ?>
+					<?php endif ?>
 
 				</div><!-- end load-first -->
 		
@@ -361,15 +361,15 @@ else {
 									<div id="column-group-beta-1" class="<?php echo $columnGroupBetaClass ?>">
 										
 									</div><!-- end column-3 -->								
-								<?php endif; ?>			   
+								<?php endif ?>
 								<?php if ($this->countModules('column-4')) : ?>
 									<div id="column-4" class="<?php echo $columnGroupBetaClass ?>">
 										
 									</div><!-- end column-4 -->
-								<?php endif; ?>	
+								<?php endif ?>
 							</div><!--end gutter -->
 						</div><!-- end column-group-beta -->
-					<?php endif; ?>
+					<?php endif ?>
 			
 				<?php if ($footerAboveCount) : ?>
 					<div id="footer-above" class="clearfix">						
@@ -377,34 +377,34 @@ else {
 							<div id="footer-above-1" class="<?php echo $footerAboveClass ?>">
 								
 							</div><!-- end footer-above-1 -->								
-						<?php endif; ?>			   
+						<?php endif ?>
 						<?php if ($this->countModules('footer-above-2')) : ?>
 							<div id="footer-above-2" class="<?php echo $footerAboveClass ?>">
 								
 							</div><!-- end footer-above-2 -->
-						<?php endif; ?>					
+						<?php endif ?>
 						<?php if ($this->countModules('footer-above-3')) : ?>
 							<div id="footer-above-3" class="<?php echo $footerAboveClass ?>">
 								
 							</div><!-- end footer-above-3 -->
-						<?php endif; ?>					
+						<?php endif ?>
 						<?php if ($this->countModules('footer-above-4')) : ?>
 							<div id="footer-above-4" class="<?php echo $footerAboveClass ?>">
 								
 							</div><!-- end footer-above-4 -->
-						<?php endif; ?>					
+						<?php endif ?>
 						<?php if ($this->countModules('footer-above-5')) : ?>
 							<div id="footer-above-5" class="<?php echo $footerAboveClass ?>">
 								
 							</div><!-- end footer-above-5 -->
-						<?php endif; ?>						
+						<?php endif ?>
 						<?php if ($this->countModules('footer-above-6')) : ?>
 							<div id="footer-above-6" class="<?php echo $footerAboveClass ?>">
 								
 							</div><!-- end footer-above-6 -->
-						<?php endif; ?>											
+						<?php endif ?>
 					</div><!-- end footer-above -->
-				<?php endif; ?>
+				<?php endif ?>
 
 			</div><!-- end content-container -->
 		</div><!-- end body-container -->
@@ -419,22 +419,22 @@ else {
 			<div id="syndicate">
 				
 			</div>
-			<?php endif; ?>
+			<?php endif ?>
 
 			<?php if ($this->countModules('footer')) : ?>
 				<jdoc:include type="modules" name="footer" style="jexhtml" />
-			<?php endif; ?>
+			<?php endif ?>
 
 		</div><!--end gutter -->
 	</div><!-- end footer -->
 
 	<?php if ($this->countModules('debug')) : ?>
 		<jdoc:include type="modules" name="debug" style="raw" />
-	<?php endif; ?>
+	<?php endif ?>
 	
 	<?php if ($this->countModules('analytics')) : ?>
 		<jdoc:include type="modules" name="analytics" />
-	<?php endif; ?>	  
+	<?php endif ?>
 	
 	</body>
 </html>
