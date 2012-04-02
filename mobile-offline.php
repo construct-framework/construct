@@ -37,7 +37,7 @@ else {
 		<?php if ( $mNavPosition && ($this->countModules('nav'))) : ?>
 			<div id="nav">
 				<jdoc:include type="modules" name="nav" style="raw" />
-			</div><!-- end nav-->
+			</div>
 		<?php endif ?>
 		
 		<div id="content-container" data-role="content" data-theme="<?php echo $mContentDataTheme ?>">
@@ -68,14 +68,14 @@ else {
 				<input type="hidden" name="return" value="<?php echo base64_encode(JURI::base()) ?>" />
 				<?php echo JHtml::_('form.token') ?>
 			</fieldset>
-			</form>						
+			</form>
 			
 		</div>
 		
 		<?php if ( !$mNavPosition && ($this->countModules('nav'))) : ?>
 			<div id="nav">
 				<jdoc:include type="modules" name="nav" style="raw" />
-			</div><!-- end nav-->
+			</div>
 		<?php endif ?>
 									
 		<div id="footer" data-role="footer" data-theme="<?php echo $mFooterDataTheme ?>">

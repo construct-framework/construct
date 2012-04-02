@@ -54,38 +54,38 @@ else {
 	<div id="footer-push">
 			<a id="page-top" name="page-top"></a>
 			<?php if ($headerAboveCount) : ?>
-			<div id="header-above" class="clearfix">						
+			<div id="header-above" class="clearfix">
 				<?php if ($this->countModules('header-above-1')) : ?>
 					<div id="header-above-1" class="<?php echo $headerAboveClass ?>">
 						
-					</div><!-- end header-above-1 -->								
+					</div>
 				<?php endif ?>
 				<?php if ($this->countModules('header-above-2')) : ?>
 					<div id="header-above-2" class="<?php echo $headerAboveClass ?>">
 						
-					</div><!-- end header-above-2 -->								
+					</div>
 				<?php endif ?>
 				<?php if ($this->countModules('header-above-3')) : ?>
 					<div id="header-above-3" class="<?php echo $headerAboveClass ?>">
 						
-					</div><!-- end header-above-3 -->								
+					</div>
 				<?php endif ?>
 				<?php if ($this->countModules('header-above-4')) : ?>
 					<div id="header-above-4" class="<?php echo $headerAboveClass ?>">
 						
-					</div><!-- end header-above-4 -->								
+					</div>
 				<?php endif ?>
 				<?php if ($this->countModules('header-above-5')) : ?>
 					<div id="header-above-5" class="<?php echo $headerAboveClass ?>">
 						
-					</div><!-- end header-above-5 -->								
+					</div>
 				<?php endif ?>
 				<?php if ($this->countModules('header-above-6')) : ?>
 					<div id="header-above-6" class="<?php echo $headerAboveClass ?>">
 						
-					</div><!-- end header-above-6 -->								
+					</div>
 				<?php endif ?>
-			</div><!-- end header-above -->
+			</div>
 		<?php endif ?>
 	
 		<div id="header" class="clear clearfix">
@@ -148,86 +148,86 @@ else {
 					</ul>
 				<?php endif ?>
 
-			</div><!--end gutter -->
-		</div><!-- end header-->
+			</div>
+		</div>
 		   
 		<div id="body-container">
 
 			<?php if ($headerBelowCount) : ?>
-				<div id="header-below" class="clearfix">						
+				<div id="header-below" class="clearfix">
 					<?php if ($this->countModules('header-below-1')) : ?>
 						<div id="header-below-1" class="<?php echo $headerBelowClass ?>">
 							
-						</div><!-- end head -->								
+						</div>
 					<?php endif ?>
 					<?php if ($this->countModules('header-below-2')) : ?>
 						<div id="header-below-2" class="<?php echo $headerBelowClass ?>">
 							
-						</div><!-- end header-below-2 -->
+						</div>
 					<?php endif ?>
 					<?php if ($this->countModules('header-below-3')) : ?>
 						<div id="header-below-3" class="<?php echo $headerBelowClass ?>">
 							
-						</div><!-- end header-below-3 -->
+						</div>
 					<?php endif ?>
 					<?php if ($this->countModules('header-below-4')) : ?>
 						<div id="header-below-4" class="<?php echo $headerBelowClass ?>">
 							
-						</div><!-- end header-below-4 -->
+						</div>
 					<?php endif ?>
 					<?php if ($this->countModules('header-below-5')) : ?>
 						<div id="header-below-5" class="<?php echo $headerBelowClass ?>">
 							
-						</div><!-- end header-below-5 -->
+						</div>
 					<?php endif ?>
 					<?php if ($this->countModules('header-below-6')) : ?>
 						<div id="header-below-6" class="<?php echo $headerBelowClass ?>">
 							
-						</div><!-- end header-below-6 -->
+						</div>
 					<?php endif ?>
-				</div><!-- end header-below -->
+				</div>
 			<?php endif ?>
 		
 			<div id="content-container" class="clear clearfix">    
 
 				<?php if ($navBelowCount) : ?>
-					<div id="nav-below" class="clearfix">						
+					<div id="nav-below" class="clearfix">
 						<?php if ($this->countModules('nav-below-1')) : ?>
 							<div id="nav-below-1" class="<?php echo $navBelowClass ?>">
 								
-							</div><!-- end nav-below-1 -->								
+							</div>
 						<?php endif ?>
 				   
 						<?php if ($this->countModules('nav-below-2')) : ?>
 							<div id="nav-below-2" class="<?php echo $navBelowClass ?>">
 								
-							</div><!-- end nav-below-2 -->
+							</div>
 						<?php endif ?>
 						
 						<?php if ($this->countModules('nav-below-3')) : ?>
 							<div id="nav-below-3" class="<?php echo $navBelowClass ?>">
 								
-							</div><!-- end nav-below-3 -->
+							</div>
 						<?php endif ?>
 						
 						<?php if ($this->countModules('nav-below-4')) : ?>
 							<div id="nav-below-4" class="<?php echo $navBelowClass ?>">
 								
-							</div><!-- end nav-below-4 -->
+							</div>
 						<?php endif ?>
 
 						<?php if ($this->countModules('nav-below-5')) : ?>
 							<div id="nav-below-5" class="<?php echo $navBelowClass ?>">
 								
-							</div><!-- end nav-below-5 -->
+							</div>
 						<?php endif ?>
 						
 						<?php if ($this->countModules('nav-below-6')) : ?>
 							<div id="nav-below-6" class="<?php echo $navBelowClass ?>">
 								
-							</div><!-- end nav-below-6 -->
+							</div>
 						<?php endif ?>
-					</div><!-- end nav-below -->
+					</div>
 				<?php endif ?>
 			
 				<div id="load-first" class="clearfix">
@@ -236,49 +236,49 @@ else {
 						<div class="gutter">
 						
 							<?php if ($contentAboveCount) : ?>
-								<div id="content-above" class="clearfix">						
+								<div id="content-above" class="clearfix">
 									<?php if ($this->countModules('content-above-1')) : ?>
 										<div id="content-above" class="<?php echo $contentAboveClass ?>">
 											
-										</div><!-- end content-above-1 -->								
+										</div>
 									<?php endif ?>
 							
 									<?php if ($this->countModules('content-above-2')) : ?>
 										<div id="content-above-2" class="<?php echo $contentAboveClass ?>">
 											
-										</div><!-- end content-above-2 -->
+										</div>
 									<?php endif ?>
 									
 									<?php if ($this->countModules('content-above-3')) : ?>
 										<div id="content-above-3" class="<?php echo $contentAboveClass ?>">
 											
-										</div><!-- end content-above-3 -->
+										</div>
 									<?php endif ?>
 									
 									<?php if ($this->countModules('content-above-4')) : ?>
 										<div id="content-above-4" class="<?php echo $contentAboveClass ?>">
 											
-										</div><!-- end content-above-4 -->
+										</div>
 									<?php endif ?>
 									
 									<?php if ($this->countModules('content-above-5')) : ?>
 										<div id="content-above-5" class="<?php echo $contentAboveClass ?>">
 											
-										</div><!-- end content-above-5 -->
+										</div>
 									<?php endif ?>
 									
 									<?php if ($this->countModules('content-above-6')) : ?>
 										<div id="content-above-6" class="<?php echo $contentAboveClass ?>">
 											
-										</div><!-- end content-above-6 -->
+										</div>
 									<?php endif ?>
 															
-								</div><!-- end content-above -->
+								</div>
 							<?php endif ?>
 							
 							<div id="offline">
-								<?php if ($this->countModules('offline')) : ?>								
-										<jdoc:include type="modules" name="offline" style="jexhtml" />								
+								<?php if ($this->countModules('offline')) : ?>
+										<jdoc:include type="modules" name="offline" style="jexhtml" />
 								<?php endif ?>
 					  
 								<?php if ($this->getBuffer('message')) : ?>
@@ -288,13 +288,13 @@ else {
 								<h3><?php echo $app->getCfg('offline_message') ?></h3>
 	
 								<form action="<?php echo JRoute::_('index.php', true) ?>" method="post" id="form-login">
-								<fieldset class="input">									
+								<fieldset class="input">
 									<label id="form-login-username" for="username"><?php echo JText::_('JGLOBAL_USERNAME') ?>
 										<input name="username" id="username" type="text" class="inputbox" alt="<?php echo JText::_('JGLOBAL_USERNAME') ?>" size="18" />
 									</label>			
 									<label id="form-login-password" for="passwd"><?php echo JText::_('JGLOBAL_PASSWORD') ?>
 										<input type="password" name="password" class="inputbox" size="18" alt="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" id="passwd" />
-									</label>									
+									</label>
 									<label id="form-login-remember" for="remember"><?php echo JText::_('JGLOBAL_REMEMBER_ME') ?>
 										<input type="checkbox" name="remember" class="inputbox" value="yes" alt="<?php echo JText::_('JGLOBAL_REMEMBER_ME') ?>" id="remember" />
 									</label>
@@ -308,123 +308,123 @@ else {
 							</div>
 	
 							<?php if ($contentBelowCount) : ?>
-								<div id="content-below" class="clearfix">						
+								<div id="content-below" class="clearfix">
 									<?php if ($this->countModules('content-below-1')) : ?>
 										<div id="content-below-1" class="<?php echo $contentBelowClass ?>">
 											
-										</div><!-- end content-below-1 -->								
+										</div>
 									<?php endif ?>
 						
 									<?php if ($this->countModules('content-below-2')) : ?>
 										<div id="content-below-2" class="<?php echo $contentBelowClass ?>">
 											
-										</div><!-- end content-below-2 -->
+										</div>
 									<?php endif ?>
 									
 									<?php if ($this->countModules('content-below-3')) : ?>
 										<div id="content-below-3" class="<?php echo $contentBelowClass ?>">
 											
-										</div><!-- end content-below-3 -->
+										</div>
 									<?php endif ?>
 									
 									<?php if ($this->countModules('content-below-4')) : ?>
 										<div id="content-below-4" class="<?php echo $contentBelowClass ?>">
 											
-										</div><!-- end content-below-4 -->
+										</div>
 									<?php endif ?>
 									
 									<?php if ($this->countModules('content-below-5')) : ?>
 										<div id="content-below-5" class="<?php echo $contentBelowClass ?>">
 											
-										</div><!-- end content-below-5 -->
+										</div>
 									<?php endif ?>
 									
 									<?php if ($this->countModules('content-below-6')) : ?>
 										<div id="content-below-6" class="<?php echo $contentBelowClass ?>">
 											
-										</div><!-- end content-below-6 -->
+										</div>
 									<?php endif ?>
 																						
-								</div><!-- end content-below -->
+								</div>
 							<?php endif ?>
 						 
-						</div><!--end gutter -->        
-					</div><!-- end content-main -->
+						</div>
+					</div>
 					
 					<?php if ($columnGroupAlphaCount) : ?>
 						<div id="column-group-alpha" class="clearfix">
-							<div class="gutter clearfix">						
+							<div class="gutter clearfix">
 								<?php if ($this->countModules('column-1')) : ?>
 									<div id="column-1" class="<?php echo $columnGroupAlphaClass ?>">
 										
-									</div><!-- end column-1 -->								
+									</div>
 								<?php endif ?>
 								<?php if ($this->countModules('column-2')) : ?>
 									<div id="column-2" class="<?php echo $columnGroupAlphaClass ?>">
 										
-									</div><!-- end column-2 -->
+									</div>
 								<?php endif ?>
-							</div><!--end gutter -->
-						</div><!-- end column-group-alpha -->
+							</div>
+						</div>
 					<?php endif ?>
 
-				</div><!-- end load-first -->
+				</div>
 		
 					<?php if ($columnGroupBetaCount) : ?>
 						<div id="column-group-beta" class="clearfix">
-							<div class="gutter clearfix">						
+							<div class="gutter clearfix">
 								<?php if ($this->countModules('column-3')) : ?>
 									<div id="column-group-beta-1" class="<?php echo $columnGroupBetaClass ?>">
 										
-									</div><!-- end column-3 -->								
+									</div>
 								<?php endif ?>
 								<?php if ($this->countModules('column-4')) : ?>
 									<div id="column-4" class="<?php echo $columnGroupBetaClass ?>">
 										
-									</div><!-- end column-4 -->
+									</div>
 								<?php endif ?>
-							</div><!--end gutter -->
-						</div><!-- end column-group-beta -->
+							</div>
+						</div>
 					<?php endif ?>
 			
 				<?php if ($footerAboveCount) : ?>
-					<div id="footer-above" class="clearfix">						
+					<div id="footer-above" class="clearfix">
 						<?php if ($this->countModules('footer-above-1')) : ?>
 							<div id="footer-above-1" class="<?php echo $footerAboveClass ?>">
 								
-							</div><!-- end footer-above-1 -->								
+							</div>
 						<?php endif ?>
 						<?php if ($this->countModules('footer-above-2')) : ?>
 							<div id="footer-above-2" class="<?php echo $footerAboveClass ?>">
 								
-							</div><!-- end footer-above-2 -->
+							</div>
 						<?php endif ?>
 						<?php if ($this->countModules('footer-above-3')) : ?>
 							<div id="footer-above-3" class="<?php echo $footerAboveClass ?>">
 								
-							</div><!-- end footer-above-3 -->
+							</div>
 						<?php endif ?>
 						<?php if ($this->countModules('footer-above-4')) : ?>
 							<div id="footer-above-4" class="<?php echo $footerAboveClass ?>">
 								
-							</div><!-- end footer-above-4 -->
+							</div>
 						<?php endif ?>
 						<?php if ($this->countModules('footer-above-5')) : ?>
 							<div id="footer-above-5" class="<?php echo $footerAboveClass ?>">
 								
-							</div><!-- end footer-above-5 -->
+							</div>
 						<?php endif ?>
 						<?php if ($this->countModules('footer-above-6')) : ?>
 							<div id="footer-above-6" class="<?php echo $footerAboveClass ?>">
 								
-							</div><!-- end footer-above-6 -->
+							</div>
 						<?php endif ?>
-					</div><!-- end footer-above -->
+					</div>
 				<?php endif ?>
 
-			</div><!-- end content-container -->
-		</div><!-- end body-container -->
-	</div><!-- end footer-push -->
+			</div>
+		</div>
+	</div>
     
 	<div id="footer" class="clear clearfix">
 		<div class="gutter clearfix">			
@@ -441,8 +441,8 @@ else {
 				<jdoc:include type="modules" name="footer" style="jexhtml" />
 			<?php endif ?>
 
-		</div><!--end gutter -->
-	</div><!-- end footer -->
+		</div>
+	</div>
 
 	<?php if ($this->countModules('debug')) : ?>
 		<jdoc:include type="modules" name="debug" style="raw" />
