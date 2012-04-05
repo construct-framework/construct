@@ -4,7 +4,7 @@
 * @author		Matt Thomas http://construct-framework.com | http://betweenbrain.com
 * @copyright	Copyright (C) 2009 - 2012 Matt Thomas. All rights reserved.
 * @license		GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
-*/	
+*/
 
 // To enable use of site configuration
 $app 					= JFactory::getApplication();
@@ -16,7 +16,7 @@ if(JFile::exists($template.'/layouts/mobile-offline.php')) {
 else {
 ?>
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html class="no-js">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -28,20 +28,20 @@ else {
 		<script>(function($) {$(document).ready(function() {$('html').removeClass("no-js").addClass("js");});})(jQuery);</script>
 	</head>
 
-<body class="noscript">	
+<body class="noscript">
 	<div data-role="page" data-theme="<?php echo $mPageDataTheme ?>">
 		<div id="header" data-role="header" data-theme="<?php echo $mHeaderDataTheme ?>">
 			<h1><a href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo $app->getCfg('sitename') ?></a></h1>
 		</div>
-	
+
 		<?php if ( $mNavPosition && ($this->countModules('nav'))) : ?>
 			<div id="nav">
 				<jdoc:include type="modules" name="nav" style="raw" />
 			</div>
 		<?php endif ?>
-		
+
 		<div id="content-container" data-role="content" data-theme="<?php echo $mContentDataTheme ?>">
-	
+
 			<?php if ($this->getBuffer('message')) : ?>
 				<jdoc:include type="message" />
 			<?php endif ?>
@@ -69,15 +69,15 @@ else {
 				<?php echo JHtml::_('form.token') ?>
 			</fieldset>
 			</form>
-			
+
 		</div>
-		
+
 		<?php if ( !$mNavPosition && ($this->countModules('nav'))) : ?>
 			<div id="nav">
 				<jdoc:include type="modules" name="nav" style="raw" />
 			</div>
 		<?php endif ?>
-									
+
 		<div id="footer" data-role="footer" data-theme="<?php echo $mFooterDataTheme ?>">
 			<a class="view-desktop" href="<?php echo JURI::current() ?>?viewDesktop=true">View Desktop Version</a>
 			<?php if ($this->countModules('footer')) : ?>
@@ -85,7 +85,12 @@ else {
 			<?php endif ?>
 		</div>
 	</div>
-	  
+
+	<?php if ($this->countModules('analytics')) : ?>
+		<jdoc:include type="modules" name="analytics" />
+	<?php endif ?>
+
 </body>
 </html>
 <?php }
+
