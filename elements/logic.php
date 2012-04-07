@@ -15,6 +15,8 @@ if (JFile::exists(dirname(__FILE__).'/helper.php')) {
 $app 					= JFactory::getApplication();
 // Returns a reference to the global document object
 $doc 					= JFactory::getDocument();
+// Returns an array of any system messages
+$messageQueue			= count($app->getMessageQueue());
 // Define relative shortcut for current template directory
 $template 				= 'templates/' . $this->template;
 // Define absolute path to the template directory
