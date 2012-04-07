@@ -246,7 +246,7 @@
 										<jdoc:include type="modules" name="offline" style="jexhtml" />
 								<?php endif ?>
 					  
-								<?php if ($this->getBuffer('message')) : ?>
+								<?php if ($messageQueue) : ?>
 									<jdoc:include type="message" />
 								<?php endif ?>
 
