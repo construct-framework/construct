@@ -298,8 +298,8 @@ ul.menu-horizontal li{float:left} /* Use -horizontal menu class suffix */
 /* -- Menu CSS -- */
 ul.menu a,
 ul.menu span.separator{display:block;padding:.1em .7em/*use padding to indent text*/}
-ul.menu li{float:left;position:relative}
-ul.menu ul{position:absolute;left:-999em;width:16em;/*sub-menu widths*/z-index:999}
+ul.menu li{float:left;position:relative;margin:0;padding:0;}
+ul.menu ul{position:absolute;left:-999em;width:16em;/*sub-menu widths*/z-index:999;margin:0;padding:0;}
 ul.menu ul li{width:100%;}
 ul.menu ul ul{margin:0 0 0 100%;top:0;}
 #nav:after,
@@ -312,7 +312,6 @@ ul.menu ul ul{margin:0 0 0 100%;top:0;}
 #column-group-beta ul.menu li {width:100%;margin:0;}
 #column-group-alpha ul.menu ul {margin:0 0 0 100%;top:0;}
 #column-group-beta ul.menu ul {right:100%;top:0;}
-#nav ul, #nav li{margin:0;padding:0;}
 #nav ul.menu ul ul{margin:0 0 0 100%;top:0;}
 
 #nav{z-index:999;}
