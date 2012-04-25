@@ -290,9 +290,9 @@ ul.menu-horizontal li{float:left} /* Use -horizontal menu class suffix */
 #system-message dd:after{clear:both;content:".";font:1px/0;display:block;height:0;visibility:hidden}
 #system-message dd ul li{list-style:none;}
 #system-message dd.message{color:#0055BB;background:#C3D2E5;border-top:2px solid #84A7DB;border-bottom:2px solid #84A7DB}
-#system-message dd.message ul{margin-bottom:0;}
+#system-message dd.message ul{margin:0;}
 #system-message dd.warning{color:#F00;background:#FBAD18;border-top:2px solid #F57E20;border-bottom:2px solid #F57E20;}
-#system-message dd.warning ul{margin-bottom:0;}
+#system-message dd.warning ul{margin:0;}
 #system-message dd.error{color:#F00;background:#FBEEF1;border-top:2px solid #FEABB9;border-bottom:2px solid #FEABB9}
 
 /* -- Menu CSS -- */
