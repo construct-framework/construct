@@ -124,7 +124,7 @@
 		<position>nav-below-6</position>
 		<position>offline</position>
 		<position>syndicate</position>
-	</positions>
+</positions>
 
 	<config>
 		<fields name="params">
