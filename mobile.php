@@ -76,7 +76,7 @@ if ($mobileResults) {
 		<?php endif ?>
 
 		<div id="content-container" data-role="content" data-theme="<?php echo $mContentDataTheme ?>">
-			<?php if ($messageQueue) : ?>
+			<?php if (!empty($messageQueue)) : ?>
 					<jdoc:include type="message" />
 			<?php endif ?>
 			<jdoc:include type="component" />

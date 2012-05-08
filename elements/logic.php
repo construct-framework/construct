@@ -16,7 +16,7 @@ $app 					= JFactory::getApplication();
 // Returns a reference to the global document object
 $doc 					= JFactory::getDocument();
 // Checks for any system messages
-$messageQueue			= count($app->getMessageQueue());
+$messageQueue			= $app->getMessageQueue();
 // Define relative shortcut for current template directory
 $template 				= 'templates/' . $this->template;
 // Define absolute path to the template directory
