@@ -60,6 +60,9 @@ $app 					= JFactory::getApplication();
 						  } ?>
 			    </ul>
 			<?php endif ?>
+			<?php if ( !$mNavPosition && ($this->countModules('nav'))) : ?>
+			<a href="<?php echo JURI::current() ?>#nav" data-ajax="false">Menu</a>
+			<?php endif ?>
 		</div>
 
 		<?php if ( $mNavPosition && ($this->countModules('nav'))) : ?>

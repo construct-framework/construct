@@ -205,7 +205,7 @@
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
-				<field name="mNavPosition" type="radio" default="1" label="TPL_JE_CONSTRUCT_PRO_MNAVPOSITION_LABEL" description="TPL_JE_CONSTRUCT_PRO_MNAVPOSITION_DESC">
+				<field name="mNavPosition" type="radio" default="0" label="TPL_JE_CONSTRUCT_PRO_MNAVPOSITION_LABEL" description="TPL_JE_CONSTRUCT_PRO_MNAVPOSITION_DESC">
 					<option value="1">Before Content</option>
 					<option value="0">After Content</option>
 				</field>
