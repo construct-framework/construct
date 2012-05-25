@@ -53,7 +53,7 @@ img, a img {
 
 /* -- Layout -- */
 body {
-	font-size : 76% /* 12px in most modern browsers - used as basis of layout and typography. Calculate em based dims as "target dim(px) / container dim(px) = result in em" */
+	font-size : 76% /* 12px in most modern browsers - used as basis of layout and typography. Calculate em based dims as "target dim(px) / container dim(px) = result in em" */;
 }
 
 #body-container,
@@ -301,7 +301,7 @@ body {
 .cols-4 .item,
 .cols-5 .item,
 .cols-6 .item {
-	float : left
+	float : left;
 }
 
 .column-1, .items-more {
@@ -379,7 +379,7 @@ a:hover {
 }
 
 b {
-	font-weight : bold
+	font-weight : bold;
 }
 
 blockquote {
@@ -390,15 +390,15 @@ blockquote {
 code {
 	font-family : "Courier New", Courier, monospace;
 	font-size   : 1em;
-	white-space : pre
+	white-space : pre;
 }
 
 div {
-	font-size : 1em
+	font-size : 1em;
 }
 
 em {
-	font-style : italic
+	font-style : italic;
 }
 
 fieldset {
@@ -406,7 +406,7 @@ fieldset {
 }
 
 form table {
-	font-size : 1.1em
+	font-size : 1.1em;
 }
 
 form {
@@ -420,36 +420,36 @@ hr {
 
 h1 {
 	font-size   : 2em;
-	font-weight : normal
+	font-weight : normal;
 }
 
 h2 {
 	font-size   : 1.7em;
-	font-weight : normal
+	font-weight : normal;
 }
 
 h3 {
 	font-size   : 1.4em;
-	font-weight : normal
+	font-weight : normal;
 }
 
 h4 {
 	font-size   : 1.2em;
-	font-weight : bold
+	font-weight : bold;
 }
 
 h5 {
 	font-size   : 1.0em;
-	font-weight : bold
+	font-weight : bold;
 }
 
 h6 {
 	font-size   : 0.8em;
-	font-weight : bold
+	font-weight : bold;
 }
 
 p, dl, hr, pre, table, address {
-	margin-bottom : 1em
+	margin-bottom : 1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -457,11 +457,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h3+ul, h3+ol {
-	margin-top : -.3em
+	margin-top : -.3em;
 }
 
 i {
-	font-style : italic
+	font-style : italic;
 }
 
 input.button {
@@ -469,7 +469,7 @@ input.button {
 }
 
 li > p {
-	margin : 0.2em 0 0 1em
+	margin : 0.2em 0 0 1em;
 }
 
 ol, ul, li {
@@ -478,25 +478,25 @@ ol, ul, li {
 }
 
 li {
-	margin-left : 1.25em
+	margin-left : 1.25em;
 }
 
 .item ol,
 .intro ol,
 .item-page ol,
 .items-leading ol {
-	list-style : decimal
+	list-style : decimal;
 }
 
 .item ul,
 .intro ul,
 .item-page ul,
 .items-leading ul {
-	list-style : disc
+	list-style : disc;
 }
 
 p {
-	font-size : 1em
+	font-size : 1em;
 }
 
 pre {
@@ -507,7 +507,7 @@ pre {
 	white-space : -moz-pre-wrap !important; /* Mozilla, since 1999 */
 	white-space : -pre-wrap; /* Opera 4-6 */
 	white-space : -o-pre-wrap; /* Opera 7 */
-	word-wrap   : break-word; /* Internet Explorer 5.5+ */
+	word-wrap   : break-word; /* Internet Explorer 5.5+ */;
 }
 
 table {
@@ -521,7 +521,7 @@ table {
 table caption {
 	font-weight : bold;
 	margin      : 0;
-	padding     : 0 0 1.5em
+	padding     : 0 0 1.5em;
 }
 
 textarea {
@@ -531,21 +531,21 @@ textarea {
 
 td {
 	font-size      : 1em;
-	vertical-align : top
+	vertical-align : top;
 }
 
 th {
 	font-weight : bold;
-	text-align  : left
+	text-align  : left;
 }
 
 strong {
-	font-weight : bold
+	font-weight : bold;
 }
 
 /* -- Editor Buttons -- */
 .actions {
-	float : right
+	float : right;
 }
 
 .actions li {
@@ -554,18 +554,18 @@ strong {
 	margin     : 0 0 0 5px;
 }
 
-.article-info {
+.article-info {;
 }
 
 .button2-left,
 .button2-left div {
-	float : left
+	float : left;
 }
 
 .button2-left a {
 	font-size : .9em;
 	display   : block;
-	float     : left
+	float     : left;
 }
 
 .button2-left .page a,
@@ -598,23 +598,23 @@ strong {
 }
 
 .button2-left .article {
-	background : url(../images/editor-buttons/j_button2_blank.png) 100% 0 no-repeat
+	background : url(../images/editor-buttons/j_button2_blank.png) 100% 0 no-repeat;
 }
 
 .button2-left .image {
-	background : url(../images/editor-buttons/j_button2_image.png) 100% 0 no-repeat
+	background : url(../images/editor-buttons/j_button2_image.png) 100% 0 no-repeat;
 }
 
 .button2-left .readmore {
-	background : url(../images/editor-buttons/j_button2_readmore.png) 100% 0 no-repeat
+	background : url(../images/editor-buttons/j_button2_readmore.png) 100% 0 no-repeat;
 }
 
 .button2-left .pagebreak {
-	background : url(../images/editor-buttons/j_button2_pagebreak.png) 100% 0 no-repeat
+	background : url(../images/editor-buttons/j_button2_pagebreak.png) 100% 0 no-repeat;
 }
 
 .button2-left .blank {
-	background : url(../images/editor-buttons/j_button2_blank.png) 100% 0 no-repeat
+	background : url(../images/editor-buttons/j_button2_blank.png) 100% 0 no-repeat;
 }
 
 table.category {
@@ -622,15 +622,15 @@ table.category {
 }
 
 .category thead {
-	background : #333
+	background : #333;
 }
 
 .category thead a {
-	color : #fff
+	color : #fff;
 }
 
 .category tbody tr:hover {
-	background : #dddddd
+	background : #dddddd;
 }
 
 .category td {
@@ -638,10 +638,10 @@ table.category {
 }
 
 .category .cat-list-row0 {
-	background : #eeeeee
+	background : #eeeeee;
 }
 
-.category .cat-list-row1 {
+.category .cat-list-row1 {;
 }
 
 .category th img {
@@ -675,7 +675,7 @@ table.category {
 
 .content_vote {
 	margin  : 0 0 10px;
-	display : block
+	display : block;
 }
 
 .content_vote input {
@@ -687,11 +687,11 @@ table.category {
 	font-weight : bold;
 	margin      : 20px 10px 0 0;
 	padding     : 0 0 0 30px;
-	cursor      : pointer
+	cursor      : pointer;
 }
 
 .date-container {
-	float : right
+	float : right;
 }
 
 .drop-shadow {
@@ -722,27 +722,27 @@ table.category {
 
 .edit .formelm #jform_description-lbl {
 	float   : none;
-	display : block
+	display : block;
 }
 
 .edit .formelm .radio label {
 	float : none;
-	width : 14em
+	width : 14em;
 }
 
 .edit .formelm .radio label span {
 	float : left;
-	width : 14em
+	width : 14em;
 }
 
 .edit .formelm-area label {
 	float       : none !important;
 	display     : block;
-	font-weight : bold
+	font-weight : bold;
 }
 
 .even {
-	background : #eeeeee
+	background : #eeeeee;
 }
 
 ol.form {
@@ -756,7 +756,7 @@ ol.form li {
 	float    : left;
 	margin   : 0 0 10px;
 	width    : 100%;
-	position : relative
+	position : relative;
 }
 
 ol.form label {
@@ -778,7 +778,7 @@ ol.form textarea {
 
 ol.form li.group label {
 	margin : 0;
-	width  : auto
+	width  : auto;
 }
 
 ol.form li.group {
@@ -795,16 +795,16 @@ ol.form li.group ul label {
 	float       : none;
 	font-weight : normal;
 	margin      : 0 0 0 10px;
-	width       : auto
+	width       : auto;
 }
 
 ol.form li.group ul input {
-	width : auto
+	width : auto;
 }
 
 ol.form li.button button {
 	margin  : 0 auto;
-	display : block
+	display : block;
 }
 
 ol.form li.checkbox {
@@ -825,11 +825,11 @@ textarea.invalid {
 
 label.invalid {
 	color       : #ff0000;
-	font-weight : bold
+	font-weight : bold;
 }
 
 .left {
-	float : left
+	float : left;
 }
 
 .login-fields {
@@ -845,7 +845,7 @@ label.invalid {
 }
 
 ul.menu-horizontal li {
-	float : left
+	float : left;
 }
 
 /* Use -horizontal menu class suffix */
@@ -889,7 +889,7 @@ ul.menu-horizontal li {
 
 .pagenav li.pagenav-next {
 	float      : right;
-	text-align : right
+	text-align : right;
 }
 
 .red,
@@ -900,23 +900,23 @@ ul.menu-horizontal li {
 .blue a,
 .orange,
 .orange a {
-	color : #FFF !important
+	color : #FFF !important;
 }
 
 .red {
-	background : #ff0000 !important
+	background : #ff0000 !important;
 }
 
 .green {
-	background : #00a33d !important
+	background : #00a33d !important;
 }
 
 .blue {
-	background : #0060b6 !important
+	background : #0060b6 !important;
 }
 
 .orange {
-	background : #ff7f00 !important
+	background : #ff7f00 !important;
 }
 
 .rounded {
@@ -928,25 +928,25 @@ ul.menu-horizontal li {
 }
 
 .right {
-	float : right
+	float : right;
 }
 
 .search {
-	float : left
+	float : left;
 }
 
 .search .only {
 	border      : solid 1px #ccc;
 	margin      : 10px 0 10px 10px;
 	padding     : 5px 10px 13px;
-	line-height : 1.3em
+	line-height : 1.3em;
 }
 
 .search .phrases .inputbox {
 	display    : block;
 	height     : 1.5em;
 	margin-top : 10px;
-	width      : 12em
+	width      : 12em;
 }
 
 .search .phrases .inputbox option {
@@ -957,7 +957,7 @@ ul.menu-horizontal li {
 .search .phrases .inputbox option a:hover {
 	background   : #C00;
 	border-color : #CFD0D6;
-	color        : #fff
+	color        : #fff;
 }
 
 .search input {
@@ -966,7 +966,7 @@ ul.menu-horizontal li {
 
 .search .word {
 	padding : 10px 10px 10px 0;
-	border  : solid 0 !important
+	border  : solid 0 !important;
 }
 
 .search .word input {
@@ -984,7 +984,7 @@ ul.menu-horizontal li {
 	z-index            : 50;
 	-webkit-box-shadow : 5px 5px 10px rgba(0, 0, 0, 0.6);
 	-moz-box-shadow    : 5px 5px 10px rgba(0, 0, 0, 0.6);
-	box-shadow         : 5px 5px 10px rgba(0, 0, 0, 0.6)
+	box-shadow         : 5px 5px 10px rgba(0, 0, 0, 0.6);
 }
 
 .tip-title {
@@ -1005,7 +1005,7 @@ ul.menu-horizontal li {
 
 #access {
 	float : left;
-	clear : left
+	clear : left;
 }
 
 #access li {
@@ -1066,12 +1066,12 @@ ul.menu-horizontal li {
 
 #editor-xtd-buttons {
 	background : #efefef;
-	margin-top : 1em
+	margin-top : 1em;
 }
 
 #diagnostics {
 	float : right;
-	clear : right
+	clear : right;
 }
 
 #footer {
@@ -1101,7 +1101,7 @@ ul.menu-horizontal li {
 }
 
 #form-login-remember label {
-	float : left
+	float : left;
 }
 
 #form-login ul li {
@@ -1110,7 +1110,7 @@ ul.menu-horizontal li {
 
 #header {
 	margin     : 0;
-	text-align : left
+	text-align : left;
 }
 
 #logo {
@@ -1124,7 +1124,7 @@ ul.menu-horizontal li {
 	width           : 300px;
 	height          : 103px;
 	text-decoration : none;
-	text-indent     : -9000em
+	text-indent     : -9000em;
 }
 
 #logo a:focus {
@@ -1134,13 +1134,13 @@ ul.menu-horizontal li {
 #siteinfo-legal {
 	text-align : left;
 	width      : 500px;
-	margin     : 0 auto
+	margin     : 0 auto;
 }
 
 #style-switch {
 	list-style-type : none;
 	float           : right;
-	clear           : right
+	clear           : right;
 }
 
 #style-switch li {
@@ -1170,7 +1170,7 @@ ul.menu-horizontal li {
 	font       : 1px/0;
 	display    : block;
 	height     : 0;
-	visibility : hidden
+	visibility : hidden;
 }
 
 #system-message dd ul li {
@@ -1181,7 +1181,7 @@ ul.menu-horizontal li {
 	color         : #0055BB;
 	background    : #C3D2E5;
 	border-top    : 2px solid #84A7DB;
-	border-bottom : 2px solid #84A7DB
+	border-bottom : 2px solid #84A7DB;
 }
 
 #system-message dd.message ul {
@@ -1203,14 +1203,14 @@ ul.menu-horizontal li {
 	color         : #F00;
 	background    : #FBEEF1;
 	border-top    : 2px solid #FEABB9;
-	border-bottom : 2px solid #FEABB9
+	border-bottom : 2px solid #FEABB9;
 }
 
 /* -- Menu CSS -- */
 ul.menu a,
 ul.menu span.separator {
 	display : block;
-	padding : .1em .7em /*use padding to indent text*/
+	padding : .1em .7em /*use padding to indent text*/;
 }
 
 ul.menu li {
@@ -1246,7 +1246,7 @@ ul.menu ul ul {
 	font       : 1px/0;
 	display    : block;
 	height     : 0;
-	visibility : hidden
+	visibility : hidden;
 }
 
 #column-group-alpha ul.menu,
@@ -1327,7 +1327,7 @@ ul.menu ul ul li:hover ul ul,
 ul.menu li.pie_hover ul ul,
 ul.menu ul li.pie_hover ul ul,
 ul.menu ul ul li.pie_hover ul ul {
-	left : -999em
+	left : -999em;
 }
 
 ul.menu li:hover ul,
@@ -1338,7 +1338,7 @@ ul.menu li.pie_hover ul,
 ul.menu ul li.pie_hover ul,
 ul.menu ul ul li.pie_hover ul,
 ul.menu ul ul ul li.pie_hover ul {
-	left : auto
+	left : auto;
 }
 
 /* -- Dwyer Method for Image Replacement -- */
@@ -1352,7 +1352,7 @@ ul.menu ul ul ul li.pie_hover ul {
 	font       : 1px/0;
 	display    : block;
 	height     : 0;
-	visibility : hidden
+	visibility : hidden;
 }
 
 /*:before is for gutter margin top*/
@@ -1367,7 +1367,7 @@ ul.menu ul ul ul li.pie_hover ul {
 }
 
 .clear {
-	clear : both
+	clear : both;
 }
 
 /* -- Sticky Footer -- *//*http://www.cssstickyfooter.com/*/
@@ -1381,7 +1381,7 @@ html, .sticky-footer {
 
 .sticky-footer #footer {
 	position : relative;
-	clear    : both
+	clear    : both;
 }
 
 .sticky-footer:before {
@@ -1395,7 +1395,7 @@ html, .sticky-footer {
 /*Opera Fix*/
 /* -- Docman Style Overrides -- */
 #dm_docs h3.dm_title {
-	float : left
+	float : left;
 }
 
 #dm_docs .dm_row .dm_description, #dm_docs .dm_row .dm_homepage {
@@ -1409,7 +1409,7 @@ html, .sticky-footer {
 
 /* -- Preview Module Styles for use with index.php?tp=1 -- */
 .mod-preview {
-	position : relative
+	position : relative;
 }
 
 .mod-preview-wrapper {
@@ -1441,7 +1441,7 @@ html, .sticky-footer {
 	left        : 5px;
 	top         : 5px;
 	font-family : BebasNeueRegular;
-	font-size   : 2em
+	font-size   : 2em;
 }
 
 #left .mod-preview-wrapper, #left2 .mod-preview-wrapper, #right .mod-preview-wrapper, #right2 .mod-preview-wrapper {
