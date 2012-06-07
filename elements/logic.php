@@ -8,7 +8,7 @@
 
 // Call the Construct Template Helper Class
 if (JFile::exists(dirname(__FILE__) . '/helper.php')) {
-	include dirname(__FILE__) . '/helper.php';
+    include dirname(__FILE__) . '/helper.php';
 }
 
 // To get an application object
@@ -77,22 +77,22 @@ $this->setGenerator($setGeneratorTag);
 
 // Enable Mootols
 if ($loadMoo) {
-	JHtml::_('behavior.framework', true);
+    JHtml::_('behavior.framework', true);
 }
 
 // Enable modal pop-ups
 if ($loadMoo && $loadModal) {
-	JHtml::_('behavior.modal');
+    JHtml::_('behavior.modal');
 }
 
 // Remove MooTools if set to no.
 if (!$loadMoo) {
-	unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-core.js']);
-	unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-more.js']);
-	unset($doc->_scripts[$this->baseurl . '/media/system/js/core.js']);
-	unset($doc->_scripts[$this->baseurl . '/media/system/js/caption.js']);
-	unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools.js']);
-	unset($doc->_scripts[$this->baseurl . '/plugins/system/mtupgrade/mootools.js']);
+    unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-core.js']);
+    unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-more.js']);
+    unset($doc->_scripts[$this->baseurl . '/media/system/js/core.js']);
+    unset($doc->_scripts[$this->baseurl . '/media/system/js/caption.js']);
+    unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools.js']);
+    unset($doc->_scripts[$this->baseurl . '/plugins/system/mtupgrade/mootools.js']);
 }
 
 // Change Google Web Font name for CSS
@@ -200,11 +200,11 @@ if ($columnGroupBetaCount) : $columnGroupBetaClass = 'count-' . $columnGroupBeta
 $columnLayout = 'main-only';
 
 if (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount == 0)) :
-	$columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main';
+    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main';
 elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
-	$columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount;
+    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount;
 elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
-	$columnLayout = 'main-beta-' . $columnGroupBetaCount;
+    $columnLayout = 'main-beta-' . $columnGroupBetaCount;
 endif;
 
 #-------------------------------- Item ID ---------------------------------#
@@ -214,23 +214,23 @@ $itemId = JRequest::getInt('Itemid', 0);
 #------------------------------- Article ID -------------------------------#
 
 if ($view == 'article')
-	$articleId = JRequest::getInt('id');
+    $articleId = JRequest::getInt('id');
 else ($articleId = NULL);
 
 #------------------------------ Category ID -------------------------------#
 
 function getCategory($id)
 {
-	$database = JFactory::getDBO();
-	if ((JRequest::getCmd('view', 0) == "category") || (JRequest::getCmd('view', 0) == "categories")) {
-		return $id;
-	}
-	elseif (JRequest::getCmd('view', 0) == "article") {
-		$temp = explode(":", $id);
-		$sql = "SELECT catid FROM #__content WHERE id = " . $temp[0];
-		$database->setQuery($sql);
-		return $database->loadResult();
-	}
+    $database = JFactory::getDBO();
+    if ((JRequest::getCmd('view', 0) == "category") || (JRequest::getCmd('view', 0) == "categories")) {
+        return $id;
+    }
+    elseif (JRequest::getCmd('view', 0) == "article") {
+        $temp = explode(":", $id);
+        $sql = "SELECT catid FROM #__content WHERE id = " . $temp[0];
+        $database->setQuery($sql);
+        return $database->loadResult();
+    }
 }
 
 $catId = getCategory(JRequest::getInt('id'));
@@ -239,39 +239,39 @@ $catId = getCategory(JRequest::getInt('id'));
 
 if ($catId && ($inheritStyle || $inheritLayout)) {
 
-	function getParentCategory($id)
-	{
-		$database = JFactory::getDBO();
-		$sql = "SELECT parent_id 
-		FROM #__categories 
-		WHERE id = $id";
-		$database->setQuery($sql);
-		return $database->loadResult();
-	}
+    function getParentCategory($id)
+    {
+        $database = JFactory::getDBO();
+        $sql = "SELECT parent_id
+        FROM #__categories
+        WHERE id = $id";
+        $database->setQuery($sql);
+        return $database->loadResult();
+    }
 
-	$parentCategory = getParentCategory($catId);
+    $parentCategory = getParentCategory($catId);
 
-	function getAncestorCategories($id)
-	{
-		$database = JFactory::getDBO();
-		$sql = "SELECT b.id, b.title
-		FROM #__categories a,
-		#__categories b
-		WHERE a.id = $id
-		AND a.lft > b.lft
-		AND a.rgt < b.rgt
-		AND a.id <> b.id
-		AND b.lft > 0";
-		$database->setQuery($sql);
-		return $database->loadObjectList();
-	}
+    function getAncestorCategories($id)
+    {
+        $database = JFactory::getDBO();
+        $sql = "SELECT b.id, b.title
+        FROM #__categories a,
+        #__categories b
+        WHERE a.id = $id
+        AND a.lft > b.lft
+        AND a.rgt < b.rgt
+        AND a.id <> b.id
+        AND b.lft > 0";
+        $database->setQuery($sql);
+        return $database->loadObjectList();
+    }
 
 }
 
 #--------------------------------- Alias ----------------------------------#
 
 if ($itemId) {
-	$currentAlias = $app->getMenu()->getActive()->alias;
+    $currentAlias = $app->getMenu()->getActive()->alias;
 }
 
 #----------------------------- Component Name -----------------------------#
@@ -292,20 +292,20 @@ $styleOverride->includeFile[] = $template . '/css/item/item-' . $itemId . '.css'
 $styleOverride->includeFile[] = $template . '/css/category/' . $overrideTheme . '-category-' . $catId . '.css';
 $styleOverride->includeFile[] = $template . '/css/category/category-' . $catId . '.css';
 if ($catId && $inheritStyle) {
-	$styleOverride->includeFile[] = $template . '/css/category/category-' . $parentCategory . '.css';
+    $styleOverride->includeFile[] = $template . '/css/category/category-' . $parentCategory . '.css';
 
-	$results = getAncestorCategories($catId);
-	if (count($results) > 0) {
-		foreach ($results as $result) {
-			$styleOverride->includeFile[] = $template . '/css/category/category-' . $result->id . '.css';
-		}
-	}
+    $results = getAncestorCategories($catId);
+    if (count($results) > 0) {
+        foreach ($results as $result) {
+            $styleOverride->includeFile[] = $template . '/css/category/category-' . $result->id . '.css';
+        }
+    }
 }
 if ($view == 'category') {
-	$styleOverride->includeFile[] = $template . '/css/category/category.css';
+    $styleOverride->includeFile[] = $template . '/css/category/category.css';
 }
 if ($view == 'categories') {
-	$styleOverride->includeFile[] = $template . '/css/category/categories.css';
+    $styleOverride->includeFile[] = $template . '/css/category/categories.css';
 }
 $styleOverride->includeFile[] = $template . '/css/component/' . $currentComponent . '.css';
 $styleOverride->includeFile[] = $template . '/css/component/' . $overrideTheme . '-' . $currentComponent . '.css';
@@ -335,20 +335,20 @@ $layoutOverride->includeFile[] = $template . '/layouts/item/item-' . $itemId . '
 $layoutOverride->includeFile[] = $template . '/layouts/category/' . $overrideTheme . '-category-' . $catId . '.php';
 $layoutOverride->includeFile[] = $template . '/layouts/category/category-' . $catId . '.php';
 if ($catId && $inheritLayout) {
-	$layoutOverride->includeFile[] = $template . '/layouts/category/category-' . $parentCategory . '.php';
+    $layoutOverride->includeFile[] = $template . '/layouts/category/category-' . $parentCategory . '.php';
 
-	$results = getAncestorCategories($catId);
-	if (count($results) > 0) {
-		foreach ($results as $result) {
-			$layoutOverride->includeFile[] = $template . '/layouts/category/category-' . $result->id . '.php';
-		}
-	}
+    $results = getAncestorCategories($catId);
+    if (count($results) > 0) {
+        foreach ($results as $result) {
+            $layoutOverride->includeFile[] = $template . '/layouts/category/category-' . $result->id . '.php';
+        }
+    }
 }
 if ($view == 'category') {
-	$layoutOverride->includeFile[] = $template . '/layouts/category/category.php';
+    $layoutOverride->includeFile[] = $template . '/layouts/category/category.php';
 }
 if ($view == 'categories') {
-	$layoutOverride->includeFile[] = $template . '/layouts/category/categories.php';
+    $layoutOverride->includeFile[] = $template . '/layouts/category/categories.php';
 }
 $layoutOverride->includeFile[] = $template . '/layouts/component/' . $overrideTheme . '-' . $currentComponent . '.php';
 $layoutOverride->includeFile[] = $template . '/layouts/component/' . $currentComponent . '.php';
@@ -381,64 +381,64 @@ $doc->addFavicon($template . '/favicon.png', 'image/png', 'icon');
 $doc->addStyleSheet($template . '/css/screen.css', 'text/css', 'screen');
 $doc->addStyleSheet($template . '/css/print.css', 'text/css', 'print');
 if ($customStyleSheet != '-1') {
-	$doc->addStyleSheet($template . '/css/' . $customStyleSheet, 'text/css', 'screen');
+    $doc->addStyleSheet($template . '/css/' . $customStyleSheet, 'text/css', 'screen');
 }
 if ($this->direction == 'rtl') {
-	$doc->addStyleSheet($template . '/css/rtl.css', 'text/css', 'screen');
+    $doc->addStyleSheet($template . '/css/rtl.css', 'text/css', 'screen');
 }
 // Override style sheet returned from our template helper
 $cssFile = $styleOverride->getIncludeFile();
 if ($cssFile) {
-	$doc->addStyleSheet($cssFile, 'text/css', 'screen');
+    $doc->addStyleSheet($cssFile, 'text/css', 'screen');
 }
 
 // Style sheet switcher
 if ($enableSwitcher) {
-	$doc->addCustomTag('<link rel="alternate stylesheet" href="' . $template . '/css/diagnostic.css" type="text/css" media="screen" title="diagnostic" />');
-	$doc->addCustomTag('<link rel="alternate stylesheet" href="' . $template . '/css/wireframe.css" type="text/css" media="screen" title="wireframe" />');
-	$doc->addScript($template . '/js/styleswitch.js');
+    $doc->addCustomTag('<link rel="alternate stylesheet" href="' . $template . '/css/diagnostic.css" type="text/css" media="screen" title="diagnostic" />');
+    $doc->addCustomTag('<link rel="alternate stylesheet" href="' . $template . '/css/wireframe.css" type="text/css" media="screen" title="wireframe" />');
+    $doc->addScript($template . '/js/styleswitch.js');
 }
 
 // Typography
 if ($googleWebFont) {
-	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont . '');
-	$doc->addStyleDeclaration($googleWebFontTargets . ' {font-family:' . $googleWebFontFamily . ', serif;font-size:' . $googleWebFontSize . ';}');
+    $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont . '');
+    $doc->addStyleDeclaration($googleWebFontTargets . ' {font-family:' . $googleWebFontFamily . ', serif;font-size:' . $googleWebFontSize . ';}');
 }
 if ($googleWebFont2) {
-	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont2 . '');
-	$doc->addStyleDeclaration($googleWebFontTargets2 . ' {font-family:' . $googleWebFontFamily2 . ', serif;font-size:' . $googleWebFontSize2 . ';}');
+    $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont2 . '');
+    $doc->addStyleDeclaration($googleWebFontTargets2 . ' {font-family:' . $googleWebFontFamily2 . ', serif;font-size:' . $googleWebFontSize2 . ';}');
 }
 if ($googleWebFont3) {
-	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont3 . '');
-	$doc->addStyleDeclaration($googleWebFontTargets3 . ' {font-family:' . $googleWebFontFamily3 . ', serif;font-size:' . $googleWebFontSize3 . ';}');
+    $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont3 . '');
+    $doc->addStyleDeclaration($googleWebFontTargets3 . ' {font-family:' . $googleWebFontFamily3 . ', serif;font-size:' . $googleWebFontSize3 . ';}');
 }
 
 // JavaScript
 $doc->addCustomTag('<script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
 if ($loadjQuery) {
-	$doc->addCustomTag('<script type="text/javascript" src="' . $loadjQuery . '"></script>');
-	$doc->addCustomTag('<script type="text/javascript">jQuery.noConflict();</script>');
+    $doc->addCustomTag('<script type="text/javascript" src="' . $loadjQuery . '"></script>');
+    $doc->addCustomTag('<script type="text/javascript">jQuery.noConflict();</script>');
 }
 
 // Layout Declarations
 if ($siteWidth) {
-	$doc->addStyleDeclaration('#body-container, #header-above {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . ';}');
+    $doc->addStyleDeclaration('#body-container, #header-above {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . ';}');
 }
 if (($siteWidthType == 'max-width') && $fluidMedia) {
-	$doc->addStyleDeclaration('img, object {max-width:100%;}');
+    $doc->addStyleDeclaration('img, object {max-width:100%;}');
 }
 if (!$fullWidth) {
-	$doc->addStyleDeclaration('#header, #footer {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . '; margin:0 auto;}');
+    $doc->addStyleDeclaration('#header, #footer {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . '; margin:0 auto;}');
 }
 if ($useStickyFooter) {
-	$doc->addStyleDeclaration('.sticky-footer #body-container {padding-bottom:' . $stickyFooterHeight . 'px;}');
-	$doc->addStyleDeclaration('.sticky-footer #footer {margin-top:-' . $stickyFooterHeight . 'px;height:' . $stickyFooterHeight . 'px;}');
+    $doc->addStyleDeclaration('.sticky-footer #body-container {padding-bottom:' . $stickyFooterHeight . 'px;}');
+    $doc->addStyleDeclaration('.sticky-footer #footer {margin-top:-' . $stickyFooterHeight . 'px;height:' . $stickyFooterHeight . 'px;}');
 }
 
 // Internet Explorer Fixes
 $doc->addCustomTag('<!--[if lt IE 9]>');
 if ($IECSS3) {
-	$doc->addCustomTag('<style type="text/css">' . $IECSS3Targets . ' {behavior:url("' . $this->baseurl . '/templates/' . $this->template . '/js/PIE.htc")}</style>');
+    $doc->addCustomTag('<style type="text/css">' . $IECSS3Targets . ' {behavior:url("' . $this->baseurl . '/templates/' . $this->template . '/js/PIE.htc")}</style>');
 }
 $doc->addCustomTag('<![endif]-->');
 
@@ -449,17 +449,17 @@ $doc->addCustomTag('<style type="text/css">');
 $doc->addCustomTag('body {text-align:center;}');
 $doc->addCustomTag('#body-container {text-align:left;}');
 if ($useStickyFooter) {
-	$doc->addCustomTag('body.sticky-footer #footer-push {display:table;height:100%;}');
+    $doc->addCustomTag('body.sticky-footer #footer-push {display:table;height:100%;}');
 }
 if (!$fullWidth) {
-	$doc->addCustomTag('#body-container, #header-above, #header, #footer {width: expression( document.body.clientWidth >' . ($siteWidth - 1) . ' ? "' . $siteWidth . $siteWidthUnit . '" : "auto" );margin:0 auto;}');
+    $doc->addCustomTag('#body-container, #header-above, #header, #footer {width: expression( document.body.clientWidth >' . ($siteWidth - 1) . ' ? "' . $siteWidth . $siteWidthUnit . '" : "auto" );margin:0 auto;}');
 }
 else {
-	$doc->addCustomTag('#body-container, #header-above {width: expression( document.body.clientWidth >' . ($siteWidth - 1) . ' ? "' . $siteWidth . $siteWidthUnit . '" : "auto" );margin:0 auto;}');
+    $doc->addCustomTag('#body-container, #header-above {width: expression( document.body.clientWidth >' . ($siteWidth - 1) . ' ? "' . $siteWidth . $siteWidthUnit . '" : "auto" );margin:0 auto;}');
 }
 $doc->addCustomTag('</style>');
 if ($IE6TransFix) {
-	$doc->addCustomTag('<script type="text/javascript" src="' . $template . '/js/DD_belatedPNG_0.0.8a-min.js"></script>');
-	$doc->addCustomTag('<script type="text/javascript">DD_belatedPNG.fix(\'' . $IE6TransFixTargets . '\');</script>');
+    $doc->addCustomTag('<script type="text/javascript" src="' . $template . '/js/DD_belatedPNG_0.0.8a-min.js"></script>');
+    $doc->addCustomTag('<script type="text/javascript">DD_belatedPNG.fix(\'' . $IE6TransFixTargets . '\');</script>');
 }
 $doc->addCustomTag('<![endif]-->');
