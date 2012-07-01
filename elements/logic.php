@@ -368,8 +368,12 @@ $mobileLayoutOverride->includeFile[] = $template . '/layouts/mobile.php';
 
 #---------------------------- Head Elements --------------------------------#
 
-// Custom tags
-$doc->addCustomTag('<meta name="copyright" content="' . htmlspecialchars($app->getCfg('sitename')) . '" />');
+// Always force latest IE rendering engine (even in intranet) & Chrome Frame
+$doc->setMetadata('X-UA-Compatible', 'IE=edge,chrome=1');
+// Set initial scale of mobile viewport to 100% - see http://bit.ly/sK7Zty
+$doc->setMetadata('viewport', 'width=device-width, initial-scale=1.0');
+// Define copyright of site content
+$doc->setMetadata('copyright', htmlspecialchars($app->getCfg('sitename')));
 
 // Transparent favicon
 $doc->addFavicon($template . '/favicon.png', 'image/png', 'icon');
