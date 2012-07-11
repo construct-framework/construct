@@ -20,7 +20,7 @@
   <link rel="alternate stylesheet" href="templates/' . $this->template . '/css/wireframe.css" type="text/css" title="wireframe"/>';
 } ?>
     <?php
-    if ($customStyleSheet != '-1')
+    if ($customStyleSheet > -1)
         echo '<link rel="stylesheet" href="' . $this->baseurl . '/templates/' . $this->template . '/css/' . $customStyleSheet . '"  type="text/css" media="screen" />';
     if ($this->direction == 'rtl')
         echo '<link rel="stylesheet" href="' . $this->baseurl . '/templates/' . $this->template . '/css/rtl.css"  type="text/css" media="screen" />';

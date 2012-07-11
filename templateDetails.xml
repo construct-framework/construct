@@ -32,7 +32,7 @@
 		<filename>elements/jqueryversion.php</filename>
 		<filename>elements/logic.php</filename>
 		<filename>elements/mdetect.php</filename>
-		<filename>elements/upgradecheck.php</filename>
+		<filename>elements/version.php</filename>
 		<filename>html/modules.php</filename>
 		<filename>html/pagination.php</filename>
 		<filename>html/index.html</filename>
@@ -168,6 +168,11 @@
 					   filter="\.css"
 					   exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css"
 					   description="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_DESC"/>
+				<field name="customStyleSheetVersion"
+					   type="text"
+					   default=""
+					   label="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_VERSION_LABEL"
+					   description="TPL_JE_CONSTRUCT_PRO_CUSTOM_STYLE_SHEET_VERSION_DESC"/>
 				<field name="setGeneratorTag"
 					   type="text"
 					   default="Construct Framework | http://Construct-Framework.com"
@@ -408,7 +413,7 @@
 					   size="50"/>
 			</fieldset>
 			<fieldset name="version_check">
-				<field label="TPL_JE_CONSTRUCT_PRO_VERSION_CHECK_LABEL" type="upgradecheck"/>
+				<field label="TPL_JE_CONSTRUCT_PRO_VERSION_CHECK_LABEL" type="version"/>
 			</fieldset>
 		</fields>
 	</config>
