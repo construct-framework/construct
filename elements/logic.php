@@ -426,7 +426,7 @@ if ($googleWebFont3) {
 }
 
 // JavaScript
-$doc->addCustomTag('<script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
+$doc->addScriptDeclaration('window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window)});');
 if ($loadjQuery) {
     $doc->addCustomTag('<script type="text/javascript" src="' . $loadjQuery . '"></script>');
     $doc->addCustomTag('<script type="text/javascript">jQuery.noConflict();</script>');
@@ -439,7 +439,7 @@ if ($siteWidth) {
 if (($siteWidthType == 'max-width') && $fluidMedia) {
     $doc->addStyleDeclaration('img, object {max-width:100%;}');
 }
-if (!$fullWidth) {
+if ($siteWidth && !$fullWidth) {
     $doc->addStyleDeclaration('#header, #footer {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . '; margin:0 auto;}');
 }
 if ($useStickyFooter) {
@@ -463,7 +463,7 @@ $doc->addCustomTag('#body-container {text-align:left;}');
 if ($useStickyFooter) {
     $doc->addCustomTag('body.sticky-footer #footer-push {display:table;height:100%;}');
 }
-if (!$fullWidth) {
+if ($siteWidth && !$fullWidth) {
     $doc->addCustomTag('#body-container, #header-above, #header, #footer {width: expression( document.body.clientWidth >' . ($siteWidth - 1) . ' ? "' . $siteWidth . $siteWidthUnit . '" : "auto" );margin:0 auto;}');
 }
 else {

@@ -238,7 +238,7 @@
 			<fieldset name="Layout">
 				<field name="siteWidth"
 					   type="text"
-					   default="80.5"
+					   default=""
 					   label="TPL_JE_CONSTRUCT_PRO_SITE_WIDTH_LABEL"
 					   description="TPL_JE_CONSTRUCT_PRO_SITE_WIDTH_DESC"
 					   size="10"/>
