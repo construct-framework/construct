@@ -20,7 +20,7 @@ function modChrome_jexhtml($module, &$params, &$attribs)
 		echo '<h' . $headerLevel . ' class="' . $headerClass . '">' . $module->title . '</h' . $headerLevel . '>';
 		}
 		echo $module->content ?>
-	</div>;
+	</div>
 	<?php endif;
 }
 
@@ -44,6 +44,6 @@ function modChrome_jerounded($module, &$params, &$attribs)
 				</div>
 			</div>
 		</div>
-	</div>';
+	</div>'
 	<?php endif;
 }
