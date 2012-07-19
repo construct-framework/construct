@@ -285,7 +285,7 @@
 				</field>
 				<field name="stickyFooterHeight"
 					   type="text"
-					   default="175"
+					   default=""
 					   label="TPL_JE_CONSTRUCT_PRO_STICKY_FOOTER_HEIGHT_LABEL"
 					   description="TPL_JE_CONSTRUCT_PRO_STICKY_FOOTER_HEIGHT_DESC"
 					   size="5"/>
