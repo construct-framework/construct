@@ -88,9 +88,9 @@ function CmodMainMenuXMLCallback(&$node, $args)
 
 	if (($node->name() == 'li') && ($id = $node->attributes('id'))) {
 		if ($node->attributes('class')) {
-			$node->addAttribute('class', $node->attributes('class').' item'.$id);
+			$node->addAttribute('class', $node->attributes('class').' item'.$id.' '.$menu->getItem($id)->alias);
 		} else {
-			$node->addAttribute('class', 'item'.$id);
+			$node->addAttribute('class', 'item'.$id.' '.$menu->getItem($id)->alias);
 		}
 	}
 	
