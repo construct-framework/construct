@@ -229,6 +229,13 @@
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
+                <field name="mooExceptions"
+					   type="textarea"
+					   default=""
+					   label="TPL_CONSTRUCT_MOO_EXCEPTIONS_LABEL"
+					   description="TPL_CONSTRUCT_MOO_EXCEPTIONS_DESC"
+					   rows="1"
+					   cols="30"/>
 				<field name="loadjQuery"
 					   type="jqueryversion"
 					   default=""

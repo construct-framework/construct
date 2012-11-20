@@ -57,6 +57,7 @@ $mHeaderDataTheme        = $this->params->get('mHeaderDataTheme');
 $mNavPosition            = $this->params->get('mNavPosition');
 $mNavDataTheme           = $this->params->get('mNavDataTheme');
 $mPageDataTheme          = $this->params->get('mPageDataTheme');
+$mooExceptions           = htmlspecialchars($this->params->get('mooExceptions'));
 $setGeneratorTag         = htmlspecialchars($this->params->get('setGeneratorTag'));
 $showDiagnostics         = $this->params->get('showDiagnostics');
 $siteWidth               = htmlspecialchars($this->params->get('siteWidth'));
@@ -83,6 +84,12 @@ if ($customStyleSheetVersion == '') {
 // Change generator tag
 $this->setGenerator($setGeneratorTag);
 
+// Current component Name
+$currentComponent = JRequest::getCmd('option');
+
+// Turn $mooExceptions into an array, remove spaces from input
+$mooExceptions = explode(',', str_replace(' ', '', $mooExceptions));
+
 // Enable Mootols
 if ($loadMoo) {
     JHtml::_('behavior.framework', true);
@@ -94,7 +101,7 @@ if ($loadMoo && $loadModal) {
 }
 
 // Remove MooTools if set to no.
-if (!$loadMoo) {
+if (!$loadMoo && !in_array($currentComponent, $mooExceptions)) {
     unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-core.js']);
     unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-more.js']);
     unset($doc->_scripts[$this->baseurl . '/media/system/js/core.js']);
@@ -281,10 +288,6 @@ if ($catId && ($inheritStyle || $inheritLayout)) {
 if ($itemId) {
     $currentAlias = $app->getMenu()->getActive()->alias;
 }
-
-#----------------------------- Component Name -----------------------------#
-
-$currentComponent = JRequest::getCmd('option');
 
 #------------------Extended Template Style Overrides------------------------#
 
