@@ -13,8 +13,6 @@ if (JFile::exists(dirname(__FILE__) . '/helper.php')) {
 
 // To get an application object
 $app = JFactory::getApplication();
-// The default menu item
-$default = $menu->getActive() == $menu->getDefault($lang->getTag());
 // Returns a reference to the global document object
 $doc = JFactory::getDocument();
 // Returns a reference to the global language object
@@ -23,7 +21,7 @@ $lang = JFactory::getLanguage();
 $menu = $app->getMenu();
 // Checks for any system messages
 $messageQueue = $app->getMessageQueue();
-// Define relative shortcut for current template directory
+// Define relative path to the  current template directory
 $template = 'templates/' . $this->template;
 // Define absolute path to the template directory
 $templateDir = JPATH_THEMES . '/' . $this->template;
@@ -33,6 +31,9 @@ $url = clone(JURI::getInstance());
 $user = JFactory::getUser();
 // Get the current view
 $view = JRequest::getCmd('view');
+
+// The default menu item
+$default = $menu->getActive() == $menu->getDefault($lang->getTag());
 
 // Define shortcuts for template parameters
 $customStyleSheet        = $this->params->get('customStyleSheet');
