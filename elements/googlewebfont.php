@@ -33,8 +33,8 @@ class JFormFieldGooglewebfont extends JFormFieldList {
      * @return    array    The field option objects.
      * @since    1.6
      */
-    protected function getOptions()
-    {
+    protected function getOptions() {
+
         $obj    = $this->form->getValue('params');
         $params = new JRegistry();
         $params->loadObject($obj);
