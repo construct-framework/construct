@@ -79,7 +79,7 @@ if ($loadMoo) {
 }
 
 // Enable modal pop-ups
-if ( $loadMoo && $loadModal ) {	
+if ( $loadMoo && $loadModal ) {
 	JHTML::_('behavior.modal');
 }
 
@@ -192,7 +192,7 @@ $columnGroupBetaCount = $column3Count + $column4Count;
 if ($columnGroupBetaCount) : $columnGroupBetaClass = 'count-'.$columnGroupBetaCount; endif;
 
 $columnLayout= 'main-only';
-	
+
 if (($columnGroupAlphaCount > 0 ) && ($columnGroupBetaCount == 0)) :
 	$columnLayout = 'alpha-'.$columnGroupAlphaCount.'-main';
 elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
@@ -200,16 +200,33 @@ elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
 elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
 	$columnLayout = 'main-beta-'.$columnGroupBetaCount;
 endif;
-	
+
 #-------------------------------- Item ID ---------------------------------#
+
 
 $itemId = JRequest::getInt('Itemid', 0);
 
+#------------------------- Menu Item Alias --------------------------------#
+
+$menu	= &JSite::getMenu();
+$itemAlias = $menu->getItem($itemId)->alias;
+
 #------------------------------- Article ID -------------------------------#
 
-if ($view == 'article') 
+if ($view == 'article')
 $articleId = JRequest::getInt('id');
-else ($articleId = NULL);
+else ($articleId = null);
+
+#------------------------------- Article Alias -------------------------------#
+if ($view == 'article')
+{
+	$article =& JTable::getInstance("content");
+	$article->load($articleId);
+	$articleAlias = $article->get('alias');
+}
+else {
+	($articleAlias = null);
+}
 
 #------------------------------- Section ID -------------------------------#
 
@@ -230,9 +247,9 @@ function getSection($iId) {
 			$database->setQuery( $sql );
 			$row = $database->loadResult();
 			return $row;
-		}		
+		}
 	}
-	
+
 $sectionId = getSection(JRequest::getInt('id'));
 
 #------------------------------ Category ID -------------------------------#
@@ -244,16 +261,16 @@ function getCategory($iId) {
 		}
 	  elseif(JRequest::getCmd('view', 0) == "category") {
 			return JRequest::getInt('id');
-		}		
+		}
 	  elseif(JRequest::getCmd('view', 0) == "article") {
 			$temp = explode(":",JRequest::getInt('id'));
 			$sql = "SELECT catid FROM #__content WHERE id = ".$temp[0];
 			$database->setQuery( $sql );
 			$row = $database->loadResult();
 			return $row;
-		}		
+		}
 	}
-	
+
 $catId = getCategory(JRequest::getInt('id'));
 
 #--------------------------------- Alias ----------------------------------#
@@ -279,7 +296,7 @@ $styleOverride->includeFile[] 				= $template.'/css/item/'.$overrideTheme.'-item
 $styleOverride->includeFile[] 				= $template.'/css/item/item-'.$itemId.'.css';
 $styleOverride->includeFile[] 				= $template.'/css/category/'.$overrideTheme.'-category-'.$catId.'.css';
 $styleOverride->includeFile[] 				= $template.'/css/category/category-'.$catId.'.css';
-if ($view == 'category') {						
+if ($view == 'category') {
 	$styleOverride->includeFile[] 			= $template.'/css/category/category.css';
 }
 $styleOverride->includeFile[] 				= $template.'/css/section/'.$overrideTheme.'-section-'.$sectionId.'.css';
@@ -306,21 +323,21 @@ $layoutOverride 							= new ConstructTemplateHelper ();
 
 $layoutOverride->includeFile 				= array ();
 
-$layoutOverride->includeFile[] 				= $template.'/layouts/article/'.$overrideTheme.'-article-'.$articleId.'.php';	
-$layoutOverride->includeFile[] 				= $template.'/layouts/article/article-'.$articleId.'.php';	
-$layoutOverride->includeFile[] 				= $template.'/layouts/article/article.php';	
-$layoutOverride->includeFile[] 				= $template.'/layouts/item/'.$overrideTheme.'-item-'.$itemId.'.php';	
-$layoutOverride->includeFile[] 				= $template.'/layouts/item/item-'.$itemId.'.php';	
-$layoutOverride->includeFile[] 				= $template.'/layouts/category/'.$overrideTheme.'-category-'.$catId.'.php';	
+$layoutOverride->includeFile[] 				= $template.'/layouts/article/'.$overrideTheme.'-article-'.$articleId.'.php';
+$layoutOverride->includeFile[] 				= $template.'/layouts/article/article-'.$articleId.'.php';
+$layoutOverride->includeFile[] 				= $template.'/layouts/article/article.php';
+$layoutOverride->includeFile[] 				= $template.'/layouts/item/'.$overrideTheme.'-item-'.$itemId.'.php';
+$layoutOverride->includeFile[] 				= $template.'/layouts/item/item-'.$itemId.'.php';
+$layoutOverride->includeFile[] 				= $template.'/layouts/category/'.$overrideTheme.'-category-'.$catId.'.php';
 $layoutOverride->includeFile[] 				= $template.'/layouts/category/category-'.$catId.'.php';
-if ($view == 'category') {						
+if ($view == 'category') {
 	$layoutOverride->includeFile[] 			= $template.'/layouts/category/category.php';
 }
-$layoutOverride->includeFile[] 				= $template.'/layouts/section/'.$overrideTheme.'-section-'.$sectionId.'.php';	
-$layoutOverride->includeFile[] 				= $template.'/layouts/section/section-'.$sectionId.'.php';	
-$layoutOverride->includeFile[] 				= $template.'/layouts/section/section.php';	
-$layoutOverride->includeFile[] 				= $template.'/layouts/component/'.$overrideTheme.'-'.$currentComponent.'.php';	
-$layoutOverride->includeFile[] 				= $template.'/layouts/component/'.$currentComponent.'.php';	
+$layoutOverride->includeFile[] 				= $template.'/layouts/section/'.$overrideTheme.'-section-'.$sectionId.'.php';
+$layoutOverride->includeFile[] 				= $template.'/layouts/section/section-'.$sectionId.'.php';
+$layoutOverride->includeFile[] 				= $template.'/layouts/section/section.php';
+$layoutOverride->includeFile[] 				= $template.'/layouts/component/'.$overrideTheme.'-'.$currentComponent.'.php';
+$layoutOverride->includeFile[] 				= $template.'/layouts/component/'.$currentComponent.'.php';
 $layoutOverride->includeFile[] 				= $template.'/layouts/'.$overrideTheme.'-index.php';
 $layoutOverride->includeFile[] 				= $template.'/layouts/index.php';
 
