@@ -252,6 +252,15 @@ function getSection($iId) {
 
 $sectionId = getSection(JRequest::getInt('id'));
 
+#----------------------------- Section Alias -----------------------------#
+
+if ($sectionId)
+{
+	$section =& JTable::getInstance("section");
+	$section->load($sectionId);
+	$secAlias = $section->get('alias');
+}
+
 #------------------------------ Category ID -------------------------------#
 
 function getCategory($iId) {
@@ -273,6 +282,14 @@ function getCategory($iId) {
 
 $catId = getCategory(JRequest::getInt('id'));
 
+#----------------------------- Category Alias -----------------------------#
+
+if ($catId)
+{
+	$category =& JTable::getInstance("category");
+	$category->load($catId);
+	$catAlias = $category->get('alias');
+}
 #--------------------------------- Alias ----------------------------------#
 
 if ($itemId) {
