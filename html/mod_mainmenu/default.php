@@ -25,18 +25,18 @@ function CmodMainMenuXMLCallback(&$node, $args)
 		}
 	}
 
-	
+
 // first and last class
 	if ($node->name() == 'ul') {
 		foreach ($node->children() as $child) {
 			/* keep reference to the parent */
 			$child->my_parent =& $node; // ??
-			
+
 			if ($child->attributes('access') > $user->get('aid', 0)) {
 				$node->removeChild($child);
 			}
 		}
-	
+
 // count items in the menu array
 		$children_count = count($node->children());
 		$children_index = 0;
@@ -88,12 +88,14 @@ function CmodMainMenuXMLCallback(&$node, $args)
 
 	if (($node->name() == 'li') && ($id = $node->attributes('id'))) {
 		if ($node->attributes('class')) {
-			$node->addAttribute('class', $node->attributes('class').' item'.$id.' '.$menu->getItem($id)->alias);
+			// Class attribute already exists
+			$node->addAttribute('class', $node->attributes('class').' '.$menu->getItem($id)->alias);
 		} else {
-			$node->addAttribute('class', 'item'.$id.' '.$menu->getItem($id)->alias);
+			// Class attribute doe not exist
+			$node->addAttribute('class', $menu->getItem($id)->alias);
 		}
 	}
-	
+
 	if (isset($path) && $node->attributes('id') == $path[0]) {
 		$node->addAttribute('id', 'current');
 	} else {
