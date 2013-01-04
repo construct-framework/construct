@@ -12,7 +12,7 @@
 <jdoc:include type="head" />
 </head>
 
-<body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; echo ' '.$currentComponent; if($articleId) echo ' article-'.$articleId; if ($itemId) echo ' item-'.$itemId; if($catId) echo ' category-'.$catId; if($sectionId) echo ' section-'.$sectionId ?>">
+<body class="<?php echo $columnLayout; if($useStickyFooter) echo ' sticky-footer'; echo ' '.$currentComponent; if($articleId) echo ' '.$articleAlias .'-article'; if ($itemId) echo ' '.$itemAlias.'-item'; if($catId) echo ' '.$catAlias .'-category'; if($sectionId) echo ' '.$secAlias.'-section' ?>">
 
 	<div id="footer-push">
 			<a id="page-top" name="page-top"></a>
