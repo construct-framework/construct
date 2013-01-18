@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-html{font-family:Helvetica,Arial,FreeSans,sans-serif;background:#9da2a7 url(../images/example-fade.png) 50% 0 repeat-y !important;background:url(../images/example-fade.png) 50% 0 repeat-y/*for IE6*/}
+html{font-family:sans-serif;background:#9da2a7 url(../images/example-fade.png) 50% 0 repeat-y !important;background:url(../images/example-fade.png) 50% 0 repeat-y/*for IE6*/}
 @font-face {font-family: 'BebasNeueRegular';src: url('../fonts/BebasNeue-webfont.eot');src: local('?'), url('../fonts/BebasNeue-webfont.woff') format('woff'), url('../fonts/BebasNeue-webfont.ttf') format('truetype'), url('../fonts/BebasNeue-webfont.svg#webfontDYsPqAbQ') format('svg');font-weight: normal;font-style: normal;}
 .componentheading,
 .contentheading,
