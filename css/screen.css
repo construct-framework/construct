@@ -312,6 +312,7 @@ body {
 body {
 	color       : #333;
 	line-height : 1.6em;
+	font-family : sans-serif;
 }
 
 body.arial {
@@ -1089,7 +1090,6 @@ ul.menu-horizontal li {
 
 #footer ul.menu li a, #footer ul.menu li a:visited {
 	font-weight     : normal;
-	padding         : 1px 3px;
 	text-decoration : none;
 }
 
@@ -1114,7 +1114,6 @@ ul.menu-horizontal li {
 }
 
 #logo {
-	float  : left;
 	margin : 0;
 }
 
@@ -1345,25 +1344,22 @@ ul.menu ul ul ul li.pie_hover ul {
 /* Fully browser compatible, works with screenreaders but doesn't work with images off/css on */
 /*#nav ul.menu li a {display:block;width:100px;height:20px;background:url(../images/logo.png) -50px -50px no-repeat}
 #nav ul.menu li a span{display:block;width:0;height:0;overflow:hidden;}*/
+
 /* -- CSS Clearing -- */
-.clearfix:after, .clearfix:before {
-	clear      : both;
-	content    : ".";
-	font       : 1px/0;
-	display    : block;
-	height     : 0;
-	visibility : hidden;
+.clearfix:before,
+.clearfix:after {
+	content  : "\0020";
+	display  : block;
+	height   : 0;
+	overflow : hidden;
 }
 
-/*:before is for gutter margin top*/
+.clearfix:after {
+	clear : both;
+}
+
 .clearfix {
-	display   : inline-block;
-	display   : block;
-	min-width : 0;
-}
-
-* html .clearfix {
-	height : 1%;
+	zoom : 1;
 }
 
 .clear {

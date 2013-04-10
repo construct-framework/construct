@@ -15,9 +15,13 @@ if (JFile::exists(dirname(__FILE__) . '/helper.php')) {
 $app = JFactory::getApplication();
 // Returns a reference to the global document object
 $doc = JFactory::getDocument();
+// Returns a reference to the global language object
+$lang = JFactory::getLanguage();
+// Returns a reference to the menu object
+$menu = $app->getMenu();
 // Checks for any system messages
 $messageQueue = $app->getMessageQueue();
-// Define relative shortcut for current template directory
+// Define relative path to the  current template directory
 $template = 'templates/' . $this->template;
 // Define absolute path to the template directory
 $templateDir = JPATH_THEMES . '/' . $this->template;
@@ -28,6 +32,9 @@ $user = JFactory::getUser();
 // Get the current view
 $view = JRequest::getCmd('view');
 
+// The default menu item
+$default = $menu->getActive() == $menu->getDefault($lang->getTag());
+
 // Define shortcuts for template parameters
 $customStyleSheet        = $this->params->get('customStyleSheet');
 $customStyleSheetVersion = htmlspecialchars($this->params->get('customStyleSheetVersion'));
@@ -36,10 +43,13 @@ $enableSwitcher          = $this->params->get('enableSwitcher');
 $fluidMedia              = $this->params->get('fluidMedia');
 $fullWidth               = $this->params->get('fullWidth');
 $googleWebFont           = $this->params->get('googleWebFont');
+$googleWebFontSubset     = $this->params->get('googleWebFontSubset');
 $googleWebFontTargets    = htmlspecialchars($this->params->get('googleWebFontTargets'));
 $googleWebFont2          = $this->params->get('googleWebFont2');
+$googleWebFontSubset2    = $this->params->get('googleWebFontSubset2');
 $googleWebFontTargets2   = htmlspecialchars($this->params->get('googleWebFontTargets2'));
 $googleWebFont3          = $this->params->get('googleWebFont3');
+$googleWebFontSubset3    = $this->params->get('googleWebFontSubset3');
 $googleWebFontTargets3   = htmlspecialchars($this->params->get('googleWebFontTargets3'));
 $IECSS3                  = $this->params->get('IECSS3');
 $IECSS3Targets           = htmlspecialchars($this->params->get('IECSS3Targets'));
@@ -57,6 +67,7 @@ $mHeaderDataTheme        = $this->params->get('mHeaderDataTheme');
 $mNavPosition            = $this->params->get('mNavPosition');
 $mNavDataTheme           = $this->params->get('mNavDataTheme');
 $mPageDataTheme          = $this->params->get('mPageDataTheme');
+$mooExceptions           = htmlspecialchars($this->params->get('mooExceptions'));
 $setGeneratorTag         = htmlspecialchars($this->params->get('setGeneratorTag'));
 $showDiagnostics         = $this->params->get('showDiagnostics');
 $siteWidth               = htmlspecialchars($this->params->get('siteWidth'));
@@ -77,15 +88,21 @@ $version = $data['version'];
 
 // Define fallback version number for custom style sheet
 if ($customStyleSheetVersion == '') {
-	$customStyleSheetVersion = $version;
+    $customStyleSheetVersion = $version;
 }
 
 // Change generator tag
 $this->setGenerator($setGeneratorTag);
 
+// Current component Name
+$currentComponent = JRequest::getCmd('option');
+
+// Turn $mooExceptions into an array, remove spaces from input
+$mooExceptions = explode(',', str_replace(' ', '', $mooExceptions));
+
 // Enable Mootols
 if ($loadMoo) {
-    JHtml::_('behavior.framework', true);
+    JHtml::_('behavior.framework', TRUE);
 }
 
 // Enable modal pop-ups
@@ -94,7 +111,7 @@ if ($loadMoo && $loadModal) {
 }
 
 // Remove MooTools if set to no.
-if (!$loadMoo) {
+if (!$loadMoo && !in_array($currentComponent, $mooExceptions)) {
     unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-core.js']);
     unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-more.js']);
     unset($doc->_scripts[$this->baseurl . '/media/system/js/core.js']);
@@ -104,7 +121,7 @@ if (!$loadMoo) {
 }
 
 // Change Google Web Font name for CSS
-$googleWebFontFamily = str_replace(array('+', ':bold', ':italic'), " ", $googleWebFont);
+$googleWebFontFamily  = str_replace(array('+', ':bold', ':italic'), " ", $googleWebFont);
 $googleWebFontFamily2 = str_replace(array('+', ':bold', ':italic'), " ", $googleWebFont2);
 $googleWebFontFamily3 = str_replace(array('+', ':bold', ':italic'), " ", $googleWebFont3);
 
@@ -208,10 +225,8 @@ if ($columnGroupBetaCount) : $columnGroupBetaClass = 'count-' . $columnGroupBeta
 $columnLayout = 'main-only';
 
 if (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount == 0)) :
-    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main';
-elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
-    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount;
-elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
+    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main'; elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
+    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount; elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
     $columnLayout = 'main-beta-' . $columnGroupBetaCount;
 endif;
 
@@ -227,16 +242,15 @@ else ($articleId = NULL);
 
 #------------------------------ Category ID -------------------------------#
 
-function getCategory($id)
-{
+function getCategory($id) {
     $database = JFactory::getDBO();
     if ((JRequest::getCmd('view', 0) == "category") || (JRequest::getCmd('view', 0) == "categories")) {
         return $id;
-    }
-    elseif (JRequest::getCmd('view', 0) == "article") {
+    } elseif (JRequest::getCmd('view', 0) == "article") {
         $temp = explode(":", $id);
-        $sql = "SELECT catid FROM #__content WHERE id = " . $temp[0];
+        $sql  = "SELECT catid FROM #__content WHERE id = " . $temp[0];
         $database->setQuery($sql);
+
         return $database->loadResult();
     }
 }
@@ -247,22 +261,21 @@ $catId = getCategory(JRequest::getInt('id'));
 
 if ($catId && ($inheritStyle || $inheritLayout)) {
 
-    function getParentCategory($id)
-    {
+    function getParentCategory($id) {
         $database = JFactory::getDBO();
-        $sql = "SELECT parent_id
+        $sql      = "SELECT parent_id
         FROM #__categories
         WHERE id = $id";
         $database->setQuery($sql);
+
         return $database->loadResult();
     }
 
     $parentCategory = getParentCategory($catId);
 
-    function getAncestorCategories($id)
-    {
+    function getAncestorCategories($id) {
         $database = JFactory::getDBO();
-        $sql = "SELECT b.id, b.title
+        $sql      = "SELECT b.id, b.title
         FROM #__categories a,
         #__categories b
         WHERE a.id = $id
@@ -271,6 +284,7 @@ if ($catId && ($inheritStyle || $inheritLayout)) {
         AND a.id <> b.id
         AND b.lft > 0";
         $database->setQuery($sql);
+
         return $database->loadObjectList();
     }
 
@@ -281,10 +295,6 @@ if ($catId && ($inheritStyle || $inheritLayout)) {
 if ($itemId) {
     $currentAlias = $app->getMenu()->getActive()->alias;
 }
-
-#----------------------------- Component Name -----------------------------#
-
-$currentComponent = JRequest::getCmd('option');
 
 #------------------Extended Template Style Overrides------------------------#
 
@@ -413,15 +423,27 @@ if ($enableSwitcher) {
 
 // Typography
 if ($googleWebFont) {
-    $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont . '');
+    $googleWebFont = 'http://fonts.googleapis.com/css?family=' . $googleWebFont;
+    if ($googleWebFontSubset) {
+        $googleWebFont = $googleWebFont . '&subset=' . $googleWebFontSubset;
+    }
+    $doc->addStyleSheet($googleWebFont);
     $doc->addStyleDeclaration($googleWebFontTargets . ' {font-family:' . $googleWebFontFamily . ', serif;}');
 }
 if ($googleWebFont2) {
-    $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont2 . '');
+    $googleWebFont2 = 'http://fonts.googleapis.com/css?family=' . $googleWebFont2;
+    if ($googleWebFontSubset) {
+        $googleWebFont2 = $googleWebFont2 . '&subset=' . $googleWebFontSubset2;
+    }
+    $doc->addStyleSheet($googleWebFont2);
     $doc->addStyleDeclaration($googleWebFontTargets2 . ' {font-family:' . $googleWebFontFamily2 . ', serif;}');
 }
 if ($googleWebFont3) {
-    $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont3 . '');
+    $googleWebFont3 = 'http://fonts.googleapis.com/css?family=' . $googleWebFont3;
+    if ($googleWebFontSubset) {
+        $googleWebFont3 = $googleWebFont3 . '&subset=' . $googleWebFontSubset3;
+    }
+    $doc->addStyleSheet($googleWebFont3);
     $doc->addStyleDeclaration($googleWebFontTargets3 . ' {font-family:' . $googleWebFontFamily3 . ', serif;}');
 }
 
@@ -465,8 +487,7 @@ if ($useStickyFooter) {
 }
 if ($siteWidth && !$fullWidth) {
     $doc->addCustomTag('#body-container, #header-above, #header, #footer {width: expression( document.body.clientWidth >' . ($siteWidth - 1) . ' ? "' . $siteWidth . $siteWidthUnit . '" : "auto" );margin:0 auto;}');
-}
-else {
+} else {
     $doc->addCustomTag('#body-container, #header-above {width: expression( document.body.clientWidth >' . ($siteWidth - 1) . ' ? "' . $siteWidth . $siteWidthUnit . '" : "auto" );margin:0 auto;}');
 }
 $doc->addCustomTag('</style>');
