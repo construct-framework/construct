@@ -36,6 +36,7 @@ $view = JRequest::getCmd('view');
 $default = $menu->getActive() == $menu->getDefault($lang->getTag());
 
 // Define shortcuts for template parameters
+$allowMobileUrl          = $this->params->get('allowMobileUrl');
 $customStyleSheet        = $this->params->get('customStyleSheet');
 $customStyleSheetVersion = htmlspecialchars($this->params->get('customStyleSheetVersion'));
 $detectTablets           = $this->params->get('detectTablets');
